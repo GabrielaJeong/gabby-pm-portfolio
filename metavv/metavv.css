@@ -1509,6 +1509,10 @@
   margin-bottom: var(--space-3);
 }
 
+.exec-tradeoff-list + .exec-detail-body {
+  margin-top: var(--space-2);
+}
+
 .exec-detail-body {
   font-size: var(--fs-body);
   color: var(--text-secondary);
