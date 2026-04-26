@@ -9,6 +9,6 @@
     // KEY DECISIONS 카드 그룹
     initExpandCards('.exec-phase-card:not([data-group])', { firstOpen: true });
     // ENGINEERING RIGOR 카드 그룹
-    initExpandCards('.exec-phase-card[data-group="engineering"]', { firstOpen: true });
+    initExpandCards('.exec-phase-card[data-group="engineering"]', { firstOpen: false });
   }
 })();
