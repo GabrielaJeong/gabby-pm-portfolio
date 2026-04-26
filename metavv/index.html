@@ -202,69 +202,61 @@
 
           <div class="ctx-diagram">
 
-            <svg class="ctx-arch-svg" viewBox="0 0 480 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="메타브와 메타브 스튜디오가 공유하는 인프라 구조도">
+            <!-- HTML/CSS 기반 다이어그램 — 각 박스 독립 flexbox 수직 중앙정렬 -->
+            <div class="ctx-arch" role="img" aria-label="메타브와 메타브 스튜디오가 공유하는 인프라 구조도">
 
-              <text x="240" y="20" text-anchor="middle" fill="#8A8882" font-size="9" letter-spacing="2" font-family="Pretendard">USERS</text>
+              <p class="phase-section-label">USERS</p>
+              <div class="ctx-arch-row">
+                <div class="phase-card">
+                  <span class="phase-card-label">B2C VISITORS</span>
+                  <span class="phase-card-num">80만 회원 · 월 30만 UV</span>
+                  <span class="phase-card-desc">무료 콘텐츠 이용</span>
+                </div>
+                <div class="phase-card">
+                  <span class="phase-card-label">SAAS USERS</span>
+                  <span class="phase-card-num">결제 사용자 · 외부 제작자</span>
+                  <span class="phase-card-desc">저가 요금제 쏠림</span>
+                </div>
+              </div>
 
-              <!-- B2C VISITORS — 가운데 정렬 -->
-              <g>
-                <rect x="40" y="28" width="170" height="72" rx="8" fill="#0a0a0a" stroke="rgba(138,136,130,0.3)" stroke-width="1"/>
-                <text x="125" y="56" text-anchor="middle" fill="#F5CFA5" font-size="9" letter-spacing="2" font-family="Pretendard">B2C VISITORS</text>
-                <text x="125" y="74" text-anchor="middle" fill="#fff" font-size="13" font-weight="500" font-family="Pretendard">80만 회원 · 월 30만 UV</text>
-                <text x="125" y="90" text-anchor="middle" fill="#8A8882" font-size="10" font-family="Pretendard">무료 콘텐츠 이용</text>
-              </g>
+              <div class="ctx-arch-arrow-row">
+                <span class="ctx-arch-arrow">↓</span>
+                <span class="ctx-arch-arrow">↓</span>
+              </div>
 
-              <!-- SAAS USERS — 가운데 정렬 -->
-              <g>
-                <rect x="270" y="28" width="170" height="72" rx="8" fill="#0a0a0a" stroke="rgba(138,136,130,0.3)" stroke-width="1"/>
-                <text x="355" y="56" text-anchor="middle" fill="#F5CFA5" font-size="9" letter-spacing="2" font-family="Pretendard">SAAS USERS</text>
-                <text x="355" y="74" text-anchor="middle" fill="#fff" font-size="13" font-weight="500" font-family="Pretendard">결제 사용자 · 외부 제작자</text>
-                <text x="355" y="90" text-anchor="middle" fill="#8A8882" font-size="10" font-family="Pretendard">저가 요금제 쏠림</text>
-              </g>
+              <p class="phase-section-label">SERVICES</p>
+              <div class="ctx-arch-row">
+                <div class="phase-card phase-card--service">
+                  <span class="phase-card-num">메타브</span>
+                  <span class="phase-card-desc">B2C Platform</span>
+                  <span class="phase-card-desc">콘텐츠 무료 제공</span>
+                </div>
+                <div class="phase-card phase-card--service">
+                  <span class="phase-card-num">메타브 스튜디오</span>
+                  <span class="phase-card-desc">SaaS · 4-Tier</span>
+                  <span class="phase-card-desc">Free/Plus/Pro/Enterprise</span>
+                </div>
+              </div>
 
-              <path d="M 125 108 L 125 136" stroke="rgba(138,136,130,0.4)" stroke-width="1" marker-end="url(#arrowhead1)"/>
-              <path d="M 355 108 L 355 136" stroke="rgba(138,136,130,0.4)" stroke-width="1" marker-end="url(#arrowhead1)"/>
+              <!-- 수렴 화살표 — 곡선만 SVG로 처리 -->
+              <svg class="ctx-arch-merge-svg" viewBox="0 0 400 60" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+                <path d="M 80 4 Q 80 46 200 54" stroke="#F5CFA5" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <path d="M 320 4 Q 320 46 200 54" stroke="#F5CFA5" stroke-width="1.5" stroke-dasharray="4,3"/>
+                <circle cx="200" cy="56" r="3" fill="#F5CFA5"/>
+                <path d="M 200 59 L 200 60" stroke="#F5CFA5" stroke-width="1.5" marker-end="url(#arrowheadGold2)"/>
+                <defs>
+                  <marker id="arrowheadGold2" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
+                    <polygon points="0 0, 6 3, 0 6" fill="#F5CFA5"/>
+                  </marker>
+                </defs>
+              </svg>
 
-              <text x="240" y="133" text-anchor="middle" fill="#8A8882" font-size="9" letter-spacing="2" font-family="Pretendard">SERVICES</text>
+              <div class="phase-card ctx-arch-infra">
+                <span class="phase-card-label">SHARED INFRASTRUCTURE</span>
+                <span class="phase-card-num">서버 · DB · 월 비용 420만원</span>
+              </div>
 
-              <!-- 메타브 — 가운데 정렬 -->
-              <g>
-                <rect x="40" y="146" width="170" height="72" rx="8" fill="#1f1d1a" stroke="rgba(245,207,165,0.3)" stroke-width="1"/>
-                <text x="125" y="174" text-anchor="middle" fill="#fff" font-size="14" font-weight="500" font-family="Pretendard">메타브</text>
-                <text x="125" y="190" text-anchor="middle" fill="#8A8882" font-size="10" font-family="Pretendard">B2C Platform</text>
-                <text x="125" y="205" text-anchor="middle" fill="#8A8882" font-size="9" font-family="Pretendard">콘텐츠 무료 제공</text>
-              </g>
-
-              <!-- 메타브 스튜디오 — 가운데 정렬 -->
-              <g>
-                <rect x="270" y="146" width="170" height="72" rx="8" fill="#1f1d1a" stroke="rgba(245,207,165,0.3)" stroke-width="1"/>
-                <text x="355" y="174" text-anchor="middle" fill="#fff" font-size="14" font-weight="500" font-family="Pretendard">메타브 스튜디오</text>
-                <text x="355" y="190" text-anchor="middle" fill="#8A8882" font-size="10" font-family="Pretendard">SaaS · 4-Tier</text>
-                <text x="355" y="205" text-anchor="middle" fill="#8A8882" font-size="9" font-family="Pretendard">Free/Plus/Pro/Enterprise</text>
-              </g>
-
-              <path d="M 125 222 Q 125 256, 200 278" stroke="#F5CFA5" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
-              <path d="M 355 222 Q 355 256, 280 278" stroke="#F5CFA5" stroke-width="1.5" fill="none" stroke-dasharray="4,3"/>
-
-              <circle cx="240" cy="276" r="3" fill="#F5CFA5"/>
-              <path d="M 240 280 L 240 296" stroke="#F5CFA5" stroke-width="1.5" marker-end="url(#arrowheadGold)"/>
-
-              <!-- SHARED INFRASTRUCTURE — 카드 그리드와 동일 폭(x=40, width=400) -->
-              <g>
-                <rect x="40" y="306" width="400" height="56" rx="8" fill="rgba(245,207,165,0.06)" stroke="#F5CFA5" stroke-width="1" stroke-dasharray="5,3"/>
-                <text x="240" y="325" text-anchor="middle" fill="#F5CFA5" font-size="9" letter-spacing="2" font-family="Pretendard">SHARED INFRASTRUCTURE</text>
-                <text x="240" y="347" text-anchor="middle" fill="#fff" font-size="15" font-weight="500" font-family="Pretendard">서버 · DB · 월 비용 420만원</text>
-              </g>
-
-              <defs>
-                <marker id="arrowhead1" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-                  <polygon points="0 0, 6 3, 0 6" fill="rgba(138,136,130,0.5)"/>
-                </marker>
-                <marker id="arrowheadGold" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-                  <polygon points="0 0, 6 3, 0 6" fill="#F5CFA5"/>
-                </marker>
-              </defs>
-            </svg>
+            </div>
 
             <div class="ctx-diagram-caption">
               B2C 사용자가 늘어도 직접 결제는 없고,<br />

@@ -429,10 +429,70 @@
   justify-content: center;
 }
 
-.ctx-arch-svg {
+/* ── HTML/CSS 인프라 다이어그램 (SVG y좌표 의존 제거) ── */
+
+.ctx-arch {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
   width: 100%;
-  height: auto;
+}
+
+/* 2열 박스 그리드 */
+.ctx-arch-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  width: 100%;
+  align-items: stretch;
+}
+
+/* ctx 박스: 수직 중앙정렬 + 콤팩트 폰트 */
+.ctx-arch-row .phase-card {
+  justify-content: center;
+}
+
+.ctx-arch-row .phase-card-num {
+  font-size: var(--fs-body);
+  font-weight: 500;
+  margin-bottom: var(--space-1);
+}
+
+/* SERVICES 박스 — 골드 보더 + 서피스 배경 */
+.phase-card--service {
+  border-color: var(--border-gold);
+  background: var(--surface);
+}
+
+/* 수직 화살표 행 */
+.ctx-arch-arrow-row {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-3);
+  width: 100%;
+}
+
+.ctx-arch-arrow {
+  text-align: center;
+  color: rgba(138, 136, 130, 0.5);
+  font-size: var(--fs-body);
+}
+
+/* 수렴 곡선 SVG */
+.ctx-arch-merge-svg {
+  width: 100%;
+  height: 60px;
   display: block;
+}
+
+/* SHARED INFRASTRUCTURE 박스 */
+.phase-card.ctx-arch-infra {
+  width: 100%;
+  background: rgba(245, 207, 165, 0.06);
+  border: 1px dashed var(--border-gold);
+  justify-content: center;
+  gap: var(--space-1);
 }
 
 .ctx-diagram-caption {
@@ -671,6 +731,7 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+  justify-content: center;          /* 수직 중앙정렬 — 각 박스 독립 */
 }
 
 .phase-card-label {
