@@ -342,25 +342,11 @@
   border: 1px solid var(--border);
   border-radius: var(--radius-card);
   padding: var(--card-padding-lg);
-  cursor: pointer;
-  transition: border-color 0.3s ease, transform 0.2s ease;
-  position: relative;
-  font-family: inherit;
-  text-align: left;           /* 콘텐츠 카드 → 왼쪽 정렬 */
+  text-align: left;
   width: 100%;
   box-sizing: border-box;
-  color: inherit;
   display: flex;
   flex-direction: column;
-}
-
-.impact-metric-card:hover {
-  border-color: var(--border-gold);
-  transform: translateY(-2px);
-}
-
-.impact-metric-card[aria-expanded="true"] {
-  border-color: var(--gold);
 }
 
 .impact-metric-tag {
@@ -387,40 +373,21 @@
 .impact-metric-label {
   font-size: var(--fs-body);
   font-weight: var(--fw-body);
-  color: var(--text-secondary);         /* 본문 → 0.85 */
+  color: var(--text-secondary);
   line-height: var(--lh-normal);
-  margin-bottom: var(--card-gap-loose);
-}
-
-.impact-metric-arrow {
-  font-size: var(--fs-sub);
-  font-weight: var(--fw-caption);
-  color: var(--text-tertiary);
-  letter-spacing: 0.05em;
-  margin-top: auto;                     /* 카드 하단 고정 */
+  margin-bottom: var(--space-4);
 }
 
 .impact-metric-detail {
-  max-height: 0;
-  overflow: hidden;
-  transition: max-height 0.4s ease, margin-top 0.3s ease, padding-top 0.3s ease;
   font-size: var(--fs-body);
   font-weight: var(--fw-body);
   color: var(--text-secondary);
   line-height: var(--lh-relaxed);
   word-break: keep-all;
   overflow-wrap: break-word;
-}
-
-.impact-metric-card[aria-expanded="true"] .impact-metric-detail {
-  max-height: 240px;
-  margin-top: var(--space-3);
   padding-top: var(--space-4);
   border-top: 1px dashed var(--border-default);
-}
-
-.impact-metric-card[aria-expanded="true"] .impact-metric-arrow {
-  display: none;
+  margin-top: auto;
 }
 
 /* ==================== CONTEXT ==================== */
@@ -496,16 +463,16 @@
   font-weight: 500;
 }
 
-/* 매출 vs 비용 차트 */
-.prob-chart-card {
+/* 비용 회수율 도넛 차트 */
+.prob-donut-card {
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-card);
-  padding: var(--space-10) var(--space-10);
+  padding: var(--space-10);
   margin-bottom: var(--space-4);
 }
 
-.prob-chart-tag {
+.prob-donut-label {
   font-size: var(--fs-caption);
   font-weight: var(--fw-caption);
   color: var(--text-label-gold);
@@ -513,7 +480,7 @@
   margin-bottom: var(--space-2);
 }
 
-.prob-chart-title {
+.prob-donut-title {
   font-size: var(--fs-h2);
   font-weight: var(--fw-h2);
   color: var(--text-primary);
@@ -521,51 +488,105 @@
   margin-bottom: var(--space-8);
 }
 
-.prob-bars {
+.prob-donut-body {
+  display: flex;
+  align-items: center;
+  gap: var(--space-12);
+}
+
+.prob-donut-chart-area {
+  position: relative;
+  width: 200px;
+  height: 200px;
+  flex-shrink: 0;
+}
+
+.prob-donut-chart-area canvas {
+  width: 200px !important;
+  height: 200px !important;
+}
+
+.prob-donut-center {
+  position: absolute;
+  top: 50%;
+  left: 50%;
+  transform: translate(-50%, -50%);
+  text-align: center;
+  pointer-events: none;
+  white-space: nowrap;
+}
+
+.prob-donut-center-label {
+  font-size: 9px;
+  font-weight: var(--fw-caption);
+  color: var(--text-tertiary);
+  letter-spacing: 0.12em;
+  margin-bottom: 4px;
+}
+
+.prob-donut-center-num {
+  font-size: 36px;
+  font-weight: 700;
+  color: var(--gold);
+  line-height: 1;
+  letter-spacing: -0.02em;
+  margin-bottom: 5px;
+}
+
+.prob-donut-center-caption {
+  font-size: 9px;
+  color: var(--text-tertiary);
+  line-height: 1.4;
+}
+
+.prob-donut-aux {
   display: flex;
   flex-direction: column;
-  gap: var(--space-7);
+  gap: var(--space-5);
+  flex: 1;
 }
 
-.prob-bar-label-row {
+.prob-donut-aux-row {
   display: flex;
-  justify-content: space-between;
-  align-items: baseline;
-  margin-bottom: var(--space-2);
+  align-items: flex-start;
+  gap: var(--space-4);
 }
 
-.prob-bar-label {
+.prob-donut-aux-dot {
+  width: 8px;
+  height: 8px;
+  border-radius: 50%;
+  flex-shrink: 0;
+  margin-top: 6px;
+}
+
+.prob-donut-aux-dot.gold  { background: var(--gold); }
+.prob-donut-aux-dot.muted { background: rgba(138, 136, 130, 0.35); }
+
+.prob-donut-aux-info {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.prob-donut-aux-label {
   font-size: var(--fs-body);
-  font-weight: var(--fw-body);
   color: var(--text-secondary);
 }
 
-.prob-bar-value {
-  font-size: var(--fs-body);
+.prob-donut-aux-val {
+  font-size: var(--fs-h3);
   font-weight: 600;
-  color: var(--gold);
   letter-spacing: -0.01em;
 }
 
-.prob-bar-value.muted {
-  color: var(--text-tertiary);
-}
+.prob-donut-aux-val.gold  { color: var(--gold); }
+.prob-donut-aux-val.muted { color: var(--text-tertiary); }
 
-.prob-bar-track {
-  height: 8px;
-  background: rgba(138, 136, 130, 0.1);
-  border-radius: var(--radius-sm);
-  overflow: hidden;
+.prob-donut-aux-divider {
+  height: 1px;
+  background: var(--border);
 }
-
-.prob-bar-fill {
-  height: 100%;
-  border-radius: var(--radius-sm);
-  transition: width 1s ease;
-}
-
-.prob-bar-fill.gold  { background: var(--gold); }
-.prob-bar-fill.muted { background: rgba(138, 136, 130, 0.4); }
 
 /* Discovery 카드 */
 .discovery-card {

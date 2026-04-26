@@ -103,23 +103,84 @@
     });
   }
 
-  // ============ 2. 카드 토글 인터랙션 ============
+  // ============ 2. 인용 카드 토글 인터랙션 ============
   function setupToggleCards() {
-    // 메트릭 카드 (IMPACT DASHBOARD)
-    document.querySelectorAll('.impact-metric-card').forEach(function (card) {
-      card.addEventListener('click', function () {
-        const expanded = card.getAttribute('aria-expanded') === 'true';
-        card.setAttribute('aria-expanded', String(!expanded));
-      });
-    });
-
-    // 인용 카드 (PROBLEM)
     document.querySelectorAll('.quote-card').forEach(function (card) {
       card.addEventListener('click', function () {
         const expanded = card.getAttribute('aria-expanded') === 'true';
         card.setAttribute('aria-expanded', String(!expanded));
       });
     });
+  }
+
+  // ============ 2-b. 비용 회수율 도넛 차트 ============
+  function setupCostDonut() {
+    var canvas = document.getElementById('costDonut');
+    if (!canvas || typeof Chart === 'undefined') return;
+
+    var triggered = false;
+
+    function render() {
+      if (triggered) return;
+      triggered = true;
+
+      var ctx = canvas.getContext('2d');
+      new Chart(ctx, {
+        type: 'doughnut',
+        data: {
+          datasets: [{
+            data: [2, 98],
+            backgroundColor: ['#F5CFA5', 'rgba(138, 136, 130, 0.15)'],
+            borderColor: ['transparent', 'transparent'],
+            borderWidth: 0,
+            hoverBackgroundColor: ['#F5CFA5', 'rgba(138, 136, 130, 0.28)']
+          }]
+        },
+        options: {
+          responsive: false,
+          cutout: '72%',
+          animation: { duration: 1200, easing: 'easeOutCubic' },
+          plugins: {
+            legend: { display: false },
+            tooltip: {
+              backgroundColor: 'rgba(26, 25, 25, 0.95)',
+              titleColor: '#F5CFA5',
+              bodyColor: '#D8D4CA',
+              titleFont: { family: 'Pretendard', size: 11, weight: '500' },
+              bodyFont: { family: 'Pretendard', size: 13, weight: '500' },
+              padding: 12,
+              displayColors: false,
+              borderColor: 'rgba(245, 207, 165, 0.3)',
+              borderWidth: 1,
+              callbacks: {
+                title: function (items) {
+                  return items[0].dataIndex === 0 ? '월 매출 (스튜디오 결제)' : '월 인프라 비용 (서버·DB)';
+                },
+                label: function (item) {
+                  return item.dataIndex === 0 ? '15만원 (2%)' : '405만원 (98%)';
+                }
+              }
+            }
+          }
+        }
+      });
+    }
+
+    if (!('IntersectionObserver' in window)) {
+      render();
+      return;
+    }
+
+    var observer = new IntersectionObserver(function (entries) {
+      entries.forEach(function (entry) {
+        if (entry.isIntersecting) {
+          render();
+          observer.unobserve(canvas);
+        }
+      });
+    }, { threshold: 0.5 });
+
+    observer.observe(canvas);
   }
 
   // ============ 3. 직접 매출 막대 애니메이션 트리거 ============
@@ -192,6 +253,7 @@
   function init() {
     renderRevenueChart();
     setupToggleCards();
+    setupCostDonut();
     setupBarAnimation();
     setupPhaseCards();
     setupMiniTabs();
