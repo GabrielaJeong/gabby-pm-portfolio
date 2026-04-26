@@ -1,4 +1,4 @@
-// ==================== BGYK CASE STUDY · JS ====================
+﻿// ==================== BGYK CASE STUDY · JS ====================
 
 (function () {
   'use strict';
