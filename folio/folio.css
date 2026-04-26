@@ -189,13 +189,17 @@ a.axis-card.doc-card:hover {
 
 /* ==================== ENGINEERING RIGOR 섹션 내 간격 ==================== */
 
-/* 메트릭 → 아코디언 카드 */
-.case-section .result-grid + .exec-phase-card {
+/* 메트릭 → 2×2 카드 그리드 */
+.eng-card-grid {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-4);
+  align-items: start;
   margin-top: var(--section-gap);
 }
 
-/* 마지막 아코디언 카드 → WHY 헤더 */
-.case-section .exec-phase-card ~ .case-block-header {
+/* 2×2 카드 그리드 → WHY 헤더 */
+.case-section .eng-card-grid + .case-block-header {
   margin-top: var(--section-gap);
 }
 
