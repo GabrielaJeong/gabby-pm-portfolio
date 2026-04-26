@@ -187,7 +187,24 @@ a.axis-card.doc-card:hover {
   color: var(--text-quaternary);
 }
 
-/* KEY DECISIONS: exec-phase-card (metavv.css) 재사용 */
+/* ==================== ENGINEERING RIGOR 섹션 내 간격 ==================== */
+
+/* 메트릭 → 아코디언 카드 */
+.case-section .result-grid + .exec-phase-card {
+  margin-top: var(--section-gap);
+}
+
+/* 마지막 아코디언 카드 → WHY 헤더 */
+.case-section .exec-phase-card ~ .case-block-header {
+  margin-top: var(--section-gap);
+}
+
+/* WHY block-sub → 인사이트 카드 그리드 */
+.case-section .block-sub + .axis-grid {
+  margin-top: var(--space-8);
+}
+
+/* ==================== KEY DECISIONS 카드 ==================== */
 
 /* TODO 카드 — 점선 보더로 WIP 표시 */
 .exec-phase-card--todo {
