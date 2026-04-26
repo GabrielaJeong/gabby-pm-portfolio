@@ -205,3 +205,128 @@
 - "박스가 좌측으로 쏠려 보인다" → 레이아웃 문제인지 SVG 내부 텍스트 문제인지 먼저 구분
 
 **금지**: 텍스트 정렬 요청을 레이아웃 재구조화로 해석해 ctx-grid 같은 의도된 2열 레이아웃을 무너뜨리기.
+
+---
+
+## L14. 신규 클래스 폭발
+
+**문제**: 새 영역/페이지 작업 시 메타브 또는 components.css에 이미 있는 패턴을 무시하고 새 클래스를 대량 생성. 한 페이지에 30+개 신규 클래스가 발견되는 사례.
+
+**증상 예시**:
+- LIVE PREVIEW 영역에 `.live-browser-frame`, `.live-browser-bar`, `.live-browser-dots` 등 10+개 신규 클래스
+- DESIGN SYSTEM 영역에 `.ds-section`, `.ds-swatches`, `.ds-swatch-color`, `.ds-type-scale` 등 14+개
+
+**올바른 패턴**:
+1. 작업 전 메타브 페이지 + components.css 모두 검색
+2. 동일/유사 패턴 있으면 그 클래스 그대로 사용 (rename 금지)
+3. 진짜 신규로 필요한 경우만 가비님 승인 후 추가
+4. 신규 클래스는 페이지별 CSS에만 추가, components.css 오염 금지
+
+**금지**:
+- 기존 `.axis-card` 패턴이 있는데 `.ds-component-card` 새로 만들기
+- 기존 `.case-block-header` 있는데 다른 영역 헤더용 신규 클래스 만들기
+- "이 영역만의 차별점이라서" 라는 이유로 신규 클래스 정당화
+
+---
+
+## L15. 하드코딩 색상값
+
+**문제**: 디자인 토큰(`var(--*)`)을 무시하고 색상 값을 직접 입력.
+
+**증상 예시**:
+```css
+background: #0A0E17;
+background: #131927;
+border: 1px solid #2a3a50;
+background: rgba(0, 0, 0, 0.72);
+box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
+```
+
+**올바른 패턴**:
+- 모든 색상은 `var(--*)` 토큰 사용
+- 토큰에 없는 색상이 필요하면 `styles.css`에 신규 토큰 추가 후 사용
+- rgba 투명도도 토큰화 (`--bg-overlay`, `--border-subtle` 등)
+
+**금지**:
+- 16진수 색상 직접 입력
+- `rgba()` 직접 입력 (글로벌 토큰 외)
+- "이 영역만 살짝 다르게" 라며 임의 색상 사용
+
+---
+
+## L16. 음수 margin으로 영역 분리
+
+**문제**: 영역에 풀폭 배경 적용하려고 음수 margin + padding 사용. 컨테이너 패턴 위반.
+
+**증상 예시**:
+```css
+.case-section[data-section="execution"] {
+  margin-left: calc(-1 * var(--space-12));
+  margin-right: calc(-1 * var(--space-12));
+  padding-left: var(--space-12);
+  background: rgba(255, 255, 255, 0.03);
+}
+```
+
+**올바른 패턴** (LEARNED.md L01 컨테이너화):
+```html
+<section class="execution-section">  <!-- 풀폭 배경은 section 자체에 -->
+  <div class="container">             <!-- 콘텐츠는 항상 .container 안에 -->
+    ...
+  </div>
+</section>
+```
+```css
+.execution-section {
+  background: rgba(255, 255, 255, 0.03);
+  padding: var(--space-12) 0;
+}
+```
+
+**금지**:
+- 음수 margin으로 콘텐츠 영역 밖으로 빠져나가기
+- max-width 컨테이너 깨고 배경 적용하기
+- 부모 padding을 음수로 보정하기
+
+---
+
+## L17. 페이지별 CSS의 다른 페이지 CSS 임포트
+
+**문제**: `folio.css`가 `metavv.css`를 임포트하는 구조 — 페이지 전용 CSS가 다른 페이지 전용 CSS에 의존.
+
+**증상 예시**:
+```html
+<link rel="stylesheet" href="/metavv/metavv.css">
+<link rel="stylesheet" href="/folio/folio.css">
+```
+
+**올바른 패턴**:
+- 공유 컴포넌트는 `components.css`로 분리
+- 모든 페이지가 `components.css` 임포트
+- 페이지별 CSS는 그 페이지 전용 차별 스타일만
+- 페이지 CSS 끼리 의존 관계 없음
+
+**금지**:
+- 다른 페이지 CSS 임포트
+- 페이지별 CSS에 공유 컴포넌트 정의
+
+---
+
+## L18. CLAUDE.md / LEARNED.md / 메타브 정답 페이지 미참조
+
+**문제**: 작업 메시지 첫 줄에 "CLAUDE.md / LEARNED.md / 메타브 페이지 확인 후 시작" 명시되어 있어도 클코가 무시하고 자기 판단으로 작업 진행.
+
+**증상 예시**:
+- CLAUDE.md 토큰 강제 규칙 무시 → 하드코딩 색상값 발생 (L15)
+- LEARNED.md L01 컨테이너화 무시 → 음수 margin 사용 (L16)
+- 메타브 정답 페이지 패턴 무시 → 신규 클래스 폭발 (L14)
+
+**올바른 패턴**:
+- 작업 시작 전 반드시 CLAUDE.md 0번 항목 준수
+- 4단계 점검 완료 보고 후 작업 시작
+- 작업 중 의문 발생 시 임의 판단 금지, 가비님에게 확인
+
+**금지**:
+- "확인 완료"라고 보고만 하고 실제로는 안 읽음
+- 새 작업이라고 강제 규칙 무시
+- 시간 절약 위해 점검 단계 건너뛰기

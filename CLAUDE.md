@@ -34,35 +34,52 @@
 ```
 gabby-pm-portfolio/
 ├── index.html          # 메인 페이지
-├── styles.css          # 공용 스타일 + 글로벌 토큰
+├── styles.css          # 글로벌 토큰 (--bg, --gold, --space-N 등)
+├── components.css      # ★ 공유 컴포넌트 (메타브에서 검증된 모든 케이스 스터디 공통 클래스)
+├── nav.js              # 공유 네비게이션 컴포넌트
 ├── script.js           # 공용 JS
 ├── reveal.js           # Reveal on Scroll (모든 페이지 공유)
-├── charts.js           # Chart.js helper (모든 페이지 공유)
+├── expand-toggle.js    # 펼침/접힘 유틸리티 (모든 페이지 공유)
 ├── CLAUDE.md           # 이 파일 (강제 규칙서)
-├── DESIGN_SYSTEM.md    # 디자인 토큰 상세
-├── LEARNED.md          # 반복 실수 패턴
-├── metavv/             # 정답 페이지 — 다른 페이지 복제 시 직접 참고
+├── docs/
+│   ├── DESIGN_SYSTEM.md    # 디자인 토큰 상세
+│   └── LEARNED.md          # 반복 실수 패턴
+├── assets/             # 정적 파일 (resume.pdf, profile.jpg)
+├── metavv/             # 정답 페이지 — metavv.css = 메타브 전용 스타일만
 ├── folio/
-├── kakaobank/          # (방구석연구소 — 별도 폴더명 가능)
+├── banggooso/
 └── momscare/
+```
+
+**CSS 임포트 순서 (모든 케이스 스터디 페이지 필수):**
+```html
+<link rel="stylesheet" href="/styles.css">      <!-- 1. 글로벌 토큰 -->
+<link rel="stylesheet" href="/components.css">  <!-- 2. 공유 컴포넌트 -->
+<link rel="stylesheet" href="/{page}.css">      <!-- 3. 페이지 전용 -->
 ```
 
 URL 매핑 (Vercel 자동):
 - `/` → 메인
-- `/metavv/`, `/folio/`, `/kakaobank/`, `/momscare/` → 각 상세
+- `/metavv/`, `/folio/`, `/banggooso/`, `/momscare/` → 각 상세
 
 ---
 
 ## 3. 디자인 시스템 강제 규칙
 
-### 3-1. 메타브 페이지 = 정답 페이지
+### 3-1. 컴포넌트 조회 우선순위
 
-`/metavv/`는 **디자인 시스템의 살아있는 정답 페이지**.
-다른 페이지 작업 시 다음 순서:
+새 페이지/컴포넌트 작업 시 **반드시 이 순서로 확인**:
 
-1. 메타브 페이지에서 동일/유사 패턴 찾기
-2. 있으면 그 클래스 그대로 재사용 (rename 금지)
-3. 없으면 가비님에게 물어볼 것 (새 클래스 임의 생성 금지)
+1. **`/components.css` 먼저** — 공유 컴포넌트 목록 확인 (최우선)
+2. **메타브 페이지 HTML/CSS** — 동일/유사 패턴 확인
+3. **둘 다에 없으면 가비님에게 확인** — 신규 클래스 임의 생성 절대 금지
+
+`/components.css`에 있는 클래스 = 모든 페이지에서 바로 사용 가능.
+`/metavv/metavv.css` = 메타브 전용 스타일 (탭 네비, 케이스별 특수 다이어그램 등)만 포함.
+
+메타브 페이지에서 동일 패턴을 찾으면:
+- 있으면 그 클래스 그대로 재사용 (rename 금지)
+- 없으면 가비님에게 물어볼 것 (새 클래스 임의 생성 금지)
 
 ### 3-2. 디자인 토큰만 사용 (하드코딩 금지)
 
