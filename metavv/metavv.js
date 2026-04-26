@@ -270,3 +270,12 @@
   window.addEventListener('popstate', handleHash);
   handleHash();
 })();
+
+// ==================== SCROLL INDICATOR ====================
+(function () {
+  var indicator = document.getElementById('scrollIndicator');
+  if (!indicator) return;
+  window.addEventListener('scroll', function () {
+    indicator.classList.toggle('is-hidden', window.scrollY > 80);
+  }, { passive: true });
+})();
