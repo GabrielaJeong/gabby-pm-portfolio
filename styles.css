@@ -1308,8 +1308,8 @@ ul {
 
 .proj-grid {
   display: grid;
-  grid-template-columns: repeat(2, 1fr);
-  gap: 24px;
+  grid-template-columns: repeat(4, 1fr);
+  gap: 16px;
 }
 
 .pcard {
@@ -1354,16 +1354,16 @@ ul {
 }
 
 .pcard-thumb-num {
-  font-size: 80px;
+  font-size: 52px;
   font-weight: 500;
   color: var(--gold);
   line-height: 1;
   letter-spacing: -0.035em;
-  margin-bottom: 14px;
+  margin-bottom: 10px;
 }
 
 .pcard-thumb-num .small {
-  font-size: 40px;
+  font-size: 28px;
 }
 
 .pcard-thumb-tag {
@@ -1374,29 +1374,29 @@ ul {
 }
 
 .pcard-body {
-  padding: 28px 32px 32px;
+  padding: 20px 22px 24px;
 }
 
 .pcard-num {
-  font-size: 12px;
+  font-size: 11px;
   color: var(--gold);
   letter-spacing: 0.12em;
-  margin-bottom: 10px;
+  margin-bottom: 8px;
 }
 
 .pcard-title {
-  font-size: 22px;
+  font-size: 18px;
   color: #ffffff;
   font-weight: 500;
-  margin: 0 0 8px;
+  margin: 0 0 6px;
   letter-spacing: -0.015em;
 }
 
 .pcard-desc {
-  font-size: 14px;
+  font-size: 13px;
   color: var(--text-muted);
   line-height: 1.6;
-  margin: 0 0 20px;
+  margin: 0 0 16px;
 }
 
 .pcard-arrow {
@@ -1426,15 +1426,16 @@ ul {
   }
 
   .proj-grid {
-    gap: 20px;
+    grid-template-columns: repeat(2, 1fr);
+    gap: 16px;
   }
 
   .pcard-thumb-num {
-    font-size: 64px;
+    font-size: 44px;
   }
 
   .pcard-thumb-num .small {
-    font-size: 32px;
+    font-size: 24px;
   }
 }
 
