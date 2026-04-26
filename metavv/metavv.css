@@ -1179,19 +1179,60 @@
   margin-bottom: var(--space-5);
 }
 
-/* 하단 캡션 */
+/* 하단 결론 박스 */
 .axis-bottom-caption {
   display: flex;
   flex-direction: column;
   align-items: center;
-  gap: var(--space-3);
+  gap: var(--space-6);
+  margin-top: var(--space-12);
+  padding: var(--space-12) var(--space-10);
+  background: rgba(245, 207, 165, 0.04);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-lg);
+  text-align: center;
 }
 
-.axis-bottom-line {
-  width: 48px;
-  height: 2px;
-  background: var(--border-gold);
-  border-radius: 1px;
+/* Before/After 비교 레이아웃 */
+.axis-bottom-compare {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-12);
+}
+
+.axis-bottom-before,
+.axis-bottom-after {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-2);
+}
+
+/* result-num 컨텍스트 오버라이드 — 마진/색상 재정의 */
+.axis-bottom-compare .result-num {
+  margin-bottom: 0;
+}
+
+.axis-bottom-before .result-num {
+  color: var(--text-secondary);
+}
+
+.axis-bottom-after .result-num {
+  color: var(--gold);
+}
+
+/* 화살표 — 수치와 수직 정렬 */
+.axis-bottom-arrow-wrap {
+  display: flex;
+  align-items: center;
+  padding-top: var(--space-6);   /* period 라벨 높이 보정 */
+}
+
+.axis-bottom-arrow {
+  font-size: var(--fs-h1);
+  color: var(--text-label-gold);
+  line-height: 1;
 }
 
 .axis-bottom-text {
