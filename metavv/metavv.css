@@ -634,7 +634,7 @@
 
 /* 화살표 */
 .phase-arrow {
-  font-size: 13px;
+  font-size: var(--fs-sub);
   color: var(--text-quaternary);
   margin: var(--space-3) 0;
   text-align: center;
