@@ -209,23 +209,30 @@
 (function setupCaseTabs() {
   'use strict';
 
-  const tabs     = document.querySelectorAll('.case-tab');
-  const contents = document.querySelectorAll('.case-content');
-  const tabNav   = document.querySelector('.case-tab-nav');
-  const VALID_TABS = ['revenue', 'cs', 'zero-to-one'];
+  var tabs         = document.querySelectorAll('.case-tab');
+  var contents     = document.querySelectorAll('.case-content');
+  var tabNav       = document.querySelector('.case-tab-nav');
+  var casesWrapper = document.querySelector('.cases-wrapper');
+  var VALID_TABS   = ['revenue', 'cs', 'zero-to-one'];
 
   if (!tabs.length || !contents.length) return;
 
-  // 탭 활성화
-  function activateTab(tabName, options) {
-    var scroll = options && options.scroll !== undefined ? options.scroll : true;
+  // 페이지 기준 절대 Y 계산 (scrollY와 무관한 고정값)
+  function getAbsoluteTop(el) {
+    var top = 0;
+    while (el) {
+      top += el.offsetTop;
+      el = el.offsetParent;
+    }
+    return top;
+  }
 
-    // 탭 aria-selected 갱신
+  // 탭 활성화
+  function activateTab(tabName, scroll) {
     tabs.forEach(function (tab) {
       tab.setAttribute('aria-selected', tab.dataset.tab === tabName ? 'true' : 'false');
     });
 
-    // 콘텐츠 show / hide
     contents.forEach(function (content) {
       if (content.dataset.case === tabName) {
         content.removeAttribute('hidden');
@@ -234,36 +241,30 @@
       }
     });
 
-    // 탭 네비 바로 아래로 smooth scroll
-    if (scroll && tabNav) {
-      var navOffset = tabNav.getBoundingClientRect().top + window.scrollY;
-      window.scrollTo({ top: navOffset, behavior: 'smooth' });
+    // 클릭 시에만 스크롤 — getAbsoluteTop으로 고정 위치 계산 (누적 X)
+    if (scroll && casesWrapper) {
+      var navH  = tabNav ? tabNav.offsetHeight : 80;
+      var target = getAbsoluteTop(casesWrapper) - navH;
+      window.scrollTo({ top: Math.max(0, target), behavior: 'smooth' });
     }
   }
 
-  // 탭 클릭
+  // 탭 클릭 — 해시 업데이트 + 스크롤 O
   tabs.forEach(function (tab) {
     tab.addEventListener('click', function (e) {
       e.preventDefault();
       var tabName = tab.dataset.tab;
       history.pushState(null, '', '#' + tabName);
-      activateTab(tabName, { scroll: true });
+      activateTab(tabName, true);
     });
   });
 
-  // 해시 기반 초기화 (새로고침 / 링크 공유 대응)
+  // 해시 처리 — 스크롤 X (페이지 로드 / popstate 모두)
   function handleHash() {
     var hash = window.location.hash.replace('#', '');
-    if (VALID_TABS.indexOf(hash) !== -1) {
-      activateTab(hash, { scroll: false });
-    } else {
-      activateTab('revenue', { scroll: false });
-    }
+    activateTab(VALID_TABS.indexOf(hash) !== -1 ? hash : 'revenue', false);
   }
 
-  // 뒤로가기 / 앞으로가기 대응
   window.addEventListener('popstate', handleHash);
-
-  // 초기 실행
   handleHash();
 })();

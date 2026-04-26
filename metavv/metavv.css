@@ -1497,9 +1497,23 @@
 /* ==================== META REFLECTION ==================== */
 
 .meta-reflection {
-  padding: var(--section-gap) 0;
-  border-top: 1px solid var(--border);
-  margin-top: var(--section-gap);
+  /* 케이스 끝 → 메타 영역 시작 : 다른 경계보다 강한 단절감 */
+  padding: calc(var(--section-gap) * 1.5) 0 var(--section-gap);
+  border-top: 2px solid var(--border-strong);   /* 더 굵은 구분선 */
+  margin-top: calc(var(--section-gap) * 1.5);   /* 더 넓은 여백 */
+  background: var(--bg);
+}
+
+/* META REFLECTION 헤더 — 섹션 라벨 강조 (케이스와 차별화) */
+.meta-reflection .case-section-label {
+  font-size: var(--fs-body);     /* caption(12px) → body(14px)로 키움 */
+  letter-spacing: 0.18em;
+  color: var(--text-label-gold); /* gold로 강조 */
+}
+
+.meta-reflection .case-section-title {
+  font-size: 44px;               /* 케이스 내 타이틀(32px)보다 크게 */
+  letter-spacing: -0.03em;
 }
 
 /* LEARNED 3카드 그리드 — learned-card 재사용 */
@@ -1630,8 +1644,12 @@
 /* ==================== PROJECT NAVIGATION ==================== */
 
 .project-navigation {
-  padding: var(--section-gap) 0 var(--space-16);
-  border-top: 1px solid var(--border);
+  background: rgba(245, 207, 165, 0.025);   /* 미묘한 골드 틴트 */
+  border-top: 1px solid var(--border-default);
+  /* full-width 확장 */
+  margin-left: calc(-1 * var(--space-12));
+  margin-right: calc(-1 * var(--space-12));
+  padding: var(--section-gap) var(--space-12) var(--space-16);
   margin-top: var(--section-gap);
 }
 
@@ -1721,7 +1739,17 @@
 /* ==================== CASES WRAPPER — sticky 범위 제한 ==================== */
 
 .cases-wrapper {
-  position: relative;   /* sticky 부모 기준 */
+  position: relative;
+  background: rgba(255, 255, 255, 0.018);   /* 미묘하게 밝은 톤 */
+  border-top: 1px solid var(--border-default);
+  border-bottom: 1px solid var(--border-default);
+  /* case-inner padding 밖으로 확장해 full-width 느낌 */
+  margin-left: calc(-1 * var(--space-12));
+  margin-right: calc(-1 * var(--space-12));
+  padding-left: var(--space-12);
+  padding-right: var(--space-12);
+  padding-bottom: var(--section-gap);
+  margin-top: var(--section-gap);
 }
 
 /* ==================== TAB NAVIGATION ==================== */
