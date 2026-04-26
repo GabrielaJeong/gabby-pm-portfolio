@@ -976,13 +976,281 @@
       </section>
 
       <section class="case-content" data-case="zero-to-one" hidden>
-        <div class="case-placeholder">
-          <p>CASE 03 · 0→1 기획 — 콘텐츠 작업 예정</p>
-          <div class="mini-tab-nav">
-            <button class="mini-tab" data-mini-tab="nickname">닉네임 삽입</button>
-            <button class="mini-tab" data-mini-tab="image-custom">이미지커스텀</button>
+
+        <!-- ══════════ 공통 인트로 ══════════ -->
+        <div class="case-block">
+          <div class="case-block-header">
+            <div class="case-section-label">CASE 03 · 0→1 PLANNING</div>
+          </div>
+          <h2 class="case-section-title">두 번의 0→1, 같은 사고로 풀었다</h2>
+          <p class="case-section-sub">시장 시그널 → 가설 → 기능 정의 → 결제 동기 연결. 닉네임과 이미지커스텀, 두 기능에 같은 사고방식을 적용했습니다.</p>
+
+          <div class="case-preview-grid">
+            <div class="case-preview-card">
+              <div class="case-preview-label">CASE A</div>
+              <div class="case-preview-title">닉네임 삽입 기능</div>
+              <div class="case-preview-summary">시장 트렌드를 범용 기능으로 번역해 Pro 결제 동기로 연결</div>
+              <div class="case-preview-metric">Pro 결제 월 0~2건 → 4~5건</div>
+            </div>
+            <div class="case-preview-card">
+              <div class="case-preview-label">CASE B</div>
+              <div class="case-preview-title">이미지커스텀 MVP</div>
+              <div class="case-preview-summary">반복 개발 리소스를 노코드 템플릿으로 전환</div>
+              <div class="case-preview-metric">납품 리드타임 4주 → 2주</div>
+            </div>
           </div>
         </div>
+
+        <!-- ══════════ mini-tab 네비 ══════════ -->
+        <nav class="mini-tab-nav" role="tablist" aria-label="0→1 케이스 탭">
+          <button class="mini-tab" data-mini-tab="nickname" role="tab" aria-selected="true">
+            <span class="mini-tab-label">CASE A</span>
+            <span class="mini-tab-title">닉네임 삽입 기능</span>
+          </button>
+          <button class="mini-tab" data-mini-tab="image-custom" role="tab" aria-selected="false">
+            <span class="mini-tab-label">CASE B</span>
+            <span class="mini-tab-title">이미지커스텀 MVP</span>
+          </button>
+        </nav>
+
+        <!-- ══════════ CASE A — 닉네임 ══════════ -->
+        <div class="mini-case-content" data-mini-case="nickname">
+
+          <div class="case-block">
+            <div class="case-block-header">
+              <div class="case-section-label">CASE A · STRATEGY</div>
+            </div>
+            <h2 class="case-section-title">트렌드를 기능으로 번역하다</h2>
+            <p class="case-section-sub">사용자가 열광한 포인트를 단발 콘텐츠가 아닌 범용 기능으로</p>
+
+            <div class="axis-grid">
+              <div class="axis-card">
+                <div class="axis-card-label">SIGNAL</div>
+                <div class="axis-card-title">800만 참여 콘텐츠가 보낸 신호</div>
+                <div class="axis-card-body">LG전자×방구석연구소 '사고력 테스트' 800만 참여. 사용자가 열광한 포인트 = "내 정보가 반영된 결과물"</div>
+                <div class="axis-card-divider"></div>
+                <div class="axis-card-insight">"퍼스널라이징은 트렌드가 아니라 시장 수요"</div>
+              </div>
+              <div class="axis-card">
+                <div class="axis-card-label">HYPOTHESIS</div>
+                <div class="axis-card-title">단발 콘텐츠 → 범용 기능</div>
+                <div class="axis-card-body">같은 경험을 모든 템플릿(퀴즈/방탈출/심리테스트)에 적용 가능한 범용 기능으로 만들면, 광고주·마케터의 반복 수요를 흡수할 수 있다.</div>
+                <div class="axis-card-divider"></div>
+                <div class="axis-card-insight">"재사용 가능한 구조로 만들어야 자산이 된다"</div>
+              </div>
+              <div class="axis-card">
+                <div class="axis-card-label">STRATEGY</div>
+                <div class="axis-card-title">가격이 아닌 기능으로 결제 동기 만들기</div>
+                <div class="axis-card-body">단순 가격 인상 대신, 닉네임 삽입을 Pro 등급에 배치. 사용자가 "이 기능을 위해 Pro를 결제"하도록 자연스러운 업그레이드 동기 설계.</div>
+                <div class="axis-card-divider"></div>
+                <div class="axis-card-insight">"기능이 결제 동기가 되면 가격 저항이 사라진다"</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-block">
+            <div class="case-block-header">
+              <div class="case-section-label">CASE A · EXECUTION</div>
+            </div>
+            <h2 class="case-section-title">변수 삽입 → 자동 치환 → 바이럴 4단계 플로우</h2>
+            <p class="case-section-sub">제작자와 플레이어 모두에게 직관적인 흐름으로 설계</p>
+
+            <div class="flow-step-grid">
+              <div class="flow-step-card">
+                <div class="flow-step-label">STEP 01</div>
+                <div class="flow-step-action">변수 삽입</div>
+                <div class="flow-step-desc">제작자가 에디터에서 &#123;&#123;name&#125;&#125; 변수 위치 결정</div>
+              </div>
+              <div class="flow-step-card">
+                <div class="flow-step-label">STEP 02</div>
+                <div class="flow-step-action">닉네임 입력</div>
+                <div class="flow-step-desc">플레이어가 콘텐츠 시작 시 닉네임 입력 (플랫폼 닉네임 연동 가능)</div>
+              </div>
+              <div class="flow-step-card">
+                <div class="flow-step-label">STEP 03</div>
+                <div class="flow-step-action">자동 치환</div>
+                <div class="flow-step-desc">결과 화면에서 변수 구간이 플레이어 닉네임으로 자동 노출</div>
+              </div>
+              <div class="flow-step-card">
+                <div class="flow-step-label">STEP 04</div>
+                <div class="flow-step-action">바이럴 유도</div>
+                <div class="flow-step-desc">닉네임 삽입된 결과 페이지 공유 → 자연 확산</div>
+              </div>
+            </div>
+
+            <div class="exec-step-grid" style="margin-top: var(--space-5);">
+              <div class="exec-step-card">
+                <div class="exec-step-label">SCOPE</div>
+                <div class="exec-step-title">전체 템플릿 범용 적용</div>
+                <div class="exec-step-body">퀴즈, 방탈출, 심리테스트 등 모든 기존 템플릿에 적용. 기획 비용 대비 활용도 극대화.</div>
+              </div>
+              <div class="exec-step-card">
+                <div class="exec-step-label">PRICING</div>
+                <div class="exec-step-title">Pro 등급 전용 기능</div>
+                <div class="exec-step-body">Free/Plus에서는 미노출. Pro 등급에서만 활성화. 기능 자체가 Pro 업그레이드 동기로 작동.</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-block">
+            <div class="case-block-header">
+              <div class="case-section-label">CASE A · RESULT</div>
+            </div>
+            <h2 class="case-section-title">기능이 Pro 결제 동기로 작동한 첫 사례</h2>
+
+            <div class="result-grid result-grid--3">
+              <div class="result-card">
+                <div class="result-label">PRO PURCHASES</div>
+                <div class="result-num result-num--sm">0~2 → 4~5건</div>
+                <div class="result-sub">월 Pro 결제 건수</div>
+              </div>
+              <div class="result-card">
+                <div class="result-label">ACTIVATION</div>
+                <div class="result-num">~90%</div>
+                <div class="result-sub">Pro 결제 시 닉네임 기능 활성화 비율</div>
+              </div>
+              <div class="result-card">
+                <div class="result-label">SCOPE</div>
+                <div class="result-num result-num--sm">전체 템플릿</div>
+                <div class="result-sub">기존 모든 템플릿에 적용 가능한 범용 기능</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ══════════ CASE B — 이미지커스텀 ══════════ -->
+        <div class="mini-case-content" data-mini-case="image-custom" hidden>
+
+          <div class="case-block">
+            <div class="case-block-header">
+              <div class="case-section-label">CASE B · STRATEGY</div>
+            </div>
+            <h2 class="case-section-title">반복 개발을 노코드 템플릿으로 전환</h2>
+            <p class="case-section-sub">건별 수작업으로 인턴부터 테크리드까지 투입되던 구조를 0→1 템플릿화</p>
+
+            <div class="axis-grid">
+              <div class="axis-card">
+                <div class="axis-card-label">REFERENCE</div>
+                <div class="axis-card-title">픽크루(일본)</div>
+                <div class="axis-card-body">일본의 이미지 커스텀 서비스 픽크루. 언어 장벽과 에디터 구조 복잡도로 국내 창작자 진입장벽이 높았던 시장.</div>
+                <div class="axis-card-divider"></div>
+                <div class="axis-card-insight">"수요는 검증됐지만 경쟁자는 없다"</div>
+              </div>
+              <div class="axis-card">
+                <div class="axis-card-label">PROBLEM</div>
+                <div class="axis-card-title">반복 개발 리소스 소모</div>
+                <div class="axis-card-body">이미지커스텀 콘텐츠 요청이 들어올 때마다 개발 인턴부터 테크리드까지 투입. 빠른 납품 불가.</div>
+                <div class="axis-card-divider"></div>
+                <div class="axis-card-insight">"수동 개발이 병목"</div>
+              </div>
+              <div class="axis-card">
+                <div class="axis-card-label">HYPOTHESIS</div>
+                <div class="axis-card-title">픽크루 + 레이어 기반 조합툴 = 노코드 템플릿</div>
+                <div class="axis-card-body">픽크루 방식과 레이어 기반 조합 UI를 결합한 노코드 템플릿. 파츠 배치/수정을 직관적 에디터로 단순화하면 진입장벽 완화 + 납품 속도 향상.</div>
+                <div class="axis-card-divider"></div>
+                <div class="axis-card-insight">"구조를 바꾸면 인력 의존을 벗어날 수 있다"</div>
+              </div>
+            </div>
+          </div>
+
+          <div class="case-block">
+            <div class="case-block-header">
+              <div class="case-section-label">CASE B · EXECUTION</div>
+            </div>
+            <h2 class="case-section-title">MVP는 무엇을 뺄지 결정하는 작업</h2>
+            <p class="case-section-sub">3개 핵심 설계 원칙 + 의도적인 MVP 범위 축소</p>
+
+            <div class="axis-grid">
+              <div class="axis-card">
+                <div class="axis-card-label">PRINCIPLE 01</div>
+                <div class="axis-card-title">직관적 화면 구성</div>
+                <div class="axis-card-body">심플한 유저 친화적 화면 + 기능. 에디터 학습 곡선 최소화로 진입장벽 완화.</div>
+              </div>
+              <div class="axis-card">
+                <div class="axis-card-label">PRINCIPLE 02</div>
+                <div class="axis-card-title">레이어 개념 활용</div>
+                <div class="axis-card-body">피그마/포토샵 등에서 사용되는 '레이어' 개념 차용. 유저가 다양한 레이어 구성으로 창의적 작업 가능하게 설계.</div>
+              </div>
+              <div class="axis-card">
+                <div class="axis-card-label">PRINCIPLE 03</div>
+                <div class="axis-card-title">웹 편집기 / 앱 플레이어 합일성</div>
+                <div class="axis-card-body">제작자(웹 편집기)와 플레이어(앱) 양쪽의 기능 구성을 일치시켜 일관된 UX 제공.</div>
+              </div>
+            </div>
+
+            <div class="mvp-decision-card">
+              <div class="exec-step-label">MVP SCOPE DECISION</div>
+              <div class="exec-step-title">"무엇을 뺄지 결정"</div>
+              <div class="exec-step-body">초기 기획안에는 텍스트 삽입 기능과 편집기 내 기본 레이어 노출이 포함되어 있었지만, MVP 범위에서는 의도적으로 제외했습니다. 리소스 제약 안에서 핵심 가설을 가장 빠르게 검증하기 위해, 부가 기능 대신 본질 기능에 집중하는 결정이었습니다.</div>
+            </div>
+          </div>
+
+          <div class="case-block">
+            <div class="case-block-header">
+              <div class="case-section-label">CASE B · RESULT</div>
+            </div>
+            <h2 class="case-section-title">납품 4주→2주, 마케팅 없이 5건 판매</h2>
+
+            <div class="result-grid result-grid--3">
+              <div class="result-card">
+                <div class="result-label">LEAD TIME</div>
+                <div class="result-num result-num--sm">4주 → 2주</div>
+                <div class="result-sub">건별 수작업 → 노코드 템플릿</div>
+              </div>
+              <div class="result-card">
+                <div class="result-label">INITIAL SALES</div>
+                <div class="result-num">5건</div>
+                <div class="result-sub">마케팅 없이 출시 후 자연 판매</div>
+              </div>
+              <div class="result-card">
+                <div class="result-label">DEV DEPENDENCY</div>
+                <div class="result-num result-num--sm">인력 투입 → 0</div>
+                <div class="result-sub">반복 개발 리소스 제거</div>
+              </div>
+            </div>
+          </div>
+
+        </div>
+
+        <!-- ══════════ 공통 메타 REFLECTION ══════════ -->
+        <div class="case-block">
+          <div class="case-block-header">
+            <div class="case-section-label">CASE 03 · META REFLECTION</div>
+          </div>
+          <h2 class="case-section-title">두 번의 0→1에서 배운 것</h2>
+          <p class="case-section-sub">다른 도메인의 두 기능, 같은 사고방식을 적용했습니다</p>
+
+          <div class="learned-card">
+            <div class="learned-label">LEARNED 01</div>
+            <div class="learned-insight">MVP는 무엇을 만들지가 아니라 무엇을 뺄지 결정하는 것</div>
+            <div class="learned-body">0→1 기획에서 욕심을 내면 출시 자체가 미뤄집니다. 핵심 가설을 가장 빠르게 검증할 수 있는 범위까지 의도적으로 줄이는 것이 MVP의 본질입니다. 두 케이스 모두 같은 원칙을 적용했습니다.</div>
+          </div>
+
+          <div class="learned-card">
+            <div class="learned-label">LEARNED 02</div>
+            <div class="learned-insight">시장 시그널이 검증된 순간이 최적의 출시 타이밍이다</div>
+            <div class="learned-body">닉네임 기능은 800만 참여 콘텐츠가 보낸 신호에서, 이미지커스텀은 픽크루의 검증된 수요에서 출발했습니다. 0→1 기획은 수요를 만드는 작업이 아니라 검증된 수요를 발견하고 번역하는 작업입니다.</div>
+          </div>
+
+          <div class="good-limit-grid">
+            <div class="good-limit-card">
+              <div class="good-limit-label">GOOD</div>
+              <ul class="good-limit-list">
+                <li>시장 시그널 기반 가설 수립 → 출시 후 즉시 결제/판매 검증</li>
+                <li>기능 자체가 결제 동기로 작동하는 구조 설계 (닉네임 → Pro)</li>
+              </ul>
+            </div>
+            <div class="good-limit-card good-limit-card--limit">
+              <div class="good-limit-label">LIMIT</div>
+              <ul class="good-limit-list">
+                <li>이미지커스텀 — GTM 전략이 출시 시점부터 함께 설계되어야 했음</li>
+                <li>두 케이스 모두 장기 retention 검증까지는 이르지 못함</li>
+              </ul>
+            </div>
+          </div>
+        </div>
+
       </section>
 
     </div>

@@ -1576,25 +1576,177 @@
   margin: 0;
 }
 
-/* mini-tab placeholder */
+/* ==================== MINI TAB NAV (Tab 3 내부) ==================== */
+
 .mini-tab-nav {
   display: flex;
-  gap: var(--space-3);
+  gap: var(--space-2);
+  margin: var(--section-inner) 0 0;
+  border-bottom: 1px solid var(--border-default);
+  padding-bottom: 0;
 }
 
 .mini-tab {
-  padding: var(--space-2) var(--space-5);
-  border-radius: var(--radius-sm);
-  border: 1px solid var(--border-default);
   background: transparent;
-  font-family: inherit;
-  font-size: var(--fs-sub);
-  color: var(--text-tertiary);
+  border: none;
+  border-bottom: 2px solid transparent;
+  padding: var(--space-3) var(--space-5);
+  padding-bottom: calc(var(--space-3) - 2px);
   cursor: pointer;
-  transition: border-color 0.2s ease, color 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  text-align: left;
+  transition: background 0.2s ease, border-color 0.2s ease;
+  font-family: inherit;
+  margin-bottom: -1px;
 }
 
-.mini-tab:hover {
-  border-color: var(--border-gold);
+.mini-tab-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
   color: var(--text-label-gold);
+  letter-spacing: 0.08em;
+}
+
+.mini-tab-title {
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--text-tertiary);
+  transition: color 0.2s ease;
+}
+
+.mini-tab[aria-selected="true"] {
+  border-bottom-color: var(--border-gold);
+}
+
+.mini-tab[aria-selected="true"] .mini-tab-title {
+  color: var(--text-primary);
+}
+
+.mini-tab:hover:not([aria-selected="true"]) {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* mini-case 콘텐츠 */
+.mini-case-content {
+  padding-top: var(--space-8);
+}
+
+.mini-case-content[hidden] {
+  display: none;
+}
+
+/* ==================== INTRO PREVIEW CARDS (Tab 3) ==================== */
+
+.case-preview-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  align-items: stretch;
+  margin-top: var(--space-8);
+}
+
+.case-preview-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--card-padding-lg);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.case-preview-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--card-gap-default);
+}
+
+.case-preview-title {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
+  color: var(--text-primary);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-3);
+}
+
+.case-preview-summary {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+  word-break: keep-all;
+  flex: 1;
+  margin-bottom: var(--space-4);
+}
+
+.case-preview-metric {
+  font-size: var(--fs-sub);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+}
+
+/* ==================== FLOW STEP CARDS (CASE A — 4단계 플로우) ==================== */
+
+.flow-step-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-4);
+  align-items: stretch;
+}
+
+.flow-step-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--card-padding-sm);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.flow-step-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--card-gap-tight);
+}
+
+.flow-step-action {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
+  color: var(--text-primary);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-2);
+}
+
+.flow-step-desc {
+  font-size: var(--fs-caption);
+  color: var(--text-tertiary);
+  line-height: var(--lh-normal);
+  word-break: keep-all;
+}
+
+/* ==================== MVP DECISION CARD (CASE B — 골드 틴트) ==================== */
+
+.mvp-decision-card {
+  padding: var(--card-padding-lg);
+  background: rgba(245, 207, 165, 0.05);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  margin-top: var(--space-5);
+  box-sizing: border-box;
+}
+
+/* 3열 result-grid 변형 */
+.result-grid--3 {
+  grid-template-columns: repeat(3, 1fr);
 }

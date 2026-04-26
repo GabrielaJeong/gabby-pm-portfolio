@@ -151,7 +151,33 @@
     });
   }
 
-  // ============ 4. Phase 카드 펼침/접힘 ============
+  // ============ 4. Mini-tab 토글 (Tab 3 내부) ============
+  function setupMiniTabs() {
+    var miniTabBtns = document.querySelectorAll('.mini-tab-nav .mini-tab');
+    var miniContents = document.querySelectorAll('.mini-case-content');
+
+    if (!miniTabBtns.length) return;
+
+    miniTabBtns.forEach(function (btn) {
+      btn.addEventListener('click', function () {
+        var target = btn.dataset.miniTab;
+
+        miniTabBtns.forEach(function (b) {
+          b.setAttribute('aria-selected', b.dataset.miniTab === target ? 'true' : 'false');
+        });
+
+        miniContents.forEach(function (content) {
+          if (content.dataset.miniCase === target) {
+            content.removeAttribute('hidden');
+          } else {
+            content.setAttribute('hidden', '');
+          }
+        });
+      });
+    });
+  }
+
+  // ============ 5. Phase 카드 펼침/접힘 ============
   function setupPhaseCards() {
     document.querySelectorAll('.exec-phase-card').forEach(function (card) {
       var btn = card.querySelector('.exec-phase-toggle');
@@ -169,6 +195,7 @@
     setupToggleCards();
     setupBarAnimation();
     setupPhaseCards();
+    setupMiniTabs();
   }
 
   if (document.readyState === 'loading') {
