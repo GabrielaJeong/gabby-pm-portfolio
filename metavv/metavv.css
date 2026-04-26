@@ -393,16 +393,16 @@
 /* ==================== CONTEXT ==================== */
 
 .ctx-grid {
-  display: flex;
-  flex-direction: column;
+  display: grid;
+  grid-template-columns: 1fr 1.4fr;
   gap: var(--section-inner);
+  align-items: stretch;
 }
 
 .ctx-text-block {
   display: flex;
   flex-direction: column;
   gap: var(--space-6);
-  max-width: 900px;              /* 텍스트 가독성 제한 — prob-summary와 동일 */
 }
 
 .ctx-paragraph {
@@ -427,11 +427,6 @@
   display: flex;
   flex-direction: column;
   justify-content: center;
-  align-items: center;
-  max-width: var(--diagram-max-width);  /* 다이어그램 최대 너비 */
-  width: 100%;
-  margin: 0 auto;                       /* 정중앙 정렬 */
-  box-sizing: border-box;
 }
 
 .ctx-arch-svg {
