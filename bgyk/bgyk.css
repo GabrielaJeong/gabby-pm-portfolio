@@ -1,0 +1,230 @@
+/* ========================================================
+   BGYK (방구석연구소) CASE STUDY PAGE
+   /bgyk/index.html 전용 스타일
+   공유 컴포넌트: /metavv/metavv.css 재사용
+   글로벌 토큰: /styles.css :root
+   ======================================================== */
+
+/* ==================== CONTEXT 카드 (3열) ==================== */
+
+.ctx-card-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  align-items: stretch;
+  margin-top: var(--space-8);
+  width: 100%;
+}
+
+.ctx-card {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--card-padding-md);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  text-align: center;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.ctx-card-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--card-gap-default);
+}
+
+.ctx-card-items {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  line-height: var(--lh-relaxed);
+}
+
+/* ==================== PROBLEM 카드 (3열) ==================== */
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  align-items: stretch;
+  width: 100%;
+}
+
+.problem-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--card-padding-lg);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.problem-card-num {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--card-gap-default);
+}
+
+.problem-card-title {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
+  color: var(--text-primary);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-3);
+  word-break: keep-all;
+}
+
+.problem-card-body {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+  flex: 1;
+  word-break: keep-all;
+}
+
+/* ==================== MAIN CASE 진입부 ==================== */
+
+.main-case-intro {
+  padding: var(--section-gap) 0 var(--space-8);
+  border-top: 2px solid var(--border-strong);
+  margin-top: calc(var(--section-gap) * 1.5);
+  margin-bottom: var(--section-inner);
+}
+
+.main-case-label {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  letter-spacing: 0.18em;
+  margin-bottom: var(--space-4);
+}
+
+.main-case-title {
+  font-size: 44px;
+  font-weight: var(--fw-h1);
+  color: var(--text-primary);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.025em;
+  word-break: keep-all;
+}
+
+/* ==================== SIDE CASES (2×2 그리드) ==================== */
+
+.side-cases-section {
+  border-top: 1px solid var(--border-default);
+  padding: var(--section-gap) 0;
+  margin-top: var(--section-gap);
+}
+
+.side-cases-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  align-items: stretch;
+  width: 100%;
+}
+
+.side-case-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--card-padding-lg);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+/* ★ 강조 카드 (광고 구좌) */
+.side-case-card--featured {
+  border-color: var(--border-gold);
+  background: rgba(245, 207, 165, 0.03);
+}
+
+.side-case-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--card-gap-default);
+}
+
+.side-case-title {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
+  color: var(--text-primary);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-5);
+  word-break: keep-all;
+}
+
+.side-case-divider {
+  height: 1px;
+  background: var(--border-default);
+  margin-bottom: var(--space-4);
+}
+
+.side-case-row {
+  margin-bottom: var(--space-4);
+}
+
+.side-case-row-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-tertiary);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--space-1);
+}
+
+.side-case-row-value {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+  word-break: keep-all;
+}
+
+/* 미완성 영역 placeholder */
+.side-case-wip {
+  font-size: var(--fs-caption);
+  color: var(--text-quaternary);
+  font-style: italic;
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px dashed var(--border-default);
+  word-break: keep-all;
+}
+
+/* ==================== BGYK REFLECTION ==================== */
+
+.bgyk-reflection-section {
+  max-width: var(--max-width);
+  margin: calc(var(--section-gap) * 1.5) auto 0;
+  padding: calc(var(--section-gap) * 1.5) var(--space-12) var(--section-gap);
+  border-top: 2px solid var(--border-strong);
+  background: var(--bg);
+  box-sizing: border-box;
+}
+
+/* meta-reflection 스타일 재사용 (헤더 강조) */
+.bgyk-reflection-section .case-section-label {
+  font-size: var(--fs-body);
+  letter-spacing: 0.18em;
+  color: var(--text-label-gold);
+}
+
+.bgyk-reflection-section .case-section-title {
+  font-size: 44px;
+  letter-spacing: -0.03em;
+}
