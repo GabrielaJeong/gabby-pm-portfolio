@@ -1,281 +1,180 @@
 # CLAUDE.md — gabby-pm-portfolio
 
-> 이 파일은 Claude Code가 작업할 때 참고하는 프로젝트 컨텍스트입니다.  
-> 수정하는 섹션마다 아래 규칙을 따라주세요.
-
-> ⚠️ **파일 첨부 인코딩 주의**: 대화창에서 첨부 파일의 한글이 `ëìì¤` 같은 깨진 문자로 보이면,
-> 임의로 디코딩하지 말고 **즉시 가비님에게 알린 뒤 원본 텍스트를 직접 붙여넣기로 받아서 사용**할 것.
+> ⚠️ **모든 작업 시작 전 반드시 읽고 따를 강제 규칙서.**
+> 이 문서의 규칙은 가비님 명시 승인 없이 위반할 수 없습니다.
+> 콘텐츠/맥락 정보는 가비님 메시지에서 받습니다.
 
 ---
 
-## 프로젝트 개요
+## 0. 작업 시작 전 필수 점검 (매번)
 
-- **이름**: gabby-pm-portfolio (개인 PM 포트폴리오 홈페이지)
-- **소유자**: 정소채 (Gabi)
+새 작업 시작 시 **반드시** 다음 순서로 진행:
+
+1. **이 CLAUDE.md 끝까지 읽기**
+2. **DESIGN_SYSTEM.md 읽기** (디자인 토큰 / 컴포넌트 규칙)
+3. **LEARNED.md 읽기** (반복 실수 패턴 — 같은 실수 절대 금지)
+4. **메타브 페이지(/metavv/) 직접 참고** — 디자인 시스템의 정답 페이지
+5. 작업 시작
+
+위 4단계 중 하나라도 누락 시 작업 결과 거부 사유.
+
+---
+
+## 1. 프로젝트 개요
+
+- **이름**: gabby-pm-portfolio
 - **스택**: Vanilla HTML / CSS / JS (프레임워크 없음)
-- **배포**: Vercel (GitHub 연동, main 브랜치 push 시 자동 배포)
-- **폰트**: Pretendard (jsdelivr CDN)
-
-## 지원 맥락 (중요)
-
-이 홈페이지는 **페이타랩(패스오더) PM 포지션 지원용**으로 제작됩니다.
-
-- CTO가 이력서를 직접 본 뒤 담당자에게 전달한 포지션
-- JD 핵심 요구조건: **"AI 자유자재로 다루고, 개발 이해도 높은 PM"**
-- 따라서 Folio 프로젝트(PM 단독 · 0→1 풀스택)가 **결정적 차별점**
-- 의사결정 기준: 모든 섹션/문구는 "CTO가 픽한 이유에 응답하는가?"로 검증
-
-## 판단 기준 — 원티드 멘토 3대 기준
-
-모든 섹션 작성 시 아래 기준으로 검증합니다.
-
-1. **전이 가능성**: 다른 회사에서도 쓸 수 있는 구조적 문제 정의인가
-2. **판단의 재현 가능성**: 데이터·기준·과정으로 설명 가능한가
-3. **설득의 구조**: 우선순위 근거, 버린 대안, 이해관계자 설득 과정이 명확한가
+- **배포**: Vercel (GitHub main push 시 자동)
+- **폰트**: Pretendard Variable (jsdelivr CDN)
 
 ---
 
-## 디자인 시스템
-
-⚠️ 이 레포는 디자인 시스템 토큰을 사용함.
-새 페이지/컴포넌트 작업 전 반드시 **DESIGN_SYSTEM.md**를 먼저 읽을 것.
-
-핵심 원칙:
-1. 토큰 사용 — 하드코딩 px/색상 값 최소화
-2. 컴포넌트 종류별 정렬 규칙 준수 — 다이어그램 노드 = center / 콘텐츠 카드 = left
-3. 같은 줄 카드는 동일 너비/높이 — 그리드 1fr + align-items: stretch + width 100%
-4. 폰트 floor 12px, 본문 색상 var(--text-secondary) 이상
-
-상세는 DESIGN_SYSTEM.md 참조.
-
----
-
-### 컬러 토큰 (실제 CSS 변수)
-
-```css
---bg: #000000;              /* 배경 */
---surface: #1A1919;         /* 카드, 박스 */
---gold: #F5CFA5;            /* 포인트 (골드) */
---text: #D8D4CA;            /* 본문 */
---text-muted: #8A8882;      /* 보조 텍스트 */
---border: rgba(138, 136, 130, 0.2);         /* 기본 구분선 */
---border-strong: rgba(138, 136, 130, 0.4);  /* 강조 구분선 */
-```
-
-**메인 텍스트(#ffffff)는 제목·강조에만.** 본문은 `--text` (#D8D4CA) 사용.
-
-### 타이포그래피
-
-- **폰트**: Pretendard Variable (`--font-sans` 변수로 정의됨)
-- **헤딩**: weight 500
-- **본문**: weight 400
-- **줄간격**: 본문 1.6~1.85, 타이틀 1.15~1.3
-- **letter-spacing**: 큰 타이틀에 -0.02~-0.03em (타이트하게)
-
-#### 데스크탑 폰트 사이즈 표준 (1440px 기준)
-
-| 영역 | 사이즈 |
-|---|---|
-| Hero 슬로건 | 88px |
-| 섹션 타이틀 (About/Capabilities) | 44px |
-| 카드 제목 | 22px |
-| 큰 핵심 텍스트 (Capabilities) | 28-30px |
-| 큰 수치 (.big-num) | 64px |
-| 본문 | 15-16px |
-| 보조 텍스트 | 12-14px |
-| 라벨 (대문자) | 11-12px |
-
-모바일은 60-70% 비율로 축소.
-
-### 레이아웃 토큰
-
-```css
---max-width: 1440px;  /* 데스크탑 콘텐츠 표준 폭 */
---radius-card: 12px;
---radius-btn: 8px;
---radius-tag: 6px;
-```
-
-### 간격 시스템
-
-- **섹션 간격**: 160px (데스크탑) / 80px (모바일)
-- **카드 패딩**: 32px
-- **좌우 패딩**: 48px (데스크탑, 총 콘텐츠 영역 = max-width + 96px) / 24px (모바일)
-
-### 컴포넌트 규칙
-
-- **카드**: `background: #1A1919`, `border-radius: 12px`, `padding: 32px`, 경계선은 `1px solid var(--border)`
-- **버튼 (Primary)**: 골드 배경 + 검정 텍스트
-- **버튼 (Secondary)**: 투명 배경 + 본문색 텍스트 + `border: 1px solid var(--border-strong)`
-- **태그/Pill**: 투명 배경 + `border: 1px solid var(--border-strong)` + `border-radius: 6px` + `padding: 7px 14px`
-
----
-
-## 섹션별 톤 가이드
-
-Hero와 다른 섹션의 톤은 다릅니다. **한 가지 톤으로 통일하지 않습니다.**
-
-### Hero
-- **톤**: 임팩트 있는 큰 타이포그래피, 한 문장 강하게
-- **규칙**: 정보 과밀 금지. 슬로건 + 이름/직무만. 수치/그래프 넣지 않음.
-- **높이**: 100vh (다음 섹션이 위로 덮는 스크롤 애니메이션 예정)
-
-### About
-- **톤**: 서사적, 대화형
-- **구조**: 타이틀 → 가로 타임라인 (4단계) → Q&A 아코디언 (3개, 기본 닫힘)
-- **규칙**: 가비님 실제 목소리로 작성된 답변. AI가 다듬을 때 원본 톤 최대한 유지.
-
-### Capabilities
-- **톤**: 분석적, 정량 중심
-- **구조**: 3개 카드 × INSIGHT/ACTION/IMPACT 탭 (탭 전환 시 페이드+슬라이드)
-- **규칙**:
-  - 모든 수치는 팩트체크 확정된 정의 표현 그대로 사용
-  - "발견 방법" / "변화 액션" / "동반 지표" 보조 영역 유지
-  - 라벨/구분선은 미니멀 (단순화 패치 적용 후)
-
-### Projects
-- **톤**: 카드형 미리보기, 상세 페이지로 유도
-- **구조**: 4개 카드 (메타브 / 카카오뱅크 / 맘스케어 / Folio)
-- **링크**: 각 카드 클릭 → /metavv/, /kakaobank/, /momscare/, /folio/ 이동
-- **표시 정보**: 프로젝트명, 한 줄 요약, 대표 수치 1개, 도메인 태그
-- **순서**: 임팩트 우선 — 메타브(73×) → Folio(0→1) → 카카오뱅크 → 맘스케어
-  (페이타랩 핏 고려: AI/풀스택 강점인 Folio를 두 번째로 배치)
-
-### 이후 섹션 (미완성)
-- **Experience**: 이력 타임라인
-- **Contact**: 간결, CTA 1-2개
-
----
-
-## 현재 완료 상태
-
-- ✅ Global Nav (Logo=Gabby / About / Experience / Work▾드롭다운(4개) / Contact / Resume 버튼, 모바일 Work 아코디언)
-- ✅ Hero (Level 4 A 배치 · 슬로건 + 하단 구분선 + 이름/직무 + ↓ SCROLL)
-- ✅ About (가로 타임라인 + Q&A 아코디언 3개)
-- ✅ Capabilities (3개 카드 · INSIGHT/ACTION/IMPACT 탭 · 시각 위계 강화 버전)
-- ✅ Projects (2×2 그리드 · 썸네일 수치 + 본문 · 각 상세 페이지 링크)
-- ✅ Experience (3개 시기 블록 · 좌측 sticky 메타 + 우측 디테일 · 7개 프로젝트 + 횡단 업무 태그)
-- ✅ Contact (좌우 분할 · 타이틀 골드 강조 · EMAIL/GITHUB/RESUME 링크 · 푸터)
-- ✅ /metavv/ Phase 1 (HEADER → HERO → IMPACT → CONTEXT → PROBLEM · 전면 리팩터링 완료)
-- ✅ DESIGN_SYSTEM.md 작성 완료 (컬러/타이포/레이아웃/카드/그리드/인터랙션 전체)
-- ⏸️ /metavv/ Phase 2 (STRATEGY → EXECUTION → RESULT → REFLECTION → NAVIGATION)
-- ⏸️ 다음 페이지: /folio/, /kakaobank/, /momscare/
-
----
-
-## 파일 구조 / URL 라우팅
-
-옵션 B 라우팅 채택: 메인 페이지 + 프로젝트별 상세 페이지 분리.
+## 2. 파일 구조
 
 ```
 gabby-pm-portfolio/
-├── index.html             # 메인 페이지 (모든 섹션)
-├── styles.css             # 공용 스타일 (전역 토큰 + 메인 + 상세 공통)
-├── script.js              # 공용 JS
-├── resume.pdf
-├── CLAUDE.md
+├── index.html          # 메인 페이지
+├── styles.css          # 공용 스타일 + 글로벌 토큰
+├── script.js           # 공용 JS
+├── reveal.js           # Reveal on Scroll (모든 페이지 공유)
+├── charts.js           # Chart.js helper (모든 페이지 공유)
+├── CLAUDE.md           # 이 파일 (강제 규칙서)
+├── DESIGN_SYSTEM.md    # 디자인 토큰 상세
+├── LEARNED.md          # 반복 실수 패턴
+├── metavv/             # 정답 페이지 — 다른 페이지 복제 시 직접 참고
 ├── folio/
-│   └── index.html         # Folio 상세 (라이브 데모, 6개 모델 비교 등)
-├── metavv/
-│   └── index.html         # 메타브 상세 (73× 케이스 스터디)
-├── kakaobank/
-│   └── index.html         # 카카오뱅크 상세
+├── kakaobank/          # (방구석연구소 — 별도 폴더명 가능)
 └── momscare/
-    └── index.html         # 맘스케어 상세
 ```
 
-URL 매핑 (Vercel 자동 라우팅):
-- `/`                  → 메인
-- `/folio/`            → Folio 상세
-- `/metavv/`           → 메타브 상세
-- `/kakaobank/`        → 카카오뱅크 상세
-- `/momscare/`         → 맘스케어 상세
-- `/resume.pdf`        → 이력서 PDF
-
-작업 순서:
-1. 메인 페이지 전체 섹션 완성 (Hero → Contact)
-2. 그 다음 상세 페이지 4개를 공통 템플릿으로 일괄 작업
-3. 메인의 Projects 섹션에서 각 카드는 위 URL로 링크 연결
-
-⚠️ 이번 작업에서는 상세 페이지 폴더를 만들지 않음.
-   메인 페이지 작업 완료 후 일괄 생성 예정.
+URL 매핑 (Vercel 자동):
+- `/` → 메인
+- `/metavv/`, `/folio/`, `/kakaobank/`, `/momscare/` → 각 상세
 
 ---
 
-## 작업 규칙
+## 3. 디자인 시스템 강제 규칙
 
-### 새 섹션 추가 시
+### 3-1. 메타브 페이지 = 정답 페이지
 
-1. **HTML**: `<section class="[section-name]-section" id="[section-name]">` 형태로 시작
-2. **CSS**: 섹션별 스코프 유지. 기존 유틸 클래스 재사용 가능하면 사용
-3. **JS**: 섹션별 로직은 IIFE 또는 명확한 함수 분리
-4. **반응형 필수**: 960px, 768px, 480px 브레이크포인트 체크
-5. **접근성**: 버튼은 `<button>` 태그, 아코디언은 `aria-expanded` 속성
+`/metavv/`는 **디자인 시스템의 살아있는 정답 페이지**.
+다른 페이지 작업 시 다음 순서:
 
-### 콘텐츠 작성 시 금지 사항
+1. 메타브 페이지에서 동일/유사 패턴 찾기
+2. 있으면 그 클래스 그대로 재사용 (rename 금지)
+3. 없으면 가비님에게 물어볼 것 (새 클래스 임의 생성 금지)
 
-- ❌ **팩트 과장 금지**: 수치 부풀리기, 애매한 주장 (특히 "흑자 전환" 같은 해석 여지 있는 표현)
-- ❌ **"PM인데 코드로 가설 검증" 류 표현 금지**: PM 역할 범위를 넘어가는 인상 주면 안 됨
-- ❌ **모호한 수치 금지**: "CS 혼선 15%→3%" 같이 맥락 없는 수치는 근거 확인 후 사용
-- ❌ **이력서와 충돌하는 내용 금지**: 이력서 제목("심리학의 시선으로 유저 문제 정의부터 수익 구조 설계까지, 제품의 성장을 만듭니다")과 일관되어야 함
+### 3-2. 디자인 토큰만 사용 (하드코딩 금지)
 
-### 팩트체크 확정된 수치
+다음은 **모든 작업에서 강제**:
 
-**메타브**
-- ✅ **월 매출**: 15만원 → 1,100만원+ (12개월, 73× 성장)
-- ✅ **비용 회수율**: 2% → 262% (서버·DB 기준, 인건비 제외)
-- ✅ **엔터프라이즈 계약**: 11건 (문의는 별도, 미사용)
-- ✅ **CS 티켓 비율**: 15% → 3%
-- ✅ **WTP 인터뷰**: 5건 진행
-- ✅ **Plus 가격 인상**: 29,000원 → 189,000원 (6.5×)
-- ✅ **이미지커스텀**: 0→1 출시 (기획·A/B·배포)
+- 색상: `var(--bg)`, `var(--surface)`, `var(--gold)`, `var(--text)`, `var(--text-muted)`, `var(--border)`, `var(--border-strong)`, `var(--text-label-gold)` 등
+- 패딩: `var(--card-padding-sm/md/lg)`, `var(--space-1~16)`
+- 폰트 크기: `var(--fs-display/h1/h2/h3/body/sub/caption)`
+- 라인 하이트: `var(--lh-tight/snug/normal/relaxed)`
+- 라운드: `var(--radius-sm/md/lg)`
+- 트랜지션: `var(--reveal-duration)`, `var(--reveal-easing)` 등
 
-**카카오뱅크**
-- ✅ **B2B 트래픽**: 월 100-120만 유입 (카뱅 측 전환율은 공개불가)
+상세 토큰 정의는 **DESIGN_SYSTEM.md** 및 `styles.css` 참조.
 
-**맘스케어**
-- ✅ **사용자 수**: 3배 성장 (CSR 프로젝트, 결제 없음)
-- ✅ **재방문율**: 16%
-- ✅ **재협업**: 재협업 요청 수주
+토큰에 없는 값이 필요하면 **신규 토큰을 styles.css에 추가**하고
+**가비님에게 알릴 것**. 하드코딩 절대 금지.
 
-**Folio**
-- ✅ **검증 모델**: 6개 (Sonnet 4.6, Opus 4.6, Haiku 4.5, Gemini 2.5 Flash, Gemini 2.5 Pro, Gemini 3.1 Pro)
-- ✅ **기본값**: Gemini 3.1 Pro
+### 3-3. 컨테이너화 강제 규칙
 
-⚠️ 수치 정의 표현 고정: "CS 티켓 비율" / "트래픽" / "재방문율" — 다른 표현으로 임의 변경 금지
+⚠️ 가비님이 가장 자주 발견하는 실수 — **컨테이너 누락 / 일관성 깨짐**
 
----
+모든 영역(section)은 다음 패턴을 따른다:
 
-## 프로덕트 팩트 (Folio)
+```html
+<section class="[name]-section">
+  <!-- 풀폭 background는 section 자체에 -->
+  <div class="container">
+    <!-- 콘텐츠는 항상 container 안에 -->
+  </div>
+</section>
+```
 
-- **라이브 데모**: https://folio-charc.up.railway.app/
-- **GitHub**: https://github.com/GabrielaJeong/character-ai-prototype
-- **정체성**: PM 단독 · 기획/UX/어드민 설계/보안 아키텍처/LLM 6개 검증까지 0→1 풀스택
-- **핵심 역량 증명**:
-  - 기획 · UX 설계
-  - 어드민 설계
-  - 보안 아키텍처
-  - LLM 6개 비교 검증 (3층 프롬프트 아키텍처)
+- `.container`는 max-width + 좌우 padding 제공
+- 페이지의 모든 영역 헤더가 동일한 좌우 정렬선에 위치해야 함
+- `.container`를 다른 이름으로 만들지 말 것 (`-inner`, `-wrap` 등 신규 클래스 금지)
+- 풀폭 배경은 section 자체에 적용, 콘텐츠는 항상 `.container` 안
 
----
+### 3-4. 카드 정렬 강제 규칙
 
-## 스크롤 인터랙션 (향후 구현)
+같은 줄에 있는 카드는:
+- `display: grid` + `grid-template-columns: repeat(N, 1fr)` (N = 카드 개수)
+- `align-items: stretch` (높이 자동 동일)
+- 카드 자체에 `width: 100%`
+- 카드 내부 본문 길이가 다르면 `display: flex; flex-direction: column;` + 하단 요소에 `margin-top: auto`
 
-**구조**: Hero 고정 + 다음 섹션이 위로 덮음 (책장 넘기는 느낌)
+### 3-5. 정렬 규칙
 
-- Hero는 `min-height: 100vh`로 뷰포트 꽉 채움
-- 다음 섹션부터는 일반 문서 흐름
-- 섹션 진입 시 페이드인 + translateY (IntersectionObserver 활용)
-- `position: sticky` 또는 `scroll-timeline` 중 선택 (모바일 호환성 체크 필요)
+- **다이어그램 노드**: 가운데 정렬 (`text-align: center`)
+- **콘텐츠 카드**: 왼쪽 정렬 (`text-align: left`)
+- **메트릭/수치 카드**: 왼쪽 정렬 (라벨 → 큰 수치 → 부연 설명)
 
 ---
 
-## 프로젝트 소유자 정보
+## 4. 신규 클래스 추가 절차
 
-- **이름**: 정소채 (Gabi)
-- **직무**: Product Manager
-- **PM 경력**: 2년차 (2024.02~, 정규직 1년 7개월 + 프리랜서 3개월)
-- **이력서 제목**: "심리학의 시선으로 유저 문제 정의부터 수익 구조 설계까지, 제품의 성장을 만듭니다"
-- **배경**: UBC 심리학 학사 → HR/사업 PL → 항해99 Node.js 백엔드 → 현재 PM
-- **언어**: 한국어 / 영어 (TOEIC Speaking AL, OPIc IH)
-- **소통 스타일**: 캐주얼, 직접적
+새 클래스를 추가하기 전 **반드시** 다음 점검:
+
+1. 기존 클래스로 표현 가능한가? → 가능하면 재사용
+2. 메타브 페이지에 동일/유사 패턴이 있는가? → 있으면 그 클래스 사용
+3. 정말 새로 필요한가? → 필요한 이유 가비님에게 보고 후 승인 받기
+
+신규 클래스 임의 생성 시 작업 결과 거부 사유.
+
+---
+
+## 5. 인터랙션 표준
+
+다음 인터랙션은 **모든 페이지가 공유**:
+
+- **Reveal on Scroll**: `reveal.js` 사용. 신규 reveal 로직 만들지 말 것
+- **Chart.js**: `charts.js`의 helper 함수 사용. 직접 Chart.js 인스턴스 만들지 말 것
+- **Tab 전환** (필요 시): 메타브의 `setupCaseTabs()` 그대로 사용
+
+---
+
+## 6. 메타브 페이지 복제 시 주의 (다른 페이지 작업 시)
+
+- `cases-wrapper` 안에만 탭 네비가 있어야 sticky 범위 제한됨
+- `meta-reflection`은 max-width + padding 직접 적용 (case-inner 미사용)
+- `project-navigation`은 full-bleed 배경 + `proj-nav-inner`로 콘텐츠 제약
+- 탭 있는 페이지만 `setupCaseTabs()` JS 필요
+- LEARNED 카드에 출처 라벨 있으면 반드시 flex column + meta-source margin-top: auto
+
+---
+
+## 7. 작업 후 보고 규칙
+
+작업 완료 후 **반드시** 다음을 가비님에게 보고:
+
+1. 위 강제 규칙 모두 통과했는지 (각 항목 ✅/❌)
+2. 신규 클래스 추가 여부 (있으면 목록 + 추가 사유)
+3. 신규 토큰 추가 여부
+4. 하드코딩 잔존 여부 (의도된 one-off만 허용)
+5. 메타브 페이지 컴포넌트 재사용 비율
+
+---
+
+## 8. 작업 결과 거부 사유
+
+다음 중 하나라도 발생 시 가비님이 작업 결과를 거부할 수 있음:
+
+- DESIGN_SYSTEM.md 또는 LEARNED.md 또는 메타브 페이지 미참조
+- 토큰 무시한 하드코딩
+- 신규 클래스 임의 생성
+- 컨테이너 패턴 위반
+- 카드 정렬 규칙 위반
+- LEARNED.md에 명시된 반복 실수 재발생
+
+---
+
+## 9. 인코딩 주의
+
+대화창 첨부 파일의 한글이 `ëìì¤` 같이 깨져 보이면:
+- 임의 디코딩 금지
+- 즉시 가비님에게 알리고 원본 텍스트 직접 받기
