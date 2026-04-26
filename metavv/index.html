@@ -200,7 +200,6 @@
           </div>
 
           <div class="ctx-diagram">
-            <div class="ctx-diagram-label">SHARED INFRASTRUCTURE</div>
 
             <svg class="ctx-arch-svg" viewBox="0 0 480 380" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="메타브와 메타브 스튜디오가 공유하는 인프라 구조도">
 
@@ -318,56 +317,40 @@
 
           <div class="discovery-grid">
 
-            <!-- 좌측: 깔때기 다이어그램 -->
-            <div class="funnel-svg-wrap">
-              <svg viewBox="0 0 540 360" xmlns="http://www.w3.org/2000/svg" role="img" aria-label="인터뷰 깔때기 다이어그램">
-                <text x="270" y="18" text-anchor="middle" fill="#8A8882" font-size="9" letter-spacing="2" font-family="Pretendard">PHASE 01 · QUALITATIVE</text>
+            <!-- 좌측: 깔때기 (HTML 카드) -->
+            <div class="phase-funnel-wrapper">
+              <div class="phase-section-label">PHASE 01 · QUALITATIVE</div>
+              <div class="phase-01-cards">
+                <div class="phase-card">
+                  <div class="phase-card-label">FREE / PLUS</div>
+                  <div class="phase-card-num">10명</div>
+                  <div class="phase-card-desc">무료 콘텐츠 · 트래픽 보유</div>
+                </div>
+                <div class="phase-card">
+                  <div class="phase-card-label">PRO</div>
+                  <div class="phase-card-num">3명</div>
+                  <div class="phase-card-desc">월 29,000원 결제자</div>
+                </div>
+                <div class="phase-card">
+                  <div class="phase-card-label">ENTERPRISE</div>
+                  <div class="phase-card-num">2명</div>
+                  <div class="phase-card-desc">기업 결제자</div>
+                </div>
+              </div>
 
-                <g>
-                  <rect x="20" y="30" width="160" height="74" rx="8" fill="#0a0a0a" stroke="rgba(138,136,130,0.35)" stroke-width="1"/>
-                  <text x="100" y="52" text-anchor="middle" fill="#8A8882" font-size="9" letter-spacing="1.5" font-family="Pretendard">FREE / PLUS</text>
-                  <text x="100" y="76" text-anchor="middle" fill="#fff" font-size="22" font-weight="500" font-family="Pretendard">10명</text>
-                  <text x="100" y="94" text-anchor="middle" fill="#8A8882" font-size="9" font-family="Pretendard">무료 콘텐츠 · 트래픽 보유</text>
-                </g>
+              <div class="phase-arrow">↓</div>
 
-                <g>
-                  <rect x="190" y="30" width="160" height="74" rx="8" fill="#0a0a0a" stroke="rgba(138,136,130,0.35)" stroke-width="1"/>
-                  <text x="270" y="52" text-anchor="middle" fill="#8A8882" font-size="9" letter-spacing="1.5" font-family="Pretendard">PRO</text>
-                  <text x="270" y="76" text-anchor="middle" fill="#fff" font-size="22" font-weight="500" font-family="Pretendard">3명</text>
-                  <text x="270" y="94" text-anchor="middle" fill="#8A8882" font-size="9" font-family="Pretendard">월 29,000원 결제자</text>
-                </g>
+              <div class="phase-total-box">
+                <div class="phase-total-label">TOTAL · 정성 인사이트</div>
+                <div class="phase-total-num">15명</div>
+              </div>
 
-                <g>
-                  <rect x="360" y="30" width="160" height="74" rx="8" fill="#0a0a0a" stroke="rgba(138,136,130,0.35)" stroke-width="1"/>
-                  <text x="440" y="52" text-anchor="middle" fill="#8A8882" font-size="9" letter-spacing="1.5" font-family="Pretendard">ENTERPRISE</text>
-                  <text x="440" y="76" text-anchor="middle" fill="#fff" font-size="22" font-weight="500" font-family="Pretendard">2명</text>
-                  <text x="440" y="94" text-anchor="middle" fill="#8A8882" font-size="9" font-family="Pretendard">기업 결제자</text>
-                </g>
+              <div class="phase-arrow phase-arrow-gold">↓</div>
 
-                <path d="M 100 110 Q 100 145, 200 175" stroke="rgba(138,136,130,0.5)" stroke-width="1" fill="none"/>
-                <path d="M 270 110 L 270 175" stroke="rgba(138,136,130,0.5)" stroke-width="1" fill="none"/>
-                <path d="M 440 110 Q 440 145, 340 175" stroke="rgba(138,136,130,0.5)" stroke-width="1" fill="none"/>
-
-                <g>
-                  <rect x="170" y="180" width="200" height="62" rx="8" fill="#1f1d1a" stroke="rgba(138,136,130,0.5)" stroke-width="1"/>
-                  <text x="270" y="202" text-anchor="middle" fill="#8A8882" font-size="9" letter-spacing="1.5" font-family="Pretendard">TOTAL · 정성 인사이트</text>
-                  <text x="270" y="226" text-anchor="middle" fill="#fff" font-size="20" font-weight="500" font-family="Pretendard">15명</text>
-                </g>
-
-                <path d="M 270 248 L 270 278" stroke="#F5CFA5" stroke-width="1.5" stroke-dasharray="4,3" fill="none" marker-end="url(#arrowGoldFunnel)"/>
-
-                <g>
-                  <rect x="170" y="284" width="200" height="62" rx="8" fill="rgba(245,207,165,0.08)" stroke="#F5CFA5" stroke-width="1.5"/>
-                  <text x="270" y="306" text-anchor="middle" fill="#F5CFA5" font-size="9" letter-spacing="1.5" font-family="Pretendard">PHASE 02 · WTP MEASUREMENT</text>
-                  <text x="270" y="332" text-anchor="middle" fill="#F5CFA5" font-size="22" font-weight="500" font-family="Pretendard">5명</text>
-                </g>
-
-                <defs>
-                  <marker id="arrowGoldFunnel" markerWidth="6" markerHeight="6" refX="5" refY="3" orient="auto">
-                    <polygon points="0 0, 6 3, 0 6" fill="#F5CFA5"/>
-                  </marker>
-                </defs>
-              </svg>
+              <div class="phase-02-box">
+                <div class="phase-02-label">PHASE 02 · WTP MEASUREMENT</div>
+                <div class="phase-02-num">5명</div>
+              </div>
             </div>
 
             <!-- 우측: 인용 카드 3개 + 블로그 모음 -->
@@ -381,8 +364,8 @@
                       <div class="quote-card-headline">비용 대비 기능이 충분히 제공된다</div>
                       <div class="quote-card-decision">→ 가격 인상 여지 확인 · WTP 검증의 핵심</div>
                     </div>
-                    <span class="quote-card-toggle">+</span>
                   </div>
+                  <span class="quote-card-toggle" aria-hidden="true">+</span>
                   <div class="quote-card-detail">
                     "비용적으로는 기능이 충분히 제공된다고 생각합니다."
                     <div class="quote-card-source">→ Pro 결제자 · 인터뷰 응답</div>
@@ -396,8 +379,8 @@
                       <div class="quote-card-headline">멤버십과 템플릿이 헷갈려 잘못 결제한다</div>
                       <div class="quote-card-decision">→ CS UX 개선의 실질 근거 (15% → 3%)</div>
                     </div>
-                    <span class="quote-card-toggle">+</span>
                   </div>
+                  <span class="quote-card-toggle" aria-hidden="true">+</span>
                   <div class="quote-card-detail">
                     "멤버십과 템플릿별 상품의 차이가 명확하게 설명되지 않아 헷갈렸습니다. 이 때문에 멤버십을 취소하고 플러스를 결제하는 실수를 했습니다."
                     <div class="quote-card-source">→ Pro 결제자 · 인터뷰 응답</div>
@@ -411,8 +394,8 @@
                       <div class="quote-card-headline">도움 버퍼·닉네임 기능에 차별성이 있다</div>
                       <div class="quote-card-decision">→ 결제 동기 기능 식별 · 닉네임 출시 근거</div>
                     </div>
-                    <span class="quote-card-toggle">+</span>
                   </div>
+                  <span class="quote-card-toggle" aria-hidden="true">+</span>
                   <div class="quote-card-detail">
                     "도움 버퍼 기능은 굉장한 차별성이 있다고 생각했습니다. 이 기능 덕분에 참가자들이 테스트 결과를 확인한 후, 바로 앱 내에 관련 상품 페이지로 이동하게 해서 전환율을 높이는 데 큰 도움이 됐거든요."
                     <div class="quote-card-source">→ Plus 결제자 · 인터뷰 응답</div>

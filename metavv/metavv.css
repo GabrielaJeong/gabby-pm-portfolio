@@ -7,21 +7,18 @@
 /* ==================== 타이포 / 사이즈 토큰 ==================== */
 
 :root {
-  /* 색상 시스템 */
   --text-primary:    #FFFFFF;
   --text-secondary:  rgba(255, 255, 255, 0.85);
   --text-tertiary:   rgba(255, 255, 255, 0.65);
   --text-label-gold: rgba(245, 207, 165, 0.85);
 
-  /* 폰트 크기 (floor 12px) */
   --fs-display: 56px;
   --fs-h1:      32px;
-  --fs-h2:      20px;
+  --fs-h2:      18px;
   --fs-body:    14px;
   --fs-sub:     13px;
   --fs-caption: 12px;
 
-  /* 폰트 굵기 */
   --fw-display: 600;
   --fw-h1:      700;
   --fw-h2:      600;
@@ -392,19 +389,10 @@
   background: var(--surface);
   border: 1px solid var(--border);
   border-radius: var(--radius-card);
-  padding: 40px 36px;
+  padding: 40px 32px;
   display: flex;
   flex-direction: column;
   justify-content: center;
-}
-
-.ctx-diagram-label {
-  font-size: var(--fs-caption);
-  font-weight: var(--fw-caption);
-  color: var(--text-tertiary);
-  letter-spacing: 0.18em;
-  margin-bottom: 32px;
-  text-align: center;
 }
 
 .ctx-arch-svg {
@@ -414,12 +402,11 @@
 }
 
 .ctx-diagram-caption {
-  margin-top: 20px;
+  margin: 32px 0 0;
   padding-top: 20px;
-  border-top: 1px dashed var(--border);
+  border-top: 1px solid rgba(255, 255, 255, 0.12);
   text-align: center;
-  font-size: var(--fs-caption);
-  font-weight: var(--fw-caption);
+  font-size: var(--fs-sub);
   color: var(--text-tertiary);
   line-height: 1.7;
 }
@@ -542,25 +529,129 @@
   align-items: flex-start;
 }
 
-.funnel-svg-wrap {
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  padding-top: 12px;
-}
-
-.funnel-svg-wrap svg {
-  width: 100%;
-  max-width: 540px;
-}
-
 .discovery-right {
   display: flex;
   flex-direction: column;
   gap: 16px;
 }
 
-/* 인용 카드 */
+/* ==================== PHASE FUNNEL ==================== */
+
+.phase-funnel-wrapper {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: 0;
+  padding: 0;
+}
+
+.phase-section-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-tertiary);
+  letter-spacing: 0.12em;
+  margin-bottom: 16px;
+  align-self: flex-start;
+}
+
+.phase-01-cards {
+  display: flex;
+  gap: 10px;
+  width: 100%;
+}
+
+.phase-card {
+  flex: 1;
+  background: #0a0a0a;
+  border: 1px solid rgba(138, 136, 130, 0.35);
+  border-radius: 8px;
+  padding: 14px 16px;
+}
+
+.phase-card-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  letter-spacing: 0.08em;
+  margin-bottom: 8px;
+}
+
+.phase-card-num {
+  font-size: 22px;
+  font-weight: 600;
+  color: var(--text-primary);
+  margin-bottom: 6px;
+  letter-spacing: -0.02em;
+}
+
+.phase-card-desc {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-body);
+  color: var(--text-tertiary);
+  line-height: 1.4;
+}
+
+.phase-arrow {
+  font-size: 14px;
+  color: rgba(255, 255, 255, 0.4);
+  margin: 10px 0;
+  text-align: center;
+}
+
+.phase-arrow-gold {
+  color: rgba(245, 207, 165, 0.6);
+}
+
+.phase-total-box {
+  max-width: 280px;
+  width: 100%;
+  background: #1f1d1a;
+  border: 1px solid rgba(138, 136, 130, 0.5);
+  border-radius: 8px;
+  padding: 14px 24px;
+  text-align: center;
+}
+
+.phase-total-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-tertiary);
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.phase-total-num {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--text-primary);
+}
+
+.phase-02-box {
+  max-width: 200px;
+  width: 100%;
+  background: rgba(245, 207, 165, 0.08);
+  border: 1.5px solid rgba(245, 207, 165, 0.9);
+  border-radius: 8px;
+  padding: 14px 24px;
+  text-align: center;
+}
+
+.phase-02-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  letter-spacing: 0.08em;
+  margin-bottom: 6px;
+}
+
+.phase-02-num {
+  font-size: 20px;
+  font-weight: 600;
+  color: var(--gold);
+}
+
+/* ==================== 인용 카드 ==================== */
+
 .quotes-list {
   display: flex;
   flex-direction: column;
@@ -568,10 +659,12 @@
 }
 
 .quote-card {
+  position: relative;
   background: #0a0a0a;
   border: 1px solid var(--border-strong);
   border-radius: 8px;
   padding: 24px 28px;
+  padding-right: 52px;
   cursor: pointer;
   transition: all 0.3s ease;
   font-family: inherit;
@@ -589,19 +682,33 @@
   background: rgba(245, 207, 165, 0.04);
 }
 
+.quote-card-toggle {
+  position: absolute;
+  top: 24px;
+  right: 28px;
+  font-size: 18px;
+  color: rgba(255, 255, 255, 0.5);
+  line-height: 1;
+  transition: transform 0.25s ease, color 0.2s ease;
+}
+
+.quote-card[aria-expanded="true"] .quote-card-toggle {
+  transform: rotate(45deg);
+  color: var(--gold);
+}
+
 .quote-card-summary {
   display: flex;
   align-items: flex-start;
-  gap: 14px;
+  gap: 10px;
 }
 
 .quote-card-icon {
-  font-size: 24px;
-  color: var(--text-tertiary);
+  font-size: 20px;
+  color: rgba(245, 207, 165, 0.5);
   line-height: 1;
   flex-shrink: 0;
   font-family: serif;
-  margin-bottom: 8px;
 }
 
 .quote-card-body {
@@ -623,20 +730,11 @@
   font-weight: var(--fw-body);
   color: var(--text-label-gold);
   letter-spacing: 0.02em;
-  margin-bottom: 20px;
+  margin-bottom: 0;
 }
 
-.quote-card-toggle {
-  font-size: 14px;
-  color: var(--text-tertiary);
-  margin-left: 8px;
-  transition: transform 0.3s ease, color 0.2s ease;
-  flex-shrink: 0;
-}
-
-.quote-card[aria-expanded="true"] .quote-card-toggle {
-  transform: rotate(45deg);
-  color: var(--gold);
+.quote-card[aria-expanded="true"] .quote-card-decision {
+  margin-bottom: 16px;
 }
 
 .quote-card-detail {
@@ -649,7 +747,6 @@
   line-height: 1.7;
   word-break: keep-all;
   overflow-wrap: break-word;
-  margin-bottom: 12px;
 }
 
 .quote-card[aria-expanded="true"] .quote-card-detail {
@@ -666,7 +763,8 @@
   margin-top: 8px;
 }
 
-/* 블로그 모음 카드 */
+/* ==================== 블로그 모음 카드 ==================== */
+
 .blog-collection {
   background: rgba(245, 207, 165, 0.04);
   border: 1px solid rgba(245, 207, 165, 0.25);
