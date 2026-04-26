@@ -72,6 +72,7 @@
   /* ═══ SECTION GAPS ═══ */
   --section-gap:   var(--space-16);
   --section-inner: var(--space-12);
+  --diagram-max-width: 760px;   /* 다이어그램 컨테이너 최대 너비 (CONTEXT / STRATEGY 등) */
 
   /* ═══ BORDER COLORS ═══ */
   --border-default: rgba(255, 255, 255, 0.12);

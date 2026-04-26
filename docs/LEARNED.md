@@ -190,3 +190,32 @@
 - IntersectionObserver로 차트 영역 진입 감지 후 Chart.js 초기화
 
 **금지**: 페이지 로드 시 Chart.js 즉시 초기화 + Reveal 동시 적용.
+
+---
+
+## L13. 다이어그램 영역 정렬 깨짐
+
+**문제**: 다이어그램 컨테이너가 2열 그리드의 한 컬럼 안에 위치하거나, max-width + margin: 0 auto 없이 두어 정중앙이 아닌 좌측으로 쏠림. 라벨(USERS, SERVICES)만 SVG 내부 좌표 기준 center-aligned되고 박스들은 페이지 기준으로 좌측에 치우쳐 보임.
+
+**올바른 패턴**:
+```css
+/* 다이어그램 컨테이너: 정중앙 정렬 */
+.ctx-diagram {
+  max-width: var(--diagram-max-width);  /* styles.css 토큰 사용 */
+  width: 100%;
+  margin: 0 auto;
+  align-items: center;
+}
+
+/* 다이어그램을 포함하는 섹션 레이아웃: flex-column (텍스트 위, 다이어그램 아래) */
+.ctx-grid {
+  display: flex;
+  flex-direction: column;
+  gap: var(--section-inner);
+}
+```
+
+**금지**:
+- 다이어그램을 `grid-template-columns: 1fr 1.4fr` 같은 비대칭 2열 그리드의 한 컬럼에 넣어두기
+- `margin: 0 auto` 없이 블록 요소로 두기
+- max-width 미설정으로 화면 가득 채우기 (SVG가 과도하게 커짐)
