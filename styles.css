@@ -439,13 +439,13 @@ ul {
 
 .hero-label {
   position: absolute;
-  top: -240px;
+  top: 50%;
   right: 48px;
   font-size: 12px;
   color: var(--text-muted);
   letter-spacing: 0.18em;
   writing-mode: vertical-rl;
-  transform: rotate(180deg);
+  transform: translateY(-50%) rotate(180deg);
 }
 
 .hero-status {
