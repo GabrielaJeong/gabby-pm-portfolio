@@ -82,6 +82,12 @@
   --lh-snug:    1.2;
   --lh-normal:  1.5;
   --lh-relaxed: 1.7;
+
+  /* ═══ REVEAL ON SCROLL ═══ */
+  --reveal-duration: 0.6s;
+  --reveal-easing:   cubic-bezier(0.16, 1, 0.3, 1);
+  --reveal-distance: 24px;
+  --reveal-stagger:  0.1s;
 }
 
 * {
@@ -1939,5 +1945,40 @@ ul {
 @media (max-width: 480px) {
   .contact-title {
     font-size: 20px;
+  }
+}
+
+/* ==================== REVEAL ON SCROLL ==================== */
+
+/* 초기 상태 — js-reveal 클래스가 있을 때만 숨김 */
+.js-reveal [data-reveal]:not(.revealed) {
+  opacity: 0;
+  transform: translateY(var(--reveal-distance));
+}
+
+/* 트랜지션 — 상태 변경 시 부드럽게 */
+.js-reveal [data-reveal] {
+  transition:
+    opacity   var(--reveal-duration) var(--reveal-easing),
+    transform var(--reveal-duration) var(--reveal-easing);
+}
+
+/* 완료 상태 */
+.js-reveal [data-reveal].revealed {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+/* 스태거 딜레이 */
+.js-reveal [data-reveal-delay="1"] { transition-delay: var(--reveal-stagger); }
+.js-reveal [data-reveal-delay="2"] { transition-delay: calc(var(--reveal-stagger) * 2); }
+.js-reveal [data-reveal-delay="3"] { transition-delay: calc(var(--reveal-stagger) * 3); }
+
+/* prefers-reduced-motion — 효과 비활성화 */
+@media (prefers-reduced-motion: reduce) {
+  .js-reveal [data-reveal] {
+    opacity: 1 !important;
+    transform: none !important;
+    transition: none !important;
   }
 }

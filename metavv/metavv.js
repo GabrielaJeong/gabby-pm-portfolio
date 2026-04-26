@@ -236,6 +236,8 @@
     contents.forEach(function (content) {
       if (content.dataset.case === tabName) {
         content.removeAttribute('hidden');
+        // 탭 전환 시 reveal 요소 즉시 표시 (스크롤 애니메이션 없음)
+        if (window.__revealTabContent) window.__revealTabContent(content);
       } else {
         content.setAttribute('hidden', '');
       }
