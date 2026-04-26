@@ -5,6 +5,52 @@
    글로벌 토큰: /styles.css :root
    ======================================================== */
 
+/* ==================== PRODUCT DOCUMENTS ==================== */
+
+/* 문서 미리보기 placeholder 영역 — 스크린샷 제공 후 img로 교체 */
+.doc-preview {
+  aspect-ratio: 4 / 3;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  margin: var(--space-4) 0;
+  overflow: hidden;
+  font-size: var(--fs-caption);
+  color: var(--text-quaternary);
+  letter-spacing: 0.08em;
+}
+
+/* doc-preview에 실제 이미지 삽입 시 */
+.doc-preview img {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  display: block;
+}
+
+/* 문서 카드 — axis-card를 <a> 태그로 사용 시 hover 추가 */
+a.axis-card.doc-card {
+  text-decoration: none;
+  color: inherit;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background 0.25s ease;
+}
+
+a.axis-card.doc-card:hover {
+  border-color: var(--border-gold);
+  background: rgba(245, 207, 165, 0.03);
+}
+
+/* CTA 버튼 래퍼 — 중앙 정렬 */
+.doc-cta-wrap {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-8);
+}
+
 /* ==================== HERO — 라이브 데모 CTA ==================== */
 
 .hero-live-btn {
