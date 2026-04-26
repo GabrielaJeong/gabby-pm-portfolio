@@ -1509,6 +1509,13 @@
   gap: var(--space-5);
   align-items: stretch;
   margin-bottom: var(--section-inner);
+  width: 100%;
+}
+
+/* grid item min-width 오버플로우 방지 */
+.meta-learned-grid .learned-card {
+  min-width: 0;
+  margin-bottom: 0;   /* meta-learned-grid 안에서는 마진 불필요 */
 }
 
 /* 케이스 출처 라벨 */
@@ -1577,6 +1584,11 @@
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-5);
   align-items: stretch;
+  width: 100%;
+}
+
+.meta-skill-detail-grid .meta-skill-detail-card {
+  min-width: 0;
 }
 
 .meta-skill-detail-card {
@@ -1628,6 +1640,11 @@
   grid-template-columns: repeat(3, 1fr);
   gap: var(--space-5);
   align-items: stretch;
+  width: 100%;
+}
+
+.project-nav-grid .project-nav-card {
+  min-width: 0;
 }
 
 .project-nav-card {
@@ -1699,6 +1716,12 @@
   transition: color 0.2s ease;
   margin-top: auto;
   align-self: flex-end;
+}
+
+/* ==================== CASES WRAPPER — sticky 범위 제한 ==================== */
+
+.cases-wrapper {
+  position: relative;   /* sticky 부모 기준 */
 }
 
 /* ==================== TAB NAVIGATION ==================== */
