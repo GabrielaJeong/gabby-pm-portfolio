@@ -289,7 +289,7 @@
   font-size: var(--fs-display);
   font-weight: var(--fw-display);
   color: var(--text-primary);
-  line-height: 1;
+  line-height: var(--lh-tight);
   letter-spacing: -0.025em;
   margin-bottom: var(--space-4);
 }
@@ -386,7 +386,7 @@
   text-align: center;
   font-size: var(--fs-sub);
   color: var(--text-tertiary);
-  line-height: 1.7;
+  line-height: var(--lh-relaxed);
 }
 
 /* ==================== PROBLEM ==================== */
@@ -519,8 +519,10 @@
   display: flex;
   flex-direction: column;
   align-items: center;
-  padding: 0;
-  background: transparent;
+  padding: var(--space-8);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
 }
 
 .phase-section-label {
@@ -528,8 +530,9 @@
   font-weight: var(--fw-caption);
   color: var(--text-tertiary);
   letter-spacing: 0.12em;
-  margin-bottom: var(--space-4);
-  align-self: flex-start;
+  margin-bottom: var(--space-5);
+  text-align: center;
+  align-self: center;
 }
 
 .phase-01-cards {
@@ -544,6 +547,7 @@
   border: 1px solid rgba(138, 136, 130, 0.35);
   border-radius: var(--radius-sm);
   padding: var(--card-padding-sm);
+  text-align: center;
 }
 
 .phase-card-label {
@@ -558,6 +562,7 @@
   font-size: 22px;
   font-weight: 600;
   color: var(--text-primary);
+  line-height: var(--lh-tight);
   margin-bottom: var(--space-1);
   letter-spacing: -0.02em;
 }
@@ -566,7 +571,7 @@
   font-size: var(--fs-caption);
   font-weight: var(--fw-body);
   color: var(--text-tertiary);
-  line-height: 1.4;
+  line-height: var(--lh-normal);
 }
 
 .phase-arrow {
@@ -603,10 +608,11 @@
   font-size: 20px;
   font-weight: 600;
   color: var(--text-primary);
+  line-height: var(--lh-tight);
 }
 
 .phase-02-box {
-  max-width: 200px;
+  max-width: 240px;
   width: 100%;
   background: rgba(245, 207, 165, 0.08);
   border: 1.5px solid var(--border-gold);
@@ -628,6 +634,7 @@
   font-size: 20px;
   font-weight: 600;
   color: var(--gold);
+  line-height: var(--lh-tight);
 }
 
 /* ==================== 인용 카드 ==================== */
@@ -724,7 +731,7 @@
   font-size: var(--fs-body);
   font-weight: var(--fw-body);
   color: var(--text-secondary);
-  line-height: 1.7;
+  line-height: var(--lh-relaxed);
   word-break: keep-all;
   overflow-wrap: break-word;
 }
