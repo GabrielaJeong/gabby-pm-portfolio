@@ -1696,7 +1696,16 @@
   padding-bottom: var(--space-16);
 }
 
-/* case-inner가 좌우 padding(var(--space-12)) 담당 */
+/* 각 행이 직접 max-width + 좌우 padding 담당 (컨테이너 의존 X) */
+.proj-nav-row {
+  max-width: var(--max-width);
+  margin-left: auto;
+  margin-right: auto;
+  padding-left: var(--space-12);
+  padding-right: var(--space-12);
+  box-sizing: border-box;
+  width: 100%;
+}
 
 .project-nav-grid {
   display: grid;
