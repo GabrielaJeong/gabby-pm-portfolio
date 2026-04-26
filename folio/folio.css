@@ -147,62 +147,20 @@ a.axis-card.doc-card:hover {
 
 /* 프레임 콘텐츠 영역 (스크린샷 또는 placeholder) */
 .live-browser-content {
-  background: #0a0a0a;
+  background: var(--bg);
   position: relative;
+  min-height: 600px;
   overflow: hidden;
 }
 
-/* 데모 스크린샷 — 자연스러운 비율로 프레임에 맞춤 */
-.live-browser-content img {
+/* iframe — 브라우저 프레임 전체 채움 */
+.live-browser-content iframe {
   width: 100%;
-  height: auto;
+  height: 100%;
+  border: 0;
   display: block;
-}
-
-/* 호버 오버레이 — 기본 숨김, 마우스 올리면 등장 */
-.live-placeholder-msg {
   position: absolute;
   inset: 0;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  gap: var(--space-5);
-  padding: var(--space-10);
-  background: rgba(0, 0, 0, 0.72);
-  text-align: center;
-  color: var(--text-tertiary);
-  opacity: 0;
-  transition: opacity 0.25s ease;
-}
-
-.live-browser-content:hover .live-placeholder-msg {
-  opacity: 1;
-}
-
-.live-placeholder-msg p {
-  font-size: var(--fs-body);
-  margin: 0;
-  word-break: keep-all;
-}
-
-.live-placeholder-cta {
-  display: inline-flex;
-  align-items: center;
-  gap: var(--space-2);
-  padding: var(--space-3) var(--space-6);
-  background: var(--gold);
-  color: #000;
-  border-radius: var(--radius-sm);
-  font-size: var(--fs-body);
-  font-weight: 600;
-  text-decoration: none;
-  transition: opacity 0.2s ease, transform 0.2s ease;
-}
-
-.live-placeholder-cta:hover {
-  opacity: 0.88;
-  transform: translateY(-1px);
 }
 
 .live-preview-note {

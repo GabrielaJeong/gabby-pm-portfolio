@@ -66,14 +66,14 @@
     </div><!-- /case-inner -->
 
     <!-- ══════════ LIVE PREVIEW (folio 차별 컴포넌트) ══════════ -->
-    <!-- iframe SAMEORIGIN 정책으로 외부 임베드 불가 → 브라우저 프레임 + 스크린샷 placeholder -->
+    <!-- CSP frame-ancestors 설정으로 포트폴리오 도메인에서 iframe 임베드 허용 -->
     <section class="live-preview-section">
       <div class="case-inner">
         <div class="case-block-header">
           <div class="block-label">LIVE PREVIEW</div>
         </div>
         <h2 class="block-title">직접 사용해보세요</h2>
-        <p class="block-sub">아래 브라우저 프레임을 클릭하거나 버튼을 눌러 라이브 데모를 체험할 수 있습니다.</p>
+        <p class="block-sub">아래 프레임에서 직접 AI 캐릭터와 대화해보세요. 새 창에서 열어도 됩니다.</p>
 
         <div class="live-browser-frame">
           <div class="live-browser-bar">
@@ -85,17 +85,16 @@
             <div class="live-browser-url">folio-charc.up.railway.app</div>
             <a href="https://folio-charc.up.railway.app/" target="_blank" rel="noopener" class="live-browser-open">새 창에서 열기 ↗</a>
           </div>
-          <a href="https://folio-charc.up.railway.app/" target="_blank" rel="noopener">
-            <div class="live-browser-content">
-              <img src="/folio/screenshot.png" alt="Folio 라이브 데모 스크린샷">
-              <div class="live-placeholder-msg">
-                <p>클릭하면 Folio 라이브 데모가 새 창에서 열립니다.<br />AI 캐릭터와 직접 대화해보세요.</p>
-                <span class="live-placeholder-cta">Open Folio →</span>
-              </div>
-            </div>
-          </a>
+          <div class="live-browser-content">
+            <iframe
+              src="https://folio-charc.up.railway.app/"
+              title="Folio 라이브 데모"
+              loading="lazy"
+              referrerpolicy="no-referrer-when-downgrade">
+            </iframe>
+          </div>
         </div>
-        <p class="live-preview-note">보안 정책(SAMEORIGIN)으로 직접 임베드는 불가. 스크린샷 이미지 추가 예정.</p>
+        <p class="live-preview-note">CSP frame-ancestors 정책으로 포트폴리오 도메인만 임베드 허용</p>
       </div>
     </section>
 
@@ -506,6 +505,10 @@
               <div class="exec-tradeoff-item">
                 <div class="exec-tradeoff-q">verifyOwnership</div>
                 <div class="exec-tradeoff-a">세션 소유권 검증 + 게스트 세션 격리</div>
+              </div>
+              <div class="exec-tradeoff-item">
+                <div class="exec-tradeoff-q">CSP frame-ancestors</div>
+                <div class="exec-tradeoff-a">포트폴리오 임베드 위해 X-Frame-Options 대신 CSP로 통합 관리 (두 헤더 동시 사용 시 충돌)</div>
               </div>
             </div>
             <div class="exec-detail-section">
