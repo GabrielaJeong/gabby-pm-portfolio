@@ -1525,10 +1525,22 @@
   width: 100%;
 }
 
-/* grid item min-width 오버플로우 방지 */
+/* grid item min-width 오버플로우 방지 + 내부 flex column */
 .meta-learned-grid .learned-card {
   min-width: 0;
-  margin-bottom: 0;   /* meta-learned-grid 안에서는 마진 불필요 */
+  margin-bottom: 0;
+  display: flex;
+  flex-direction: column;
+}
+
+/* 본문이 남은 공간 채워서 meta-source를 카드 하단으로 밀어냄 */
+.meta-learned-grid .learned-card .learned-body {
+  flex: 1;
+}
+
+/* CASE 출처 라벨 — 항상 카드 하단 고정 */
+.meta-learned-grid .meta-source {
+  margin-top: auto;
 }
 
 /* 케이스 출처 라벨 */
