@@ -5,6 +5,12 @@
    글로벌 토큰: /styles.css :root
    ======================================================== */
 
+/* ==================== WHAT 섹션 — 4열 그리드 오버라이드 ==================== */
+
+.case-section .impact-metric-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 /* ==================== PRODUCT DOCUMENTS ==================== */
 
 /* 문서 미리보기 placeholder — 스크린샷 제공 후 doc-preview-img로 교체 */
