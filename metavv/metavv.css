@@ -1152,6 +1152,12 @@
   color: var(--text-tertiary);
 }
 
+/* axis-card 태그 그룹 하단 고정 */
+.axis-card .exec-steps {
+  margin-top: auto;
+  flex-wrap: wrap;
+}
+
 /* axis-card 내 impact-metric 재사용 — 크기/여백 컨텍스트 오버라이드 */
 .axis-card .impact-metric-num {
   font-size: var(--fs-h1);           /* 56px → 32px: 카드 규모에 맞게 */
