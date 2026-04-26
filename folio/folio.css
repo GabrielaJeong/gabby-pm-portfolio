@@ -7,11 +7,11 @@
 
 /* ==================== PRODUCT DOCUMENTS ==================== */
 
-/* 문서 미리보기 placeholder 영역 — 스크린샷 제공 후 img로 교체 */
+/* 문서 미리보기 placeholder — 스크린샷 제공 후 doc-preview-img로 교체 */
 .doc-preview {
-  aspect-ratio: 4 / 3;
+  aspect-ratio: 16 / 10;
   background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--border-default);
+  border: 1px dashed var(--border-default);   /* 점선: placeholder 명시 */
   border-radius: var(--radius-md);
   display: flex;
   align-items: center;
@@ -20,15 +20,18 @@
   overflow: hidden;
   font-size: var(--fs-caption);
   color: var(--text-quaternary);
-  letter-spacing: 0.08em;
+  letter-spacing: 0.06em;
 }
 
-/* doc-preview에 실제 이미지 삽입 시 */
-.doc-preview img {
+/* 실제 스크린샷 이미지 삽입 후 (placeholder div → img 태그로 교체) */
+.doc-preview-img {
   width: 100%;
-  height: 100%;
+  aspect-ratio: 16 / 10;
   object-fit: cover;
   display: block;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  margin: var(--space-4) 0;
 }
 
 /* 문서 카드 — axis-card를 <a> 태그로 사용 시 hover 추가 */
