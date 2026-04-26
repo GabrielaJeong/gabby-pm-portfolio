@@ -1494,6 +1494,213 @@
   color: var(--text-tertiary);
 }
 
+/* ==================== META REFLECTION ==================== */
+
+.meta-reflection {
+  padding: var(--section-gap) 0;
+  border-top: 1px solid var(--border);
+  margin-top: var(--section-gap);
+}
+
+/* LEARNED 3카드 그리드 — learned-card 재사용 */
+.meta-learned-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  align-items: stretch;
+  margin-bottom: var(--section-inner);
+}
+
+/* 케이스 출처 라벨 */
+.meta-source {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-tertiary);
+  letter-spacing: 0.08em;
+  margin-top: var(--space-4);
+  padding-top: var(--space-4);
+  border-top: 1px dashed var(--border-default);
+}
+
+/* 메타 스킬 섹션 */
+.meta-skill-section {
+  margin-top: var(--section-inner);
+}
+
+.meta-skill-sub-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  letter-spacing: 0.18em;
+  margin-bottom: var(--space-3);
+}
+
+.meta-skill-title {
+  font-size: var(--fs-h2);
+  font-weight: var(--fw-h2);
+  color: var(--text-primary);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-3);
+  word-break: keep-all;
+}
+
+.meta-skill-sub {
+  font-size: 15px;
+  color: var(--text-tertiary);
+  line-height: var(--lh-relaxed);
+  margin-bottom: var(--space-6);
+  word-break: keep-all;
+}
+
+.meta-skill-card {
+  padding: var(--card-padding-lg);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  margin-bottom: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.meta-skill-card p {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+  margin: 0;
+  word-break: keep-all;
+}
+
+/* 사이드 디테일 3카드 */
+.meta-skill-detail-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  align-items: stretch;
+}
+
+.meta-skill-detail-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--card-padding-md);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.meta-skill-detail-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--card-gap-default);
+}
+
+.meta-skill-detail-title {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
+  color: var(--text-primary);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-3);
+}
+
+.meta-skill-detail-body {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+  word-break: keep-all;
+  flex: 1;
+}
+
+/* ==================== PROJECT NAVIGATION ==================== */
+
+.project-navigation {
+  padding: var(--section-gap) 0 var(--space-16);
+  border-top: 1px solid var(--border);
+  margin-top: var(--section-gap);
+}
+
+.project-nav-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  align-items: stretch;
+}
+
+.project-nav-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--card-padding-lg);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  text-align: left;
+  text-decoration: none;
+  color: inherit;
+  width: 100%;
+  box-sizing: border-box;
+  transition: border-color 0.2s ease, background 0.2s ease;
+  cursor: pointer;
+  position: relative;
+}
+
+.project-nav-card:hover {
+  border-color: var(--border-gold);
+  background: rgba(245, 207, 165, 0.04);
+}
+
+.project-nav-card:hover .project-nav-arrow {
+  color: var(--text-label-gold);
+}
+
+.project-nav-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--card-gap-default);
+}
+
+.project-nav-title {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
+  color: var(--text-primary);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-3);
+}
+
+.project-nav-summary {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+  word-break: keep-all;
+  flex: 1;
+  margin-bottom: var(--space-4);
+}
+
+.project-nav-divider {
+  height: 1px;
+  background: var(--border-default);
+  margin-bottom: var(--space-4);
+}
+
+.project-nav-metric {
+  font-size: var(--fs-sub);
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-4);
+}
+
+.project-nav-arrow {
+  font-size: var(--fs-body);
+  color: var(--text-quaternary);
+  transition: color 0.2s ease;
+  margin-top: auto;
+  align-self: flex-end;
+}
+
 /* ==================== TAB NAVIGATION ==================== */
 
 .case-tab-nav {
