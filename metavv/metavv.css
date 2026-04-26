@@ -157,7 +157,7 @@
   color: var(--text-primary);
   letter-spacing: -0.025em;
   line-height: var(--lh-snug);
-  margin: 0 0 var(--space-8);   /* sub 없어도 카드와 32px 간격 보장 */
+  margin: 0 0 var(--space-2);
 }
 
 .case-section-title .accent {
@@ -179,7 +179,7 @@
   color: var(--text-primary);
   letter-spacing: -0.025em;
   line-height: var(--lh-snug);
-  margin: 0 0 var(--space-8);   /* sub 없어도 카드와 32px 간격 보장 */
+  margin: 0 0 var(--space-2);
 }
 
 .block-title .accent {
@@ -192,6 +192,13 @@
   color: var(--text-tertiary);
   line-height: var(--lh-relaxed);
   margin: 0 0 var(--space-8);   /* 32px */
+}
+
+/* 빈 더미 sub — 높이 0, margin만 유지 (sub 없는 h2 아래 간격용) */
+.block-sub:empty,
+.case-section-sub:empty {
+  font-size: 0;
+  line-height: 0;
 }
 
 /* ── 탭 내 서브섹션 라벨 (case-block-header 안) ── */
