@@ -1569,6 +1569,7 @@
 /* 본문이 남은 공간 채워서 meta-source를 카드 하단으로 밀어냄 */
 .meta-learned-grid .learned-card .learned-body {
   flex: 1;
+  margin-bottom: var(--space-5);   /* 점선 위 여백 보장 */
 }
 
 /* CASE 출처 라벨 — 항상 카드 하단 고정 */
