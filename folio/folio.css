@@ -5,6 +5,23 @@
    글로벌 토큰: /styles.css :root
    ======================================================== */
 
+/* ==================== exec-phase-detail 내부 간격 ==================== */
+
+/* exec-detail 자유 라벨 → 콘텐츠 */
+.exec-phase-detail > .exec-detail-label {
+  margin-bottom: var(--space-3);
+}
+
+/* exec-steps 태그 행 → 다음 콘텐츠 */
+.exec-phase-detail .exec-steps {
+  margin-bottom: var(--space-5);
+}
+
+/* exec-detail-section 내부 라벨 */
+.exec-detail-section .exec-detail-label {
+  margin-bottom: var(--space-3);
+}
+
 /* ==================== WHAT 섹션 — 4열 그리드 오버라이드 ==================== */
 
 .case-section .impact-metric-grid {
