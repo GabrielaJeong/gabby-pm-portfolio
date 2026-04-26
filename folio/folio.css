@@ -200,13 +200,18 @@ a.axis-card.doc-card:hover {
   background: rgba(245, 207, 165, 0.03);
 }
 
+/* folio — case-section border-bottom 제거 (KEY DECISIONS border-top이 구분선 역할) */
+.case-section {
+  border-bottom: none;
+}
+
 /* KEY DECISIONS 섹션 — case-section에 execution 배경 적용 */
 .case-section[data-section="execution"] {
   margin-left: calc(-1 * var(--space-12));
   margin-right: calc(-1 * var(--space-12));
   padding-left: var(--space-12);
   padding-right: var(--space-12);
-  padding-top: var(--space-12);
+  padding-top: var(--section-gap);
   padding-bottom: var(--space-12);
   border-top: 1px solid var(--border-default);
   border-bottom: 1px solid var(--border-default);
