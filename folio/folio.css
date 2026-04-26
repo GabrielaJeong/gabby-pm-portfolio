@@ -114,7 +114,6 @@ a.axis-card.doc-card:hover {
 /* ==================== LIVE PREVIEW 섹션 ==================== */
 
 .live-preview-section {
-  border-top: 1px solid var(--border-default);
   padding: var(--section-gap) 0;
   margin-top: var(--section-gap);
 }
