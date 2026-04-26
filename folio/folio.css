@@ -81,7 +81,6 @@ a.axis-card.doc-card:hover {
 /* ==================== LIVE PREVIEW 섹션 ==================== */
 
 .live-preview-section {
-  background: rgba(255, 255, 255, 0.015);
   border-top: 1px solid var(--border-default);
   border-bottom: 1px solid var(--border-default);
   padding: var(--section-gap) 0;
@@ -194,7 +193,6 @@ a.axis-card.doc-card:hover {
   padding-right: var(--space-12);
   padding-top: var(--space-12);
   padding-bottom: var(--space-12);
-  background: rgba(255, 255, 255, 0.03);
   border-top: 1px solid var(--border-default);
   border-bottom: 1px solid var(--border-default);
 }
@@ -202,7 +200,6 @@ a.axis-card.doc-card:hover {
 /* ==================== DESIGN SYSTEM 섹션 ==================== */
 
 .ds-section {
-  background: rgba(255, 255, 255, 0.015);
   border-top: 1px solid var(--border-default);
   border-bottom: 1px solid var(--border-default);
   padding: var(--section-gap) 0;
