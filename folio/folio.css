@@ -269,7 +269,6 @@ a.axis-card.doc-card:hover {
 
 .ds-section {
   border-top: 1px solid var(--border-default);
-  border-bottom: 1px solid var(--border-default);
   padding: var(--section-gap) 0;
   margin-top: var(--section-gap);
 }
