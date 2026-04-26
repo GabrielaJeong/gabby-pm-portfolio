@@ -1,23 +1,11 @@
 // ==================== FOLIO CASE STUDY · JS ====================
+// KEY DECISIONS: expand-toggle.js의 initExpandCards 재사용
+// IMPACT 카드: div (항상 펼쳐진 상태, 토글 없음)
 
 (function () {
   'use strict';
 
-  // 메트릭 카드 토글
-  document.querySelectorAll('.impact-metric-card').forEach(function (card) {
-    card.addEventListener('click', function () {
-      var expanded = card.getAttribute('aria-expanded') === 'true';
-      card.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-    });
-  });
-
-  // KEY DECISIONS 펼침/접힘
-  document.querySelectorAll('.key-decision-card').forEach(function (card) {
-    var btn = card.querySelector('.key-decision-toggle');
-    if (!btn) return;
-    btn.addEventListener('click', function () {
-      var expanded = card.getAttribute('aria-expanded') === 'true';
-      card.setAttribute('aria-expanded', expanded ? 'false' : 'true');
-    });
-  });
+  if (window.initExpandCards) {
+    initExpandCards('.exec-phase-card', { firstOpen: true });
+  }
 })();

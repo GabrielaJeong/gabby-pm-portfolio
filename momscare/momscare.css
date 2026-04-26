@@ -84,53 +84,7 @@
   text-align: center;
 }
 
-/* ==================== PROBLEM 카드 (재사용 from bgyk 패턴) ==================== */
-
-.problem-grid {
-  display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-5);
-  align-items: stretch;
-  width: 100%;
-}
-
-.problem-card {
-  display: flex;
-  flex-direction: column;
-  padding: var(--card-padding-lg);
-  background: rgba(255, 255, 255, 0.02);
-  border: 1px solid var(--border-default);
-  border-radius: var(--radius-md);
-  text-align: left;
-  width: 100%;
-  box-sizing: border-box;
-  min-width: 0;
-}
-
-.problem-card-num {
-  font-size: var(--fs-caption);
-  font-weight: var(--fw-caption);
-  color: var(--text-label-gold);
-  letter-spacing: 0.08em;
-  margin-bottom: var(--card-gap-default);
-}
-
-.problem-card-title {
-  font-size: var(--fs-h3);
-  font-weight: var(--fw-h3);
-  color: var(--text-primary);
-  line-height: var(--lh-snug);
-  margin-bottom: var(--space-3);
-  word-break: keep-all;
-}
-
-.problem-card-body {
-  font-size: var(--fs-body);
-  color: var(--text-secondary);
-  line-height: var(--lh-normal);
-  flex: 1;
-  word-break: keep-all;
-}
+/* PROBLEM: axis-grid + axis-card (metavv.css)로 대체됨 */
 
 /* ==================== 협업 타임라인 ==================== */
 
@@ -286,24 +240,9 @@
   font-style: italic;
 }
 
-/* ==================== MOMSCARE REFLECTION ==================== */
+/* MOMSCARE REFLECTION: meta-reflection (metavv.css)으로 대체됨 */
 
-.momscare-reflection-section {
-  max-width: var(--max-width);
-  margin: calc(var(--section-gap) * 1.5) auto 0;
-  padding: calc(var(--section-gap) * 1.5) var(--space-12) var(--section-gap);
-  border-top: 2px solid var(--border-strong);
-  background: var(--bg);
-  box-sizing: border-box;
-}
-
-.momscare-reflection-section .case-section-label {
-  font-size: var(--fs-body);
-  letter-spacing: 0.18em;
-  color: var(--text-label-gold);
-}
-
-.momscare-reflection-section .case-section-title {
-  font-size: 44px;
-  letter-spacing: -0.03em;
+/* collab-phase-result가 collab-wip-note 다음에 올 때 간격 확보 */
+.collab-wip-note + .collab-phase-result {
+  margin-top: var(--space-4);
 }
