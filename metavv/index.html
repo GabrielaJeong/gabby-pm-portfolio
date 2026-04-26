@@ -553,68 +553,66 @@
           <h2 class="block-title">각 축마다 검증과 실행을 거쳤습니다</h2>
           <p class="block-sub">12개월 동안 3축을 단계적으로 도입하며 안정화</p>
 
-          <!-- Phase 1 카드 — 의사결정 흐름도 시안 (PHASE 2·3 검토 후 동일 패턴 적용 예정) -->
-          <div class="exec-phase-card" data-dflow>
+          <!-- Phase 1 카드 -->
+          <div class="exec-phase-card" role="button" tabindex="0" aria-expanded="false">
+            <button class="exec-phase-toggle" aria-hidden="true" tabindex="-1">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><polyline points="4 6 8 10 12 6"/></svg>
+            </button>
             <div class="exec-phase-header">
               <div class="exec-phase-label">PHASE 1 · 1~3개월</div>
               <div class="exec-phase-title">요금제 인상</div>
             </div>
             <div class="exec-phase-summary">WTP 인터뷰 결과를 바탕으로 Plus 6.5배 인상, 결제량 유지를 확인했습니다.</div>
+            <div class="exec-phase-detail" data-expand-detail>
+              <div class="dflow">
 
-            <!-- 의사결정 흐름도 -->
-            <div class="dflow" data-reveal>
+                <div class="dflow-node">
+                  <div class="dflow-label">SIGNAL</div>
+                  <div class="dflow-content">트래픽 vs 비용 회수율 2%</div>
+                  <div class="dflow-sub">지속 손실 구조 — 사용자가 늘수록 적자 심화</div>
+                </div>
 
-              <!-- STEP 1: SIGNAL -->
-              <div class="dflow-node">
-                <div class="dflow-label">SIGNAL</div>
-                <div class="dflow-content">트래픽 vs 비용 회수율 2%</div>
-                <div class="dflow-sub">지속 손실 구조 — 사용자가 늘수록 적자 심화</div>
-              </div>
+                <div class="dflow-arrow" aria-hidden="true">↓</div>
 
-              <div class="dflow-arrow" aria-hidden="true">↓</div>
+                <div class="dflow-node">
+                  <div class="dflow-label">VALIDATION</div>
+                  <div class="dflow-content">WTP 인터뷰 5건</div>
+                  <div class="dflow-sub">"기능 대비 가격이 너무 저렴하다" — 응답 반복</div>
+                </div>
 
-              <!-- STEP 2: VALIDATION -->
-              <div class="dflow-node">
-                <div class="dflow-label">VALIDATION</div>
-                <div class="dflow-content">WTP 인터뷰 5건</div>
-                <div class="dflow-sub">"기능 대비 가격이 너무 저렴하다" — 응답 반복</div>
-              </div>
+                <div class="dflow-arrow" aria-hidden="true">↓</div>
 
-              <div class="dflow-arrow" aria-hidden="true">↓</div>
-
-              <!-- STEP 3: DECISION BRANCH (exec-detail 클래스 재사용) -->
-              <div class="dflow-branch">
-                <div class="dflow-label">DECISION</div>
-                <div class="exec-detail-row">
-                  <div class="exec-detail-option">
-                    <div class="exec-detail-option-label">V1 — 보수적 안</div>
-                    <div class="exec-detail-option-body">Pro만 인상, Plus 동결. 리스크 최소화.</div>
-                  </div>
-                  <div class="exec-detail-option exec-detail-option--selected">
-                    <div class="exec-detail-option-label">V2 — 채택 ✓</div>
-                    <div class="exec-detail-option-body">Plus 6.5×, Pro 동결. 결제 90%가 Plus 집중 → 가격 간극 조정 필요.</div>
+                <div class="dflow-branch">
+                  <div class="dflow-label">DECISION</div>
+                  <div class="exec-detail-row">
+                    <div class="exec-detail-option">
+                      <div class="exec-detail-option-label">V1 — 보수적 안</div>
+                      <div class="exec-detail-option-body">Pro만 인상, Plus 동결. 리스크 최소화.</div>
+                    </div>
+                    <div class="exec-detail-option exec-detail-option--selected">
+                      <div class="exec-detail-option-label">V2 — 채택 ✓</div>
+                      <div class="exec-detail-option-body">Plus 6.5×, Pro 동결. 결제 90%가 Plus 집중 → 가격 간극 조정 필요.</div>
+                    </div>
                   </div>
                 </div>
+
+                <div class="dflow-arrow" aria-hidden="true">↓</div>
+
+                <div class="dflow-node">
+                  <div class="dflow-label">EXECUTION</div>
+                  <div class="dflow-content">한 번에 인상 결정</div>
+                  <div class="dflow-sub">단계적 인상 = 매번 재협상 부담 + 검증 시그널 흐려짐</div>
+                </div>
+
+                <div class="dflow-arrow" aria-hidden="true">↓</div>
+
+                <div class="dflow-node dflow-node--result">
+                  <div class="dflow-label">RESULT</div>
+                  <div class="dflow-content">결제량 유지 — 월 매출 15만 → 20~30만 원</div>
+                  <div class="dflow-sub">1~3개월 · Plus·Pro 이탈 없음</div>
+                </div>
+
               </div>
-
-              <div class="dflow-arrow" aria-hidden="true">↓</div>
-
-              <!-- STEP 4: EXECUTION -->
-              <div class="dflow-node">
-                <div class="dflow-label">EXECUTION</div>
-                <div class="dflow-content">한 번에 인상 결정</div>
-                <div class="dflow-sub">단계적 인상 = 매번 재협상 부담 + 검증 시그널 흐려짐</div>
-              </div>
-
-              <div class="dflow-arrow" aria-hidden="true">↓</div>
-
-              <!-- STEP 5: RESULT -->
-              <div class="dflow-node dflow-node--result">
-                <div class="dflow-label">RESULT</div>
-                <div class="dflow-content">결제량 유지 — 월 매출 15만 → 20~30만 원</div>
-                <div class="dflow-sub">1~3개월 · Plus·Pro 이탈 없음</div>
-              </div>
-
             </div>
           </div>
 
@@ -628,80 +626,60 @@
               <div class="exec-phase-title">엔터프라이즈 B2B 도입</div>
             </div>
             <div class="exec-phase-summary">수익 다각화와 마케터 인지도 확보를 동시에 노린 B2B 모델을 설계했습니다.</div>
-            <div class="exec-metrics">
-              <div class="exec-metric">
-                <div class="exec-metric-label">프로젝트 수</div>
-                <div class="exec-metric-num">11건</div>
-                <div class="exec-metric-sub">9개 브랜드</div>
-              </div>
-              <div class="exec-metric">
-                <div class="exec-metric-label">프로젝트당</div>
-                <div class="exec-metric-num">300~</div>
-                <div class="exec-metric-sub">1,800만원</div>
-              </div>
-              <div class="exec-metric">
-                <div class="exec-metric-label">제작 기간</div>
-                <div class="exec-metric-num">3~6주</div>
-                <div class="exec-metric-sub">납품 기준</div>
-              </div>
-            </div>
-            <!-- 클라이언트 그리드 — 접힌 상태에서도 항상 노출 -->
-            <div class="client-grid">
-              <!-- TODO: replace text with simpleicons SVG logos -->
-              <div class="client-item">디즈니플러스</div>
-              <div class="client-item">티빙</div>
-              <div class="client-item">토스</div>
-              <div class="client-item">스타벅스</div>
-              <div class="client-item">롯데백화점</div>
-              <div class="client-item">현대자동차</div>
-              <div class="client-item">포미버즈</div>
-              <div class="client-item">환경재단</div>
-              <div class="client-item">르르르</div>
-            </div>
-            <div class="client-grid-caption">+ 그 외 다수의 브랜드와 협업</div>
             <div class="exec-phase-detail" data-expand-detail>
-              <div class="exec-detail-section">
-                <div class="exec-detail-label">도입 동기 (2축)</div>
-                <div class="exec-detail-body">수익 다각화 — SaaS 직접 결제 외 별도 수익축 확보. 마케터 인지도 상승 — 스튜디오 유입 간접 경로 확보. 두 동기가 같은 채널에서 동시에 해결됩니다.</div>
-              </div>
-              <div class="exec-detail-section">
-                <div class="exec-detail-label">인입 경로 3축</div>
-                <div class="exec-tradeoff-list">
-                  <div class="exec-tradeoff-item">
-                    <div class="exec-tradeoff-q">인바운드</div>
-                    <div class="exec-tradeoff-a">메타브 콘텐츠·엔터프라이즈 결과물을 보고 연락한 회사</div>
-                  </div>
-                  <div class="exec-tradeoff-item">
-                    <div class="exec-tradeoff-q">방구석연구소 전환</div>
-                    <div class="exec-tradeoff-a">본사 인입 콘텐츠 중 급건·예산 부족 건을 메타브 엔터프라이즈로 전환</div>
-                  </div>
-                  <div class="exec-tradeoff-item">
-                    <div class="exec-tradeoff-q">자체 영업</div>
-                    <div class="exec-tradeoff-a">콜드 아웃바운드, 경영진 네트워크 활용</div>
+              <div class="dflow">
+
+                <div class="dflow-node">
+                  <div class="dflow-label">SIGNAL</div>
+                  <div class="dflow-content">직접 결제(SaaS) 수익만으로 인프라 비용 회수 불가</div>
+                  <div class="dflow-sub">별도 수익축 필요 — 수익 다각화 + 마케터 인지도 확보 동시 필요</div>
+                </div>
+
+                <div class="dflow-arrow" aria-hidden="true">↓</div>
+
+                <div class="dflow-node">
+                  <div class="dflow-label">VALIDATION</div>
+                  <div class="dflow-content">인바운드 문의 + 방구석연구소 B2B 전환 가능성 확인</div>
+                  <div class="dflow-sub">메타브 결과물 보고 연락한 기업 존재 → B2B 시장 수요 확인</div>
+                </div>
+
+                <div class="dflow-arrow" aria-hidden="true">↓</div>
+
+                <!-- DECISION — 단일 결정 노드 (V1/V2 분기 정보 추가 필요) -->
+                <div class="dflow-node">
+                  <div class="dflow-label">DECISION</div>
+                  <div class="dflow-content">프리랜서-기업 매칭 엔터프라이즈 모델 채택</div>
+                  <div class="dflow-sub">수익 다각화 + 마케터 인지도 — 동일 채널에서 동시 해결 가능</div>
+                </div>
+
+                <div class="dflow-arrow" aria-hidden="true">↓</div>
+
+                <div class="dflow-node">
+                  <div class="dflow-label">EXECUTION</div>
+                  <div class="dflow-content">7단계 수주·제작 프로세스 표준화</div>
+                  <div class="dflow-sub">
+                    <div class="exec-steps" style="margin-top: var(--space-2)">
+                      <span class="exec-step">1차 기획안</span>
+                      <span class="exec-step-arrow">→</span>
+                      <span class="exec-step">최종 기획안</span>
+                      <span class="exec-step-arrow">→</span>
+                      <span class="exec-step">2차 디자인</span>
+                      <span class="exec-step-arrow">→</span>
+                      <span class="exec-step">최종 디자인</span>
+                      <span class="exec-step-arrow">→</span>
+                      <span class="exec-step">오픈</span>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="exec-detail-section">
-                <div class="exec-detail-label">7단계 프로세스</div>
-                <div class="exec-steps">
-                  <span class="exec-step">1차 기획안</span>
-                  <span class="exec-step-arrow">→</span>
-                  <span class="exec-step">2차 기획안</span>
-                  <span class="exec-step-arrow">→</span>
-                  <span class="exec-step">최종 기획안</span>
-                  <span class="exec-step-arrow">→</span>
-                  <span class="exec-step">2차 디자인</span>
-                  <span class="exec-step-arrow">→</span>
-                  <span class="exec-step">최종 디자인</span>
-                  <span class="exec-step-arrow">→</span>
-                  <span class="exec-step">가오픈</span>
-                  <span class="exec-step-arrow">→</span>
-                  <span class="exec-step">오픈</span>
+
+                <div class="dflow-arrow" aria-hidden="true">↓</div>
+
+                <div class="dflow-node dflow-node--result">
+                  <div class="dflow-label">RESULT</div>
+                  <div class="dflow-content">11건 수주, 9개 브랜드 (디즈니플러스·티빙·토스·스타벅스 등)</div>
+                  <div class="dflow-sub">건당 300~1,800만원 · 확산 플랜 별도 200만원~</div>
                 </div>
-              </div>
-              <div class="exec-detail-section">
-                <div class="exec-detail-label">가격 구조</div>
-                <div class="exec-detail-body">콘텐츠 수준·매칭 크리에이터에 따라 300~1,800만원. 확산 플랜 별도 200만원~(인스타/X 페이드 + 인플루언서). 300만원 이상은 카카오톡 비즈보드·틱톡·유튜브 믹스.</div>
+
               </div>
             </div>
           </div>
@@ -716,61 +694,55 @@
               <div class="exec-phase-title">리워드 광고 도입</div>
             </div>
             <div class="exec-phase-summary">무료 트래픽을 비용에서 수익원으로 전환하고, Pro 업셀과 연계했습니다.</div>
-            <div class="exec-metrics">
-              <div class="exec-metric">
-                <div class="exec-metric-label">광고 위치</div>
-                <div class="exec-metric-num">결과 직전</div>
-                <div class="exec-metric-sub">이탈률 최소화</div>
-              </div>
-              <div class="exec-metric">
-                <div class="exec-metric-label">Pro 차별화</div>
-                <div class="exec-metric-num">광고 제거</div>
-                <div class="exec-metric-sub">업셀 연계</div>
-              </div>
-              <div class="exec-metric">
-                <div class="exec-metric-label">트래픽 전환</div>
-                <div class="exec-metric-num">비용→자산</div>
-                <div class="exec-metric-sub">수익화 구조</div>
-              </div>
-            </div>
             <div class="exec-phase-detail" data-expand-detail>
-              <div class="exec-detail-section">
-                <div class="exec-detail-label">광고 위치 트레이드오프</div>
-                <div class="exec-detail-row">
-                  <div class="exec-detail-option">
-                    <div class="exec-detail-option-label">인트로 노출</div>
-                    <div class="exec-detail-option-body">CPM 높음 / 이탈률 높음</div>
-                  </div>
-                  <div class="exec-detail-option exec-detail-option--selected">
-                    <div class="exec-detail-option-label">결과 직전 노출 ✓</div>
-                    <div class="exec-detail-option-body">CPM 낮음 / 이탈률 낮음 + 시청 선택 확률 높음 + 결과 앞 브릿지 페이지 구현</div>
+              <div class="dflow">
+
+                <div class="dflow-node">
+                  <div class="dflow-label">SIGNAL</div>
+                  <div class="dflow-content">월 30만 UV 무료 트래픽이 서버 비용만 늘리는 구조</div>
+                  <div class="dflow-sub">트래픽 = 손실 — 수익화 구조 전환 필요</div>
+                </div>
+
+                <div class="dflow-arrow" aria-hidden="true">↓</div>
+
+                <div class="dflow-node">
+                  <div class="dflow-label">VALIDATION</div>
+                  <div class="dflow-content">광고 위치별 트레이드오프 분석</div>
+                  <div class="dflow-sub">인트로: CPM 높음, 이탈 높음 / 결과 직전: CPM 낮음, 이탈 낮음 + 시청 선택 확률 높음</div>
+                </div>
+
+                <div class="dflow-arrow" aria-hidden="true">↓</div>
+
+                <div class="dflow-branch">
+                  <div class="dflow-label">DECISION</div>
+                  <div class="exec-detail-row">
+                    <div class="exec-detail-option">
+                      <div class="exec-detail-option-label">V1 — 인트로 노출</div>
+                      <div class="exec-detail-option-body">CPM 높음 / 이탈률 높음</div>
+                    </div>
+                    <div class="exec-detail-option exec-detail-option--selected">
+                      <div class="exec-detail-option-label">V2 — 결과 직전 노출 ✓</div>
+                      <div class="exec-detail-option-body">CPM 낮음 / 이탈률 낮음 + 시청 선택 확률 높음 + 브릿지 페이지 구현</div>
+                    </div>
                   </div>
                 </div>
-              </div>
-              <div class="exec-detail-section">
-                <div class="exec-detail-label">광고 네트워크 선정 과정</div>
-                <div class="exec-tradeoff-list">
-                  <div class="exec-tradeoff-item">
-                    <div class="exec-tradeoff-q">1차 시도 — 쿠팡 CPS</div>
-                    <div class="exec-tradeoff-a">고도화 시도 → 정책 제한으로 진행 불가</div>
-                  </div>
-                  <div class="exec-tradeoff-item">
-                    <div class="exec-tradeoff-q">2차 검토 → 채택</div>
-                    <div class="exec-tradeoff-a">4개 광고 네트워크 미팅 진행. 구글 애드센스 + 넥스트페이퍼(미디어렙) 채택.</div>
-                  </div>
+
+                <div class="dflow-arrow" aria-hidden="true">↓</div>
+
+                <div class="dflow-node">
+                  <div class="dflow-label">EXECUTION</div>
+                  <div class="dflow-content">광고 네트워크 선정 — 4개 미팅 → 구글 애드센스 + 넥스트페이퍼 채택</div>
+                  <div class="dflow-sub">1차 쿠팡 CPS → 정책 제한 불가 → 최적 조합 채택</div>
                 </div>
-              </div>
-              <div class="exec-detail-section">
-                <div class="exec-detail-label">광고 시스템 4개 컴포넌트</div>
-                <div class="exec-steps">
-                  <span class="exec-step">결과 앞 브릿지 페이지</span>
-                  <span class="exec-step-arrow">+</span>
-                  <span class="exec-step">Pro 광고 제거</span>
-                  <span class="exec-step-arrow">+</span>
-                  <span class="exec-step">에디터 내 ON/OFF</span>
-                  <span class="exec-step-arrow">+</span>
-                  <span class="exec-step">업셀 플로우 연결</span>
+
+                <div class="dflow-arrow" aria-hidden="true">↓</div>
+
+                <div class="dflow-node dflow-node--result">
+                  <div class="dflow-label">RESULT</div>
+                  <div class="dflow-content">무료 트래픽 → 수익원 전환 완료</div>
+                  <div class="dflow-sub">Pro 업셀 연계 (광고 미노출 특권) + 에디터 내 ON/OFF + 업셀 플로우 연결</div>
                 </div>
+
               </div>
             </div>
           </div>

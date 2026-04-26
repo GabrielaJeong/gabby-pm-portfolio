@@ -1265,15 +1265,12 @@
   padding-bottom: var(--space-8);   /* 기존 64px(토글용) 해제 */
 }
 
-/* 흐름도 컨테이너 */
+/* 흐름도 컨테이너 — exec-phase-detail::before가 상단 구분선 담당 */
 .dflow {
   display: flex;
   flex-direction: column;
   align-items: center;
   gap: var(--space-3);
-  margin-top: var(--space-6);
-  padding-top: var(--space-6);
-  border-top: 1px dashed var(--border-default);
   width: 100%;
 }
 
