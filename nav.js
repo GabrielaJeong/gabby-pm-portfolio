@@ -34,7 +34,7 @@
           '</li>',
           '<li><a href="/#contact">Contact</a></li>',
         '</ul>',
-        '<a href="/resume.pdf" class="nav-cta" target="_blank" rel="noopener">Resume</a>',
+        '<a href="/assets/resume.pdf" class="nav-cta" target="_blank" rel="noopener">Resume</a>',
         '<button class="nav-hamburger" aria-label="메뉴 열기" id="hamburger">',
           '<span></span><span></span><span></span>',
         '</button>',
@@ -54,7 +54,7 @@
           '</div>',
         '</div>',
         '<a href="/#contact">Contact</a>',
-        '<a href="/resume.pdf" class="drawer-cta" target="_blank" rel="noopener">Resume</a>',
+        '<a href="/assets/resume.pdf" class="drawer-cta" target="_blank" rel="noopener">Resume</a>',
       '</div>',
     '</nav>',
   ].join('');
