@@ -594,7 +594,7 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-8);
-  align-items: flex-start;
+  align-items: stretch;
 }
 
 .discovery-right {
