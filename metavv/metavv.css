@@ -44,9 +44,9 @@
 /* ==================== HERO ==================== */
 
 .case-hero {
-  padding: var(--space-8) 0 var(--space-16);
+  padding: var(--space-8) 0 var(--space-8);
   border-bottom: 1px solid var(--border);
-  margin-bottom: 100px;
+  margin-bottom: var(--space-16);
 }
 
 /* ── Scroll Indicator ── */
@@ -387,7 +387,7 @@
   overflow-wrap: break-word;
   padding-top: var(--space-4);
   border-top: 1px dashed var(--border-default);
-  margin-top: auto;
+  margin-top: var(--space-4);
 }
 
 /* ==================== CONTEXT ==================== */
@@ -1112,7 +1112,7 @@
 .exec-phase-card {
   position: relative;
   padding: var(--card-padding-lg);
-  padding-right: 52px;
+  padding-bottom: 64px;           /* 하단 화살표 공간 */
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-lg);
@@ -1139,10 +1139,11 @@
 
 .exec-phase-toggle {
   position: absolute;
-  top: var(--space-6);
-  right: var(--space-7);
-  width: 28px;
-  height: 28px;
+  bottom: var(--space-5);         /* 하단에서 20px */
+  left: 50%;
+  transform: translateX(-50%);
+  width: 32px;
+  height: 32px;
   display: flex;
   align-items: center;
   justify-content: center;
@@ -1150,11 +1151,16 @@
   border: none;
   color: var(--text-tertiary);
   pointer-events: none;
-  padding: 0;
+  padding: var(--space-2);
+  transition: color 0.2s ease;
 }
 
 .exec-phase-toggle svg {
-  transition: transform 0.3s ease, color 0.2s ease;
+  transition: transform 0.3s ease;
+}
+
+.exec-phase-card:hover .exec-phase-toggle {
+  color: var(--text-secondary);
 }
 
 .exec-phase-card[aria-expanded="true"] .exec-phase-toggle {
@@ -1235,9 +1241,15 @@
 
 /* 펼침 영역 — max-height 는 expand-toggle.js 가 인라인으로 제어 */
 .exec-phase-detail {
-  margin-top: var(--space-6);
-  padding-top: var(--space-6);
+  overflow: hidden;               /* JS도 동일하게 설정; ::before 클리핑 보장 */
+  margin-top: 0;                  /* 접힌 상태에서 빈 공간 생기지 않도록 */
+}
+
+.exec-phase-detail::before {
+  content: '';
+  display: block;
   border-top: 1px dashed var(--border-default);
+  margin: var(--space-6) 0 var(--space-6);  /* 구분선 위아래 여백, 요소 내부에 있어 접힘 시 함께 숨김 */
 }
 
 .exec-detail-section {
