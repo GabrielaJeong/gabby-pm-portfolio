@@ -149,29 +149,44 @@ a.axis-card.doc-card:hover {
 .live-browser-content {
   background: #0a0a0a;
   min-height: 480px;
-  display: flex;
-  align-items: center;
-  justify-content: center;
-  flex-direction: column;
-  gap: var(--space-5);
-  padding: var(--space-10);
+  position: relative;
+  overflow: hidden;
 }
 
+/* 데모 스크린샷 — 프레임 전체 채움 */
 .live-browser-content img {
   width: 100%;
-  height: auto;
+  height: 100%;
+  object-fit: cover;
   display: block;
+  position: absolute;
+  inset: 0;
 }
 
-/* 스크린샷 없을 때 placeholder */
+/* 호버 오버레이 — 기본 숨김, 마우스 올리면 등장 */
 .live-placeholder-msg {
+  position: absolute;
+  inset: 0;
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-5);
+  padding: var(--space-10);
+  background: rgba(0, 0, 0, 0.72);
   text-align: center;
   color: var(--text-tertiary);
+  opacity: 0;
+  transition: opacity 0.25s ease;
+}
+
+.live-browser-content:hover .live-placeholder-msg {
+  opacity: 1;
 }
 
 .live-placeholder-msg p {
   font-size: var(--fs-body);
-  margin: 0 0 var(--space-5);
+  margin: 0;
   word-break: keep-all;
 }
 
