@@ -157,7 +157,7 @@
   color: var(--text-primary);
   letter-spacing: -0.025em;
   line-height: var(--lh-snug);
-  margin: 0 0 var(--space-2);
+  margin: 0 0 var(--space-8);   /* sub 없어도 카드와 32px 간격 보장 */
 }
 
 .case-section-title .accent {
@@ -179,7 +179,7 @@
   color: var(--text-primary);
   letter-spacing: -0.025em;
   line-height: var(--lh-snug);
-  margin: 0 0 var(--space-2);
+  margin: 0 0 var(--space-8);   /* sub 없어도 카드와 32px 간격 보장 */
 }
 
 .block-title .accent {
