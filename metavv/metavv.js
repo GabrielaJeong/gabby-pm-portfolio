@@ -164,3 +164,66 @@
     init();
   }
 })();
+
+// ==================== CASE TAB NAVIGATION + URL HASH ROUTING ====================
+(function setupCaseTabs() {
+  'use strict';
+
+  const tabs     = document.querySelectorAll('.case-tab');
+  const contents = document.querySelectorAll('.case-content');
+  const tabNav   = document.querySelector('.case-tab-nav');
+  const VALID_TABS = ['revenue', 'cs', 'zero-to-one'];
+
+  if (!tabs.length || !contents.length) return;
+
+  // 탭 활성화
+  function activateTab(tabName, options) {
+    var scroll = options && options.scroll !== undefined ? options.scroll : true;
+
+    // 탭 aria-selected 갱신
+    tabs.forEach(function (tab) {
+      tab.setAttribute('aria-selected', tab.dataset.tab === tabName ? 'true' : 'false');
+    });
+
+    // 콘텐츠 show / hide
+    contents.forEach(function (content) {
+      if (content.dataset.case === tabName) {
+        content.removeAttribute('hidden');
+      } else {
+        content.setAttribute('hidden', '');
+      }
+    });
+
+    // 탭 네비 바로 아래로 smooth scroll
+    if (scroll && tabNav) {
+      var navOffset = tabNav.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({ top: navOffset, behavior: 'smooth' });
+    }
+  }
+
+  // 탭 클릭
+  tabs.forEach(function (tab) {
+    tab.addEventListener('click', function (e) {
+      e.preventDefault();
+      var tabName = tab.dataset.tab;
+      history.pushState(null, '', '#' + tabName);
+      activateTab(tabName, { scroll: true });
+    });
+  });
+
+  // 해시 기반 초기화 (새로고침 / 링크 공유 대응)
+  function handleHash() {
+    var hash = window.location.hash.replace('#', '');
+    if (VALID_TABS.indexOf(hash) !== -1) {
+      activateTab(hash, { scroll: false });
+    } else {
+      activateTab('revenue', { scroll: false });
+    }
+  }
+
+  // 뒤로가기 / 앞으로가기 대응
+  window.addEventListener('popstate', handleHash);
+
+  // 초기 실행
+  handleHash();
+})();

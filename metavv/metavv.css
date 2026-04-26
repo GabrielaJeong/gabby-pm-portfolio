@@ -868,19 +868,107 @@
   transition: color 0.2s ease;
 }
 
-/* ==================== Placeholder ==================== */
+/* ==================== TAB NAVIGATION ==================== */
 
-.case-next-placeholder {
-  padding: 80px var(--space-10);
-  background: var(--surface);
-  border: 1px dashed var(--border);
-  border-radius: var(--radius-card);
-  text-align: center;
-  color: var(--text-tertiary);
-  font-size: var(--fs-sub);
-  letter-spacing: 0.05em;
+.case-tab-nav {
+  position: sticky;
+  top: 80px;                            /* 글로벌 네비 높이 (case-main padding-top 기준) */
+  z-index: 50;
+  background: var(--bg);
+  border-bottom: 1px solid var(--border-default);
+  padding: var(--space-4) 0;
+  margin-top: var(--section-gap);
+  display: flex;
+  gap: var(--space-2);
 }
 
-.case-next-placeholder p {
+.case-tab {
+  padding: var(--space-3) var(--space-5);
+  border-radius: var(--radius-md);
+  border: 1px solid transparent;
+  text-decoration: none;
+  color: inherit;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+  transition: background 0.2s ease, border-color 0.2s ease;
+}
+
+.case-tab-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  letter-spacing: 0.08em;
+}
+
+.case-tab-title {
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--text-tertiary);
+  transition: color 0.2s ease;
+}
+
+.case-tab[aria-selected="true"] {
+  background: rgba(245, 207, 165, 0.08);
+  border-color: var(--border-gold);
+}
+
+.case-tab[aria-selected="true"] .case-tab-title {
+  color: var(--text-primary);
+}
+
+.case-tab:hover:not([aria-selected="true"]) {
+  background: rgba(255, 255, 255, 0.03);
+}
+
+/* ==================== TAB CONTENT ==================== */
+
+.case-content {
+  padding: var(--section-inner) 0;
+}
+
+.case-content[hidden] {
+  display: none;
+}
+
+/* ==================== PLACEHOLDER (탭 콘텐츠 임시) ==================== */
+
+.case-placeholder {
+  padding: var(--space-16) var(--space-8);
+  text-align: center;
+  color: var(--text-tertiary);
+  border: 1px dashed var(--border-default);
+  border-radius: var(--radius-lg);
+  font-size: var(--fs-body);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-6);
+}
+
+.case-placeholder p {
   margin: 0;
+}
+
+/* mini-tab placeholder */
+.mini-tab-nav {
+  display: flex;
+  gap: var(--space-3);
+}
+
+.mini-tab {
+  padding: var(--space-2) var(--space-5);
+  border-radius: var(--radius-sm);
+  border: 1px solid var(--border-default);
+  background: transparent;
+  font-family: inherit;
+  font-size: var(--fs-sub);
+  color: var(--text-tertiary);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.mini-tab:hover {
+  border-color: var(--border-gold);
+  color: var(--text-label-gold);
 }

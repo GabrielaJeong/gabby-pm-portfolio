@@ -450,10 +450,44 @@
 
       </section>
 
-      <!-- 다음 섹션 안내 placeholder -->
-      <div class="case-next-placeholder">
-        <p>STRATEGY · EXECUTION · RESULT · REFLECTION 섹션은 다음 작업에서 추가 예정</p>
-      </div>
+      <!-- ============ 탭 네비게이션 ============ -->
+      <nav class="case-tab-nav" role="tablist" aria-label="케이스 스터디 탭">
+        <a href="#revenue" class="case-tab" data-tab="revenue" role="tab" aria-selected="true">
+          <span class="case-tab-label">CASE 01</span>
+          <span class="case-tab-title">수익 구조 재설계</span>
+        </a>
+        <a href="#cs" class="case-tab" data-tab="cs" role="tab" aria-selected="false">
+          <span class="case-tab-label">CASE 02</span>
+          <span class="case-tab-title">CS UX 개선</span>
+        </a>
+        <a href="#zero-to-one" class="case-tab" data-tab="zero-to-one" role="tab" aria-selected="false">
+          <span class="case-tab-label">CASE 03</span>
+          <span class="case-tab-title">0→1 기획</span>
+        </a>
+      </nav>
+
+      <!-- ============ 탭 콘텐츠 ============ -->
+      <section class="case-content" data-case="revenue">
+        <div class="case-placeholder">
+          <p>CASE 01 · 수익 구조 재설계 — 콘텐츠 작업 예정</p>
+        </div>
+      </section>
+
+      <section class="case-content" data-case="cs" hidden>
+        <div class="case-placeholder">
+          <p>CASE 02 · CS UX 개선 — 콘텐츠 작업 예정</p>
+        </div>
+      </section>
+
+      <section class="case-content" data-case="zero-to-one" hidden>
+        <div class="case-placeholder">
+          <p>CASE 03 · 0→1 기획 — 콘텐츠 작업 예정</p>
+          <div class="mini-tab-nav">
+            <button class="mini-tab" data-mini-tab="nickname">닉네임 삽입</button>
+            <button class="mini-tab" data-mini-tab="image-custom">이미지커스텀</button>
+          </div>
+        </div>
+      </section>
 
     </div>
   </main>
