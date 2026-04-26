@@ -148,19 +148,15 @@ a.axis-card.doc-card:hover {
 /* 프레임 콘텐츠 영역 (스크린샷 또는 placeholder) */
 .live-browser-content {
   background: #0a0a0a;
-  min-height: 480px;
   position: relative;
   overflow: hidden;
 }
 
-/* 데모 스크린샷 — 프레임 전체 채움 */
+/* 데모 스크린샷 — 자연스러운 비율로 프레임에 맞춤 */
 .live-browser-content img {
   width: 100%;
-  height: 100%;
-  object-fit: cover;
+  height: auto;
   display: block;
-  position: absolute;
-  inset: 0;
 }
 
 /* 호버 오버레이 — 기본 숨김, 마우스 올리면 등장 */
