@@ -151,11 +151,24 @@
     });
   }
 
+  // ============ 4. Phase 카드 펼침/접힘 ============
+  function setupPhaseCards() {
+    document.querySelectorAll('.exec-phase-card').forEach(function (card) {
+      var btn = card.querySelector('.exec-phase-toggle');
+      if (!btn) return;
+      btn.addEventListener('click', function () {
+        var expanded = card.getAttribute('aria-expanded') === 'true';
+        card.setAttribute('aria-expanded', expanded ? 'false' : 'true');
+      });
+    });
+  }
+
   // ============ Init ============
   function init() {
     renderRevenueChart();
     setupToggleCards();
     setupBarAnimation();
+    setupPhaseCards();
   }
 
   if (document.readyState === 'loading') {
