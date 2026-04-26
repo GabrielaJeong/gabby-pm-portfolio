@@ -221,9 +221,10 @@ a.axis-card.doc-card:hover {
   background: rgba(245, 207, 165, 0.03);
 }
 
-/* folio — case-section border-bottom 제거 (KEY DECISIONS border-top이 구분선 역할) */
+/* folio — case-section border-bottom + margin-bottom 제거 */
 .case-section {
   border-bottom: none;
+  margin-bottom: 0;
 }
 
 /* KEY DECISIONS 섹션 — case-section에 execution 배경 적용 */
