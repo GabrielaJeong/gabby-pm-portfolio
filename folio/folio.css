@@ -227,6 +227,11 @@ a.axis-card.doc-card:hover {
   margin-bottom: 0;
 }
 
+/* meta-reflection 상단 구분선 제거 */
+.meta-reflection {
+  border-top: none;
+}
+
 /* KEY DECISIONS 섹션 — case-section에 execution 배경 적용 */
 .case-section[data-section="execution"] {
   margin-left: calc(-1 * var(--space-12));
