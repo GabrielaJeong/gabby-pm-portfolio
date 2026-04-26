@@ -1688,18 +1688,14 @@
 /* ==================== PROJECT NAVIGATION ==================== */
 
 .project-navigation {
-  background: rgba(245, 207, 165, 0.025);   /* full-bleed 배경 */
+  background: rgba(245, 207, 165, 0.025);
   border-top: 1px solid var(--border-default);
   margin-top: var(--section-gap);
+  padding-top: var(--section-gap);
+  padding-bottom: var(--space-16);
 }
 
-/* inner wrapper: 콘텐츠 max-width + 명시적 padding */
-.proj-nav-inner {
-  max-width: var(--max-width);
-  margin: 0 auto;
-  padding: var(--section-gap) var(--space-12) var(--space-16);
-  box-sizing: border-box;
-}
+/* case-inner가 좌우 padding(var(--space-12)) 담당 */
 
 .project-nav-grid {
   display: grid;
