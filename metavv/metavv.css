@@ -1348,11 +1348,18 @@
 }
 
 .exec-detail-section {
-  margin-bottom: var(--space-6);
+  margin-bottom: 0;
+  padding-bottom: var(--space-4);
 }
 
 .exec-detail-section:last-child {
-  margin-bottom: 0;
+  padding-bottom: 0;
+}
+
+/* 섹션 사이 구분선 — 3단계 정보 위계 명확화 */
+.exec-detail-section + .exec-detail-section {
+  border-top: 1px dashed var(--border-default);
+  padding-top: var(--space-4);
 }
 
 .exec-detail-label {
@@ -1386,9 +1393,14 @@
   box-sizing: border-box;
 }
 
+/* V1 — 거부된 안: 전체 dim으로 "채택 X" 시각화 */
+.exec-detail-option:not(.exec-detail-option--selected) {
+  opacity: 0.45;
+}
+
 .exec-detail-option--selected {
   border-color: var(--border-gold);
-  background: rgba(245, 207, 165, 0.04);
+  background: rgba(245, 207, 165, 0.06);
 }
 
 .exec-detail-option-label {
@@ -1407,6 +1419,11 @@
   color: var(--text-secondary);
   line-height: var(--lh-normal);
   word-break: keep-all;
+}
+
+/* V2 — 채택된 안: body 텍스트도 강조 */
+.exec-detail-option--selected .exec-detail-option-body {
+  color: var(--text-primary);
 }
 
 /* 트레이드오프 Q&A */
