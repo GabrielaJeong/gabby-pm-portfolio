@@ -11,6 +11,11 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
+/* case-section 안 case-block — 앞 콘텐츠와 간격 */
+.case-section .case-block {
+  margin-top: var(--section-gap);
+}
+
 /* ==================== PRODUCT DOCUMENTS ==================== */
 
 /* 문서 미리보기 placeholder — 스크린샷 제공 후 doc-preview-img로 교체 */
