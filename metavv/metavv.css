@@ -1275,6 +1275,88 @@
   margin-top: var(--space-4);
 }
 
+/* axis-card 변형 — Tab 2 strategy용 */
+.axis-card-body {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+  margin-bottom: var(--space-4);
+  word-break: keep-all;
+  flex: 1;
+}
+
+.axis-card-insight {
+  font-size: var(--fs-sub);
+  color: var(--text-tertiary);
+  font-style: italic;
+  margin-top: var(--space-3);
+}
+
+/* ==================== EXECUTION STEP (Tab 2) — 비확장 카드 ==================== */
+
+.exec-step-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-5);
+  align-items: stretch;
+}
+
+.exec-step-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--card-padding-lg);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+}
+
+.exec-step-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--card-gap-default);
+}
+
+.exec-step-title {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
+  color: var(--text-primary);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-3);
+  word-break: keep-all;
+}
+
+.exec-step-body {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+  word-break: keep-all;
+  flex: 1;
+  margin-bottom: var(--space-5);
+}
+
+.exec-step-divider {
+  height: 1px;
+  background: var(--border-default);
+  margin-bottom: var(--space-4);
+}
+
+.exec-step-effect {
+  font-size: var(--fs-sub);
+  color: var(--text-tertiary);
+  margin-top: auto;
+}
+
+/* result-num 작은 변형 (긴 텍스트용) */
+.result-num--sm {
+  font-size: var(--fs-h1);
+  line-height: var(--lh-tight);
+}
+
 /* ==================== RESULT ==================== */
 
 .result-grid {
