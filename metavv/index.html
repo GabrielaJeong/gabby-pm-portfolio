@@ -559,8 +559,10 @@
           <p class="block-sub">12개월 동안 3축을 단계적으로 도입하며 안정화</p>
 
           <!-- Phase 1 카드 -->
-          <div class="exec-phase-card" aria-expanded="false">
-            <button class="exec-phase-toggle" aria-label="펼치기/접기">+</button>
+          <div class="exec-phase-card" role="button" tabindex="0" aria-expanded="false">
+            <button class="exec-phase-toggle" aria-hidden="true" tabindex="-1">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><polyline points="4 6 8 10 12 6"/></svg>
+            </button>
             <div class="exec-phase-header">
               <div class="exec-phase-label">PHASE 1 · 1~3개월</div>
               <div class="exec-phase-title">요금제 인상</div>
@@ -583,7 +585,7 @@
                 <div class="exec-metric-sub">이탈 없음</div>
               </div>
             </div>
-            <div class="exec-phase-detail">
+            <div class="exec-phase-detail" data-expand-detail>
               <div class="exec-detail-section">
                 <div class="exec-detail-label">V1 vs V2 비교</div>
                 <div class="exec-detail-row">
@@ -618,8 +620,10 @@
           </div>
 
           <!-- Phase 2 카드 -->
-          <div class="exec-phase-card" aria-expanded="false">
-            <button class="exec-phase-toggle" aria-label="펼치기/접기">+</button>
+          <div class="exec-phase-card" role="button" tabindex="0" aria-expanded="false">
+            <button class="exec-phase-toggle" aria-hidden="true" tabindex="-1">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><polyline points="4 6 8 10 12 6"/></svg>
+            </button>
             <div class="exec-phase-header">
               <div class="exec-phase-label">PHASE 2 · 3~6개월</div>
               <div class="exec-phase-title">엔터프라이즈 B2B 도입</div>
@@ -656,7 +660,7 @@
               <div class="client-item">르르르</div>
             </div>
             <div class="client-grid-caption">+ 그 외 다수의 브랜드와 협업</div>
-            <div class="exec-phase-detail">
+            <div class="exec-phase-detail" data-expand-detail>
               <div class="exec-detail-section">
                 <div class="exec-detail-label">도입 동기 (2축)</div>
                 <div class="exec-detail-body">수익 다각화 — SaaS 직접 결제 외 별도 수익축 확보. 마케터 인지도 상승 — 스튜디오 유입 간접 경로 확보. 두 동기가 같은 채널에서 동시에 해결됩니다.</div>
@@ -704,8 +708,10 @@
           </div>
 
           <!-- Phase 3 카드 -->
-          <div class="exec-phase-card" aria-expanded="false">
-            <button class="exec-phase-toggle" aria-label="펼치기/접기">+</button>
+          <div class="exec-phase-card" role="button" tabindex="0" aria-expanded="false">
+            <button class="exec-phase-toggle" aria-hidden="true" tabindex="-1">
+              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><polyline points="4 6 8 10 12 6"/></svg>
+            </button>
             <div class="exec-phase-header">
               <div class="exec-phase-label">PHASE 3 · 6개월 이후</div>
               <div class="exec-phase-title">리워드 광고 도입</div>
@@ -728,7 +734,7 @@
                 <div class="exec-metric-sub">수익화 구조</div>
               </div>
             </div>
-            <div class="exec-phase-detail">
+            <div class="exec-phase-detail" data-expand-detail>
               <div class="exec-detail-section">
                 <div class="exec-detail-label">광고 위치 트레이드오프</div>
                 <div class="exec-detail-row">
@@ -1381,6 +1387,7 @@
   <!-- 글로벌 JS (nav 동작) -->
   <script src="/script.js"></script>
   <script src="/reveal.js" defer></script>
+  <script src="/expand-toggle.js"></script>
   <!-- 케이스 스터디 전용 JS -->
   <script src="/metavv/metavv.js"></script>
 </body>

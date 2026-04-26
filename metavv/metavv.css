@@ -1118,7 +1118,19 @@
   border-radius: var(--radius-lg);
   margin-bottom: var(--space-5);
   text-align: left;
-  transition: border-color 0.2s ease;
+  cursor: pointer;
+  transition: border-color 0.25s ease, background 0.25s ease;
+  outline: none;
+}
+
+.exec-phase-card:hover {
+  border-color: var(--border-gold);
+  background: rgba(255, 255, 255, 0.04);
+}
+
+.exec-phase-card:focus-visible {
+  border-color: var(--border-gold);
+  box-shadow: 0 0 0 2px rgba(245, 207, 165, 0.25);
 }
 
 .exec-phase-card[aria-expanded="true"] {
@@ -1129,19 +1141,28 @@
   position: absolute;
   top: var(--space-6);
   right: var(--space-7);
-  font-size: var(--fs-h3);
+  width: 28px;
+  height: 28px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
   background: transparent;
   border: none;
-  color: var(--text-quaternary);
-  cursor: pointer;
-  line-height: var(--lh-tight);
-  transition: transform 0.25s ease, color 0.2s ease;
-  font-family: inherit;
+  color: var(--text-tertiary);
+  pointer-events: none;
+  padding: 0;
+}
+
+.exec-phase-toggle svg {
+  transition: transform 0.3s ease, color 0.2s ease;
 }
 
 .exec-phase-card[aria-expanded="true"] .exec-phase-toggle {
-  transform: rotate(45deg);
   color: var(--gold);
+}
+
+.exec-phase-card[aria-expanded="true"] .exec-phase-toggle svg {
+  transform: rotate(180deg);
 }
 
 .exec-phase-label {
@@ -1212,15 +1233,7 @@
   line-height: var(--lh-normal);
 }
 
-/* 펼침 영역 */
-.exec-phase-card[aria-expanded="false"] .exec-phase-detail {
-  display: none;
-}
-
-.exec-phase-card[aria-expanded="true"] .exec-phase-detail {
-  display: block;
-}
-
+/* 펼침 영역 — max-height 는 expand-toggle.js 가 인라인으로 제어 */
 .exec-phase-detail {
   margin-top: var(--space-6);
   padding-top: var(--space-6);
