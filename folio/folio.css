@@ -235,7 +235,6 @@ a.axis-card.doc-card:hover {
   padding-top: var(--section-gap);
   padding-bottom: var(--space-12);
   border-top: 1px solid var(--border-default);
-  border-bottom: 1px solid var(--border-default);
 }
 
 /* ==================== DESIGN SYSTEM 섹션 ==================== */
