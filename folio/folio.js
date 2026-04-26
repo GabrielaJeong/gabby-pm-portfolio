@@ -1,11 +1,14 @@
 // ==================== FOLIO CASE STUDY · JS ====================
-// KEY DECISIONS: expand-toggle.js의 initExpandCards 재사용
-// IMPACT 카드: div (항상 펼쳐진 상태, 토글 없음)
+// KEY DECISIONS: data-group 없는 exec-phase-card (첫 번째만 열림)
+// ENGINEERING RIGOR: data-group="engineering" exec-phase-card (첫 번째만 열림)
 
 (function () {
   'use strict';
 
   if (window.initExpandCards) {
-    initExpandCards('.exec-phase-card', { firstOpen: true });
+    // KEY DECISIONS 카드 그룹
+    initExpandCards('.exec-phase-card:not([data-group])', { firstOpen: true });
+    // ENGINEERING RIGOR 카드 그룹
+    initExpandCards('.exec-phase-card[data-group="engineering"]', { firstOpen: true });
   }
 })();

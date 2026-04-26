@@ -208,6 +208,12 @@ a.axis-card.doc-card:hover {
   border-style: dashed;
 }
 
+/* HARNESS 카드 ★ — 골드 보더로 강조 */
+.exec-phase-card--harness {
+  border-color: var(--border-gold);
+  background: rgba(245, 207, 165, 0.03);
+}
+
 /* KEY DECISIONS 섹션 — case-section에 execution 배경 적용 */
 .case-section[data-section="execution"] {
   margin-left: calc(-1 * var(--space-12));
