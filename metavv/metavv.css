@@ -1497,10 +1497,9 @@
 /* ==================== META REFLECTION ==================== */
 
 .meta-reflection {
-  /* 케이스 끝 → 메타 영역 시작 : 다른 경계보다 강한 단절감 */
   padding: calc(var(--section-gap) * 1.5) 0 var(--section-gap);
-  border-top: 2px solid var(--border-strong);   /* 더 굵은 구분선 */
-  margin-top: calc(var(--section-gap) * 1.5);   /* 더 넓은 여백 */
+  border-top: 2px solid var(--border-strong);
+  margin-top: calc(var(--section-gap) * 1.5);
   background: var(--bg);
 }
 
@@ -1644,12 +1643,9 @@
 /* ==================== PROJECT NAVIGATION ==================== */
 
 .project-navigation {
-  background: rgba(245, 207, 165, 0.025);   /* 미묘한 골드 틴트 */
+  background: rgba(245, 207, 165, 0.025);
   border-top: 1px solid var(--border-default);
-  /* full-width 확장 */
-  margin-left: calc(-1 * var(--space-12));
-  margin-right: calc(-1 * var(--space-12));
-  padding: var(--section-gap) var(--space-12) var(--space-16);
+  padding: var(--section-gap) 0 var(--space-16);
   margin-top: var(--section-gap);
 }
 
@@ -1740,14 +1736,9 @@
 
 .cases-wrapper {
   position: relative;
-  background: rgba(255, 255, 255, 0.018);   /* 미묘하게 밝은 톤 */
+  background: rgba(255, 255, 255, 0.018);
   border-top: 1px solid var(--border-default);
   border-bottom: 1px solid var(--border-default);
-  /* case-inner padding 밖으로 확장해 full-width 느낌 */
-  margin-left: calc(-1 * var(--space-12));
-  margin-right: calc(-1 * var(--space-12));
-  padding-left: var(--space-12);
-  padding-right: var(--space-12);
   padding-bottom: var(--section-gap);
   margin-top: var(--section-gap);
 }

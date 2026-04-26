@@ -450,8 +450,11 @@
 
       </section>
 
-      <!-- ============ cases-wrapper: sticky 범위 제한 ============ -->
-      <div class="cases-wrapper">
+    </div><!-- /case-inner -->
+
+  <!-- ============ cases-wrapper: sticky 범위 제한 ============ -->
+  <div class="cases-wrapper">
+    <div class="case-inner">
 
       <!-- ============ 탭 네비게이션 ============ -->
       <nav class="case-tab-nav" role="tablist" aria-label="케이스 스터디 탭">
@@ -1256,10 +1259,12 @@
 
       </section>
 
-      </div><!-- /cases-wrapper -->
+    </div><!-- /case-inner inside cases-wrapper -->
+  </div><!-- /cases-wrapper -->
 
-      <!-- ══════════ META REFLECTION (모든 탭 외부 — 항상 노출) ══════════ -->
-      <section class="meta-reflection">
+  <!-- ══════════ META REFLECTION ══════════ -->
+  <section class="meta-reflection">
+    <div class="case-inner">
         <div class="case-block-header">
           <div class="case-section-label">META REFLECTION</div>
         </div>
@@ -1318,10 +1323,12 @@
             </div>
           </div>
         </div>
-      </section>
+    </div><!-- /case-inner inside meta-reflection -->
+  </section>
 
-      <!-- ══════════ PROJECT NAVIGATION ══════════ -->
-      <nav class="project-navigation" aria-label="다른 프로젝트">
+  <!-- ══════════ PROJECT NAVIGATION ══════════ -->
+  <nav class="project-navigation" aria-label="다른 프로젝트">
+    <div class="case-inner">
         <div class="case-block-header">
           <div class="case-section-label">NEXT PROJECT</div>
         </div>
@@ -1353,10 +1360,10 @@
             <div class="project-nav-arrow">↗</div>
           </a>
         </div>
-      </nav>
+    </div><!-- /case-inner inside project-navigation -->
+  </nav>
 
-    </div>
-  </main>
+</main>
 
   <!-- 맨 위로 버튼 -->
   <button class="back-to-top" id="backToTop" aria-label="맨 위로">↑</button>
