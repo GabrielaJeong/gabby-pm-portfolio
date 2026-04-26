@@ -1,0 +1,309 @@
+/* ========================================================
+   MOMSCARE CASE STUDY PAGE
+   /momscare/index.html 전용 스타일
+   공유 컴포넌트: /metavv/metavv.css 재사용
+   글로벌 토큰: /styles.css :root
+   ======================================================== */
+
+/* ==================== CONTEXT — 3사 협업 구조 ==================== */
+
+.ctx-collab-diagram {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
+  align-items: center;
+}
+
+.ctx-collab-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-4);
+  width: 100%;
+  align-items: stretch;
+}
+
+.ctx-collab-party {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  padding: var(--card-padding-sm);
+  border-radius: var(--radius-md);
+  text-align: center;
+  box-sizing: border-box;
+  width: 100%;
+  min-width: 0;
+}
+
+.ctx-collab-party--sponsor {
+  background: rgba(245, 207, 165, 0.04);
+  border: 1px solid var(--border-gold);
+}
+
+.ctx-collab-party--operator {
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-default);
+}
+
+.ctx-party-role {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--card-gap-tight);
+}
+
+.ctx-party-name {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-h3);
+  color: var(--text-primary);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-1);
+  word-break: keep-all;
+}
+
+.ctx-party-desc {
+  font-size: var(--fs-caption);
+  color: var(--text-tertiary);
+  line-height: var(--lh-normal);
+}
+
+.ctx-collab-arrow {
+  font-size: 16px;
+  color: var(--text-quaternary);
+  text-align: center;
+}
+
+.ctx-collab-user {
+  padding: var(--space-3) var(--space-6);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--text-secondary);
+  text-align: center;
+}
+
+/* ==================== PROBLEM 카드 (재사용 from bgyk 패턴) ==================== */
+
+.problem-grid {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+  align-items: stretch;
+  width: 100%;
+}
+
+.problem-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--card-padding-lg);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  text-align: left;
+  width: 100%;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.problem-card-num {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--card-gap-default);
+}
+
+.problem-card-title {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
+  color: var(--text-primary);
+  line-height: var(--lh-snug);
+  margin-bottom: var(--space-3);
+  word-break: keep-all;
+}
+
+.problem-card-body {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+  flex: 1;
+  word-break: keep-all;
+}
+
+/* ==================== 협업 타임라인 ==================== */
+
+.collab-timeline-section {
+  background: rgba(255, 255, 255, 0.015);
+  border-top: 1px solid var(--border-default);
+  border-bottom: 1px solid var(--border-default);
+  padding: var(--section-gap) 0;
+  margin-top: var(--section-gap);
+}
+
+.collab-timeline {
+  display: grid;
+  grid-template-columns: 1fr auto 1fr;
+  gap: var(--space-4);
+  align-items: start;
+  margin-top: var(--space-8);
+}
+
+/* Phase 카드 */
+.collab-phase {
+  display: flex;
+  flex-direction: column;
+  padding: var(--card-padding-lg);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  text-align: left;
+  box-sizing: border-box;
+  min-width: 0;
+}
+
+.collab-phase--completed {
+  border-color: var(--border-gold);
+}
+
+.collab-phase--wip {
+  border-style: dashed;
+  border-color: var(--border-default);
+  background: rgba(255, 255, 255, 0.01);
+}
+
+.collab-phase-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  letter-spacing: 0.08em;
+  margin-bottom: var(--card-gap-tight);
+}
+
+.collab-phase-period {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
+  color: var(--text-primary);
+  line-height: var(--lh-tight);
+  letter-spacing: -0.015em;
+  margin-bottom: var(--space-5);
+}
+
+.collab-phase-tasks {
+  list-style: none;
+  padding: 0;
+  margin: 0 0 var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
+.collab-phase-tasks li {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  padding-left: var(--space-4);
+  position: relative;
+  line-height: var(--lh-normal);
+  word-break: keep-all;
+}
+
+.collab-phase-tasks li::before {
+  content: '·';
+  position: absolute;
+  left: var(--space-1);
+  color: var(--text-label-gold);
+}
+
+.collab-phase-result {
+  margin-top: auto;
+  padding-top: var(--space-4);
+  border-top: 1px dashed var(--border-default);
+  font-size: var(--fs-sub);
+  color: var(--text-label-gold);
+  font-weight: var(--fw-caption);
+}
+
+.collab-wip-note {
+  font-size: var(--fs-caption);
+  color: var(--text-quaternary);
+  font-style: italic;
+  padding-top: var(--space-4);
+  border-top: 1px dashed var(--border-default);
+  margin-top: var(--space-4);
+  word-break: keep-all;
+}
+
+/* 중간 갭 ("1년 후" 연결부) */
+.collab-gap {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  padding: var(--space-8) var(--space-3);
+  gap: var(--space-4);
+  min-height: 200px;
+}
+
+.collab-gap-line {
+  flex: 1;
+  width: 1px;
+  border-left: 1px dashed var(--border-default);
+}
+
+.collab-gap-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-tertiary);
+  letter-spacing: 0.1em;
+  text-align: center;
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+}
+
+.collab-gap-badge {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  background: rgba(245, 207, 165, 0.08);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-sm);
+  padding: var(--space-2) var(--space-3);
+  text-align: center;
+  white-space: nowrap;
+  writing-mode: vertical-rl;
+  transform: rotate(180deg);
+  letter-spacing: 0.08em;
+}
+
+/* 타임라인 캡션 */
+.collab-caption {
+  margin-top: var(--space-6);
+  text-align: center;
+  font-size: var(--fs-sub);
+  color: var(--text-tertiary);
+  font-style: italic;
+}
+
+/* ==================== MOMSCARE REFLECTION ==================== */
+
+.momscare-reflection-section {
+  max-width: var(--max-width);
+  margin: calc(var(--section-gap) * 1.5) auto 0;
+  padding: calc(var(--section-gap) * 1.5) var(--space-12) var(--section-gap);
+  border-top: 2px solid var(--border-strong);
+  background: var(--bg);
+  box-sizing: border-box;
+}
+
+.momscare-reflection-section .case-section-label {
+  font-size: var(--fs-body);
+  letter-spacing: 0.18em;
+  color: var(--text-label-gold);
+}
+
+.momscare-reflection-section .case-section-title {
+  font-size: 44px;
+  letter-spacing: -0.03em;
+}
