@@ -51,9 +51,11 @@
 
 /* ── Scroll Indicator ── */
 .scroll-indicator {
-  display: inline-flex;
+  display: flex;
+  justify-content: center;
   align-items: center;
   gap: var(--space-2);
+  width: 100%;
   margin-top: var(--space-8);
   color: var(--text-tertiary);
   font-size: var(--fs-sub);
