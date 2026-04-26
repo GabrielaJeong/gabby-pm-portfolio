@@ -150,6 +150,7 @@
   color: var(--text-tertiary);
 }
 
+/* ── 메인 섹션 타이틀 (IMPACT / CONTEXT / PROBLEM / META REFLECTION) ── */
 .case-section-title {
   font-size: var(--fs-h1);
   font-weight: var(--fw-h1);
@@ -168,7 +169,37 @@
   font-weight: var(--fw-body);
   color: var(--text-tertiary);
   line-height: var(--lh-relaxed);
-  margin: 0 0 var(--space-16);
+  margin: 0 0 var(--space-8);   /* 64px → 32px (절반) */
+}
+
+/* ── 탭 내 서브섹션 타이틀 (case-block 안: STRATEGY / EXECUTION / RESULT 등) ── */
+.block-title {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-h1);
+  color: var(--text-primary);
+  letter-spacing: -0.025em;
+  line-height: var(--lh-snug);
+  margin: 0 0 var(--space-2);
+}
+
+.block-title .accent {
+  color: var(--gold);
+}
+
+.block-sub {
+  font-size: 15px;
+  font-weight: var(--fw-body);
+  color: var(--text-tertiary);
+  line-height: var(--lh-relaxed);
+  margin: 0 0 var(--space-8);   /* 32px */
+}
+
+/* ── 탭 내 서브섹션 라벨 (case-block-header 안) ── */
+.block-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-tertiary);
+  letter-spacing: 0.18em;
 }
 
 /* ==================== IMPACT DASHBOARD ==================== */
