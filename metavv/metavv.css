@@ -1243,6 +1243,93 @@
   letter-spacing: -0.02em;
 }
 
+/* ==================== DECISION FLOW (PHASE 1 시안) ==================== */
+
+/* data-dflow 카드: 정적 카드 (토글 없음) */
+.exec-phase-card[data-dflow] {
+  cursor: default;
+  padding-bottom: var(--space-8);   /* 기존 64px(토글용) 해제 */
+}
+
+/* 흐름도 컨테이너 */
+.dflow {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-3);
+  margin-top: var(--space-6);
+  padding-top: var(--space-6);
+  border-top: 1px dashed var(--border-default);
+  width: 100%;
+}
+
+/* 단일 스텝 노드 */
+.dflow-node {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--card-padding-md);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  max-width: 600px;
+  width: 100%;
+  box-sizing: border-box;
+  text-align: left;
+}
+
+/* RESULT 노드 — 골드 강조 */
+.dflow-node--result {
+  border-color: var(--border-gold);
+  background: rgba(245, 207, 165, 0.04);
+}
+
+/* 노드 라벨 (SIGNAL / VALIDATION / DECISION / EXECUTION / RESULT) */
+.dflow-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  letter-spacing: 0.12em;
+}
+
+/* DECISION 분기 섹션에서 라벨 중앙 정렬 */
+.dflow-branch .dflow-label {
+  text-align: center;
+  margin-bottom: var(--space-3);
+}
+
+/* 노드 메인 텍스트 */
+.dflow-content {
+  font-size: var(--fs-body);
+  font-weight: 500;
+  color: var(--text-primary);
+  line-height: var(--lh-normal);
+  word-break: keep-all;
+}
+
+/* 노드 부연 텍스트 */
+.dflow-sub {
+  font-size: var(--fs-sub);
+  color: var(--text-tertiary);
+  line-height: var(--lh-normal);
+  word-break: keep-all;
+}
+
+/* 단계 간 화살표 */
+.dflow-arrow {
+  font-size: var(--fs-h2);
+  color: var(--text-label-gold);
+  line-height: 1;
+  text-align: center;
+}
+
+/* DECISION BRANCH — V1/V2 좌우 분기 (exec-detail-row 재사용) */
+.dflow-branch {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+}
+
 /* ==================== EXECUTION ==================== */
 
 .exec-phase-card {

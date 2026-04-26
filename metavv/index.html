@@ -543,22 +543,6 @@
             </div>
           </div>
 
-          <div class="axis-bottom-caption" data-reveal>
-            <div class="axis-bottom-compare">
-              <div class="axis-bottom-before">
-                <div class="axis-phase-time">1개월 차</div>
-                <div class="result-num result-num--sm">15만 원</div>
-              </div>
-              <div class="axis-bottom-arrow-wrap">
-                <span class="axis-bottom-arrow">→</span>
-              </div>
-              <div class="axis-bottom-after">
-                <div class="axis-phase-time">12개월 후</div>
-                <div class="result-num">1,100만+ 원</div>
-              </div>
-            </div>
-            <div class="axis-bottom-text">월 매출 <span class="accent">70배 성장</span></div>
-          </div>
         </div>
 
         <!-- ══════════ EXECUTION ══════════ -->
@@ -569,36 +553,38 @@
           <h2 class="block-title">각 축마다 검증과 실행을 거쳤습니다</h2>
           <p class="block-sub">12개월 동안 3축을 단계적으로 도입하며 안정화</p>
 
-          <!-- Phase 1 카드 -->
-          <div class="exec-phase-card" role="button" tabindex="0" aria-expanded="false">
-            <button class="exec-phase-toggle" aria-hidden="true" tabindex="-1">
-              <svg viewBox="0 0 16 16" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="16" height="16" aria-hidden="true"><polyline points="4 6 8 10 12 6"/></svg>
-            </button>
+          <!-- Phase 1 카드 — 의사결정 흐름도 시안 (PHASE 2·3 검토 후 동일 패턴 적용 예정) -->
+          <div class="exec-phase-card" data-dflow>
             <div class="exec-phase-header">
               <div class="exec-phase-label">PHASE 1 · 1~3개월</div>
               <div class="exec-phase-title">요금제 인상</div>
             </div>
-            <div class="exec-phase-summary">WTP 인터뷰 결과를 바탕으로 Plus 6배 인상, 결제량 유지를 확인했습니다.</div>
-            <div class="exec-metrics">
-              <div class="exec-metric">
-                <div class="exec-metric-label">Plus 가격</div>
-                <div class="exec-metric-num">6.5×</div>
-                <div class="exec-metric-sub">29k → 189k</div>
+            <div class="exec-phase-summary">WTP 인터뷰 결과를 바탕으로 Plus 6.5배 인상, 결제량 유지를 확인했습니다.</div>
+
+            <!-- 의사결정 흐름도 -->
+            <div class="dflow" data-reveal>
+
+              <!-- STEP 1: SIGNAL -->
+              <div class="dflow-node">
+                <div class="dflow-label">SIGNAL</div>
+                <div class="dflow-content">트래픽 vs 비용 회수율 2%</div>
+                <div class="dflow-sub">지속 손실 구조 — 사용자가 늘수록 적자 심화</div>
               </div>
-              <div class="exec-metric">
-                <div class="exec-metric-label">Pro 가격</div>
-                <div class="exec-metric-num">동결</div>
-                <div class="exec-metric-sub">290,000원</div>
+
+              <div class="dflow-arrow" aria-hidden="true">↓</div>
+
+              <!-- STEP 2: VALIDATION -->
+              <div class="dflow-node">
+                <div class="dflow-label">VALIDATION</div>
+                <div class="dflow-content">WTP 인터뷰 5건</div>
+                <div class="dflow-sub">"기능 대비 가격이 너무 저렴하다" — 응답 반복</div>
               </div>
-              <div class="exec-metric">
-                <div class="exec-metric-label">결제량</div>
-                <div class="exec-metric-num">유지</div>
-                <div class="exec-metric-sub">이탈 없음</div>
-              </div>
-            </div>
-            <div class="exec-phase-detail" data-expand-detail>
-              <div class="exec-detail-section">
-                <div class="exec-detail-label">V1 vs V2 비교</div>
+
+              <div class="dflow-arrow" aria-hidden="true">↓</div>
+
+              <!-- STEP 3: DECISION BRANCH (exec-detail 클래스 재사용) -->
+              <div class="dflow-branch">
+                <div class="dflow-label">DECISION</div>
                 <div class="exec-detail-row">
                   <div class="exec-detail-option">
                     <div class="exec-detail-option-label">V1 — 보수적 안</div>
@@ -606,27 +592,29 @@
                   </div>
                   <div class="exec-detail-option exec-detail-option--selected">
                     <div class="exec-detail-option-label">V2 — 채택 ✓</div>
-                    <div class="exec-detail-option-body">Plus·Pro 동시 인상. 결제의 90%가 Plus에 집중 → 가격 간극 조정 필요.</div>
+                    <div class="exec-detail-option-body">Plus 6.5×, Pro 동결. 결제 90%가 Plus 집중 → 가격 간극 조정 필요.</div>
                   </div>
                 </div>
               </div>
-              <div class="exec-detail-section">
-                <div class="exec-detail-label">의사결정의 트레이드오프</div>
-                <div class="exec-tradeoff-list">
-                  <div class="exec-tradeoff-item">
-                    <div class="exec-tradeoff-q">6배 인상이면 고객 이탈하지 않을까?</div>
-                    <div class="exec-tradeoff-a">WTP 인터뷰 신뢰 — "기능 대비 가격이 너무 저렴하다"는 응답이 반복됐습니다.</div>
-                  </div>
-                  <div class="exec-tradeoff-item">
-                    <div class="exec-tradeoff-q">단계적 인상 vs 한 번에?</div>
-                    <div class="exec-tradeoff-a">한 번에 인상 결정. 단계적 인상은 매번 재협상 부담 + 검증 시그널이 흐려집니다.</div>
-                  </div>
-                </div>
+
+              <div class="dflow-arrow" aria-hidden="true">↓</div>
+
+              <!-- STEP 4: EXECUTION -->
+              <div class="dflow-node">
+                <div class="dflow-label">EXECUTION</div>
+                <div class="dflow-content">한 번에 인상 결정</div>
+                <div class="dflow-sub">단계적 인상 = 매번 재협상 부담 + 검증 시그널 흐려짐</div>
               </div>
-              <div class="exec-detail-section">
-                <div class="exec-detail-label">검증 결과</div>
-                <div class="exec-detail-body">인상 후 Plus·Pro 결제량 유지. 월 매출 15만 → 20~30만원 (1~3개월).</div>
+
+              <div class="dflow-arrow" aria-hidden="true">↓</div>
+
+              <!-- STEP 5: RESULT -->
+              <div class="dflow-node dflow-node--result">
+                <div class="dflow-label">RESULT</div>
+                <div class="dflow-content">결제량 유지 — 월 매출 15만 → 20~30만 원</div>
+                <div class="dflow-sub">1~3개월 · Plus·Pro 이탈 없음</div>
               </div>
+
             </div>
           </div>
 
