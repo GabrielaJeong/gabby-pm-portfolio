@@ -240,7 +240,7 @@
   // ============ 5. Phase 카드 펼침/접힘 ============
   function setupPhaseCards() {
     if (window.initExpandCards) {
-      window.initExpandCards('.exec-phase-card', { firstOpen: true });
+      window.initExpandCards('.exec-phase-card', { firstOpen: false });
     }
   }
 
