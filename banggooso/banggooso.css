@@ -10,9 +10,10 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
-/* ==================== IMPACT 카드 4열 ==================== */
+/* ==================== IMPACT 카드 4열 (2번째 section만) ==================== */
 
-.case-section .impact-metric-grid {
+/* IMPACT 섹션만 타겟 — PROBLEM 섹션 영향 X */
+.case-inner > section:nth-of-type(2) .impact-metric-grid {
   grid-template-columns: repeat(4, 1fr);
 }
 
