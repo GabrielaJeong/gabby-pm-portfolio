@@ -60,12 +60,14 @@
   display: grid;
   grid-template-columns: 1fr 1fr;
   gap: var(--space-12);
-  align-items: center;
+  align-items: start;
   margin-bottom: var(--space-12);
 }
 
 .case-hero-text {
-  /* 텍스트 영역 — 기존 스타일 그대로 */
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-5);
 }
 
 .case-hero-visual {
