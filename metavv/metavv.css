@@ -17,7 +17,7 @@
 .case-hero-visual img {
   width: 100%;
   height: auto;
-  transform: translateX(125px) translateY(-2px);
+  transform: translateX(120px) translateY(-2px);
 }
 
 /* ==================== DECISION FLOW (PHASE 1 시안) ==================== */
