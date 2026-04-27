@@ -7,7 +7,7 @@
 /* ==================== HERO 디바이스 목업 ==================== */
 
 .case-hero-grid {
-  grid-template-columns: 1fr 1.3fr;
+  grid-template-columns: 1.3fr 1fr;
 }
 
 .case-hero-visual {
