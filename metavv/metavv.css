@@ -257,6 +257,7 @@
 /* mini-case 콘텐츠 */
 .mini-case-content {
   padding-top: var(--space-8);
+  padding-bottom: var(--section-gap);
 }
 
 .mini-case-content[hidden] {
