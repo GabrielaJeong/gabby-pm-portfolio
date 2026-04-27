@@ -381,10 +381,11 @@
 
 /* 외부 브라우저 프레임 */
 .image-custom-frame {
+  max-width: 900px;
+  margin: var(--space-6) auto 0;
   border: 1px solid var(--border-default);
   border-radius: var(--radius-lg);
   overflow: hidden;
-  margin-top: var(--space-6);
 }
 
 /* URL 바 */
@@ -446,7 +447,7 @@
 
 .image-custom-layout {
   display: grid;
-  grid-template-columns: 0.75fr 1.25fr;
+  grid-template-columns: 300px 1fr;
   gap: var(--space-4);
   align-items: start;
 }
@@ -458,7 +459,7 @@
   gap: var(--space-3);
   background: var(--mv-white);
   border-radius: var(--mv-radius);
-  padding: var(--space-4);
+  padding: var(--space-6);
 }
 
 /* 이미지 미리보기 회색 박스 */
@@ -794,7 +795,7 @@
 }
 
 /* 모바일 반응형 */
-@media (max-width: 768px) {
+@media (max-width: 680px) {
   .image-custom-layout {
     grid-template-columns: 1fr;
   }

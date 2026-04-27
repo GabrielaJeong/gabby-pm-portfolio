@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| (pending) | metavv: TRY IT 컴포넌트 크기 조정 — max-width 900px, 좌측 300px 고정 |
 | (pending) | metavv: TRY IT CSS → metavv.studio 변수 기반으로 전환 (--mv-* 스코프) |
 | `fda5ed1` | metavv: TRY IT · IMAGE CUSTOM UI 재설계 — 실제 제품 스크린샷 기반 |
 | `928accf` | metavv: TRY IT · IMAGE CUSTOM 위치 이동 → Case 03 EXECUTION 직후로 이동 |
