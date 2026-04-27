@@ -55,6 +55,43 @@
   margin-bottom: var(--space-16);
 }
 
+/* HERO 좌우 2단 레이아웃 — 디바이스 목업 이미지 배치용 */
+.case-hero-grid {
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-12);
+  align-items: center;
+  margin-bottom: var(--space-12);
+}
+
+.case-hero-text {
+  /* 텍스트 영역 — 기존 스타일 그대로 */
+}
+
+.case-hero-visual {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.case-hero-visual img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+@media (max-width: 768px) {
+  .case-hero-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
+
+  .case-hero-visual {
+    order: -1;
+  }
+}
+
 /* ── Scroll Indicator ── */
 .scroll-indicator {
   display: flex;
