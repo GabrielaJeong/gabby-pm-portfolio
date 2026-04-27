@@ -12,9 +12,14 @@
 
 /* ==================== HERO 이미지 크기 ==================== */
 
+.case-hero-visual {
+  overflow: hidden;
+}
+
 .case-hero-visual img {
   width: 400px;
   height: auto;
+  margin-bottom: -50px;
 }
 
 /* ==================== MAIN CASE 진입부 ==================== */
