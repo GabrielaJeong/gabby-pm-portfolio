@@ -9,6 +9,8 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| (pending) | metavv: TRY IT · IMAGE CUSTOM 미니 인터랙티브 컴포넌트 추가 (EXECUTION 직후) |
+| (pending) | banggooso: SIDE CASES → 메인카드(SIDE 02) + 보조 3열(01·03·04) 구조 재설계 |
 | `b386319` | banggooso: HERO 이미지 하단 클립 100px |
 | `fe47af3` | banggooso: HERO 이미지 하단 50px 클립 |
 | `29e1d87` | momscare: HERO 이미지 width 400px |

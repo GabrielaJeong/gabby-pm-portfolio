@@ -55,7 +55,7 @@
   word-break: keep-all;
 }
 
-/* ==================== SIDE CASES (2×2 그리드) ==================== */
+/* ==================== SIDE CASES ==================== */
 
 .side-cases-section {
   border-top: 1px solid var(--border-default);
@@ -63,31 +63,31 @@
   margin-top: var(--section-gap);
 }
 
+/* 메인 카드 — impact-metric-card 위에 gold 강조 */
+.main-case-card {
+  border-color: var(--border-gold);
+  background: rgba(245, 207, 165, 0.03);
+  margin-bottom: var(--space-5);
+}
+
+/* 보조 3열 그리드 */
 .side-cases-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: repeat(3, 1fr);
   gap: var(--space-5);
   align-items: stretch;
-  width: 100%;
 }
 
 .side-case-card {
   display: flex;
   flex-direction: column;
-  padding: var(--card-padding-lg);
+  padding: var(--card-padding-md);
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-md);
-  text-align: left;
-  width: 100%;
+  gap: var(--space-3);
   box-sizing: border-box;
   min-width: 0;
-}
-
-/* ★ 강조 카드 (광고 구좌) */
-.side-case-card--featured {
-  border-color: var(--border-gold);
-  background: rgba(245, 207, 165, 0.03);
 }
 
 .side-case-label {
@@ -95,50 +95,20 @@
   font-weight: var(--fw-caption);
   color: var(--text-label-gold);
   letter-spacing: 0.08em;
-  margin-bottom: var(--card-gap-default);
 }
 
 .side-case-title {
-  font-size: var(--fs-h3);
+  font-size: var(--fs-body);
   font-weight: var(--fw-h3);
   color: var(--text-primary);
   line-height: var(--lh-snug);
-  margin-bottom: var(--space-5);
   word-break: keep-all;
 }
 
-.side-case-divider {
-  height: 1px;
-  background: var(--border-default);
-  margin-bottom: var(--space-4);
-}
-
-.side-case-row {
-  margin-bottom: var(--space-4);
-}
-
-.side-case-row-label {
+.side-case-summary {
   font-size: var(--fs-caption);
-  font-weight: var(--fw-caption);
-  color: var(--text-tertiary);
-  letter-spacing: 0.08em;
-  margin-bottom: var(--space-1);
-}
-
-.side-case-row-value {
-  font-size: var(--fs-body);
   color: var(--text-secondary);
   line-height: var(--lh-normal);
   word-break: keep-all;
-}
-
-/* 미완성 영역 placeholder */
-.side-case-wip {
-  font-size: var(--fs-caption);
-  color: var(--text-quaternary);
-  font-style: italic;
   margin-top: auto;
-  padding-top: var(--space-4);
-  border-top: 1px dashed var(--border-default);
-  word-break: keep-all;
 }

@@ -376,3 +376,236 @@
 .result-grid--3 {
   grid-template-columns: repeat(3, 1fr);
 }
+
+/* ==================== TRY IT — 이미지 커스텀 미니 시연 ==================== */
+
+/* 외부 브라우저 프레임 (폴리오 live-browser-frame 패턴 참조) */
+.image-custom-frame {
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  margin-top: var(--space-6);
+}
+
+/* URL 바 */
+.image-custom-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-4);
+  padding: var(--space-3) var(--space-5);
+  background: var(--surface);
+  border-bottom: 1px solid var(--border-default);
+}
+
+.image-custom-dots {
+  display: flex;
+  gap: 6px;
+  flex-shrink: 0;
+}
+
+.image-custom-dot {
+  width: 10px;
+  height: 10px;
+  border-radius: 50%;
+  background: rgba(138, 136, 130, 0.3);
+  display: block;
+}
+
+.image-custom-url {
+  flex: 1;
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: var(--radius-sm);
+  padding: var(--space-1) var(--space-3);
+  font-size: var(--fs-caption);
+  color: var(--text-tertiary);
+  font-family: monospace;
+  letter-spacing: 0.02em;
+}
+
+/* 메타브 시각 내부 — 흰 배경으로 실제 제품 UI 재현 (사전 승인) */
+.image-custom-content {
+  background: #FFFFFF;
+  padding: var(--space-8);
+}
+
+.image-custom-layout {
+  display: grid;
+  grid-template-columns: 1fr 1.2fr;
+  gap: var(--space-8);
+  align-items: start;
+}
+
+/* 좌: 미리보기 컬럼 */
+.image-custom-preview {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* 스텝 넘버 뱃지 */
+.image-custom-num {
+  width: 32px;
+  height: 32px;
+  background: #000000;
+  color: #FFFFFF;
+  border-radius: 4px;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-body);
+  font-weight: var(--fw-h1);
+  flex-shrink: 0;
+  align-self: flex-start;
+}
+
+/* 미리보기 영역 — 카테고리 클릭으로 색상 변경 */
+.image-custom-image {
+  aspect-ratio: 1 / 1;
+  background: #E5E5E5;
+  border-radius: var(--radius-sm);
+  transition: background 0.3s ease;
+}
+
+.image-custom-image[data-category="1"] { background: #FFE4D6; }
+.image-custom-image[data-category="2"] { background: #D6E4FF; }
+.image-custom-image[data-category="3"] { background: #E4FFD6; }
+
+/* 카테고리 탭 */
+.image-custom-tabs {
+  display: flex;
+  gap: var(--space-2);
+}
+
+.image-custom-tab {
+  flex: 1;
+  padding: var(--space-2) var(--space-1);
+  background: #F5F5F5;
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+  font-size: var(--fs-caption);
+  color: #333333;
+  cursor: pointer;
+  text-align: center;
+  transition: all 0.2s ease;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.image-custom-tab span {
+  font-size: var(--fs-caption);
+  color: #666666;
+  display: block;
+}
+
+.image-custom-tab.active {
+  background: #FF1493;
+  color: #FFFFFF;
+  border-color: #FF1493;
+}
+
+.image-custom-tab.active span {
+  color: rgba(255, 255, 255, 0.8);
+}
+
+/* 완성하기 버튼 */
+.image-custom-cta {
+  padding: var(--space-3) var(--space-6);
+  background: #FF1493;
+  color: #FFFFFF;
+  border: none;
+  border-radius: var(--radius-sm);
+  font-size: var(--fs-body);
+  font-weight: var(--fw-h3);
+  cursor: pointer;
+  transition: opacity 0.2s ease, background 0.3s ease;
+  width: 100%;
+}
+
+.image-custom-cta:hover { opacity: 0.85; }
+
+/* 우: 패널 */
+.image-custom-panel {
+  background: #FAFAFA;
+  border: 1px solid #E0E0E0;
+  border-radius: var(--radius-sm);
+  padding: var(--space-5);
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+.image-custom-panel-header {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  font-size: var(--fs-body);
+  color: #333333;
+  font-weight: var(--fw-h3);
+}
+
+.image-custom-panel-tag {
+  background: #F0F0F0;
+  padding: var(--space-1) var(--space-2);
+  border-radius: 4px;
+  font-size: var(--fs-caption);
+  color: #666666;
+  font-weight: var(--fw-body);
+}
+
+.image-custom-layers {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+  padding: var(--space-3);
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+  background: #FFFFFF;
+}
+
+.image-custom-layer-title {
+  display: flex;
+  justify-content: space-between;
+  font-size: var(--fs-caption);
+  color: #666666;
+  margin-bottom: var(--space-1);
+}
+
+.image-custom-layer {
+  padding: var(--space-2) var(--space-3);
+  background: #FFFFFF;
+  border: 1px solid #E0E0E0;
+  border-radius: 4px;
+  font-size: var(--fs-caption);
+  color: #333333;
+}
+
+.image-custom-button-name {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  padding-top: var(--space-3);
+  border-top: 1px solid #E0E0E0;
+  font-size: var(--fs-caption);
+  color: #666666;
+}
+
+.image-custom-button-value {
+  color: #FF1493;
+  font-weight: var(--fw-h3);
+}
+
+/* 하단 노트 (포트폴리오 다크 레이어) */
+.image-custom-note {
+  margin-top: var(--space-4);
+  text-align: center;
+  font-size: var(--fs-caption);
+  color: var(--text-quaternary);
+}
+
+/* 모바일 반응형 */
+@media (max-width: 768px) {
+  .image-custom-layout {
+    grid-template-columns: 1fr;
+  }
+}

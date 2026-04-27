@@ -244,6 +244,33 @@
     }
   }
 
+  // ============ 6. 이미지 커스텀 미니 인터랙션 ============
+  function initImageCustom() {
+    var tabs    = document.querySelectorAll('.image-custom-tab');
+    var preview = document.getElementById('icPreview');
+    var cta     = document.getElementById('icCta');
+
+    if (!tabs.length || !preview || !cta) return;
+
+    tabs.forEach(function (tab) {
+      tab.addEventListener('click', function () {
+        tabs.forEach(function (t) { t.classList.remove('active'); });
+        tab.classList.add('active');
+        preview.dataset.category = tab.dataset.category;
+      });
+    });
+
+    cta.addEventListener('click', function () {
+      var orig = cta.textContent;
+      cta.textContent = '✓ 완성되었습니다';
+      cta.style.background = '#28A745';
+      setTimeout(function () {
+        cta.textContent = orig;
+        cta.style.background = '';
+      }, 2500);
+    });
+  }
+
   // ============ Init ============
   function init() {
     renderRevenueChart();
@@ -252,6 +279,7 @@
     setupBarAnimation();
     setupPhaseCards();
     setupMiniTabs();
+    initImageCustom();
   }
 
   if (document.readyState === 'loading') {
