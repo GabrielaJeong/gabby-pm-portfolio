@@ -5,6 +5,39 @@
 
 ---
 
+## 2026-04-28
+
+| 커밋 | 변경 내용 |
+|---|---|
+| `b386319` | banggooso: HERO 이미지 하단 클립 100px |
+| `fe47af3` | banggooso: HERO 이미지 하단 50px 클립 |
+| `29e1d87` | momscare: HERO 이미지 width 400px |
+| `4a91f16` | banggooso: HERO 이미지 width 400px |
+| `ba8ade5` | banggooso/momscare: HERO 디바이스 목업 패턴 적용 |
+| `b365d27` | case-main padding-top 80→60px, scroll-indicator margin-top 50px |
+| `011d32b` | metavv: HERO 이미지 translateX 95px + index.html |
+| `7a24aa7` | metavv: HERO 이미지 translateX 105px |
+| `931528a` | metavv: HERO 이미지 translateX 115px |
+| `33fd058` | metavv: HERO 이미지 translateX 120px |
+| `7612b38` | metavv: HERO 이미지 translateY -2px |
+| `190972f` | metavv: HERO 이미지 translateY -5px |
+| `f1379e2` | metavv: HERO 이미지 translateY -8px |
+| `bca6790` | metavv: HERO grid 비율 1.3fr 1fr |
+| `54b57a2` | metavv: HERO tags+h1 grid 안으로, align-items:start |
+| `c7fb8fc` | metavv: HERO 이미지 translateX 125px, translateY -30px |
+| `9944675` | metavv: HERO h1 전체 너비 |
+| `51d6daa` | metavv: HERO grid 복원 + h1 word-break |
+| `5637f9e` | metavv: HERO 이미지 절대위치 |
+| `41532f9` | metavv: HERO grid 비율 1fr 1.3fr |
+| `2a39bd9` | metavv: HERO 이미지 offset 110px |
+| `f681308` | metavv: HERO 이미지 150px 이동 + overflow clip |
+| `12b6252` | assets/hero: 디바이스 목업 이미지 4개 추가 |
+| `afb9295` | metavv: HERO 디바이스 목업 이미지 추가 (좌우 2단) |
+| `f20a7e7` | 이미지 자산 /assets 폴더 통합 정리 |
+| `5b452d0` | banggooso: index.html 업데이트 |
+
+---
+
 ## 2026-04-27
 
 | 커밋 | 변경 내용 |
