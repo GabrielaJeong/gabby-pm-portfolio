@@ -246,17 +246,15 @@
 
   // ============ 6. 이미지 커스텀 미니 인터랙션 ============
   function initImageCustom() {
-    var tabs    = document.querySelectorAll('.image-custom-tab');
-    var preview = document.getElementById('icPreview');
-    var cta     = document.getElementById('icCta');
+    var tabs = document.querySelectorAll('.image-custom-tab');
+    var cta  = document.getElementById('icCta');
 
-    if (!tabs.length || !preview || !cta) return;
+    if (!tabs.length || !cta) return;
 
     tabs.forEach(function (tab) {
       tab.addEventListener('click', function () {
         tabs.forEach(function (t) { t.classList.remove('active'); });
         tab.classList.add('active');
-        preview.dataset.category = tab.dataset.category;
       });
     });
 

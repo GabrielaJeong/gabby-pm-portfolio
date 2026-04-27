@@ -1205,7 +1205,7 @@
               <div class="block-label">TRY IT · IMAGE CUSTOM</div>
             </div>
             <h2 class="block-title">메타브에서 만든 컴포넌트 — 직접 만져보세요</h2>
-            <p class="block-sub">위에서 기획한 이미지 커스텀 컴포넌트의 미니 시연. 카테고리를 클릭해보세요.</p>
+            <p class="block-sub">위에서 기획한 이미지 커스텀 컴포넌트의 미니 시연. 카테고리 탭을 클릭해보세요.</p>
 
             <div class="image-custom-frame">
               <div class="image-custom-bar">
@@ -1220,34 +1220,101 @@
               <div class="image-custom-content">
                 <div class="image-custom-layout">
 
+                  <!-- 좌: 미리보기 패널 -->
                   <div class="image-custom-preview">
-                    <div class="image-custom-num">1</div>
-                    <div class="image-custom-image" id="icPreview" data-category="1"></div>
+                    <div class="image-custom-preview-area"></div>
                     <div class="image-custom-tabs">
-                      <button class="image-custom-tab active" data-category="1">카테고리 1<span>배경 추천</span></button>
-                      <button class="image-custom-tab" data-category="2">카테고리 2<span>기본 레이어</span></button>
+                      <button class="image-custom-tab active" data-category="1">카테고리 1(배경 추천)</button>
+                      <button class="image-custom-tab" data-category="2">카테고리 2(기본 레이어 추천)</button>
                       <button class="image-custom-tab" data-category="3">카테고리 3</button>
+                    </div>
+                    <div class="image-custom-slots">
+                      <div class="image-custom-slot image-custom-slot--active">✕</div>
+                      <div class="image-custom-slot">✕</div>
+                      <div class="image-custom-slot">✕</div>
                     </div>
                     <button class="image-custom-cta" id="icCta">완성하기</button>
                   </div>
 
+                  <!-- 우: 에디터 패널 -->
                   <div class="image-custom-panel">
                     <div class="image-custom-panel-header">
                       <span>콘텐츠</span>
-                      <span class="image-custom-panel-tag">이미지 커스텀</span>
+                      <span class="image-custom-panel-tag">이미지 커스텀 ∨</span>
                     </div>
+
                     <div class="image-custom-layers">
-                      <div class="image-custom-layer-title">
-                        <span>이미지 레이어</span>
-                        <span>3 / 10</span>
+                      <div class="image-custom-layers-top">
+                        <span>이미지 레이어 <span class="image-custom-layers-count">3/10</span></span>
+                        <button class="image-custom-layers-add">+ 추가</button>
                       </div>
-                      <div class="image-custom-layer">3 &nbsp;&nbsp; 카테고리 3</div>
-                      <div class="image-custom-layer">2 &nbsp;&nbsp; 카테고리 2 (기본 레이어 추천)</div>
-                      <div class="image-custom-layer">1 &nbsp;&nbsp; 카테고리 1 (배경 추천)</div>
+
+                      <!-- Layer 3 — 접힘 -->
+                      <div class="image-custom-layer">
+                        <div class="image-custom-layer-row">
+                          <span class="image-custom-layer-drag">≡</span>
+                          <span class="image-custom-layer-num">3</span>
+                          <span class="image-custom-layer-name">카테고리 3</span>
+                          <span class="image-custom-layer-toggle">∨</span>
+                        </div>
+                      </div>
+
+                      <!-- Layer 2 — 접힘 -->
+                      <div class="image-custom-layer">
+                        <div class="image-custom-layer-row">
+                          <span class="image-custom-layer-drag">≡</span>
+                          <span class="image-custom-layer-num">2</span>
+                          <span class="image-custom-layer-name">카테고리 2(기본 레이어 추천)</span>
+                          <span class="image-custom-layer-toggle">∨</span>
+                        </div>
+                      </div>
+
+                      <!-- Layer 1 — 펼침 -->
+                      <div class="image-custom-layer image-custom-layer--open">
+                        <div class="image-custom-layer-row">
+                          <span class="image-custom-layer-drag">≡</span>
+                          <span class="image-custom-layer-num">1</span>
+                          <span class="image-custom-layer-name">카테고리 1(배경 추천)</span>
+                          <button class="image-custom-layer-delete">삭제</button>
+                          <span class="image-custom-layer-toggle">∧</span>
+                        </div>
+                        <div class="image-custom-layer-detail">
+                          <div class="image-custom-detail-top">
+                            <span>선택지 <span class="image-custom-layers-count">3/12</span></span>
+                            <button class="image-custom-none-btn">✓ 선택안함 넣기</button>
+                          </div>
+                          <div class="image-custom-detail-cols">
+                            <span></span><span></span>
+                            <span>적용 이미지</span>
+                            <span>썸네일</span>
+                          </div>
+                          <div class="image-custom-detail-row">
+                            <span class="image-custom-none-label">선택안함</span>
+                            <div class="image-custom-thumb image-custom-thumb--x">✕</div>
+                          </div>
+                          <div class="image-custom-detail-row">
+                            <span class="image-custom-row-arrows">↕</span>
+                            <span class="image-custom-row-label">선택 1 □</span>
+                            <div class="image-custom-thumb">편집</div>
+                            <div class="image-custom-thumb">편집</div>
+                          </div>
+                          <div class="image-custom-detail-row">
+                            <span class="image-custom-row-arrows">↕</span>
+                            <span class="image-custom-row-label">선택 2 □</span>
+                            <div class="image-custom-thumb">편집</div>
+                            <div class="image-custom-thumb">편집</div>
+                          </div>
+                          <button class="image-custom-add-btn">+ 선택지 추가하기</button>
+                        </div>
+                      </div>
                     </div>
+
                     <div class="image-custom-button-name">
                       <span>버튼명</span>
-                      <span class="image-custom-button-value">완성하기</span>
+                      <div class="image-custom-button-field">
+                        <span class="image-custom-button-value">완성하기</span>
+                        <span class="image-custom-button-clear">✕</span>
+                      </div>
                     </div>
                   </div>
 
