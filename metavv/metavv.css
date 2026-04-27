@@ -6,24 +6,18 @@
 
 /* ==================== HERO 디바이스 목업 ==================== */
 
-/* 텍스트는 원래 너비 유지, 이미지는 절대위치로 우측에 배치 */
-.case-hero {
-  position: relative;
-  overflow: hidden;
+.case-hero-grid {
+  grid-template-columns: 1fr 1.3fr;
 }
 
-.case-hero-grid {
-  display: block;   /* grid 해제 — 텍스트 자연 너비 유지 */
+/* h1 — 좁은 컬럼에서 자연스럽게 줄바꿈 (잘림 방지) */
+.case-hero-text .case-title {
+  word-break: break-word;
+  overflow-wrap: break-word;
+  white-space: normal;
 }
 
 .case-hero-visual {
-  position: absolute;
-  top: 0;
-  right: calc(-1 * var(--space-12));
-  bottom: 0;
-  width: 52%;
-  display: flex;
-  align-items: center;
   overflow: hidden;
 }
 
