@@ -10,13 +10,6 @@
   grid-template-columns: 1fr 1.3fr;
 }
 
-/* h1 — 좁은 컬럼에서 자연스럽게 줄바꿈 (잘림 방지) */
-.case-hero-text .case-title {
-  word-break: break-word;
-  overflow-wrap: break-word;
-  white-space: normal;
-}
-
 .case-hero-visual {
   overflow: hidden;
 }
