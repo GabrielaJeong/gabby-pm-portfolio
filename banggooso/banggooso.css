@@ -10,6 +10,12 @@
   grid-template-columns: repeat(2, 1fr);
 }
 
+/* ==================== IMPACT 카드 4열 ==================== */
+
+.case-section .impact-metric-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 /* ==================== HERO 이미지 크기 ==================== */
 
 .case-hero-visual {
