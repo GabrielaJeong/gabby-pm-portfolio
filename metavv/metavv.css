@@ -422,9 +422,25 @@
   letter-spacing: 0.02em;
 }
 
-/* 내부 영역 — 메타브 제품 UI 재현 (사전 승인) */
+/* 내부 영역 — metavv 제품 변수 스코프 */
 .image-custom-content {
-  background: #EBEBEB;
+  /* metavv.studio CSS variables 참조, .image-custom-content 스코프 */
+  --mv-bg:       #ececec;   /* --metavv-color-bg-sub */
+  --mv-white:    #ffffff;
+  --mv-no-img:   #d9d9d9;   /* --metavv-color-bg-no-img */
+  --mv-base:     #0c0c0c;   /* --metavv-color-base */
+  --mv-g800:     #333333;   /* --metavv-color-gray-800 */
+  --mv-g600:     #666666;   /* --metavv-color-gray-600 */
+  --mv-g400:     #999999;   /* --metavv-color-gray-400 */
+  --mv-g300:     #b3b3b3;   /* --metavv-color-gray-300 */
+  --mv-g200:     #cccccc;   /* --metavv-color-gray-200 */
+  --mv-g100:     #e6e6e6;   /* --metavv-color-gray-100 */
+  --mv-g50:      #f2f2f2;   /* --metavv-color-gray-50  */
+  --mv-g30:      #f8f8f8;   /* --metavv-color-gray-30  */
+  --mv-radius:   8px;       /* --metavv-card-brd-radius */
+  --mv-blue:     #3390ff;   /* --metavv-color-blue */
+  --mv-pink:     #FF1493;   /* 이미지커스텀 전용 액센트 — 제공 변수에 없음, 스크린샷 기준 */
+  background: var(--mv-bg);
   padding: var(--space-5);
 }
 
@@ -440,15 +456,15 @@
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
-  background: #FFFFFF;
-  border-radius: var(--radius-sm);
+  background: var(--mv-white);
+  border-radius: var(--mv-radius);
   padding: var(--space-4);
 }
 
 /* 이미지 미리보기 회색 박스 */
 .image-custom-preview-area {
-  background: #D9D9D9;
-  border-radius: 4px;
+  background: var(--mv-no-img);
+  border-radius: calc(var(--mv-radius) / 2);
   aspect-ratio: 1 / 1;
 }
 
@@ -462,11 +478,11 @@
   flex: 1;
   min-width: 0;
   padding: var(--space-1) var(--space-2);
-  background: #FFFFFF;
-  border: 1px solid #E0E0E0;
+  background: var(--mv-white);
+  border: 1px solid var(--mv-g100);
   border-radius: 20px;
   font-size: var(--fs-caption);
-  color: #555555;
+  color: var(--mv-g600);
   cursor: pointer;
   text-align: center;
   transition: all 0.2s ease;
@@ -476,9 +492,9 @@
 }
 
 .image-custom-tab.active {
-  background: #FF1493;
-  color: #FFFFFF;
-  border-color: #FF1493;
+  background: var(--mv-pink);
+  color: var(--mv-white);
+  border-color: var(--mv-pink);
 }
 
 /* 이미지 슬롯 행 (썸네일 3개) */
@@ -490,30 +506,30 @@
 .image-custom-slot {
   flex: 1;
   aspect-ratio: 1 / 1;
-  background: #E8E8E8;
-  border: 1px solid #CCCCCC;
-  border-radius: 4px;
+  background: var(--mv-g100);
+  border: 1px solid var(--mv-g200);
+  border-radius: calc(var(--mv-radius) / 2);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: var(--fs-body);
-  color: #AAAAAA;
+  color: var(--mv-g300);
 }
 
 .image-custom-slot--active {
-  border: 2px solid #FF1493;
-  color: #FF1493;
-  background: #FFF0F8;
+  border: 2px solid var(--mv-pink);
+  color: var(--mv-pink);
+  background: var(--mv-white);
 }
 
 /* 완성하기 버튼 */
 .image-custom-cta {
   width: 100%;
   padding: var(--space-3) var(--space-4);
-  background: #FF1493;
-  color: #FFFFFF;
+  background: var(--mv-pink);
+  color: var(--mv-white);
   border: none;
-  border-radius: var(--radius-sm);
+  border-radius: var(--mv-radius);
   font-size: var(--fs-body);
   font-weight: var(--fw-h3);
   cursor: pointer;
@@ -522,12 +538,12 @@
 
 .image-custom-cta:hover { opacity: 0.85; }
 
-/* ——— 우: 에디터 패널 ——— */
+/* ——— 우: 에디터 패널 — 팔레트 카드 스타일 기준 ——— */
 .image-custom-panel {
-  background: #FFFFFF;
-  border: 1px solid #E0E0E0;
-  border-radius: var(--radius-sm);
-  padding: var(--space-4);
+  background: var(--mv-white);
+  box-shadow: 0 2px 8px rgba(0, 0, 0, 0.12);
+  border-radius: var(--mv-radius);
+  padding: var(--space-6);
   display: flex;
   flex-direction: column;
   gap: var(--space-3);
@@ -538,17 +554,17 @@
   align-items: center;
   gap: var(--space-2);
   font-size: var(--fs-body);
-  color: #333333;
+  color: var(--mv-g800);
   font-weight: var(--fw-h3);
 }
 
 .image-custom-panel-tag {
-  background: #F0F0F0;
-  border: 1px solid #E0E0E0;
+  background: var(--mv-g50);
+  border: 1px solid var(--mv-g100);
   padding: var(--space-1) var(--space-2);
   border-radius: 20px;
   font-size: var(--fs-caption);
-  color: #555555;
+  color: var(--mv-g600);
   font-weight: var(--fw-body);
 }
 
@@ -565,20 +581,20 @@
   align-items: center;
   margin-bottom: var(--space-1);
   font-size: var(--fs-caption);
-  color: #333333;
+  color: var(--mv-g800);
   font-weight: var(--fw-h3);
 }
 
 .image-custom-layers-count {
-  color: #888888;
+  color: var(--mv-g400);
   font-weight: var(--fw-body);
 }
 
 .image-custom-layers-add {
-  background: #1A1A1A;
-  color: #FFFFFF;
+  background: var(--mv-base);
+  color: var(--mv-white);
   border: none;
-  border-radius: 4px;
+  border-radius: calc(var(--mv-radius) / 2);
   padding: var(--space-1) var(--space-3);
   font-size: var(--fs-caption);
   font-weight: var(--fw-h3);
@@ -587,9 +603,9 @@
 
 /* 레이어 아이템 */
 .image-custom-layer {
-  border: 1px solid #E0E0E0;
-  border-radius: 4px;
-  background: #FFFFFF;
+  border: 1px solid var(--mv-g100);
+  border-radius: calc(var(--mv-radius) / 2);
+  background: var(--mv-white);
   overflow: hidden;
 }
 
@@ -601,14 +617,14 @@
 }
 
 .image-custom-layer-drag {
-  color: #CCCCCC;
+  color: var(--mv-g200);
   font-size: var(--fs-body);
   flex-shrink: 0;
 }
 
 .image-custom-layer-num {
   font-size: var(--fs-caption);
-  color: #888888;
+  color: var(--mv-g400);
   flex-shrink: 0;
   min-width: var(--space-3);
 }
@@ -616,7 +632,7 @@
 .image-custom-layer-name {
   flex: 1;
   font-size: var(--fs-caption);
-  color: #333333;
+  color: var(--mv-g800);
   font-weight: var(--fw-h3);
   white-space: nowrap;
   overflow: hidden;
@@ -625,7 +641,7 @@
 
 .image-custom-layer-delete {
   font-size: var(--fs-caption);
-  color: #999999;
+  color: var(--mv-g400);
   background: none;
   border: none;
   cursor: default;
@@ -635,23 +651,23 @@
 
 .image-custom-layer-toggle {
   font-size: var(--fs-caption);
-  color: #888888;
+  color: var(--mv-g400);
   flex-shrink: 0;
 }
 
 /* 펼쳐진 레이어 강조 */
 .image-custom-layer--open {
-  border-color: #CCCCCC;
+  border-color: var(--mv-g200);
 }
 
 /* 레이어 펼침 디테일 */
 .image-custom-layer-detail {
-  border-top: 1px solid #F0F0F0;
+  border-top: 1px solid var(--mv-g50);
   padding: var(--space-3);
   display: flex;
   flex-direction: column;
   gap: var(--space-2);
-  background: #FAFAFA;
+  background: var(--mv-g30);
 }
 
 .image-custom-detail-top {
@@ -659,14 +675,14 @@
   justify-content: space-between;
   align-items: center;
   font-size: var(--fs-caption);
-  color: #666666;
+  color: var(--mv-g600);
 }
 
 .image-custom-none-btn {
   background: none;
   border: none;
   font-size: var(--fs-caption);
-  color: #2196F3;
+  color: var(--mv-blue);
   cursor: default;
   padding: 0;
 }
@@ -682,44 +698,44 @@
 
 .image-custom-detail-cols {
   font-size: var(--fs-caption);
-  color: #999999;
+  color: var(--mv-g400);
 }
 
 /* 선택안함 행 — 2열 병합 */
 .image-custom-none-label {
   font-size: var(--fs-caption);
-  color: #333333;
+  color: var(--mv-g800);
   grid-column: 1 / 3;
 }
 
 .image-custom-row-arrows {
   font-size: var(--fs-caption);
-  color: #AAAAAA;
+  color: var(--mv-g300);
   text-align: center;
   flex-shrink: 0;
 }
 
 .image-custom-row-label {
   font-size: var(--fs-caption);
-  color: #333333;
+  color: var(--mv-g800);
 }
 
 /* 썸네일 플레이스홀더 */
 .image-custom-thumb {
   aspect-ratio: 1 / 1;
-  background: #E8E8E8;
-  border-radius: 4px;
+  background: var(--mv-g100);
+  border-radius: calc(var(--mv-radius) / 2);
   display: flex;
   align-items: center;
   justify-content: center;
   font-size: var(--fs-caption);
-  color: #999999;
+  color: var(--mv-g400);
 }
 
 .image-custom-thumb--x {
-  background: #FFFFFF;
-  border: 1px solid #CCCCCC;
-  color: #AAAAAA;
+  background: var(--mv-white);
+  border: 1px solid var(--mv-g200);
+  color: var(--mv-g300);
   font-size: var(--fs-body);
 }
 
@@ -727,10 +743,10 @@
 .image-custom-add-btn {
   width: 100%;
   padding: var(--space-2) var(--space-3);
-  background: #1A1A1A;
-  color: #FFFFFF;
+  background: var(--mv-base);
+  color: var(--mv-white);
   border: none;
-  border-radius: 4px;
+  border-radius: calc(var(--mv-radius) / 2);
   font-size: var(--fs-caption);
   font-weight: var(--fw-h3);
   cursor: default;
@@ -743,9 +759,9 @@
   align-items: center;
   gap: var(--space-3);
   padding-top: var(--space-2);
-  border-top: 1px solid #E0E0E0;
+  border-top: 1px solid var(--mv-g100);
   font-size: var(--fs-caption);
-  color: #888888;
+  color: var(--mv-g400);
 }
 
 .image-custom-button-field {
@@ -753,19 +769,19 @@
   display: flex;
   align-items: center;
   justify-content: space-between;
-  background: #F5F5F5;
-  border: 1px solid #E0E0E0;
-  border-radius: 4px;
+  background: var(--mv-g50);
+  border: 1px solid var(--mv-g100);
+  border-radius: calc(var(--mv-radius) / 2);
   padding: var(--space-1) var(--space-3);
 }
 
 .image-custom-button-value {
   font-size: var(--fs-caption);
-  color: #333333;
+  color: var(--mv-g800);
 }
 
 .image-custom-button-clear {
-  color: #CCCCCC;
+  color: var(--mv-g200);
   font-size: var(--fs-caption);
 }
 
