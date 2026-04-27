@@ -20,6 +20,11 @@
   transform: translateX(95px) translateY(-2px);
 }
 
+/* scroll-indicator margin-top 조정 */
+.scroll-indicator {
+  margin-top: 50px;
+}
+
 /* ==================== DECISION FLOW (PHASE 1 시안) ==================== */
 
 /* data-dflow 카드: 정적 카드 (토글 없음) */
