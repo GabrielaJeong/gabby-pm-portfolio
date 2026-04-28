@@ -12,39 +12,54 @@
   height: auto;
 }
 
-/* ==================== IMPACT KPI 진행률 바 — 목표 vs 실적 비교 시각 ==================== */
+/* ==================== IMPACT KPI 세로형 막대 차트 — 목표 vs 실적 비교 시각 ==================== */
 
 .kpi-progress {
-  margin: var(--space-5) 0;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-3);
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: var(--space-8);
+  align-items: stretch;
+  margin: var(--space-5) 0 var(--space-3);
+  height: 280px;
 }
 
 .kpi-progress-row {
-  display: grid;
-  grid-template-columns: var(--space-12) minmax(0, 1fr) auto;
-  align-items: center;
-  gap: var(--space-3);
+  display: flex;
+  flex-direction: column;
+  align-items: flex-start;
+  gap: var(--space-2);
+  height: 100%;
 }
 
 .kpi-progress-label {
   font-size: var(--fs-caption);
-  color: var(--text-secondary);
-  font-weight: 600;
+  font-weight: var(--fw-caption);
+  color: var(--text-tertiary);
+  letter-spacing: 0.08em;
+}
+
+.kpi-progress-value {
+  font-size: var(--fs-h1);
+  font-weight: var(--fw-h1);
+  letter-spacing: -0.02em;
+  line-height: 1;
+  color: var(--text-quaternary);
+  margin-bottom: var(--space-2);
 }
 
 .kpi-progress-track {
-  height: var(--space-2);
-  background: rgba(255, 255, 255, 0.06);
+  width: 100%;
+  flex: 1;
+  background: rgba(255, 255, 255, 0.04);
   border-radius: var(--radius-sm);
   overflow: hidden;
+  display: flex;
+  align-items: flex-end;
 }
 
 .kpi-progress-fill {
-  height: 100%;
-  border-radius: var(--radius-sm);
-  transition: width 0.6s var(--reveal-easing);
+  width: 100%;
+  transition: height 0.6s var(--reveal-easing);
 }
 
 .kpi-progress-fill--target {
@@ -55,18 +70,19 @@
   background: var(--gold);
 }
 
-.kpi-progress-value {
-  font-size: var(--fs-body);
-  color: var(--text-primary);
-  font-weight: 600;
-  text-align: right;
-  white-space: nowrap;
+/* 실적 행의 숫자는 gold로 강조 (시각 대비) */
+.kpi-progress-row:has(.kpi-progress-fill--actual) .kpi-progress-value {
+  color: var(--gold);
 }
 
 @media (max-width: 768px) {
-  .kpi-progress-row {
-    grid-template-columns: var(--space-10) minmax(0, 1fr) auto;
-    gap: var(--space-2);
+  .kpi-progress {
+    height: 220px;
+    gap: var(--space-5);
+  }
+
+  .kpi-progress-value {
+    font-size: var(--fs-h2);
   }
 }
 
