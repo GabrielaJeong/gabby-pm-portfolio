@@ -1882,11 +1882,14 @@
 /* LEARNED 3카드 그리드 — learned-card 재사용 */
 .meta-learned-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-5);
   align-items: stretch;
-  margin-bottom: var(--section-inner);
+  justify-items: stretch;
+  margin: 0 0 var(--section-inner);
   width: 100%;
+  max-width: 100%;
+  box-sizing: border-box;
 }
 
 /* 2열 변형 — case-block 내부 LEARNED 카드 2개 병렬 배치 */
