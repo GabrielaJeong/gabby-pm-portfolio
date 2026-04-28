@@ -63,18 +63,25 @@
   margin-top: var(--section-gap);
 }
 
+/* 2컬럼 레이아웃 — 좌: 메인 카드 (가장 큰 값), 우: 보조 카드 직렬 */
+.side-cases-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-5);
+  align-items: stretch;
+}
+
 /* 메인 카드 — impact-metric-card 위에 gold 강조 */
 .main-case-card {
   border-color: var(--border-gold);
   background: rgba(245, 207, 165, 0.03);
-  margin-bottom: var(--space-5);
 }
 
-/* 보조 3열 그리드 */
+/* 보조 카드 세로 직렬 */
 .side-cases-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-5);
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
   align-items: stretch;
 }
 
@@ -111,4 +118,11 @@
   line-height: var(--lh-normal);
   word-break: keep-all;
   margin-top: auto;
+}
+
+/* 모바일: 2컬럼 → 1컬럼 스택 */
+@media (max-width: 768px) {
+  .side-cases-layout {
+    grid-template-columns: 1fr;
+  }
 }
