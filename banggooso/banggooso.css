@@ -97,17 +97,18 @@
 }
 
 .side-case-title {
-  font-size: var(--fs-body);
+  font-size: var(--fs-h3);
   font-weight: var(--fw-h3);
   color: var(--text-primary);
   line-height: var(--lh-snug);
+  letter-spacing: -0.01em;
   word-break: keep-all;
 }
 
 .side-case-summary {
-  font-size: var(--fs-caption);
+  font-size: var(--fs-body);
   color: var(--text-secondary);
-  line-height: var(--lh-normal);
+  line-height: var(--lh-relaxed);
   word-break: keep-all;
   margin-top: auto;
 }
