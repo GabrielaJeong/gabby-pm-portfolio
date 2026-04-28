@@ -7,6 +7,11 @@
 
 /* ==================== HERO 이미지 크기 ==================== */
 
+/* HERO 좌우 비율 — 좌측 텍스트가 한 줄로 들어가도록 (metavv 패턴) */
+.case-hero .case-hero-grid {
+  grid-template-columns: 1.3fr 1fr;
+}
+
 .case-hero-visual img {
   width: 400px;
   height: auto;
