@@ -1005,7 +1005,7 @@ ul {
 .stage-hero-main {
   font-size: 30px;
   font-weight: 500;
-  color: #ffffff;
+  color: var(--gold);
   line-height: 1.3;
   letter-spacing: -0.025em;
   margin-bottom: 12px;
