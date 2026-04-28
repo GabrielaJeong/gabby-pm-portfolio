@@ -1810,6 +1810,13 @@
   margin-top: auto;
 }
 
+/* 결과 카드 보조 메타 (전월 대비 등 부가 정보 — 더 옅은 톤) */
+.result-sub-meta {
+  font-size: var(--fs-caption);
+  color: var(--text-quaternary);
+  letter-spacing: 0.02em;
+}
+
 /* ==================== REFLECTION ==================== */
 
 .learned-card {
