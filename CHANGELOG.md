@@ -9,8 +9,9 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
-| (pending) | folio: DESIGN SYSTEM Input/Send demo 폭 제한 (max-width 260px) — 다른 카드와 비례 맞춤 |
-| `67398e4` | folio: DESIGN SYSTEM 컴포넌트 demo 높이 자동 동일화 (flex:1 + min-height 200px) — Character Card 키워진 후 시각적 비대칭 해결 |
+| (pending) | folio: DESIGN SYSTEM 컴포넌트 demo 높이를 고정값(absolute, 240px)으로 — 콘텐츠 변화에 무관한 카탈로그 일관성 + 직전 max-width 되돌림 |
+| `6d64782` | folio: DESIGN SYSTEM Input/Send demo 폭 제한 (max-width 260px) — 다른 카드와 비례 맞춤 (다음 커밋에서 되돌림) |
+| `67398e4` | folio: DESIGN SYSTEM 컴포넌트 demo 높이 자동 동일화 (flex:1 + min-height 200px) — Character Card 키워진 후 시각적 비대칭 해결 (다음 커밋에서 height 고정으로 변경) |
 
 ## 2026-04-28
 

@@ -578,12 +578,11 @@ a.axis-card.doc-card:hover {
   display: flex;
   align-items: center;
   justify-content: center;
-  flex: 1;                /* 카드 내부 남은 공간 모두 차지 → 같은 줄 demo 높이 자동 동일 */
   background: var(--folio-bg);
   border: 1px solid var(--folio-border);
   border-radius: var(--radius-md);
   padding: var(--space-5);
-  min-height: 200px;      /* 캐릭터 카드 wrap(약 160px) + padding 여유 — 카드 콘텐츠 작아도 안전망 */
+  height: 240px;          /* 고정 높이 — 콘텐츠 사이즈에 무관하게 카탈로그 일관성 유지 */
   margin-bottom: var(--space-4);
   overflow: hidden;
 }
@@ -744,7 +743,6 @@ a.axis-card.doc-card:hover {
   align-items: center;
   gap: var(--space-2);
   width: 100%;
-  max-width: 260px;       /* demo 가득 채우지 않도록 — 다른 카드와 비례 맞춤 */
   background: var(--folio-surface);
   border: 1px solid var(--folio-border-strong);
   border-radius: var(--radius-lg);
