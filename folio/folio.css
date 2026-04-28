@@ -71,38 +71,57 @@
   }
 }
 
-/* ==================== KEY DECISIONS — 5컬럼 병렬 그리드 ==================== */
+/* ==================== KEY DECISIONS — 5장 직렬 + 카드 안 좌(메타) + 우(본문) 2컬럼 ==================== */
 
-.decisions-grid {
-  display: grid;
-  grid-template-columns: repeat(5, minmax(0, 1fr));
-  gap: var(--space-4);
-  align-items: stretch;
-}
-
-/* 카드 자체도 height 100% + flex column으로 → stretch 시 콘텐츠가 자연스럽게 분배 */
-.decisions-grid .exec-phase-card {
-  height: 100%;
+.decisions-list {
   display: flex;
   flex-direction: column;
+  gap: var(--space-5);
 }
 
-/* 모바일: 너무 좁아지므로 컬럼 수 단계적 축소 */
-@media (max-width: 1100px) {
-  .decisions-grid {
-    grid-template-columns: repeat(3, minmax(0, 1fr));
-  }
+.decision-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  column-gap: var(--space-10);
+  padding: var(--card-padding-lg);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  align-items: start;
 }
 
+/* 좌측 컬럼: label / title / summary 자연 흐름 */
+.decision-card > .exec-phase-label,
+.decision-card > .exec-phase-title,
+.decision-card > .exec-phase-summary {
+  grid-column: 1;
+}
+
+/* 우측 컬럼: 본문 텍스트, 모든 row span으로 좌측 묶음 전체 높이 */
+.decision-card > .exec-detail-body {
+  grid-column: 2;
+  grid-row: 1 / -1;
+}
+
+/* 좌측 마지막 요소(summary) 하단 마진 제거 — grid가 정렬 처리 */
+.decision-card > .exec-phase-summary {
+  margin-bottom: 0;
+}
+
+/* 모바일: 1컬럼 스택 (메타 위, 본문 아래) */
 @media (max-width: 768px) {
-  .decisions-grid {
-    grid-template-columns: repeat(2, minmax(0, 1fr));
-  }
-}
-
-@media (max-width: 480px) {
-  .decisions-grid {
+  .decision-card {
     grid-template-columns: 1fr;
+    row-gap: var(--space-4);
+  }
+
+  .decision-card > .exec-detail-body {
+    grid-column: 1;
+    grid-row: auto;
+  }
+
+  .decision-card > .exec-phase-summary {
+    margin-bottom: var(--space-2);
   }
 }
 
