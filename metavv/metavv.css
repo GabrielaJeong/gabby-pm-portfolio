@@ -148,22 +148,32 @@
   letter-spacing: -0.01em;
 }
 
-/* 사용자 인용 ↔ 의문 박스 가로 병렬 (위 row), 비교 그리드는 아래 row */
-.strategy-quotes-row {
+/* 인용 → 비교 그리드 → 의문 박스 3컬럼 병렬 (가운데 비교가 더 넓음) */
+.strategy-flow-row {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1.5fr) minmax(0, 1fr);
   gap: var(--space-4);
   align-items: stretch;
   margin: var(--space-5) 0;
 }
 
-.strategy-quotes-row > .case-quote {
+.strategy-flow-row > .case-quote,
+.strategy-flow-row > .vs-compare {
   margin: 0;
 }
 
-@media (max-width: 768px) {
-  .strategy-quotes-row {
+/* 좁은 컬럼 안에서는 비교 그리드 자체도 1컬럼 세로 stack */
+.strategy-flow-row > .vs-compare {
+  grid-template-columns: 1fr;
+}
+
+@media (max-width: 1100px) {
+  .strategy-flow-row {
     grid-template-columns: 1fr;
+  }
+
+  .strategy-flow-row > .vs-compare {
+    grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   }
 }
 
