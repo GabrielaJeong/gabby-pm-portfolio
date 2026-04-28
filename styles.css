@@ -593,9 +593,9 @@ ul {
   color: var(--text-muted);
 }
 
-/* 제목 + 서브타이틀 (제목 위, 서브타이틀 아래) */
+/* 제목 + 서브타이틀 — about-grid 좌측 칼럼 상단에 위치 */
 .about-intro {
-  margin-bottom: 80px;
+  margin-bottom: 0;
 }
 
 .about-title {
@@ -618,14 +618,23 @@ ul {
   line-height: 1.6;
 }
 
-/* About 2컬럼 그리드 — 좌: Timeline, 우: 프로필 사진 */
+/* About 2컬럼 그리드 — 좌: intro + timeline, 우: 프로필 사진 (두 행 span) */
 .about-grid {
   display: grid;
-  grid-template-columns: 1fr minmax(0, 360px);
-  gap: var(--space-16);
+  grid-template-columns: 1fr minmax(0, 460px);
+  grid-template-rows: auto 1fr;
+  grid-template-areas:
+    "intro photo"
+    "timeline photo";
+  column-gap: var(--space-16);
+  row-gap: var(--space-12);
   align-items: start;
   margin-bottom: 100px;
 }
+
+.about-grid > .about-intro    { grid-area: intro; }
+.about-grid > .about-timeline { grid-area: timeline; }
+.about-grid > .about-photo    { grid-area: photo; align-self: stretch; }
 
 .about-photo {
   width: 100%;
@@ -1113,13 +1122,10 @@ ul {
     font-size: 34px;
   }
 
-  .about-intro {
-    margin-bottom: 64px;
-  }
-
   .about-grid {
-    grid-template-columns: 1fr minmax(0, 280px);
-    gap: var(--space-12);
+    grid-template-columns: 1fr minmax(0, 360px);
+    column-gap: var(--space-12);
+    row-gap: var(--space-10);
   }
 
   .cap-grid {
@@ -1186,12 +1192,18 @@ ul {
 
   .about-grid {
     grid-template-columns: 1fr;
+    grid-template-rows: auto auto auto;
+    grid-template-areas:
+      "intro"
+      "photo"
+      "timeline";
     gap: var(--space-10);
     margin-bottom: 64px;
   }
 
   .about-photo {
-    max-width: 320px;
+    max-width: 360px;
+    margin: 0 auto;
   }
 
   .timeline-item {
