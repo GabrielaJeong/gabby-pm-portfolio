@@ -28,6 +28,18 @@
   background: rgba(245, 207, 165, 0.04);
 }
 
+/* 박스 위 역할 라벨 (USER / PRODUCT MANAGER) */
+.case-quote-role {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  letter-spacing: 0.12em;
+}
+
+.case-quote--question .case-quote-role {
+  color: var(--gold);
+}
+
 .case-quote-icon {
   flex-shrink: 0;
   width: var(--space-10);
@@ -157,27 +169,35 @@
   margin: var(--space-5) 0;
 }
 
-.strategy-flow-row > .case-quote,
+.strategy-flow-row > .strategy-flow-cell,
 .strategy-flow-row > .vs-compare {
   margin: 0;
 }
 
+/* 라벨(USER/PRODUCT MANAGER) + 박스 묶음 wrapper */
+.strategy-flow-cell {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-2);
+}
+
 /* 좁은 컬럼에 맞춰 인용 박스 컴팩트화 — 픽토그램 위 / 텍스트 아래 (직렬) */
-.strategy-flow-row > .case-quote {
+.strategy-flow-cell > .case-quote {
   flex-direction: column;
   align-items: center;
   text-align: center;
   padding: var(--card-padding-md);
   gap: var(--space-3);
+  margin: 0;
 }
 
-.strategy-flow-row > .case-quote .case-quote-icon {
+.strategy-flow-cell > .case-quote .case-quote-icon {
   width: var(--space-8);
   height: var(--space-8);
   font-size: var(--fs-body);
 }
 
-.strategy-flow-row > .case-quote .case-quote-text {
+.strategy-flow-cell > .case-quote .case-quote-text {
   font-size: var(--fs-body);
   line-height: var(--lh-relaxed);
   font-weight: var(--fw-body);

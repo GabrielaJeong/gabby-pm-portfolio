@@ -860,9 +860,12 @@
           <!-- 인용 → 비교 그리드 → 의문 박스 가로 한 줄 (3컬럼 병렬) -->
           <div class="strategy-flow-row">
             <!-- 사용자 인용 (CS에서 반복된 문의) -->
-            <div class="case-quote case-quote--user">
-              <div class="case-quote-icon" aria-hidden="true">💬</div>
-              <p class="case-quote-text">어떤 상품을 결제해야 할 지 모르겠어요.<br />템플릿과 멤버십의 차이가 무엇인가요?</p>
+            <div class="strategy-flow-cell">
+              <div class="case-quote-role">USER</div>
+              <div class="case-quote case-quote--user">
+                <div class="case-quote-icon" aria-hidden="true">💬</div>
+                <p class="case-quote-text">어떤 상품을 결제해야 할 지 모르겠어요.<br />템플릿과 멤버십의 차이가 무엇인가요?</p>
+              </div>
             </div>
 
             <!-- 두 상품 비교 그리드 (가운데, 더 넓은 폭) -->
@@ -886,9 +889,12 @@
             </div>
 
             <!-- 핵심 의문 (가설로 이어지는 질문) -->
-            <div class="case-quote case-quote--question">
-              <div class="case-quote-icon" aria-hidden="true">?</div>
-              <p class="case-quote-text">이미 홈페이지에 설명이 명시되어 있는데,<br /><strong>왜 사용자들이 동일한 CS를 보낼까?</strong></p>
+            <div class="strategy-flow-cell">
+              <div class="case-quote-role">PRODUCT MANAGER</div>
+              <div class="case-quote case-quote--question">
+                <div class="case-quote-icon" aria-hidden="true">?</div>
+                <p class="case-quote-text">이미 홈페이지에 설명이 명시되어 있는데,<br /><strong>왜 사용자들이 동일한 CS를 보낼까?</strong></p>
+              </div>
             </div>
           </div>
 
