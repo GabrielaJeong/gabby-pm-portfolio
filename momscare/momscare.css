@@ -101,6 +101,29 @@
   }
 }
 
+/* ==================== PROBLEM 카드 픽토그램 — axis-card 우측 상단 ==================== */
+
+/* axis-card position 기준 (icon absolute) */
+.axis-card {
+  position: relative;
+}
+
+.axis-card-icon {
+  position: absolute;
+  top: var(--space-5);
+  right: var(--space-5);
+  width: var(--space-8);
+  height: var(--space-8);
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+/* 카드 제목/본문 영역이 아이콘 폭만큼 우측 여백 확보 */
+.axis-card .axis-card-title,
+.axis-card .axis-card-body {
+  padding-right: var(--space-10);
+}
+
 /* ==================== CONTEXT — 3사 협업 구조 ==================== */
 
 .ctx-collab-diagram {
