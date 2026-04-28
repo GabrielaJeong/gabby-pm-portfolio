@@ -379,18 +379,49 @@ a.axis-card.doc-card:hover {
 
 /* ==================== DESIGN SYSTEM 섹션 ==================== */
 
+/* folio 앱 디자인 토큰 — DS 섹션 scope 내부에서만 사용
+   (메인 사이트 토큰과 분리. 메타브 페이지/포트폴리오 자체에는 영향 없음) */
 .ds-section {
+  --folio-bg: #0A0E17;
+  --folio-surface: #131927;
+  --folio-text: #E2E8F0;
+  --folio-accent: #5B8FB9;
+  --folio-text-muted: #A8B5C8;
+  --folio-border: #1E2A3A;
+  --folio-border-strong: #2a3a50;
+  --folio-msg-user: #1a2438;
+
   border-top: 1px solid var(--border-default);
   padding: var(--section-gap) 0;
   margin-top: var(--section-gap);
 }
 
-/* 색상 스와치 */
+/* ---------- COLOR PALETTE — 시멘틱 그룹 ---------- */
+
+.ds-color-groups {
+  display: grid;
+  grid-template-columns: repeat(2, 1fr);
+  gap: var(--space-6);
+  margin-bottom: var(--space-8);
+}
+
+.ds-color-group {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.ds-color-group-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-tertiary);
+  letter-spacing: 0.12em;
+}
+
 .ds-swatches {
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(120px, 1fr));
+  grid-template-columns: repeat(auto-fill, minmax(140px, 1fr));
   gap: var(--space-3);
-  margin-bottom: var(--space-8);
 }
 
 .ds-swatch {
@@ -400,28 +431,53 @@ a.axis-card.doc-card:hover {
 }
 
 .ds-swatch-color {
-  height: 48px;
+  height: 56px;
   border-radius: var(--radius-sm);
   border: 1px solid rgba(255, 255, 255, 0.08);
+}
+
+.ds-swatch-color--bg          { background: var(--folio-bg); }
+.ds-swatch-color--surface     { background: var(--folio-surface); }
+.ds-swatch-color--text        { background: var(--folio-text); }
+.ds-swatch-color--accent      { background: var(--folio-accent); }
+.ds-swatch-color--text-muted  { background: var(--folio-text-muted); }
+.ds-swatch-color--border {
+  background: var(--folio-border);
+  border-color: var(--folio-border-strong);
+}
+
+.ds-swatch-meta {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
 }
 
 .ds-swatch-name {
   font-size: var(--fs-caption);
   font-weight: var(--fw-caption);
   color: var(--text-secondary);
+  font-family: monospace;
 }
 
 .ds-swatch-value {
-  font-size: 10px;
+  font-size: var(--fs-caption);
   color: var(--text-tertiary);
   font-family: monospace;
 }
 
-/* 타이포그래피 스케일 */
+.ds-swatch-context {
+  font-size: var(--fs-caption);
+  color: var(--text-quaternary);
+  line-height: var(--lh-snug);
+  word-break: keep-all;
+}
+
+/* ---------- TYPOGRAPHY SCALE — 위계 강화 ---------- */
+
 .ds-type-scale {
   display: flex;
   flex-direction: column;
-  gap: var(--space-4);
+  gap: var(--space-5);
   margin-bottom: var(--space-8);
   padding: var(--card-padding-lg);
   background: rgba(255, 255, 255, 0.02);
@@ -430,11 +486,12 @@ a.axis-card.doc-card:hover {
 }
 
 .ds-type-row {
-  display: flex;
+  display: grid;
+  grid-template-columns: 110px 1fr 200px;
   align-items: baseline;
-  gap: var(--space-4);
+  gap: var(--space-5);
+  padding-bottom: var(--space-4);
   border-bottom: 1px solid var(--border-default);
-  padding-bottom: var(--space-3);
 }
 
 .ds-type-row:last-child {
@@ -443,27 +500,63 @@ a.axis-card.doc-card:hover {
 }
 
 .ds-type-meta {
-  flex-shrink: 0;
-  width: 80px;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.ds-type-token {
   font-size: var(--fs-caption);
-  color: var(--text-tertiary);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  font-family: monospace;
+  letter-spacing: 0.04em;
+}
+
+.ds-type-spec {
+  font-size: var(--fs-caption);
+  color: var(--text-quaternary);
   font-family: monospace;
 }
 
 .ds-type-sample {
-  color: var(--text-primary);
-  line-height: 1.2;
+  color: var(--folio-text);
+  line-height: var(--lh-snug);
+  word-break: keep-all;
 }
 
-/* 컴포넌트 그리드 */
+/* folio 앱의 6단계 폰트 스케일 (메인 사이트 토큰과 별개) */
+.ds-type-sample--page       { font-size: 20px; font-weight: 800; }
+.ds-type-sample--section    { font-size: 18px; font-weight: 700; }
+.ds-type-sample--card-title { font-size: 15px; font-weight: 600; }
+.ds-type-sample--body       { font-size: 14px; font-weight: 400; color: var(--folio-text-muted); }
+.ds-type-sample--sub        { font-size: 13px; font-weight: 400; color: var(--folio-text-muted); }
+.ds-type-sample--caption    {
+  font-size: 11px;
+  font-weight: 500;
+  letter-spacing: 0.06em;
+  color: var(--folio-text-muted);
+}
+
+.ds-type-context {
+  font-size: var(--fs-caption);
+  color: var(--text-tertiary);
+  line-height: var(--lh-snug);
+  word-break: keep-all;
+}
+
+/* ---------- COMPONENT CATALOG — 시각화 ---------- */
+
 .ds-component-grid {
   display: grid;
   grid-template-columns: repeat(3, 1fr);
-  gap: var(--space-4);
+  gap: var(--space-5);
   align-items: stretch;
 }
 
 .ds-component-card {
+  display: flex;
+  flex-direction: column;
   padding: var(--card-padding-md);
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border-default);
@@ -478,13 +571,147 @@ a.axis-card.doc-card:hover {
   font-weight: var(--fw-caption);
   color: var(--text-label-gold);
   letter-spacing: 0.08em;
-  margin-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
 }
 
-.ds-component-preview {
-  font-size: var(--fs-body);
+.ds-component-demo {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: var(--folio-bg);
+  border: 1px solid var(--folio-border);
+  border-radius: var(--radius-md);
+  padding: var(--space-5);
+  min-height: 160px;
+  margin-bottom: var(--space-4);
+  overflow: hidden;
+}
+
+.ds-component-desc {
+  font-size: var(--fs-sub);
   color: var(--text-secondary);
   line-height: var(--lh-normal);
+  margin-top: auto;
+  word-break: keep-all;
+}
+
+/* Chat Bubble 미니 데모 */
+.ds-component-demo--chat {
+  flex-direction: column;
+  align-items: stretch;
+  gap: var(--space-2);
+}
+
+.ds-chat-bubble {
+  font-size: 13px;
+  line-height: var(--lh-snug);
+  color: var(--folio-text);
+  padding: var(--space-2) var(--space-3);
+  border-radius: var(--radius-md);
+  max-width: 80%;
+}
+
+.ds-chat-bubble--ai {
+  background: var(--folio-surface);
+  align-self: flex-start;
+  border-bottom-left-radius: var(--space-1);
+}
+
+.ds-chat-bubble--user {
+  background: var(--folio-msg-user);
+  align-self: flex-end;
+  border-bottom-right-radius: var(--space-1);
+}
+
+/* Character Card 미니 데모 */
+.ds-char-card {
+  position: relative;
+  width: 90px;
+  aspect-ratio: 3 / 3.4;
+  border-radius: var(--radius-md);
+  background: linear-gradient(135deg, var(--folio-surface), var(--folio-border));
+  overflow: hidden;
+  border: 1px solid var(--folio-border-strong);
+  display: flex;
+  flex-direction: column;
+  justify-content: flex-end;
+}
+
+.ds-char-card-img {
+  flex: 1;
+  background:
+    radial-gradient(circle at 50% 40%, var(--folio-accent) 0%, transparent 60%),
+    linear-gradient(180deg, var(--folio-surface) 0%, var(--folio-border) 100%);
+  opacity: 0.7;
+}
+
+.ds-char-card-badge {
+  position: absolute;
+  top: var(--space-2);
+  left: var(--space-2);
+  font-size: 9px;
+  font-weight: 700;
+  letter-spacing: 0.08em;
+  color: var(--folio-bg);
+  background: var(--folio-accent);
+  padding: 2px var(--space-2);
+  border-radius: var(--radius-sm);
+}
+
+.ds-char-card-info {
+  padding: var(--space-2);
+  background: linear-gradient(180deg, transparent, rgba(10, 14, 23, 0.85));
+}
+
+.ds-char-card-name {
+  font-size: 12px;
+  font-weight: 600;
+  color: var(--folio-text);
+  line-height: var(--lh-snug);
+}
+
+.ds-char-card-sub {
+  font-size: 10px;
+  color: var(--folio-text-muted);
+  line-height: var(--lh-snug);
+}
+
+/* Input / Send 미니 데모 */
+.ds-input-bar {
+  display: flex;
+  align-items: center;
+  gap: var(--space-2);
+  width: 100%;
+  background: var(--folio-surface);
+  border: 1px solid var(--folio-border-strong);
+  border-radius: var(--radius-lg);
+  padding: var(--space-2) var(--space-2) var(--space-2) var(--space-4);
+}
+
+.ds-input-bar-text {
+  flex: 1;
+  font-size: 13px;
+  color: var(--folio-text-muted);
+  line-height: var(--lh-snug);
+}
+
+.ds-input-bar-send {
+  flex-shrink: 0;
+  width: 32px;
+  height: 32px;
+  border: none;
+  border-radius: 50%;
+  background: var(--folio-accent);
+  color: var(--folio-bg);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  cursor: default;
+}
+
+.ds-input-bar-send svg {
+  width: 16px;
+  height: 16px;
 }
 
 /* FOLIO REFLECTION: meta-reflection (metavv.css) 재사용 */
@@ -493,4 +720,17 @@ a.axis-card.doc-card:hover {
 .ds-section .exec-detail-section + .exec-detail-section {
   border-top: none;
   padding-top: var(--space-10);
+}
+
+@media (max-width: 768px) {
+  .ds-color-groups {
+    grid-template-columns: 1fr;
+  }
+  .ds-component-grid {
+    grid-template-columns: 1fr;
+  }
+  .ds-type-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-2);
+  }
 }

@@ -586,91 +586,178 @@
         <h2 class="block-title">개인 프로젝트도 시스템 사고로</h2>
         <p class="block-sub">색상 토큰 · 타이포그래피 · 컴포넌트 카탈로그를 직접 정의했습니다.</p>
 
-        <!-- 색상 팔레트 -->
+        <!-- 색상 팔레트 — 시멘틱 그룹 -->
         <div class="exec-detail-section">
           <div class="exec-detail-label">COLOR PALETTE</div>
-          <div class="ds-swatches">
-            <!-- TODO: 가비님이 Folio 실제 색상 토큰으로 교체 예정 -->
-            <div class="ds-swatch">
-              <div class="ds-swatch-color" style="background: #0A0E17;"></div>
-              <div class="ds-swatch-name">--bg</div>
-              <div class="ds-swatch-value">#0A0E17</div>
+          <div class="ds-color-groups">
+
+            <div class="ds-color-group">
+              <div class="ds-color-group-label">BACKGROUND</div>
+              <div class="ds-swatches">
+                <div class="ds-swatch">
+                  <div class="ds-swatch-color ds-swatch-color--bg"></div>
+                  <div class="ds-swatch-meta">
+                    <div class="ds-swatch-name">--bg</div>
+                    <div class="ds-swatch-value">#0A0E17</div>
+                    <div class="ds-swatch-context">앱 전체 배경</div>
+                  </div>
+                </div>
+                <div class="ds-swatch">
+                  <div class="ds-swatch-color ds-swatch-color--surface"></div>
+                  <div class="ds-swatch-meta">
+                    <div class="ds-swatch-name">--surface</div>
+                    <div class="ds-swatch-value">#131927</div>
+                    <div class="ds-swatch-context">카드, AI 메시지 배경</div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="ds-swatch">
-              <div class="ds-swatch-color" style="background: #131927;"></div>
-              <div class="ds-swatch-name">--surface</div>
-              <div class="ds-swatch-value">#131927</div>
+
+            <div class="ds-color-group">
+              <div class="ds-color-group-label">FOREGROUND</div>
+              <div class="ds-swatches">
+                <div class="ds-swatch">
+                  <div class="ds-swatch-color ds-swatch-color--text"></div>
+                  <div class="ds-swatch-meta">
+                    <div class="ds-swatch-name">--text</div>
+                    <div class="ds-swatch-value">#E2E8F0</div>
+                    <div class="ds-swatch-context">기본 본문 텍스트</div>
+                  </div>
+                </div>
+                <div class="ds-swatch">
+                  <div class="ds-swatch-color ds-swatch-color--text-muted"></div>
+                  <div class="ds-swatch-meta">
+                    <div class="ds-swatch-name">--text-muted</div>
+                    <div class="ds-swatch-value">#A8B5C8</div>
+                    <div class="ds-swatch-context">보조 텍스트, 메타 정보</div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="ds-swatch">
-              <div class="ds-swatch-color" style="background: #E2E8F0;"></div>
-              <div class="ds-swatch-name">--text</div>
-              <div class="ds-swatch-value">#E2E8F0</div>
+
+            <div class="ds-color-group">
+              <div class="ds-color-group-label">ACTION</div>
+              <div class="ds-swatches">
+                <div class="ds-swatch">
+                  <div class="ds-swatch-color ds-swatch-color--accent"></div>
+                  <div class="ds-swatch-meta">
+                    <div class="ds-swatch-name">--accent</div>
+                    <div class="ds-swatch-value">#5B8FB9</div>
+                    <div class="ds-swatch-context">전송 버튼, 강조 색상</div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="ds-swatch">
-              <div class="ds-swatch-color" style="background: #5B8FB9;"></div>
-              <div class="ds-swatch-name">--accent</div>
-              <div class="ds-swatch-value">#5B8FB9</div>
+
+            <div class="ds-color-group">
+              <div class="ds-color-group-label">DIVIDER</div>
+              <div class="ds-swatches">
+                <div class="ds-swatch">
+                  <div class="ds-swatch-color ds-swatch-color--border"></div>
+                  <div class="ds-swatch-meta">
+                    <div class="ds-swatch-name">--border</div>
+                    <div class="ds-swatch-value">#1E2A3A</div>
+                    <div class="ds-swatch-context">카드 외곽선, 구분선</div>
+                  </div>
+                </div>
+              </div>
             </div>
-            <div class="ds-swatch">
-              <div class="ds-swatch-color" style="background: #A8B5C8;"></div>
-              <div class="ds-swatch-name">--text-muted</div>
-              <div class="ds-swatch-value">#A8B5C8</div>
-            </div>
-            <div class="ds-swatch">
-              <div class="ds-swatch-color" style="background: #1E2A3A; border: 1px solid #2a3a50;"></div>
-              <div class="ds-swatch-name">--border</div>
-              <div class="ds-swatch-value">#1E2A3A</div>
-            </div>
+
           </div>
-          
         </div>
 
-        <!-- 타이포그래피 스케일 -->
+        <!-- 타이포그래피 스케일 — 위계 강화 -->
         <div class="exec-detail-section">
           <div class="exec-detail-label">TYPOGRAPHY SCALE</div>
           <div class="ds-type-scale">
             <div class="ds-type-row">
-              <div class="ds-type-meta">page-title / 20px / 800</div>
-              <div class="ds-type-sample" style="font-size: 20px; font-weight: 800;">캐릭터 선택</div>
+              <div class="ds-type-meta">
+                <span class="ds-type-token">page-title</span>
+                <span class="ds-type-spec">20px / 800</span>
+              </div>
+              <div class="ds-type-sample ds-type-sample--page">캐릭터 선택</div>
+              <div class="ds-type-context">페이지 제목 (캐릭터 선택 화면 등)</div>
             </div>
             <div class="ds-type-row">
-              <div class="ds-type-meta">section / 18px / 700</div>
-              <div class="ds-type-sample" style="font-size: 18px; font-weight: 700;">Haru</div>
+              <div class="ds-type-meta">
+                <span class="ds-type-token">section</span>
+                <span class="ds-type-spec">18px / 700</span>
+              </div>
+              <div class="ds-type-sample ds-type-sample--section">Haru</div>
+              <div class="ds-type-context">캐릭터 이름, 섹션 헤딩</div>
             </div>
             <div class="ds-type-row">
-              <div class="ds-type-meta">card-title / 15px / 600</div>
-              <div class="ds-type-sample" style="font-size: 15px; font-weight: 600;">따뜻한 동생 캐릭터</div>
+              <div class="ds-type-meta">
+                <span class="ds-type-token">card-title</span>
+                <span class="ds-type-spec">15px / 600</span>
+              </div>
+              <div class="ds-type-sample ds-type-sample--card-title">따뜻한 동생 캐릭터</div>
+              <div class="ds-type-context">카드 제목, 핵심 라인</div>
             </div>
             <div class="ds-type-row">
-              <div class="ds-type-meta">body / 14px / 400</div>
-              <div class="ds-type-sample" style="font-size: 14px; font-weight: 400; color: #A8B5C8;">안녕! 오늘도 잘 부탁해 :)</div>
+              <div class="ds-type-meta">
+                <span class="ds-type-token">body</span>
+                <span class="ds-type-spec">14px / 400</span>
+              </div>
+              <div class="ds-type-sample ds-type-sample--body">안녕! 오늘도 잘 부탁해 :)</div>
+              <div class="ds-type-context">본문, 채팅 메시지</div>
             </div>
             <div class="ds-type-row">
-              <div class="ds-type-meta">sub / 13px / 400</div>
-              <div class="ds-type-sample" style="font-size: 13px; font-weight: 400; color: #A8B5C8;">3분 전</div>
+              <div class="ds-type-meta">
+                <span class="ds-type-token">sub</span>
+                <span class="ds-type-spec">13px / 400</span>
+              </div>
+              <div class="ds-type-sample ds-type-sample--sub">3분 전</div>
+              <div class="ds-type-context">시간, 보조 정보</div>
             </div>
             <div class="ds-type-row">
-              <div class="ds-type-meta">caption / 11px / 500</div>
-              <div class="ds-type-sample" style="font-size: 11px; font-weight: 500; letter-spacing: 0.06em; color: #A8B5C8;">CHARACTER · AI</div>
+              <div class="ds-type-meta">
+                <span class="ds-type-token">caption</span>
+                <span class="ds-type-spec">11px / 500</span>
+              </div>
+              <div class="ds-type-sample ds-type-sample--caption">CHARACTER · AI</div>
+              <div class="ds-type-context">라벨, 메타 카테고리</div>
             </div>
           </div>
         </div>
 
-        <!-- 컴포넌트 카탈로그 -->
+        <!-- 컴포넌트 카탈로그 — 시각적 미리보기 -->
         <div class="exec-detail-section">
           <div class="exec-detail-label">COMPONENT CATALOG</div>
           <div class="ds-component-grid">
             <div class="ds-component-card">
               <div class="ds-component-label">CHAT BUBBLE</div>
-              <div class="ds-component-preview">AI 메시지(--surface 배경)와 유저 메시지(--msg-user 배경) 분리. 발화 주체별 우/좌 정렬.</div>
+              <div class="ds-component-demo ds-component-demo--chat">
+                <div class="ds-chat-bubble ds-chat-bubble--ai">안녕! 만나서 반가워 :)</div>
+                <div class="ds-chat-bubble ds-chat-bubble--user">오늘 어땠어?</div>
+              </div>
+              <div class="ds-component-desc">AI 메시지(--surface)와 유저 메시지(--msg-user) 분리. 발화 주체별 좌·우 정렬.</div>
             </div>
             <div class="ds-component-card">
               <div class="ds-component-label">CHARACTER CARD</div>
-              <div class="ds-component-preview">aspect-ratio 3/3.4. 이미지 + 배지(NEW/HOT/UP) + 상태 오버레이 구조. 16px border-radius.</div>
+              <div class="ds-component-demo">
+                <div class="ds-char-card">
+                  <span class="ds-char-card-badge">NEW</span>
+                  <div class="ds-char-card-img"></div>
+                  <div class="ds-char-card-info">
+                    <div class="ds-char-card-name">Haru</div>
+                    <div class="ds-char-card-sub">따뜻한 동생</div>
+                  </div>
+                </div>
+              </div>
+              <div class="ds-component-desc">aspect-ratio 3/3.4. 이미지 + 배지(NEW/HOT) + 정보 오버레이 구조.</div>
             </div>
             <div class="ds-component-card">
               <div class="ds-component-label">INPUT / SEND</div>
-              <div class="ds-component-preview">42×42px 전송 버튼(--accent). iOS 16px 자동 줌 방지. disabled: --border 배경 처리.</div>
+              <div class="ds-component-demo">
+                <div class="ds-input-bar">
+                  <span class="ds-input-bar-text">메시지를 입력하세요</span>
+                  <button type="button" class="ds-input-bar-send" aria-label="전송 버튼 데모" tabindex="-1">
+                    <svg viewBox="0 0 24 24" fill="none" stroke="currentColor" stroke-width="2.5" stroke-linecap="round" stroke-linejoin="round" width="14" height="14"><line x1="12" y1="19" x2="12" y2="5"/><polyline points="5 12 12 5 19 12"/></svg>
+                  </button>
+                </div>
+              </div>
+              <div class="ds-component-desc">전송 버튼(--accent). iOS 16px 자동 줌 방지. disabled시 --border 처리.</div>
             </div>
           </div>
         </div>
