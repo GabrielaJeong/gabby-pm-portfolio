@@ -71,18 +71,10 @@
   align-items: stretch;
 }
 
-/* 메인 카드 — impact-metric-card 위에 gold 강조 */
-.main-case-card {
-  border-color: var(--border-gold);
-  background: rgba(245, 207, 165, 0.03);
-}
-
-/* 보조 카드 세로 직렬 */
-.side-cases-grid {
-  display: grid;
+/* layout 컨텍스트 안에서는 사이드 카드 그리드를 1컬럼 세로 직렬로 override */
+.side-cases-layout .side-cases-grid {
   grid-template-columns: 1fr;
-  gap: var(--space-3);
-  align-items: stretch;
+  margin-top: 0;
 }
 
 .side-case-card {

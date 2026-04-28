@@ -81,67 +81,62 @@
         <h2 class="case-section-title">KPI 3배 달성 + 1년 후 재협업</h2>
         <p class="case-section-sub">신뢰는 수치로 증명됐고, 관계로 이어졌습니다.</p>
 
-        <!-- 좌: KPI 히스토그램 카드 / 우: 나머지 3개 카드 세로 직렬 -->
-        <div class="kpi-comparison-grid">
+        <!-- 메인 카드: KPI ACHIEVEMENT (가로 풀폭) + 진행률 바 -->
+        <div class="impact-metric-card main-case-card" data-reveal>
+          <div class="impact-metric-tag">KPI ACHIEVEMENT</div>
+          <div class="impact-metric-num">3배</div>
+          <div class="impact-metric-label">홈페이지 유입 KPI 대비</div>
 
-          <!-- 좌측: KPI ACHIEVEMENT — 목표 vs 실적 막대 비교 -->
-          <div class="impact-metric-card kpi-chart-card" data-reveal>
-            <div class="impact-metric-tag">KPI ACHIEVEMENT</div>
-            <div class="impact-metric-num">3배</div>
-            <div class="impact-metric-label">홈페이지 유입 KPI 대비</div>
-
-            <div class="kpi-bar-chart">
-              <div class="kpi-bar-row">
-                <span class="kpi-bar-row-label">목표</span>
-                <div class="kpi-bar-track">
-                  <div class="kpi-bar-fill kpi-bar-fill--target" style="width: 33.33%;"></div>
-                </div>
-                <span class="kpi-bar-row-value">2,000명</span>
+          <div class="kpi-progress">
+            <div class="kpi-progress-row">
+              <span class="kpi-progress-label">목표</span>
+              <div class="kpi-progress-track">
+                <div class="kpi-progress-fill kpi-progress-fill--target" style="width: 33.3%;"></div>
               </div>
-              <div class="kpi-bar-row">
-                <span class="kpi-bar-row-label">실적</span>
-                <div class="kpi-bar-track">
-                  <div class="kpi-bar-fill kpi-bar-fill--actual" style="width: 100%;"></div>
-                </div>
-                <span class="kpi-bar-row-value">6,000명</span>
-              </div>
+              <span class="kpi-progress-value">2,000명</span>
             </div>
+            <div class="kpi-progress-row">
+              <span class="kpi-progress-label">실적</span>
+              <div class="kpi-progress-track">
+                <div class="kpi-progress-fill kpi-progress-fill--actual" style="width: 100%;"></div>
+              </div>
+              <span class="kpi-progress-value">6,000명</span>
+            </div>
+          </div>
 
+          <div class="impact-metric-detail">
+            목표 2,000명 → 실적 6,000명. PM이 어드민 기획을 수정하고 개발팀과 DB 테이블 변경을 함께 진행하며, 다자 이해관계자 조율로 달성했습니다.
+          </div>
+        </div>
+
+        <!-- 사이드 카드 3개: REACH / RETURN / RECONTRACT (3컬럼) -->
+        <div class="side-cases-grid">
+          <div class="impact-metric-card" data-reveal data-reveal-delay="1">
+            <div class="impact-metric-tag">CAMPAIGN REACH</div>
+            <div class="impact-metric-num">36만</div>
+            <div class="impact-metric-label">캠페인 도달 인원</div>
             <div class="impact-metric-detail">
-              목표 2,000명 → 실적 6,000명. 개발 리소스 추가 없이 UI 개편과 이해관계자 조율만으로 달성.
+              고객사 요청 KPI 2,000명 대비 180배 초과 도달. 홈페이지 유입 6,000명으로 KPI 3배 달성.
             </div>
           </div>
 
-          <!-- 우측: 나머지 3개 카드 세로 직렬 -->
-          <div class="impact-metric-grid kpi-side-stack">
-            <div class="impact-metric-card" data-reveal data-reveal-delay="1">
-              <div class="impact-metric-tag">CAMPAIGN REACH</div>
-              <div class="impact-metric-num">36만</div>
-              <div class="impact-metric-label">캠페인 도달 인원</div>
-              <div class="impact-metric-detail">
-                고객사 요청 KPI 2,000명 대비 36만 캠페인 도달. 홈페이지 유입 6,000명으로 KPI 3배 초과 달성.
-              </div>
-            </div>
-
-            <div class="impact-metric-card" data-reveal data-reveal-delay="2">
-              <div class="impact-metric-tag">RETURN RATE</div>
-              <div class="impact-metric-num">16%</div>
-              <div class="impact-metric-label">재방문율</div>
-              <div class="impact-metric-detail">
-                CSR 프로젝트 특성상 결제 없음. 16% 재방문율은 콘텐츠 자체에 대한 사용자 신뢰를 의미.
-              </div>
-            </div>
-
-            <div class="impact-metric-card" data-reveal data-reveal-delay="2">
-              <div class="impact-metric-tag">RECONTRACT</div>
-              <div class="impact-metric-num">1년 후</div>
-              <div class="impact-metric-label">재활성화 · 재협업 요청</div>
-              <div class="impact-metric-detail">
-                계약 종료 1년 후 고객사가 직접 재협업을 요청. 수치 너머의 신뢰 구축이 결과로 이어진 사례.
-              </div>
+          <div class="impact-metric-card" data-reveal data-reveal-delay="2">
+            <div class="impact-metric-tag">RETURN RATE</div>
+            <div class="impact-metric-num">16%</div>
+            <div class="impact-metric-label">재방문율</div>
+            <div class="impact-metric-detail">
+              CSR 프로젝트 특성상 결제 없음. 16% 재방문율은 콘텐츠 자체에 대한 사용자 신뢰를 의미.
             </div>
           </div>
 
+          <div class="impact-metric-card" data-reveal data-reveal-delay="2">
+            <div class="impact-metric-tag">RECONTRACT</div>
+            <div class="impact-metric-num result-num--sm">1년 후</div>
+            <div class="impact-metric-label">재활성화 · 재협업 요청</div>
+            <div class="impact-metric-detail">
+              계약 종료 1년 후 고객사가 직접 재협업을 요청. 수치 너머의 신뢰 구축이 결과로 이어진 사례.
+            </div>
+          </div>
         </div>
       </section>
 
