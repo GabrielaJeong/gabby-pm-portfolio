@@ -448,7 +448,7 @@
 
 .image-custom-layout {
   display: grid;
-  grid-template-columns: auto 1fr 1.05fr;
+  grid-template-columns: auto minmax(0, 1fr) minmax(0, 1.4fr);
   gap: var(--space-3);
   align-items: start;
 }
@@ -521,11 +521,11 @@
   gap: var(--space-1);
 }
 
-/* 이미지 미리보기 회색 박스 — 실제 캔버스 비율 477 × 849.031 */
+/* 이미지 미리보기 회색 박스 — 시연용 비율 (실제 캔버스 477x849지만 좌측 패널이 너무 길어져 시연용으로 1.4:1 가로형 적용) */
 .image-custom-preview-area {
   background: var(--mv-no-img);
   border-radius: calc(var(--mv-radius) / 2);
-  aspect-ratio: 477 / 849.031;
+  aspect-ratio: 7 / 5;
   width: 100%;
 }
 
@@ -763,7 +763,7 @@
 .image-custom-detail-cols,
 .image-custom-detail-row {
   display: grid;
-  grid-template-columns: var(--space-4) 1fr 1fr 1fr;
+  grid-template-columns: var(--space-4) minmax(0, 1fr) var(--space-16) var(--space-16);
   gap: var(--space-2);
   align-items: center;
 }
