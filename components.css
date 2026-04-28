@@ -1834,13 +1834,13 @@
 
 /* ==================== META REFLECTION ==================== */
 
+/* .meta-reflection: full-width section (bg/border/vertical padding only)
+   콘텐츠 정렬은 내부 .case-inner가 담당 — .cases-wrapper와 동일 패턴 */
 .meta-reflection {
-  max-width: var(--max-width);
-  margin: calc(var(--section-gap) * 1.5) auto 0;
-  padding: calc(var(--section-gap) * 1.5) var(--space-12) var(--section-gap);
+  margin-top: calc(var(--section-gap) * 1.5);
+  padding: calc(var(--section-gap) * 1.5) 0 var(--section-gap);
   border-top: 2px solid var(--border-strong);
   background: var(--bg);
-  box-sizing: border-box;
 }
 
 /* META REFLECTION 헤더 — 섹션 라벨 강조 (케이스와 차별화) */
