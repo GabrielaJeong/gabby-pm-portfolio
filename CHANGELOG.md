@@ -9,7 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
-| (pending) | folio: DESIGN SYSTEM 섹션 UX 고도화 — 색상 시멘틱 그룹화 + 타이포 위계 강화 + 컴포넌트 시각화, 인라인 하드코딩 12건 제거 |
+| `d080074` | folio: DESIGN SYSTEM 섹션 UX 고도화 — 색상 시멘틱 그룹화 + 타이포 위계 강화 + 컴포넌트 시각화, 인라인 하드코딩 12건 제거 |
 | `48dcb63` | metavv: CASE 02 EXECUTION 블록 margin-top 32px, margin-bottom 64px 적용 |
 | `a199d05` | metavv: CASE 02 EXECUTION 화면 갤러리 위치를 카드 그리드 위로 이동 |
 | `a0931dc` | metavv: CASE 02 EXECUTION 카드 그리드 아래 화면 갤러리 추가 (이미지 4장, 신규 클래스 4개) |
