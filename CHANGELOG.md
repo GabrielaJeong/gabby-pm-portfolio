@@ -9,7 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
-| (pending) | folio: DESIGN SYSTEM Character Card 미니데모를 실제 folio 앱 구조에 맞게 재구성 (번호+상태배지+태그오버레이+외부정보) |
+| `69de718` | folio: DESIGN SYSTEM Character Card 미니데모를 실제 folio 앱 구조에 맞게 재구성 (번호+상태배지+태그오버레이+외부정보) |
 | `d080074` | folio: DESIGN SYSTEM 섹션 UX 고도화 — 색상 시멘틱 그룹화 + 타이포 위계 강화 + 컴포넌트 시각화, 인라인 하드코딩 12건 제거 |
 | `48dcb63` | metavv: CASE 02 EXECUTION 블록 margin-top 32px, margin-bottom 64px 적용 |
 | `a199d05` | metavv: CASE 02 EXECUTION 화면 갤러리 위치를 카드 그리드 위로 이동 |
