@@ -148,6 +148,40 @@
   letter-spacing: -0.01em;
 }
 
+/* 박스 사이 흐름 표시 — 점선 세로선 + 가운데 화살표 (관찰 → 비교 → 의문) */
+.flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--space-10);
+  margin: var(--space-2) 0;
+  position: relative;
+  font-size: var(--fs-h3);
+  color: var(--text-tertiary);
+  font-weight: var(--fw-h3);
+  line-height: 1;
+}
+
+.flow-arrow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 1px dashed var(--border-default);
+  z-index: 0;
+}
+
+/* 화살표 글자가 점선 위에 — 배경으로 점선 일부 가려서 깔끔하게 */
+.flow-arrow {
+  background: linear-gradient(to right,
+    transparent 0,
+    transparent calc(50% - var(--space-3)),
+    var(--bg) calc(50% - var(--space-3)),
+    var(--bg) calc(50% + var(--space-3)),
+    transparent calc(50% + var(--space-3)));
+}
+
 /* 모바일: 비교 grid → 1컬럼 스택 */
 @media (max-width: 768px) {
   .vs-compare {
