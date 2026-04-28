@@ -1867,6 +1867,11 @@
   background: var(--bg);
 }
 
+/* META REFLECTION 내부 컨테이너는 풀폭으로 풀어 큰 화면에서도 콘텐츠가 꽉 차게 */
+.meta-reflection .case-inner {
+  max-width: none;
+}
+
 /* META REFLECTION 헤더 — 섹션 라벨 강조 (케이스와 차별화) */
 .meta-reflection .case-section-label {
   font-size: var(--fs-body);     /* caption(12px) → body(14px)로 키움 */
