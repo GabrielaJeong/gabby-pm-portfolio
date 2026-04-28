@@ -23,6 +23,16 @@
   word-break: keep-all;
 }
 
+/* 폰 mockup 영역은 hero 한 화면에 들어가도록 height 제한 + 하단 잘림 */
+.case-hero .case-hero-visual {
+  align-self: start;
+  height: 480px;
+  overflow: hidden;
+  display: flex;
+  justify-content: center;
+  align-items: flex-start;
+}
+
 /* 폰 프레임 — 어두운 베젤 + 그림자 */
 .folio-phone-mockup {
   width: 100%;
@@ -35,6 +45,7 @@
     0 var(--space-8) var(--space-16) rgba(0, 0, 0, 0.5),
     inset 0 0 0 1px var(--border-default);
   box-sizing: border-box;
+  flex-shrink: 0;
 }
 
 /* 화면 영역 — 폰 프레임 안에서 splash 이미지 채움 */
