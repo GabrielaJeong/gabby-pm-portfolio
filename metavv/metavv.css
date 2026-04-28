@@ -162,6 +162,27 @@
   margin: 0;
 }
 
+/* 좁은 컬럼에 맞춰 인용 박스 컴팩트화 — 픽토그램 위 / 텍스트 아래 (직렬) */
+.strategy-flow-row > .case-quote {
+  flex-direction: column;
+  align-items: center;
+  text-align: center;
+  padding: var(--card-padding-md);
+  gap: var(--space-3);
+}
+
+.strategy-flow-row > .case-quote .case-quote-icon {
+  width: var(--space-8);
+  height: var(--space-8);
+  font-size: var(--fs-body);
+}
+
+.strategy-flow-row > .case-quote .case-quote-text {
+  font-size: var(--fs-body);
+  line-height: var(--lh-relaxed);
+  font-weight: var(--fw-body);
+}
+
 /* 좁은 컬럼 안에서는 비교 그리드 자체도 1컬럼 세로 stack */
 .strategy-flow-row > .vs-compare {
   grid-template-columns: 1fr;
