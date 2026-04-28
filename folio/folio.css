@@ -87,23 +87,23 @@
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-lg);
-  align-items: start;
+  align-items: stretch;
   min-height: 200px;
 }
 
-/* 좌측 컬럼: label / title / summary 자연 흐름 */
+/* 좌측 컬럼: label / title / summary 자연 흐름 (cell 위쪽 시작) */
 .decision-card > .exec-phase-label,
 .decision-card > .exec-phase-title,
 .decision-card > .exec-phase-summary {
   grid-column: 1;
+  align-self: start;
 }
 
-/* 우측 컬럼: 본문 텍스트 — title 행에서 시작해 카드 하단까지 (label 행 skip) */
+/* 우측 컬럼: 본문이 좌측 모든 row span + cell 하단 정렬 (좌측 summary와 baseline 맞춤) */
 .decision-card > .exec-detail-body {
   grid-column: 2;
-  grid-row: 2 / -1;
+  grid-row: 1 / -1;
   align-self: end;
-  margin-top: auto;
   margin-bottom: 0;
 }
 
