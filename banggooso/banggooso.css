@@ -126,3 +126,38 @@
     grid-template-columns: 1fr;
   }
 }
+
+/* ==================== MAIN CASE RESULT — 좌: 카드 직렬, 우: 카카오뱅크 디바이스 목업 ==================== */
+
+.result-mockup-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-8);
+  align-items: center;
+}
+
+/* 이 컨텍스트 안에서는 result-grid를 1컬럼으로 (4컬럼 → 세로 직렬) */
+.result-mockup-grid .result-grid {
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+.result-mockup {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}
+
+.result-mockup img {
+  width: 100%;
+  height: auto;
+  max-width: 100%;
+  display: block;
+}
+
+/* 모바일: 2컬럼 → 1컬럼 스택 (이미지 위, 카드 아래 또는 자연 순서) */
+@media (max-width: 768px) {
+  .result-mockup-grid {
+    grid-template-columns: 1fr;
+  }
+}
