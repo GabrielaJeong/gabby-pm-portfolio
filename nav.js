@@ -17,7 +17,7 @@
   var html = [
     '<nav class="nav" id="nav">',
       '<div class="nav-inner">',
-        '<a href="/" class="nav-logo">Gabriela</a>',
+        '<a href="/" class="nav-logo">Gabriela&#39;s Portfolio</a>',
         '<ul class="nav-links">',
           '<li><a href="/#about">About</a></li>',
           '<li><a href="/#experience">Experience</a></li>',
