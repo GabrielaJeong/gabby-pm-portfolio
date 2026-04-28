@@ -141,6 +141,31 @@
   color: var(--gold);
 }
 
+/* SIDE 01 광고 구좌 실제 화면 미리보기 */
+.ad-slot-preview {
+  margin: var(--space-5) 0 0;
+  padding: 0;
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  overflow: hidden;
+  background: rgba(255, 255, 255, 0.02);
+}
+
+.ad-slot-preview img {
+  display: block;
+  width: 100%;
+  height: auto;
+}
+
+.ad-slot-caption {
+  font-size: var(--fs-caption);
+  color: var(--text-tertiary);
+  letter-spacing: 0.04em;
+  text-align: center;
+  padding: var(--space-2) var(--space-3);
+  border-top: 1px solid var(--border-default);
+}
+
 /* 모바일: 2컬럼 → 1컬럼 스택 */
 @media (max-width: 768px) {
   .side-cases-layout {
