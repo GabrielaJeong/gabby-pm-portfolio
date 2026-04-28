@@ -12,10 +12,93 @@
   height: auto;
 }
 
-/* ==================== IMPACT — 4컬럼 (카드 4개) ==================== */
+/* ==================== IMPACT — 2컬럼 (좌: KPI 차트 카드 / 우: 카드 3개 직렬) ==================== */
 
-.impact-metric-grid {
-  grid-template-columns: repeat(4, 1fr);
+.kpi-comparison-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-5);
+  align-items: stretch;
+}
+
+/* 차트 카드 — 막대 차트 영역 확보 위한 flex column */
+.kpi-chart-card {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.kpi-chart-card .impact-metric-detail {
+  margin-top: auto;
+}
+
+/* 우측 카드 묶음 — 1컬럼 세로 직렬 */
+.kpi-side-stack {
+  grid-template-columns: 1fr;
+  gap: var(--space-3);
+}
+
+/* ==================== KPI BAR CHART — 목표 vs 실적 막대 비교 ==================== */
+
+.kpi-bar-chart {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-2);
+}
+
+.kpi-bar-row {
+  display: grid;
+  grid-template-columns: var(--space-10) minmax(0, 1fr) auto;
+  gap: var(--space-3);
+  align-items: center;
+}
+
+.kpi-bar-row-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-tertiary);
+  letter-spacing: 0.08em;
+}
+
+.kpi-bar-track {
+  height: var(--space-5);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: calc(var(--radius-sm) / 2);
+  overflow: hidden;
+}
+
+.kpi-bar-fill {
+  height: 100%;
+  border-radius: calc(var(--radius-sm) / 2);
+  transition: width 0.6s var(--reveal-easing);
+}
+
+.kpi-bar-fill--target {
+  background: var(--text-quaternary);
+}
+
+.kpi-bar-fill--actual {
+  background: var(--gold);
+}
+
+.kpi-bar-row-value {
+  font-size: var(--fs-body);
+  font-weight: var(--fw-h3);
+  color: var(--text-primary);
+  white-space: nowrap;
+}
+
+.kpi-bar-row:has(.kpi-bar-fill--actual) .kpi-bar-row-value {
+  color: var(--gold);
+}
+
+/* 모바일: 2컬럼 → 1컬럼 스택 */
+@media (max-width: 768px) {
+  .kpi-comparison-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 /* ==================== CONTEXT — 3사 협업 구조 ==================== */
