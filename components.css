@@ -1865,6 +1865,11 @@
   width: 100%;
 }
 
+/* 2열 변형 — case-block 내부 LEARNED 카드 2개 병렬 배치 */
+.meta-learned-grid--2col {
+  grid-template-columns: repeat(2, 1fr);
+}
+
 /* grid item min-width 오버플로우 방지 + 내부 flex column */
 .meta-learned-grid .learned-card {
   min-width: 0;
