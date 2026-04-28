@@ -629,7 +629,6 @@ ul {
   column-gap: var(--space-16);
   row-gap: var(--space-12);
   align-items: start;
-  margin-bottom: 100px;
 }
 
 .about-grid > .about-intro    { grid-area: intro; }
