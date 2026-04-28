@@ -30,6 +30,8 @@
 
 /* 박스 위 역할 라벨 (USER / PRODUCT MANAGER) */
 .case-quote-role {
+  width: 100%;
+  text-align: center;
   font-size: var(--fs-caption);
   font-weight: var(--fw-caption);
   color: var(--text-label-gold);
@@ -76,21 +78,43 @@
 }
 
 .vs-compare-col {
+  position: relative;
   padding: var(--card-padding-lg);
-  background: rgba(255, 255, 255, 0.02);
+  background: linear-gradient(180deg, rgba(255, 255, 255, 0.03) 0%, rgba(255, 255, 255, 0.01) 100%);
   border: 1px solid var(--border-default);
-  border-radius: var(--radius-md);
+  border-radius: var(--radius-lg);
+  overflow: hidden;
+  transition: border-color 0.25s ease, transform 0.25s ease;
+}
+
+/* 박스 상단 미세한 gold accent line — 양 끝 페이드 */
+.vs-compare-col::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  left: 0;
+  right: 0;
+  height: 1px;
+  background: linear-gradient(to right,
+    transparent 0%,
+    var(--border-gold) 30%,
+    var(--border-gold) 70%,
+    transparent 100%);
+}
+
+.vs-compare-col:hover {
+  border-color: var(--border-gold);
 }
 
 .vs-compare-head {
-  font-size: var(--fs-h3);
+  font-size: var(--fs-h2);
   font-weight: var(--fw-h2);
   color: var(--text-primary);
   text-align: center;
-  padding-bottom: var(--space-3);
-  margin-bottom: var(--space-4);
-  border-bottom: 1px solid var(--border-default);
-  letter-spacing: -0.01em;
+  padding-bottom: var(--space-4);
+  margin-bottom: var(--space-5);
+  border-bottom: 1px dashed var(--border-default);
+  letter-spacing: -0.015em;
 }
 
 .vs-compare-list {
@@ -105,18 +129,22 @@
 .vs-compare-list li {
   font-size: var(--fs-body);
   color: var(--text-secondary);
-  line-height: var(--lh-normal);
-  padding-left: var(--space-4);
+  line-height: var(--lh-relaxed);
+  padding-left: var(--space-5);
   position: relative;
   word-break: keep-all;
 }
 
+/* 리스트 마커: 작은 gold dot (점 → 원) */
 .vs-compare-list li::before {
-  content: '·';
+  content: '';
   position: absolute;
   left: var(--space-1);
-  color: var(--text-label-gold);
-  font-weight: var(--fw-h2);
+  top: 0.65em;
+  width: var(--space-1);
+  height: var(--space-1);
+  border-radius: 50%;
+  background: var(--text-label-gold);
 }
 
 .vs-compare-list li strong {
