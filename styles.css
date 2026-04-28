@@ -593,12 +593,21 @@ ul {
   color: var(--text-muted);
 }
 
+/* 제목 + 서브타이틀 병렬 배치 (제목 좌, 서브타이틀 우) */
+.about-intro {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-16);
+  align-items: end;
+  margin-bottom: 80px;
+}
+
 .about-title {
   font-size: 44px;
   color: #ffffff;
   font-weight: 500;
   letter-spacing: -0.025em;
-  margin: 0 0 12px;
+  margin: 0;
   line-height: 1.25;
 }
 
@@ -609,14 +618,14 @@ ul {
 .about-subtitle {
   font-size: 17px;
   color: var(--text-muted);
-  margin: 0 0 80px;
+  margin: 0;
   line-height: 1.6;
 }
 
-/* About 2컬럼 그리드 — 좌: 프로필 사진, 우: Timeline */
+/* About 2컬럼 그리드 — 좌: Timeline, 우: 프로필 사진 */
 .about-grid {
   display: grid;
-  grid-template-columns: minmax(0, 360px) 1fr;
+  grid-template-columns: 1fr minmax(0, 360px);
   gap: var(--space-16);
   align-items: start;
   margin-bottom: 100px;
@@ -1101,8 +1110,14 @@ ul {
     font-size: 34px;
   }
 
+  .about-intro {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+    margin-bottom: 64px;
+  }
+
   .about-grid {
-    grid-template-columns: minmax(0, 280px) 1fr;
+    grid-template-columns: 1fr minmax(0, 280px);
     gap: var(--space-12);
   }
 
@@ -1159,7 +1174,10 @@ ul {
     font-size: 26px;
   }
 
-  .about-subtitle,
+  .about-subtitle {
+    font-size: 14px;
+  }
+
   .cap-sub {
     font-size: 14px;
     margin-bottom: 56px;
