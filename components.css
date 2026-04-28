@@ -1670,9 +1670,12 @@
 
 .axis-card-insight {
   font-size: var(--fs-sub);
-  color: var(--text-tertiary);
-  font-style: italic;
+  color: var(--text-label-gold);
+  font-weight: var(--fw-h3);
+  letter-spacing: 0.01em;
   margin-top: var(--space-3);
+  padding-left: var(--space-3);
+  border-left: 2px solid var(--border-gold);
 }
 
 /* ==================== EXECUTION STEP (Tab 2) — 비확장 카드 ==================== */
