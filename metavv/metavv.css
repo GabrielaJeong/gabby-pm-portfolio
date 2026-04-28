@@ -382,7 +382,7 @@
 
 /* 외부 브라우저 프레임 */
 .image-custom-frame {
-  max-width: 900px;
+  max-width: 1100px;
   margin: var(--space-6) auto 0;
   border: 1px solid var(--border-default);
   border-radius: var(--radius-lg);
@@ -448,7 +448,7 @@
 
 .image-custom-layout {
   display: grid;
-  grid-template-columns: 300px 1fr;
+  grid-template-columns: 477px 1fr;
   gap: var(--space-4);
   align-items: start;
 }
@@ -463,11 +463,12 @@
   padding: var(--space-6);
 }
 
-/* 이미지 미리보기 회색 박스 */
+/* 이미지 미리보기 회색 박스 — 실제 캔버스 비율 477 × 849.031 */
 .image-custom-preview-area {
   background: var(--mv-no-img);
   border-radius: calc(var(--mv-radius) / 2);
-  aspect-ratio: 1 / 1;
+  aspect-ratio: 477 / 849.031;
+  width: 100%;
 }
 
 /* 카테고리 탭 — 필 스타일, 텍스트 말줄임 */
