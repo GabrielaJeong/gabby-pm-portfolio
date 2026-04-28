@@ -1324,7 +1324,7 @@ ul {
 .proj-title {
   font-size: 44px;
   color: #ffffff;
-  font-weight: 500;
+  font-weight: var(--fw-h1);
   letter-spacing: -0.025em;
   margin: 0 0 12px;
   line-height: 1.25;
