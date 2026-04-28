@@ -593,12 +593,8 @@ ul {
   color: var(--text-muted);
 }
 
-/* 제목 + 서브타이틀 병렬 배치 (제목 좌, 서브타이틀 우) */
+/* 제목 + 서브타이틀 (제목 위, 서브타이틀 아래) */
 .about-intro {
-  display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
-  gap: var(--space-16);
-  align-items: end;
   margin-bottom: 80px;
 }
 
@@ -607,7 +603,7 @@ ul {
   color: #ffffff;
   font-weight: 500;
   letter-spacing: -0.025em;
-  margin: 0;
+  margin: 0 0 var(--space-3);
   line-height: 1.25;
 }
 
@@ -633,16 +629,15 @@ ul {
 
 .about-photo {
   width: 100%;
-  aspect-ratio: 4 / 5;
+  aspect-ratio: 3 / 4;
   overflow: hidden;
-  border-radius: var(--radius-lg);
-  background: var(--surface);
+  background: transparent;
 }
 
 .about-photo img {
   width: 100%;
   height: 100%;
-  object-fit: cover;
+  object-fit: contain;
   display: block;
 }
 
@@ -673,10 +668,19 @@ ul {
   text-align: left;
   position: relative;
   padding-bottom: var(--space-8);
+  display: grid;
+  grid-template-columns: auto minmax(0, 1fr);
+  column-gap: var(--space-5);
+  align-items: baseline;
 }
 
 .timeline-item:last-child {
   padding-bottom: 0;
+}
+
+/* year는 첫 행 풀폭, event/caption은 두 번째 행에 가로 배치 */
+.timeline-vertical .timeline-year {
+  grid-column: 1 / -1;
 }
 
 .timeline-dot {
@@ -713,7 +717,6 @@ ul {
   font-size: 17px;
   color: var(--text);
   font-weight: 500;
-  margin-bottom: 10px;
   line-height: 1.3;
 }
 
@@ -1111,8 +1114,6 @@ ul {
   }
 
   .about-intro {
-    grid-template-columns: 1fr;
-    gap: var(--space-3);
     margin-bottom: 64px;
   }
 
@@ -1193,13 +1194,19 @@ ul {
     max-width: 320px;
   }
 
-  .timeline-dot {
-    width: 16px;
-    height: 16px;
+  .timeline-item {
+    grid-template-columns: 1fr;
+    column-gap: 0;
   }
 
   .timeline-event {
     font-size: 15px;
+    margin-bottom: 6px;
+  }
+
+  .timeline-dot {
+    width: 16px;
+    height: 16px;
   }
 
   .timeline-caption {
