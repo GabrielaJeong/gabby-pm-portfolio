@@ -110,7 +110,7 @@
 
 .axis-card-icon {
   position: absolute;
-  top: var(--space-5);
+  bottom: var(--space-5);
   right: var(--space-5);
   width: var(--space-8);
   height: var(--space-8);
@@ -118,10 +118,9 @@
   flex-shrink: 0;
 }
 
-/* 카드 제목/본문 영역이 아이콘 폭만큼 우측 여백 확보 */
-.axis-card .axis-card-title,
+/* 본문은 좌우 풀폭, 하단만 아이콘 영역 확보 */
 .axis-card .axis-card-body {
-  padding-right: var(--space-10);
+  padding-bottom: var(--space-10);
 }
 
 /* PROBLEM 5컬럼 — 카드 5개 가로 한 줄 */
@@ -138,13 +137,12 @@
 .problem-grid--5col .axis-card-icon {
   width: var(--space-7);
   height: var(--space-7);
-  top: var(--space-4);
+  bottom: var(--space-4);
   right: var(--space-4);
 }
 
-.problem-grid--5col .axis-card .axis-card-title,
 .problem-grid--5col .axis-card .axis-card-body {
-  padding-right: var(--space-8);
+  padding-bottom: var(--space-8);
 }
 
 /* 반응형: 좁은 화면에서는 컬럼 수 단계적 축소 */
