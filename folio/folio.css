@@ -87,28 +87,22 @@
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-lg);
-  align-items: stretch;
   min-height: 200px;
 }
 
-/* 좌측 컬럼: label / title / summary 자연 흐름 (cell 위쪽 시작) */
-.decision-card > .exec-phase-label,
-.decision-card > .exec-phase-title,
-.decision-card > .exec-phase-summary {
-  grid-column: 1;
-  align-self: start;
+/* 좌측 컬럼 wrapper — flex column 자연 흐름 (위에서부터 label/title/summary) */
+.decision-card-meta {
+  display: flex;
+  flex-direction: column;
 }
 
-/* 우측 컬럼: 본문이 좌측 모든 row span + cell 하단 정렬 (좌측 summary와 baseline 맞춤) */
-.decision-card > .exec-detail-body {
-  grid-column: 2;
-  grid-row: 1 / -1;
-  align-self: end;
+.decision-card-meta > .exec-phase-summary {
   margin-bottom: 0;
 }
 
-/* 좌측 마지막 요소(summary) 하단 마진 제거 — grid가 정렬 처리 */
-.decision-card > .exec-phase-summary {
+/* 우측 컬럼: 본문이 cell 하단 정렬 — 좌측 summary 하단과 같은 baseline */
+.decision-card > .exec-detail-body {
+  align-self: end;
   margin-bottom: 0;
 }
 
@@ -120,12 +114,7 @@
   }
 
   .decision-card > .exec-detail-body {
-    grid-column: 1;
-    grid-row: auto;
-  }
-
-  .decision-card > .exec-phase-summary {
-    margin-bottom: var(--space-2);
+    align-self: stretch;
   }
 }
 

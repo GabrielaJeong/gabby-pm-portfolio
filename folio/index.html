@@ -268,37 +268,47 @@
         <div class="decisions-list">
 
           <div class="decision-card">
-            <div class="exec-phase-label">MODEL SELECTION</div>
-            <div class="exec-phase-title">Gemini 3.1 Pro를 기본값으로 선택한 이유</div>
-            <div class="exec-phase-summary">벤치마크 수치가 아닌 실제 캐릭터 대화 맥락에서 직접 6개 모델을 비교 검증했습니다.</div>
+            <div class="decision-card-meta">
+              <div class="exec-phase-label">MODEL SELECTION</div>
+              <div class="exec-phase-title">Gemini 3.1 Pro를 기본값으로 선택한 이유</div>
+              <div class="exec-phase-summary">벤치마크 수치가 아닌 실제 캐릭터 대화 맥락에서 직접 6개 모델을 비교 검증했습니다.</div>
+            </div>
             <div class="exec-detail-body">벤치마크 수치는 우리 맥락과 다르고, PM이 직접 검증하지 않으면 의사결정이 추측이 됩니다. Anthropic 3개(Sonnet 4.6 / Opus 4.6 / Haiku 4.5)와 Google 3개(Gemini 2.5 Flash·Pro / 3.1 Pro)를 동일 캐릭터·동일 시나리오로 테스트했습니다. 캐릭터 일관성·공감 품질·응답 속도·비용을 종합해 Gemini 3.1 Pro를 기본값으로 결정했습니다.</div>
           </div>
 
           <div class="decision-card">
-            <div class="exec-phase-label">PROMPT ARCHITECTURE</div>
-            <div class="exec-phase-title">3층 프롬프트 구조를 채택한 이유</div>
-            <div class="exec-phase-summary">단일 프롬프트로는 캐릭터 일관성과 가드레일을 동시에 처리할 수 없었습니다.</div>
+            <div class="decision-card-meta">
+              <div class="exec-phase-label">PROMPT ARCHITECTURE</div>
+              <div class="exec-phase-title">3층 프롬프트 구조를 채택한 이유</div>
+              <div class="exec-phase-summary">단일 프롬프트로는 캐릭터 일관성과 가드레일을 동시에 처리할 수 없었습니다.</div>
+            </div>
             <div class="exec-detail-body">시스템 프롬프트(캐릭터 정의) · 대화 메모리(컨텍스트 유지) · 가드레일(안전성)을 분리된 레이어로 설계했습니다. 이 구조가 없으면 캐릭터가 대화 중 일관성을 잃거나, 가드레일이 캐릭터 톤과 충돌하는 문제가 발생합니다.</div>
           </div>
 
           <div class="decision-card">
-            <div class="exec-phase-label">DESIGN SYSTEM</div>
-            <div class="exec-phase-title">개인 프로젝트에도 디자인 시스템을 도입한 이유</div>
-            <div class="exec-phase-summary">임시 스타일링을 반복하다 보면 컴포넌트 간 일관성이 깨지고 수정 비용이 급격히 올라갑니다.</div>
+            <div class="decision-card-meta">
+              <div class="exec-phase-label">DESIGN SYSTEM</div>
+              <div class="exec-phase-title">개인 프로젝트에도 디자인 시스템을 도입한 이유</div>
+              <div class="exec-phase-summary">임시 스타일링을 반복하다 보면 컴포넌트 간 일관성이 깨지고 수정 비용이 급격히 올라갑니다.</div>
+            </div>
             <div class="exec-detail-body">색상 토큰 · 타이포그래피 스케일 · 컴포넌트 카탈로그를 처음부터 정의했습니다. 개인 프로젝트라도 시스템 없이 시작하면 나중에 전체 리팩터링이 필요합니다. 이 결정이 유지보수 속도를 일정하게 유지해줍니다.</div>
           </div>
 
           <div class="decision-card">
-            <div class="exec-phase-label">SECURITY ARCHITECTURE</div>
-            <div class="exec-phase-title">세션 소유권 검증을 직접 설계한 이유</div>
-            <div class="exec-phase-summary">라이브 운영 중인 프로덕트는 PM도 보안 사고 책임자입니다.</div>
+            <div class="decision-card-meta">
+              <div class="exec-phase-label">SECURITY ARCHITECTURE</div>
+              <div class="exec-phase-title">세션 소유권 검증을 직접 설계한 이유</div>
+              <div class="exec-phase-summary">라이브 운영 중인 프로덕트는 PM도 보안 사고 책임자입니다.</div>
+            </div>
             <div class="exec-detail-body">비로그인 게스트의 세션이 다른 게스트와 섞이거나, 로그인 유저가 타인 세션에 접근하는 시나리오를 차단하기 위해 verifyOwnership 헬퍼를 신설했습니다. 로그인 유저는 user_id 일치, 게스트는 guest_id 일치 + user_id IS NULL 검증을 적용하고, 모든 세션 라우트(GET/PUT)에 소유권 체크를 박았습니다. 49개 테스트로 404/403/200 시나리오를 검증했습니다.</div>
           </div>
 
           <div class="decision-card">
-            <div class="exec-phase-label">BUILDER UX</div>
-            <div class="exec-phase-title">캐릭터 제작에 AI 빌더를 도입한 이유</div>
-            <div class="exec-phase-summary">빈 폼을 채우는 방식은 추상적 설정으로 끝나기 쉽습니다.</div>
+            <div class="decision-card-meta">
+              <div class="exec-phase-label">BUILDER UX</div>
+              <div class="exec-phase-title">캐릭터 제작에 AI 빌더를 도입한 이유</div>
+              <div class="exec-phase-summary">빈 폼을 채우는 방식은 추상적 설정으로 끝나기 쉽습니다.</div>
+            </div>
             <div class="exec-detail-body">기존 캐릭터 AI 플랫폼은 빈 양식을 채우는 폼 기반 제작이라 "다정하고 차가운" 같은 추상 설정에 머물기 쉽습니다. AI 에이전트가 추가 질문으로 구체화를 유도하면 비제작자도 구체적 행동 규칙 기반 캐릭터를 만들 수 있다고 봤습니다. /builder/chat (대화형)과 /builder/manual (폼) 양쪽을 모두 제공해 제작자 선택권을 보장했습니다.</div>
           </div>
 
