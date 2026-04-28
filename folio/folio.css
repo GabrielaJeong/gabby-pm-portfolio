@@ -98,11 +98,13 @@
   grid-column: 1;
 }
 
-/* 우측 컬럼: 본문 텍스트, 모든 row span으로 좌측 묶음 전체 높이 + 하단 정렬 */
+/* 우측 컬럼: 본문 텍스트 — title 행에서 시작해 카드 하단까지 (label 행 skip) */
 .decision-card > .exec-detail-body {
   grid-column: 2;
-  grid-row: 1 / -1;
+  grid-row: 2 / -1;
   align-self: end;
+  margin-top: auto;
+  margin-bottom: 0;
 }
 
 /* 좌측 마지막 요소(summary) 하단 마진 제거 — grid가 정렬 처리 */
