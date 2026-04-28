@@ -371,8 +371,6 @@
   letter-spacing: 0.1em;
   text-align: center;
   white-space: nowrap;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
 }
 
 .collab-gap-badge {
@@ -382,11 +380,9 @@
   background: rgba(245, 207, 165, 0.08);
   border: 1px solid var(--border-gold);
   border-radius: var(--radius-sm);
-  padding: var(--space-2) var(--space-3);
+  padding: var(--space-2) var(--space-4);
   text-align: center;
   white-space: nowrap;
-  writing-mode: vertical-rl;
-  text-orientation: upright;
   letter-spacing: 0.08em;
 }
 
