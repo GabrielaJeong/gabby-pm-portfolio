@@ -12,40 +12,41 @@
   height: auto;
 }
 
-/* ==================== IMPACT KPI 메인 카드 — 좌(텍스트) + 우(차트) 2컬럼 ==================== */
+/* ==================== IMPACT KPI 메인 카드 — 좌(텍스트) + 우(차트) 2컬럼, 카드 height 꽉 차게 ==================== */
 
 .kpi-summary-card {
   display: grid;
   grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
   column-gap: var(--space-10);
-  align-items: center;
+  align-items: stretch;
 }
 
-/* 차트는 우측 컬럼 + 모든 row 차지 (좌측 4행과 같이 묶임) */
+/* 좌측 텍스트 묶음 — flex column + detail을 하단으로 */
+.kpi-summary-text {
+  display: flex;
+  flex-direction: column;
+  height: 100%;
+}
+
+.kpi-summary-text > .impact-metric-detail {
+  margin-top: auto;
+}
+
+/* 차트는 우측 컬럼 + 카드 높이 꽉 채움 */
 .kpi-summary-card > .kpi-progress {
-  grid-column: 2;
-  grid-row: 1 / -1;
+  height: 100%;
   margin: 0;
-}
-
-/* 나머지 텍스트는 좌측 컬럼 자연 흐름 */
-.kpi-summary-card > .impact-metric-tag,
-.kpi-summary-card > .impact-metric-num,
-.kpi-summary-card > .impact-metric-label,
-.kpi-summary-card > .impact-metric-detail {
-  grid-column: 1;
 }
 
 /* 모바일: 1컬럼 스택 (텍스트 위, 차트 아래) */
 @media (max-width: 768px) {
   .kpi-summary-card {
     grid-template-columns: 1fr;
+    row-gap: var(--space-5);
   }
 
   .kpi-summary-card > .kpi-progress {
-    grid-column: 1;
-    grid-row: auto;
-    margin: var(--space-5) 0 var(--space-3);
+    height: 220px;
   }
 }
 
