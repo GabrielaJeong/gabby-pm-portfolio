@@ -1314,3 +1314,10 @@
     flex-direction: row;
   }
 }
+
+/* ==================== CASE 02 EXECUTION 블록 — 위/아래 간격 조정 ==================== */
+/* STRATEGY 블록과의 간격(margin-top) + RESULT 블록과의 간격(margin-bottom) 가비님 명시 값 */
+.case-content[data-case="cs"] > .case-block:nth-child(2) {
+  margin-top: var(--space-8);     /* 32px */
+  margin-bottom: var(--space-16); /* 64px */
+}

@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| (pending) | metavv: CASE 02 EXECUTION 블록 margin-top 32px, margin-bottom 64px 적용 |
 | `a199d05` | metavv: CASE 02 EXECUTION 화면 갤러리 위치를 카드 그리드 위로 이동 |
 | `a0931dc` | metavv: CASE 02 EXECUTION 카드 그리드 아래 화면 갤러리 추가 (이미지 4장, 신규 클래스 4개) |
 | (pending) | metavv: TRY IT 컴포넌트 크기 조정 — max-width 900px, 좌측 300px 고정 |
