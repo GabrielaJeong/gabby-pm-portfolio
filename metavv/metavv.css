@@ -183,9 +183,10 @@
 .cost-flow-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-5);
+  gap: var(--space-4);
   align-items: start;
-  margin-bottom: var(--space-5);
+  max-width: 760px;
+  margin: 0 auto var(--space-5);
 }
 
 .cost-flow-item {
@@ -208,7 +209,7 @@
 /* 솔리드 카드 — 핵심 메시지 박스 (다크 + 라운드) */
 .cost-flow-card {
   width: 100%;
-  padding: var(--card-padding-md);
+  padding: var(--card-padding-sm);
   background: rgba(255, 255, 255, 0.03);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-md);
@@ -216,7 +217,7 @@
 }
 
 .cost-flow-card-text {
-  font-size: var(--fs-body);
+  font-size: var(--fs-sub);
   color: var(--text-secondary);
   line-height: var(--lh-relaxed);
   word-break: keep-all;
