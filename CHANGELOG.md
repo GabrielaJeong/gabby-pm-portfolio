@@ -9,7 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
-| (pending) | folio: DESIGN SYSTEM 컴포넌트 demo 높이 자동 동일화 (flex:1 + min-height 200px) — Character Card 키워진 후 시각적 비대칭 해결 |
+| `67398e4` | folio: DESIGN SYSTEM 컴포넌트 demo 높이 자동 동일화 (flex:1 + min-height 200px) — Character Card 키워진 후 시각적 비대칭 해결 |
 
 ## 2026-04-28
 
