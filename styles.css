@@ -676,6 +676,7 @@ ul {
   text-align: left;
   position: relative;
   padding-bottom: var(--space-8);
+  padding-left: var(--space-3);
   display: grid;
   grid-template-columns: auto minmax(0, 1fr);
   column-gap: var(--space-5);
