@@ -406,3 +406,23 @@ box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
 **금지**: 텍스트 정렬 요청을 레이아웃 재구조화로 해석해 ctx-grid 같은 의도된 2열 레이아웃을 무너뜨리기.
 
 ---
+
+## L20. mini-case-content 마지막 case-block 여백 소멸
+
+**문제**: `.mini-case-content` 안의 마지막 `.case-block`이 `case-block:last-child { padding-bottom: 0 }` 규칙에 걸려서 하단 여백이 사라짐. 이어지는 바깥 요소(META REFLECTION 등)와 붙어버림.
+
+**증상 예시**: CASE 03 탭에서 CASE B RESULT 카드 아래 META REFLECTION 헤딩이 여백 없이 바로 붙음.
+
+**올바른 패턴**:
+```css
+.mini-case-content {
+  padding-top: var(--space-8);
+  padding-bottom: var(--section-gap); /* ← 이게 없으면 last-child 0으로 소멸 */
+}
+```
+
+**진단 포인트**: 헤딩이 딱 붙는다면 → 래퍼 컨테이너(`mini-case-content` 등)에 `padding-bottom`이 있는지 먼저 확인.
+
+**금지**: 헤딩에 직접 `margin-top` 추가해서 임시 보정하기. 래퍼 컨테이너에 여백을 주는 것이 올바름.
+
+---
