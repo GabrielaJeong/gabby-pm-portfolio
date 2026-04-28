@@ -179,46 +179,144 @@
   display: block;
 }
 
-/* COST 카드 그리드 — 가벼운 카드 + 외부 메타 텍스트 (PPT 톤) */
+/* COST 카드 그리드 — PPT 슬라이드 2 톤 (외부 아이콘 + 솔리드 카드 + 외부 메트릭 + 결론은 박스 없이) */
 .cost-flow-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
   gap: var(--space-5);
-  align-items: stretch;
+  align-items: start;
   margin-bottom: var(--space-5);
 }
 
 .cost-flow-item {
   display: flex;
   flex-direction: column;
+  align-items: center;
   gap: var(--space-4);
 }
 
-/* 가벼운 카드: background 제거, dashed border만 */
+/* 아이콘 — 카드 외부 위쪽 (PPT처럼 박스 위에 떠있는 동그라미) */
+.cost-flow-item > .cost-axis-icon {
+  margin: 0;
+  width: var(--space-10);
+  height: var(--space-10);
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-default);
+  color: var(--text-label-gold);
+}
+
+/* 솔리드 카드 — 핵심 메시지 박스 (다크 + 라운드) */
 .cost-flow-card {
-  display: flex;
-  flex-direction: column;
+  width: 100%;
   padding: var(--card-padding-md);
-  background: transparent;
-  border: 1px dashed var(--border-default);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-default);
   border-radius: var(--radius-md);
-  transition: border-color 0.25s ease;
-  flex: 1;
+  text-align: center;
 }
 
-.cost-flow-card:hover {
-  border-color: var(--border-gold);
-  border-style: solid;
+.cost-flow-card-text {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  line-height: var(--lh-relaxed);
+  word-break: keep-all;
 }
 
-/* 카드 외부 메트릭 — 작은 보조 텍스트 (PPT의 카드 아래 메트릭 패턴) */
+.cost-flow-card-text strong {
+  color: var(--text-primary);
+  font-weight: var(--fw-h3);
+}
+
+/* 카드 외부 메트릭 — 작은 보조 텍스트, 가운데 정렬 */
 .cost-flow-meta {
   font-size: var(--fs-sub);
   color: var(--text-tertiary);
   line-height: var(--lh-relaxed);
-  letter-spacing: 0.02em;
-  padding: 0 var(--space-3);
+  text-align: center;
   word-break: keep-all;
+}
+
+.cost-flow-meta strong {
+  color: var(--text-label-gold);
+  font-weight: var(--fw-caption);
+}
+
+/* 카드 묶음 → 결론 사이 점선 수직 화살표 */
+.cost-flow-arrow {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  height: var(--space-10);
+  position: relative;
+  margin: var(--space-3) 0;
+  color: var(--text-tertiary);
+  font-size: var(--fs-h3);
+  line-height: 1;
+}
+
+.cost-flow-arrow::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 1px dashed var(--border-default);
+  z-index: 0;
+}
+
+.cost-flow-arrow {
+  background: linear-gradient(to right,
+    transparent 0,
+    transparent calc(50% - var(--space-3)),
+    var(--bg) calc(50% - var(--space-3)),
+    var(--bg) calc(50% + var(--space-3)),
+    transparent calc(50% + var(--space-3)));
+}
+
+/* 결론 — 박스 없이 전구 + 텍스트 (PPT 마지막 단순 표현) */
+.cost-flow-conclusion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: 0;
+  background: transparent;
+  border: none;
+  margin-top: var(--space-5);
+  text-align: center;
+}
+
+.cost-flow-conclusion-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  width: var(--space-8);
+  height: var(--space-8);
+  background: rgba(245, 207, 165, 0.08);
+  border: 1px solid var(--border-gold);
+  border-radius: 50%;
+  color: var(--gold);
+  flex-shrink: 0;
+}
+
+.cost-flow-conclusion-icon svg {
+  display: block;
+}
+
+.cost-flow-conclusion-text {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
+  color: var(--text-primary);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.01em;
+}
+
+/* 결론의 핵심 강조 — gold 하이라이트 */
+.cost-flow-highlight {
+  color: var(--gold);
+  background: rgba(245, 207, 165, 0.08);
+  padding: var(--space-1) var(--space-2);
+  border-radius: var(--radius-sm);
 }
 
 @media (max-width: 768px) {
