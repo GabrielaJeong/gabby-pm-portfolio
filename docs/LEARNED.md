@@ -426,3 +426,27 @@ box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
 **금지**: 헤딩에 직접 `margin-top` 추가해서 임시 보정하기. 래퍼 컨테이너에 여백을 주는 것이 올바름.
 
 ---
+
+## L21. 이미지/asset 파일 git add 누락 — Vercel 404
+
+**문제**: 새 이미지/asset 파일을 로컬 폴더에 저장만 하고 `git add` 하지 않으면 GitHub 저장소에 안 올라감 → Vercel 배포에서 파일 없어서 404. HTML/CSS 코드는 정상인데 이미지만 안 뜸.
+
+**증상 예시**:
+- 가비님이 `assets/hero/splash.png`를 로컬에 저장
+- 클코가 HTML에 `<img src="/assets/hero/splash.png">` 추가 후 push
+- 배포 후 hard refresh해도 이미지 안 보임 (코드는 정상)
+- `git status` 확인하면 `Untracked files: assets/hero/splash.png` 발견
+
+**올바른 패턴**:
+1. asset 파일 추가 작업 시작 전에 `git status`로 untracked 파일 확인
+2. 코드 변경 commit에 asset 파일도 함께 `git add`
+3. 이미지가 안 보인다는 보고를 받으면 가장 먼저 `git ls-files <경로>`로 tracking 여부 확인
+
+**진단 포인트**: "이미지가 안 보여" → 가장 먼저 `git status` + `git ls-files`로 untracked 여부 확인. CSS/HTML 디버깅보다 우선순위 위.
+
+**금지**:
+- 코드만 push하고 가비님이 따로 add 했겠지 가정하기
+- 이미지 안 보임 = 캐시 문제로만 단정하기
+- 이미지 path 변경하거나 CSS 만지면서 시간 낭비하기
+
+---
