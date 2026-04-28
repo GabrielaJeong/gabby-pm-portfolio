@@ -1128,8 +1128,10 @@
   padding-bottom: 0;
 }
 
-/* EXECUTION 영역 — 배경 톤 차이 + 보더로 챕터 분리 (negative margin으로 full-bleed) */
-.case-block[data-section="execution"] {
+/* EXECUTION 영역 — 배경 톤 차이 + 보더로 챕터 분리 (negative margin으로 full-bleed)
+   case-block(banggooso/momscare/metavv) + case-section(folio) 둘 다 매치 */
+.case-block[data-section="execution"],
+.case-section[data-section="execution"] {
   margin-left: calc(-1 * var(--space-12));
   margin-right: calc(-1 * var(--space-12));
   padding-left: var(--space-12);
