@@ -158,6 +158,7 @@
   font-weight: var(--fw-caption);
   color: var(--text-label-gold);
   letter-spacing: 0.08em;
+  text-align: center;
   margin: var(--space-8) 0 30px;
 }
 
