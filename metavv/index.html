@@ -243,37 +243,39 @@
         </h2>
         <p class="case-section-sub">가격, 상품 혼선, 기능 가치, 인터뷰 응답에서 서로 다른 의사결정의 단서를 동시에 발견했습니다.</p>
 
-        <p class="prob-summary">
-          무료 사용자(메타브)는 비용만 늘렸고, 유료 사용자(스튜디오)는 <span class="gold">저가 요금제에 결제가 쏠려</span> 회수가 어려웠습니다. <br> 가격을 올리면 이탈할 가능성이 컸기 때문에, 먼저 <span class="gold">사용자가 어디까지 지불할 의향이 있는지</span> 측정이 필요했습니다.
-        </p>
+        <!-- 좌: 요약 텍스트 / 우: 비용 회수율 도넛 차트 -->
+        <div class="prob-grid">
+          <p class="prob-summary">
+            무료 사용자(메타브)는 비용만 늘렸고, 유료 사용자(스튜디오)는 <span class="gold">저가 요금제에 결제가 쏠려</span> 회수가 어려웠습니다. <br> 가격을 올리면 이탈할 가능성이 컸기 때문에, 먼저 <span class="gold">사용자가 어디까지 지불할 의향이 있는지</span> 측정이 필요했습니다.
+          </p>
 
-        <!-- 비용 회수율 도넛 차트 -->
-        <div class="prob-donut-card" data-reveal>
-          <div class="prob-donut-label">COST RECOVERY · BEFORE REDESIGN</div>
-          <div class="prob-donut-title">비용 회수율 2%</div>
-          <div class="prob-donut-body">
-            <div class="prob-donut-chart-area">
-              <canvas id="costDonut" width="200" height="200"></canvas>
-              <div class="prob-donut-center">
-                <div class="prob-donut-center-label">COST RECOVERY</div>
-                <div class="prob-donut-center-num">2%</div>
-                <div class="prob-donut-center-caption">월 매출 / 인프라 비용</div>
-              </div>
-            </div>
-            <div class="prob-donut-aux">
-              <div class="prob-donut-aux-row">
-                <span class="prob-donut-aux-dot gold"></span>
-                <div class="prob-donut-aux-info">
-                  <div class="prob-donut-aux-label">월 매출 (스튜디오 결제)</div>
-                  <div class="prob-donut-aux-val gold">15만원</div>
+          <div class="prob-donut-card" data-reveal>
+            <div class="prob-donut-label">COST RECOVERY · BEFORE REDESIGN</div>
+            <div class="prob-donut-title">비용 회수율 2%</div>
+            <div class="prob-donut-body">
+              <div class="prob-donut-chart-area">
+                <canvas id="costDonut" width="200" height="200"></canvas>
+                <div class="prob-donut-center">
+                  <div class="prob-donut-center-label">COST RECOVERY</div>
+                  <div class="prob-donut-center-num">2%</div>
+                  <div class="prob-donut-center-caption">월 매출 / 인프라 비용</div>
                 </div>
               </div>
-              <div class="prob-donut-aux-divider"></div>
-              <div class="prob-donut-aux-row">
-                <span class="prob-donut-aux-dot muted"></span>
-                <div class="prob-donut-aux-info">
-                  <div class="prob-donut-aux-label">월 인프라 비용 (서버·DB)</div>
-                  <div class="prob-donut-aux-val muted">420만원</div>
+              <div class="prob-donut-aux">
+                <div class="prob-donut-aux-row">
+                  <span class="prob-donut-aux-dot gold"></span>
+                  <div class="prob-donut-aux-info">
+                    <div class="prob-donut-aux-label">월 매출 (스튜디오 결제)</div>
+                    <div class="prob-donut-aux-val gold">15만원</div>
+                  </div>
+                </div>
+                <div class="prob-donut-aux-divider"></div>
+                <div class="prob-donut-aux-row">
+                  <span class="prob-donut-aux-dot muted"></span>
+                  <div class="prob-donut-aux-info">
+                    <div class="prob-donut-aux-label">월 인프라 비용 (서버·DB)</div>
+                    <div class="prob-donut-aux-val muted">420만원</div>
+                  </div>
                 </div>
               </div>
             </div>

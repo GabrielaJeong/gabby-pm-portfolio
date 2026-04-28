@@ -92,6 +92,11 @@
   .case-hero-visual {
     order: -1;
   }
+
+  .prob-grid {
+    grid-template-columns: 1fr;
+    gap: var(--space-8);
+  }
 }
 
 /* ── Scroll Indicator ── */
@@ -553,6 +558,15 @@
 
 /* ==================== PROBLEM ==================== */
 
+/* 좌: 요약 텍스트, 우: 비용 회수율 도넛 카드 — 2컬럼 */
+.prob-grid {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-10);
+  align-items: center;
+  margin-bottom: var(--space-4);
+}
+
 .prob-summary {
   font-size: 18px;
   font-weight: var(--fw-body);
@@ -561,6 +575,12 @@
   margin: 0 0 var(--space-12);
   max-width: 900px;
   word-break: keep-all;
+}
+
+/* prob-grid 안의 prob-summary는 자체 마진 제거 (그리드 cell 정렬) */
+.prob-grid .prob-summary {
+  margin: 0;
+  max-width: none;
 }
 
 .prob-summary .gold {
@@ -575,6 +595,10 @@
   border-radius: var(--radius-card);
   padding: var(--space-10);
   margin-bottom: var(--space-4);
+}
+
+.prob-grid .prob-donut-card {
+  margin-bottom: 0;
 }
 
 .prob-donut-label {
