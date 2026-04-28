@@ -71,6 +71,34 @@
   }
 }
 
+/* ==================== KEY DECISIONS — 5컬럼 병렬 그리드 ==================== */
+
+.decisions-grid {
+  display: grid;
+  grid-template-columns: repeat(5, minmax(0, 1fr));
+  gap: var(--space-4);
+  align-items: start;
+}
+
+/* 모바일: 너무 좁아지므로 컬럼 수 단계적 축소 */
+@media (max-width: 1100px) {
+  .decisions-grid {
+    grid-template-columns: repeat(3, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 768px) {
+  .decisions-grid {
+    grid-template-columns: repeat(2, minmax(0, 1fr));
+  }
+}
+
+@media (max-width: 480px) {
+  .decisions-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ==================== exec-phase-detail 내부 간격 ==================== */
 
 /* exec-detail 자유 라벨 → 콘텐츠 */
