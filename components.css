@@ -1757,6 +1757,61 @@
   margin-top: auto;
 }
 
+/* ==================== EXECUTION SCREENS — 카드 그리드 아래 별도 갤러리 ==================== */
+
+.exec-screens-grid {
+  display: grid;
+  grid-template-columns: repeat(4, 1fr);
+  gap: var(--space-5);
+  align-items: stretch;
+  margin-top: var(--space-7);
+}
+
+.exec-screen-item {
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  margin: 0;
+}
+
+.exec-screen-thumb {
+  width: 100%;
+  aspect-ratio: 16 / 10;
+  object-fit: cover;
+  display: block;
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+  margin-bottom: var(--space-3);
+}
+
+.exec-screen-item figcaption {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+.exec-screen-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  letter-spacing: 0.08em;
+}
+
+.exec-screen-item figcaption p {
+  font-size: var(--fs-sub);
+  color: var(--text-secondary);
+  line-height: var(--lh-snug);
+  word-break: keep-all;
+  margin: 0;
+}
+
+@media (max-width: 768px) {
+  .exec-screens-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
 /* result-num 작은 변형 (긴 텍스트용) */
 .result-num--sm {
   font-size: var(--fs-h1);

@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| (pending) | metavv: CASE 02 EXECUTION 카드 그리드 아래 화면 갤러리 추가 (이미지 4장, 신규 클래스 4개) |
 | (pending) | metavv: TRY IT 컴포넌트 크기 조정 — max-width 900px, 좌측 300px 고정 |
 | (pending) | metavv: TRY IT CSS → metavv.studio 변수 기반으로 전환 (--mv-* 스코프) |
 | `fda5ed1` | metavv: TRY IT · IMAGE CUSTOM UI 재설계 — 실제 제품 스크린샷 기반 |
