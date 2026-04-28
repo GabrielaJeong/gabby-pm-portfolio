@@ -136,26 +136,24 @@
   align-items: stretch;
 }
 
-/* 이 컨텍스트 안에서는 result-grid를 1컬럼 + 카드 4개가 row 균등 분배 */
+/* 카드 그리드는 자연 높이 유지 (4컬럼 → 1컬럼 직렬, 카드 자체 크기 그대로) */
 .result-mockup-grid .result-grid {
   grid-template-columns: 1fr;
-  grid-auto-rows: 1fr;
   gap: var(--space-3);
-  height: 100%;
 }
 
+/* 이미지를 absolute로 빼서 row height에 영향 주지 않도록 — 카드 묶음 높이가 row 높이를 결정, 이미지는 그 안에 fit */
 .result-mockup {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-  height: 100%;
+  position: relative;
+  min-width: 0;
 }
 
 .result-mockup img {
-  width: auto;
+  position: absolute;
+  inset: 0;
+  width: 100%;
   height: 100%;
-  max-width: 100%;
-  max-height: 100%;
+  margin: auto;
   object-fit: contain;
   display: block;
 }
