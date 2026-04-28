@@ -1867,9 +1867,12 @@
   background: var(--bg);
 }
 
-/* META REFLECTION 내부 컨테이너는 풀폭으로 풀어 큰 화면에서도 콘텐츠가 꽉 차게 */
+/* META REFLECTION 내부 컨테이너는 풀폭으로 풀어 큰 화면에서도 콘텐츠가 꽉 차게
+   padding은 화면 폭에 비례하여 자동 조정 (작은 화면 16px, 큰 화면 48px) */
 .meta-reflection .case-inner {
   max-width: none;
+  padding-left: clamp(var(--space-4), 2vw, var(--space-12));
+  padding-right: clamp(var(--space-4), 2vw, var(--space-12));
 }
 
 /* META REFLECTION 헤더 — 섹션 라벨 강조 (케이스와 차별화) */
