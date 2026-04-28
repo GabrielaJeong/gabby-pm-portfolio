@@ -161,6 +161,24 @@
   margin: var(--space-8) 0 var(--space-4);
 }
 
+/* 'COST' 카드 위 동그란 아이콘 — info / headphones / log-out */
+.cost-axis-icon {
+  width: var(--space-8);
+  height: var(--space-8);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  background: rgba(255, 255, 255, 0.04);
+  border: 1px solid var(--border-default);
+  border-radius: 50%;
+  color: var(--text-label-gold);
+  margin-bottom: var(--space-4);
+}
+
+.cost-axis-icon svg {
+  display: block;
+}
+
 /* 결론 박스 — STRATEGY 마무리에 핵심 가설 표시 */
 .case-conclusion {
   display: flex;
@@ -176,8 +194,15 @@
 }
 
 .case-conclusion-icon {
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
   font-size: var(--fs-h3);
   color: var(--gold);
+}
+
+.case-conclusion-icon svg {
+  display: block;
 }
 
 .case-conclusion-text {
