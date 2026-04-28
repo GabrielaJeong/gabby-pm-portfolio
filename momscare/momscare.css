@@ -12,6 +12,43 @@
   height: auto;
 }
 
+/* ==================== IMPACT KPI 메인 카드 — 좌(텍스트) + 우(차트) 2컬럼 ==================== */
+
+.kpi-summary-card {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  column-gap: var(--space-10);
+  align-items: center;
+}
+
+/* 차트는 우측 컬럼 + 모든 row 차지 (좌측 4행과 같이 묶임) */
+.kpi-summary-card > .kpi-progress {
+  grid-column: 2;
+  grid-row: 1 / -1;
+  margin: 0;
+}
+
+/* 나머지 텍스트는 좌측 컬럼 자연 흐름 */
+.kpi-summary-card > .impact-metric-tag,
+.kpi-summary-card > .impact-metric-num,
+.kpi-summary-card > .impact-metric-label,
+.kpi-summary-card > .impact-metric-detail {
+  grid-column: 1;
+}
+
+/* 모바일: 1컬럼 스택 (텍스트 위, 차트 아래) */
+@media (max-width: 768px) {
+  .kpi-summary-card {
+    grid-template-columns: 1fr;
+  }
+
+  .kpi-summary-card > .kpi-progress {
+    grid-column: 1;
+    grid-row: auto;
+    margin: var(--space-5) 0 var(--space-3);
+  }
+}
+
 /* ==================== IMPACT KPI 세로형 막대 차트 — 목표 vs 실적 비교 시각 ==================== */
 
 .kpi-progress {
