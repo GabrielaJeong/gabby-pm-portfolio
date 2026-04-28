@@ -5,6 +5,80 @@
    글로벌 토큰: /styles.css :root
    ======================================================== */
 
+/* ==================== HERO 디바이스 목업 (Folio 앱 스플래시) ==================== */
+
+.folio-phone-mockup {
+  width: 100%;
+  max-width: 280px;
+  aspect-ratio: 9 / 19.5;
+  background: var(--surface);
+  border-radius: var(--space-10);
+  padding: var(--space-2);
+  box-shadow:
+    0 var(--space-8) var(--space-16) rgba(0, 0, 0, 0.5),
+    inset 0 0 0 1px var(--border-default);
+  box-sizing: border-box;
+}
+
+.folio-phone-screen {
+  width: 100%;
+  height: 100%;
+  background: #0d1521;
+  border-radius: var(--space-7);
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  overflow: hidden;
+}
+
+/* "Folio" 로고 — 마지막 o 위에 두 점(umlaut) 디자인 */
+.folio-splash-logo {
+  font-size: var(--space-8);
+  font-weight: 600;
+  color: var(--text-primary);
+  letter-spacing: 0.01em;
+  font-family: var(--font-sans);
+}
+
+.folio-splash-o {
+  position: relative;
+  display: inline-block;
+}
+
+.folio-splash-o::before,
+.folio-splash-o::after {
+  content: '';
+  position: absolute;
+  width: 6px;
+  height: 6px;
+  border-radius: 50%;
+  background: #5e72e4;
+  top: -10px;
+}
+
+.folio-splash-o::before {
+  left: 15%;
+}
+
+.folio-splash-o::after {
+  right: 15%;
+}
+
+.folio-splash-tagline {
+  font-size: var(--fs-caption);
+  color: var(--text-quaternary);
+  letter-spacing: 0.02em;
+}
+
+/* 모바일: 디바이스 목업 작게 */
+@media (max-width: 768px) {
+  .folio-phone-mockup {
+    max-width: 220px;
+  }
+}
+
 /* ==================== exec-phase-detail 내부 간격 ==================== */
 
 /* exec-detail 자유 라벨 → 콘텐츠 */
