@@ -4,6 +4,162 @@
    메타브 페이지만의 특수 구조 (탭 네비, 케이스별 특수 다이어그램)
    ======================================================== */
 
+/* ==================== CASE 02 STRATEGY — 인용 / 비교 / 결론 컴포넌트 ==================== */
+
+/* 사용자 인용 / 의문 인용 — 큰 라운드 박스 + 좌측 아이콘 */
+.case-quote {
+  display: flex;
+  align-items: center;
+  gap: var(--space-5);
+  padding: var(--card-padding-lg);
+  background: rgba(255, 255, 255, 0.03);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-lg);
+  margin: var(--space-5) 0;
+}
+
+.case-quote--user {
+  /* 사용자 입에서 나온 실제 CS 인용 */
+}
+
+.case-quote--question {
+  /* PM이 던진 분석 질문 — gold border로 강조 */
+  border-color: var(--border-gold);
+  background: rgba(245, 207, 165, 0.04);
+}
+
+.case-quote-icon {
+  flex-shrink: 0;
+  width: var(--space-10);
+  height: var(--space-10);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  font-size: var(--fs-h3);
+  color: var(--text-label-gold);
+  background: rgba(255, 255, 255, 0.04);
+  border-radius: 50%;
+}
+
+.case-quote--question .case-quote-icon {
+  color: var(--gold);
+  background: rgba(245, 207, 165, 0.08);
+}
+
+.case-quote-text {
+  font-size: var(--fs-h3);
+  color: var(--text-primary);
+  line-height: var(--lh-snug);
+  font-weight: var(--fw-h3);
+  margin: 0;
+  word-break: keep-all;
+}
+
+/* 두 상품 비교 그리드 (스튜디오 템플릿 vs 멤버십) */
+.vs-compare {
+  display: grid;
+  grid-template-columns: minmax(0, 1fr) minmax(0, 1fr);
+  gap: var(--space-4);
+  margin: var(--space-5) 0;
+}
+
+.vs-compare-col {
+  padding: var(--card-padding-lg);
+  background: rgba(255, 255, 255, 0.02);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-md);
+}
+
+.vs-compare-head {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h2);
+  color: var(--text-primary);
+  text-align: center;
+  padding-bottom: var(--space-3);
+  margin-bottom: var(--space-4);
+  border-bottom: 1px solid var(--border-default);
+  letter-spacing: -0.01em;
+}
+
+.vs-compare-list {
+  list-style: none;
+  margin: 0;
+  padding: 0;
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-3);
+}
+
+.vs-compare-list li {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  line-height: var(--lh-normal);
+  padding-left: var(--space-4);
+  position: relative;
+  word-break: keep-all;
+}
+
+.vs-compare-list li::before {
+  content: '·';
+  position: absolute;
+  left: var(--space-1);
+  color: var(--text-label-gold);
+  font-weight: var(--fw-h2);
+}
+
+.vs-compare-list li strong {
+  color: var(--text-primary);
+  font-weight: var(--fw-h3);
+}
+
+/* 인라인 섹션 라벨 (axis-grid 위 묶음 제목) */
+.block-label-inline {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-label-gold);
+  letter-spacing: 0.08em;
+  margin: var(--space-8) 0 var(--space-4);
+}
+
+/* 결론 박스 — STRATEGY 마무리에 핵심 가설 표시 */
+.case-conclusion {
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: var(--space-3);
+  padding: var(--space-5) var(--space-6);
+  background: rgba(245, 207, 165, 0.05);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  margin-top: var(--space-5);
+  text-align: center;
+}
+
+.case-conclusion-icon {
+  font-size: var(--fs-h3);
+  color: var(--gold);
+}
+
+.case-conclusion-text {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
+  color: var(--text-primary);
+  line-height: var(--lh-snug);
+  letter-spacing: -0.01em;
+}
+
+/* 모바일: 비교 grid → 1컬럼 스택 */
+@media (max-width: 768px) {
+  .vs-compare {
+    grid-template-columns: 1fr;
+  }
+
+  .case-quote {
+    flex-direction: column;
+    text-align: center;
+  }
+}
+
 /* ==================== HERO 디바이스 목업 ==================== */
 
 .case-hero-grid {
