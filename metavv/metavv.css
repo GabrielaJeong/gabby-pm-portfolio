@@ -179,6 +179,54 @@
   display: block;
 }
 
+/* COST 카드 그리드 — 가벼운 카드 + 외부 메타 텍스트 (PPT 톤) */
+.cost-flow-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: var(--space-5);
+  align-items: stretch;
+  margin-bottom: var(--space-5);
+}
+
+.cost-flow-item {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-4);
+}
+
+/* 가벼운 카드: background 제거, dashed border만 */
+.cost-flow-card {
+  display: flex;
+  flex-direction: column;
+  padding: var(--card-padding-md);
+  background: transparent;
+  border: 1px dashed var(--border-default);
+  border-radius: var(--radius-md);
+  transition: border-color 0.25s ease;
+  flex: 1;
+}
+
+.cost-flow-card:hover {
+  border-color: var(--border-gold);
+  border-style: solid;
+}
+
+/* 카드 외부 메트릭 — 작은 보조 텍스트 (PPT의 카드 아래 메트릭 패턴) */
+.cost-flow-meta {
+  font-size: var(--fs-sub);
+  color: var(--text-tertiary);
+  line-height: var(--lh-relaxed);
+  letter-spacing: 0.02em;
+  padding: 0 var(--space-3);
+  word-break: keep-all;
+}
+
+@media (max-width: 768px) {
+  .cost-flow-grid {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* 결론 박스 — STRATEGY 마무리에 핵심 가설 표시 */
 .case-conclusion {
   display: flex;
