@@ -12,6 +12,12 @@
   height: auto;
 }
 
+/* ==================== IMPACT — 4컬럼 (카드 4개) ==================== */
+
+.impact-metric-grid {
+  grid-template-columns: repeat(4, 1fr);
+}
+
 /* ==================== CONTEXT — 3사 협업 구조 ==================== */
 
 .ctx-collab-diagram {
