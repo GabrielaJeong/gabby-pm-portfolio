@@ -81,13 +81,14 @@
 
 .decision-card {
   display: grid;
-  grid-template-columns: minmax(0, 1fr) minmax(0, 2fr);
+  grid-template-columns: minmax(0, 1.3fr) minmax(0, 1.7fr);
   column-gap: var(--space-10);
-  padding: var(--card-padding-lg);
+  padding: var(--space-8) var(--space-10);
   background: rgba(255, 255, 255, 0.02);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-lg);
   align-items: start;
+  min-height: 200px;
 }
 
 /* 좌측 컬럼: label / title / summary 자연 흐름 */
@@ -97,10 +98,11 @@
   grid-column: 1;
 }
 
-/* 우측 컬럼: 본문 텍스트, 모든 row span으로 좌측 묶음 전체 높이 */
+/* 우측 컬럼: 본문 텍스트, 모든 row span으로 좌측 묶음 전체 높이 + 하단 정렬 */
 .decision-card > .exec-detail-body {
   grid-column: 2;
   grid-row: 1 / -1;
+  align-self: end;
 }
 
 /* 좌측 마지막 요소(summary) 하단 마진 제거 — grid가 정렬 처리 */
