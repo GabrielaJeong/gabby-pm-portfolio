@@ -7,9 +7,20 @@
 
 /* ==================== HERO 디바이스 목업 (Folio 앱 스플래시) ==================== */
 
-/* HERO 좌우 비율 — 좌측 텍스트가 한 줄로 들어가도록 좌측 더 넓게 (metavv 패턴) */
+/* HERO 좌우 비율 — 텍스트가 길어 metavv보다 더 비대칭 (1.6:1) */
 .case-hero .case-hero-grid {
-  grid-template-columns: 1.3fr 1fr;
+  grid-template-columns: 1.6fr 1fr;
+}
+
+/* case-title 폰트 약간 축소 — '직접 만드는 프로덕트 매니저,' 한 줄로 들어가도록 */
+.case-hero .case-title {
+  font-size: 60px;
+}
+
+/* 단어 단위 줄바꿈 — 한 단어가 강제로 잘리지 않도록 */
+.case-hero .case-title,
+.case-hero .case-summary {
+  word-break: keep-all;
 }
 
 /* 폰 프레임 — 어두운 베젤 + 그림자 */
