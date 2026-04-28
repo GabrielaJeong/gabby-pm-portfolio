@@ -158,7 +158,7 @@
   font-weight: var(--fw-caption);
   color: var(--text-label-gold);
   letter-spacing: 0.08em;
-  margin: var(--space-8) 0 var(--space-4);
+  margin: var(--space-8) 0 30px;
 }
 
 /* 'COST' 카드 위 동그란 아이콘 — info / headphones / log-out */
@@ -183,9 +183,9 @@
 .cost-flow-grid {
   display: grid;
   grid-template-columns: repeat(3, minmax(0, 1fr));
-  gap: var(--space-4);
+  gap: var(--space-5);
   align-items: start;
-  max-width: 760px;
+  max-width: 920px;
   margin: 0 auto var(--space-5);
 }
 
