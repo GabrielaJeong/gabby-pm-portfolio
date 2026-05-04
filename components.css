@@ -83,6 +83,13 @@
   display: block;
 }
 
+/* HERO 디바이스 목업 직접 자식 img — 하단 페이드아웃 (이미지 잘림 자연스럽게)
+   child(>) selector라 folio의 .folio-phone-screen img(폰 mockup 내부)는 영향 없음 */
+.case-hero-visual > img {
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+          mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+}
+
 @media (max-width: 768px) {
   .case-hero-grid {
     grid-template-columns: 1fr;
