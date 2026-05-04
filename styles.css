@@ -647,6 +647,9 @@ ul {
   height: 100%;
   object-fit: contain;
   display: block;
+  /* 하단 페이드아웃 — 이미지 잘림/배경 경계 자연스럽게 */
+  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
+          mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
 }
 
 .timeline-label {
