@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| (pending) | feat: in-page-nav 컴포넌트 추가 (floating side nav, dot→hover로 라벨+sub-tier 펼침, scroll-spy + smooth scroll) — 메인 홈 적용, JSON config 기반 재사용 가능 |
 | `4cbbc87` | index: ABOUT 영역 프로필 사진(.about-photo img) 하단 페이드아웃(mask-image) |
 | `cdfbe0a` | components: HERO 디바이스 목업 직접 자식 img 하단 페이드아웃(mask-image) — 이미지 잘림 자연스럽게 (folio 폰 mockup 영향 없음) |
 | `5c61625` | folio: DESIGN SYSTEM 컴포넌트 demo 높이를 고정값(absolute, 240px)으로 — 콘텐츠 변화에 무관한 카탈로그 일관성 + 직전 max-width 되돌림 |

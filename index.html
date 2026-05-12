@@ -542,8 +542,7 @@
       <div class="proj-grid">
 
         <!-- Card 01 · 메타브 -->
-        <!-- Card 01 · 메타브 -->
-        <a href="/metavv/" class="pcard">
+        <a href="/metavv/" class="pcard" id="proj-metavv">
           <div class="pcard-thumb">
             <div class="pcard-thumb-inner">
               <div class="pcard-thumb-num">73<span class="small">×</span></div>
@@ -559,7 +558,7 @@
         </a>
 
         <!-- Card 02 · Folio -->
-        <a href="/folio/" class="pcard">
+        <a href="/folio/" class="pcard" id="proj-folio">
           <div class="pcard-thumb">
             <div class="pcard-thumb-inner">
               <div class="pcard-thumb-num">6<span class="small">개</span></div>
@@ -575,7 +574,7 @@
         </a>
 
         <!-- Card 03 · 방구석연구소 -->
-        <a href="/banggooso/" class="pcard">
+        <a href="/banggooso/" class="pcard" id="proj-banggooso">
           <div class="pcard-thumb">
             <div class="pcard-thumb-inner">
               <div class="pcard-thumb-num">16<span class="small">%</span></div>
@@ -591,7 +590,7 @@
         </a>
 
         <!-- Card 04 · 맘스케어 -->
-        <a href="/momscare/" class="pcard">
+        <a href="/momscare/" class="pcard" id="proj-momscare">
           <div class="pcard-thumb">
             <div class="pcard-thumb-inner">
               <div class="pcard-thumb-num">3<span class="small">×</span></div>
@@ -660,6 +659,21 @@
 
   <button class="back-to-top" id="backToTop" aria-label="맨 위로">↑</button>
 
+  <!-- 페이지 내 floating side nav (dot → hover로 라벨+sub-tier 펼침) -->
+  <aside class="in-page-nav" aria-label="페이지 섹션 네비게이션" data-nav-config='[
+    {"id": "about", "label": "About"},
+    {"id": "experience", "label": "Experience"},
+    {"id": "capabilities", "label": "Capabilities"},
+    {"id": "work", "label": "Work", "children": [
+      {"id": "proj-metavv", "label": "메타브"},
+      {"id": "proj-folio", "label": "Folio"},
+      {"id": "proj-banggooso", "label": "방구석연구소"},
+      {"id": "proj-momscare", "label": "맘스케어"}
+    ]},
+    {"id": "contact", "label": "Contact"}
+  ]'></aside>
+
   <script src="script.js"></script>
+  <script src="/in-page-nav.js"></script>
 </body>
 </html>
