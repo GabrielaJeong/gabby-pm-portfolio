@@ -2117,27 +2117,26 @@ ul {
   color: var(--text-primary);
 }
 
-/* dot — 평상시 표시. 배경은 페이지 색으로 채워서 뒤 라인이 점에서 끊어진 듯 보임 */
+/* dot — 평상시 채워진 점. 비활성도 색만 흐릿하게 (비워진 느낌 회피) */
 .in-page-nav-dot {
   flex-shrink: 0;
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--bg);
-  border: 1.5px solid var(--text-quaternary);
-  transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  background: var(--text-quaternary);
+  border: none;
+  transition: background 0.3s ease, transform 0.3s ease;
   position: relative;       /* ring pulse ::after 기준 */
 }
 
 .in-page-nav-link:hover .in-page-nav-dot {
-  border-color: var(--text-primary);
+  background: var(--text-secondary);
 }
 
 /* 활성 항목 — scroll-spy로 .is-active 부여 */
 .in-page-nav-item.is-active > .in-page-nav-link .in-page-nav-dot {
   background: var(--gold);
-  border-color: var(--gold);
-  transform: scale(1.15);
+  transform: scale(1.3);
 }
 
 .in-page-nav-item.is-active > .in-page-nav-link {
