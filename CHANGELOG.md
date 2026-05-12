@@ -9,6 +9,8 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `9b8fa29` | fix(in-page-nav): CSS를 components.css → styles.css로 이동 (메인 홈은 components.css 미임포트라서 스타일 미적용 문제 해결) |
+| `2b08a05` | debug(in-page-nav): console 로깅 추가 |
 | `51b1f5f` | feat: in-page-nav 컴포넌트 추가 (floating side nav, dot→hover로 라벨+sub-tier 펼침, scroll-spy + smooth scroll) — 메인 홈 적용, JSON config 기반 재사용 가능 |
 | `4cbbc87` | index: ABOUT 영역 프로필 사진(.about-photo img) 하단 페이드아웃(mask-image) |
 | `cdfbe0a` | components: HERO 디바이스 목업 직접 자식 img 하단 페이드아웃(mask-image) — 이미지 잘림 자연스럽게 (folio 폰 mockup 영향 없음) |
