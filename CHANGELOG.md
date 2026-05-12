@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `bab08ab` | fix(in-page-nav): 진행 라인 시작/끝점을 첫·마지막 점 중앙으로 맞춤 (라인이 점 위로 삐져나오는 문제 해결) |
 | `47e95cc` | fix(in-page-nav): 활성 이전 점에 .is-passed 클래스 부여 → 골드로 채워서 진행 라인과 시각 연속 |
 | `ad89758` | fix(in-page-nav): 비활성 dot도 채워진 점으로 변경 (활성→비활성 전환 시 '비어있는 원' 느낌 해결) |
 | `a29cac2` | feat(in-page-nav): 세로 라인 진행도 + 활성 점 ring pulse + 메타브 페이지 적용 (Phase 2: Top/Cases/Reflection/Next) |
