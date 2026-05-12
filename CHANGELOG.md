@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `9490b9f` | fix(folio-hero): case-title 60→72px로 다른 케이스 페이지와 통일 |
 | `9e33e45` | feat(folio-in-page-nav): nav 항목 5→9개로 확장 (Why / Decisions / Documents / Engineering 추가) |
 | `9b484a8` | feat(in-page-nav): folio/banggooso/momscare 페이지 적용 (Phase 2 마무리) |
 | `7d20376` | fix(in-page-nav): page bottom 도달 시 마지막 항목 강제 활성 fallback (NEXT 섹션 활성 안 되는 사각지대 해결) |
