@@ -127,6 +127,7 @@
     if (visibleIds.size === 0) {
       // 아무 것도 안 보이면 모두 비활성
       allTargets.forEach(function (t) { t.itemEl.classList.remove('is-active'); });
+      updateProgressLine(allTargets, null);
       return;
     }
     // 페이지 안에서 가장 먼저 나타나는(=가장 위에 있는) visible 섹션을 활성으로
@@ -146,6 +147,33 @@
       if (t === topMost) t.itemEl.classList.add('is-active');
       else t.itemEl.classList.remove('is-active');
     });
+
+    updateProgressLine(allTargets, topMost);
+  }
+
+  /* ─ 세로 라인 진행도 — 활성 항목 점 중앙까지 height 업데이트 ─ */
+  function updateProgressLine(allTargets, activeTarget) {
+    if (allTargets.length === 0) return;
+    var list = allTargets[0].itemEl.parentElement;   // ul.in-page-nav-list
+    if (!list) return;
+
+    if (!activeTarget) {
+      list.style.setProperty('--nav-progress', '0px');
+      return;
+    }
+
+    var dot = activeTarget.itemEl.querySelector('.in-page-nav-dot, .in-page-nav-subdot');
+    if (!dot) {
+      list.style.setProperty('--nav-progress', '0px');
+      return;
+    }
+
+    var dotRect = dot.getBoundingClientRect();
+    var listRect = list.getBoundingClientRect();
+    // 점 중앙 y에서 list top 까지 거리 = 진행도 라인 길이
+    var dotCenterY = dotRect.top + dotRect.height / 2;
+    var progressPx = dotCenterY - listRect.top;
+    list.style.setProperty('--nav-progress', progressPx + 'px');
   }
 
   function getScrollOffset() {

@@ -2060,6 +2060,33 @@ ul {
   background: rgba(10, 10, 10, 0);
   border-radius: var(--radius-lg);
   transition: background 0.3s ease, padding 0.3s ease;
+  position: relative;       /* 진행도 라인 절대 위치 기준 */
+}
+
+/* 점들을 잇는 배경 라인 — 흐릿하게 전체 길이 */
+.in-page-nav-list::before {
+  content: "";
+  position: absolute;
+  /* 점 중앙 x = padding-left(16) + dot 반지름(4) → -0.5px 보정 */
+  left: calc(var(--space-4) + 4px - 0.5px);
+  top: var(--space-3);
+  bottom: var(--space-3);
+  width: 1px;
+  background: var(--border-default);
+  pointer-events: none;
+}
+
+/* 진행도 라인 — 활성 항목 점 중앙까지 골드로 채워짐 */
+.in-page-nav-list::after {
+  content: "";
+  position: absolute;
+  left: calc(var(--space-4) + 4px - 0.5px);
+  top: var(--space-3);
+  width: 1px;
+  height: var(--nav-progress, 0px);
+  background: var(--gold);
+  pointer-events: none;
+  transition: height 0.4s cubic-bezier(0.4, 0, 0.2, 1);
 }
 
 /* hover 시 배경 살짝 부각 */
@@ -2090,15 +2117,16 @@ ul {
   color: var(--text-primary);
 }
 
-/* dot — 평상시 표시 */
+/* dot — 평상시 표시. 배경은 페이지 색으로 채워서 뒤 라인이 점에서 끊어진 듯 보임 */
 .in-page-nav-dot {
   flex-shrink: 0;
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: transparent;
+  background: var(--bg);
   border: 1.5px solid var(--text-quaternary);
   transition: background 0.2s ease, border-color 0.2s ease, transform 0.2s ease;
+  position: relative;       /* ring pulse ::after 기준 */
 }
 
 .in-page-nav-link:hover .in-page-nav-dot {
@@ -2114,6 +2142,36 @@ ul {
 
 .in-page-nav-item.is-active > .in-page-nav-link {
   color: var(--text-primary);
+}
+
+/* 활성 점 ring pulse — 외곽 ring이 부드럽게 퍼졌다 사라짐 */
+.in-page-nav-item.is-active > .in-page-nav-link .in-page-nav-dot::after {
+  content: "";
+  position: absolute;
+  inset: -3px;
+  border-radius: 50%;
+  border: 1.5px solid var(--gold);
+  opacity: 0;
+  pointer-events: none;
+  animation: in-page-nav-ring 2s ease-out infinite;
+}
+
+@keyframes in-page-nav-ring {
+  0% {
+    opacity: 0.55;
+    transform: scale(1);
+  }
+  100% {
+    opacity: 0;
+    transform: scale(2.4);
+  }
+}
+
+/* prefers-reduced-motion 사용자는 애니메이션 비활성 */
+@media (prefers-reduced-motion: reduce) {
+  .in-page-nav-item.is-active > .in-page-nav-link .in-page-nav-dot::after {
+    animation: none;
+  }
 }
 
 /* 라벨 — 평상시 숨김, nav hover 시 노출 */
