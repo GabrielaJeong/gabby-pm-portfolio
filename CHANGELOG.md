@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `ad89758` | fix(in-page-nav): 비활성 dot도 채워진 점으로 변경 (활성→비활성 전환 시 '비어있는 원' 느낌 해결) |
 | `a29cac2` | feat(in-page-nav): 세로 라인 진행도 + 활성 점 ring pulse + 메타브 페이지 적용 (Phase 2: Top/Cases/Reflection/Next) |
 | `79f9282` | refactor(in-page-nav): Work sub-tier 제거 — 프로젝트는 별도 페이지라 in-page anchor와 의미 충돌 |
 | `9b8fa29` | fix(in-page-nav): CSS를 components.css → styles.css로 이동 (메인 홈은 components.css 미임포트라서 스타일 미적용 문제 해결) |
