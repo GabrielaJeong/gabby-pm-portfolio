@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `cedef68` | fix(hero): slogan 폰트 88→72px (큰 화면 가독성 회복), 태그 gold weight 700→600 (Pretendard 단차 완화로 텍스트 깨짐 해소) |
 | `2bd4ebb` | fix(hero-metrics): 수치 3개를 pill 태그로 시각 강조 (gold tint 배경 + 1px border + 999px radius) |
 | `cde483d` | feat(hero): 메인 히어로 카피·정보 구조 재설계 — 'h1 + 수치 3개 + 도메인 요약' 첫 화면 노출, '심리학의 시선' → '사용자 행동을 읽고, 수익 구조' 톤 전환 |
 | `1b30d6b` | fix(banggooso-hero): h1 'B2B 협업 자산으로 / 전환하다' 줄바꿈, summary '다층 책임' → '다층적인 책임을 가졌습니다' |
