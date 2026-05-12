@@ -96,6 +96,19 @@
     allTargets.forEach(function (t) {
       if (t.el) observer.observe(t.el);
     });
+
+    /* ─ page bottom fallback ─
+       마지막 섹션이 짧거나 페이지 끝에 있을 때 rootMargin 영역에 못 들어와
+       활성 안 되는 케이스 대비. scroll 이벤트로 페이지 끝 근접 시 재평가 */
+    var rafId = null;
+    function onScroll() {
+      if (rafId) return;
+      rafId = requestAnimationFrame(function () {
+        rafId = null;
+        updateActiveState(allTargets, visibleIds);
+      });
+    }
+    window.addEventListener('scroll', onScroll, { passive: true });
   }
 
   function createNavItem(entry, allTargets, isSub) {
@@ -140,28 +153,38 @@
   }
 
   function updateActiveState(allTargets, visibleIds) {
-    if (visibleIds.size === 0) {
+    if (allTargets.length === 0) return;
+
+    // 페이지 끝 도달 시 → 마지막 항목 강제 활성 (rootMargin 사각지대 보완)
+    var atPageBottom = (window.scrollY + window.innerHeight + 80) >= document.documentElement.scrollHeight;
+
+    var topMost = null;
+    var topMostIdx = -1;
+
+    if (atPageBottom) {
+      topMost = allTargets[allTargets.length - 1];
+      topMostIdx = allTargets.length - 1;
+    } else if (visibleIds.size === 0) {
       // 아무 것도 안 보이면 모두 비활성/미통과
       allTargets.forEach(function (t) {
         t.itemEl.classList.remove('is-active', 'is-passed');
       });
       updateProgressLine(allTargets, null);
       return;
-    }
-    // 페이지 안에서 가장 먼저 나타나는(=가장 위에 있는) visible 섹션을 활성으로
-    var topMost = null;
-    var topMostY = Infinity;
-    var topMostIdx = -1;
-    allTargets.forEach(function (t, i) {
-      if (visibleIds.has(t.id)) {
-        var y = t.el.getBoundingClientRect().top;
-        if (y < topMostY) {
-          topMostY = y;
-          topMost = t;
-          topMostIdx = i;
+    } else {
+      // 페이지 안에서 가장 위에 있는 visible 섹션을 활성
+      var topMostY = Infinity;
+      allTargets.forEach(function (t, i) {
+        if (visibleIds.has(t.id)) {
+          var y = t.el.getBoundingClientRect().top;
+          if (y < topMostY) {
+            topMostY = y;
+            topMost = t;
+            topMostIdx = i;
+          }
         }
-      }
-    });
+      });
+    }
 
     // 활성 = 골드 + ring / 활성 이전 항목 = is-passed(골드) / 이후 = 비활성
     allTargets.forEach(function (t, i) {
