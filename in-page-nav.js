@@ -62,6 +62,22 @@
       history.replaceState(null, '', hash);
     });
 
+    /* ─ 라인 endpoint 측정 (첫·마지막 점 실제 중앙 위치) ─ */
+    function syncLineEndpoints() {
+      var listRect = list.getBoundingClientRect();
+      var firstDot = allTargets[0] && allTargets[0].itemEl.querySelector('.in-page-nav-dot, .in-page-nav-subdot');
+      var lastDot = allTargets[allTargets.length - 1] && allTargets[allTargets.length - 1].itemEl.querySelector('.in-page-nav-dot, .in-page-nav-subdot');
+      if (!firstDot || !lastDot) return;
+      var firstRect = firstDot.getBoundingClientRect();
+      var lastRect = lastDot.getBoundingClientRect();
+      var topOffset = (firstRect.top + firstRect.height / 2) - listRect.top;
+      var bottomOffset = listRect.bottom - (lastRect.top + lastRect.height / 2);
+      list.style.setProperty('--nav-line-top', topOffset + 'px');
+      list.style.setProperty('--nav-line-bottom', bottomOffset + 'px');
+    }
+    syncLineEndpoints();
+    window.addEventListener('resize', syncLineEndpoints, { passive: true });
+
     /* ─ scroll-spy ─ IntersectionObserver로 현재 섹션 추적 */
     if (!('IntersectionObserver' in window) || allTargets.length === 0) return;
 

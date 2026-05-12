@@ -2063,16 +2063,16 @@ ul {
   position: relative;       /* 진행도 라인 절대 위치 기준 */
 }
 
-/* 점들을 잇는 배경 라인 — 첫 점 중앙 ~ 마지막 점 중앙 사이만 그림
-   계산값: padding-top(--space-3) + link padding(2px) + dot 반지름(4px)
-   → 라인이 점 밖으로 삐져나오지 않음 */
+/* 점들을 잇는 배경 라인 — 첫·마지막 점 중앙 사이만 그림
+   라인 endpoint는 JS가 실제 dot 위치 측정 후 --nav-line-top/bottom로 set.
+   fallback: padding(--space-3) + link padding(2px) + dot 반지름(4px) */
 .in-page-nav-list::before {
   content: "";
   position: absolute;
   /* 점 중앙 x = padding-left(--space-4) + dot 반지름(4) → -0.5px 보정 */
   left: calc(var(--space-4) + 4px - 0.5px);
-  top: calc(var(--space-3) + 2px + 4px);
-  bottom: calc(var(--space-3) + 2px + 4px);
+  top: var(--nav-line-top, calc(var(--space-3) + 2px + 4px));
+  bottom: var(--nav-line-bottom, calc(var(--space-3) + 2px + 4px));
   width: 1px;
   background: var(--border-default);
   pointer-events: none;
@@ -2083,7 +2083,7 @@ ul {
   content: "";
   position: absolute;
   left: calc(var(--space-4) + 4px - 0.5px);
-  top: calc(var(--space-3) + 2px + 4px);
+  top: var(--nav-line-top, calc(var(--space-3) + 2px + 4px));
   width: 1px;
   height: var(--nav-progress, 0px);
   background: var(--gold);
