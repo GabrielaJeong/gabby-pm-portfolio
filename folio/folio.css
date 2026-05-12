@@ -12,12 +12,8 @@
   grid-template-columns: 1.6fr 1fr;
 }
 
-/* case-title 폰트 약간 축소 — '직접 만드는 프로덕트 매니저,' 한 줄로 들어가도록 */
-.case-hero .case-title {
-  font-size: 60px;
-}
-
-/* 단어 단위 줄바꿈 — 한 단어가 강제로 잘리지 않도록 */
+/* 단어 단위 줄바꿈 — 한 단어가 강제로 잘리지 않도록
+   (case-title 60px 축소 룰 제거 — 다른 케이스 페이지와 동일한 72px 사용) */
 .case-hero .case-title,
 .case-hero .case-summary {
   word-break: keep-all;
