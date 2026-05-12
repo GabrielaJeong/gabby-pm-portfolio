@@ -476,11 +476,11 @@ ul {
 }
 
 .hero-slogan {
-  font-size: 88px;
-  line-height: 1.1;
+  font-size: 72px;
+  line-height: 1.15;
   font-weight: var(--fw-h1);
   color: #ffffff;
-  letter-spacing: -0.035em;
+  letter-spacing: -0.03em;
   margin: 0 0 var(--space-8);    /* 32px — metrics/summary 자리 확보 */
   max-width: 1380px;
 }
@@ -514,7 +514,7 @@ ul {
 
 .hero-metric .gold {
   color: var(--gold);
-  font-weight: 700;
+  font-weight: 600;     /* 700은 Pretendard에서 500과 단차 커 텍스트 깨져 보임 */
 }
 
 /* sep — pill 형태에선 불필요 */
