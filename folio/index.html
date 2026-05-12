@@ -24,7 +24,7 @@
       <a href="/#work" class="case-back-link">← 모든 프로젝트 보기</a>
 
       <!-- ══════════ HERO ══════════ -->
-      <section class="case-hero">
+      <section class="case-hero" id="top">
         <div class="case-hero-grid">
           <div class="case-hero-text">
             <div class="case-meta-tags">
@@ -80,7 +80,7 @@
 
     <!-- ══════════ LIVE PREVIEW (folio 차별 컴포넌트) ══════════ -->
     <!-- CSP frame-ancestors 설정으로 포트폴리오 도메인에서 iframe 임베드 허용 -->
-    <section class="live-preview-section">
+    <section class="live-preview-section" id="live">
       <div class="case-inner">
         <div class="case-block-header">
           <div class="block-label">LIVE PREVIEW</div>
@@ -578,7 +578,7 @@
     </div><!-- /case-inner -->
 
     <!-- ══════════ DESIGN SYSTEM (folio 차별 컴포넌트) ══════════ -->
-    <section class="ds-section">
+    <section class="ds-section" id="design-system">
       <div class="case-inner">
         <div class="case-block-header">
           <div class="block-label">DESIGN SYSTEM</div>
@@ -803,7 +803,7 @@
     </div>
 
     <!-- ══════════ REFLECTION (페이지 종합) ══════════ -->
-    <section class="meta-reflection" data-reveal>
+    <section class="meta-reflection" data-reveal id="reflection">
       <div class="case-inner">
         <div class="case-section-header">
           <div class="case-section-label">META REFLECTION</div>
@@ -836,7 +836,7 @@
     </section>
 
     <!-- ══════════ NAVIGATION ══════════ -->
-    <nav class="project-navigation" aria-label="다른 프로젝트">
+    <nav class="project-navigation" aria-label="다른 프로젝트" id="next">
       <div class="proj-nav-row">
         <div class="case-block-header">
           <div class="block-label">OTHER PROJECTS</div>
@@ -877,9 +877,19 @@
 
   <button class="back-to-top" id="backToTop" aria-label="맨 위로">↑</button>
 
+  <!-- 페이지 내 floating side nav (dot → hover로 라벨 펼침) -->
+  <aside class="in-page-nav" aria-label="페이지 섹션 네비게이션" data-nav-config='[
+    {"id": "top", "label": "Top"},
+    {"id": "live", "label": "Live"},
+    {"id": "design-system", "label": "Design System"},
+    {"id": "reflection", "label": "Reflection"},
+    {"id": "next", "label": "Next"}
+  ]'></aside>
+
   <script src="/script.js"></script>
   <script src="/reveal.js" defer></script>
   <script src="/expand-toggle.js"></script>
+  <script src="/in-page-nav.js"></script>
   <script src="/folio/folio.js"></script>
 </body>
 </html>

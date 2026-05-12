@@ -24,7 +24,7 @@
       <a href="/#work" class="case-back-link">← 모든 프로젝트 보기</a>
 
       <!-- ══════════ HERO ══════════ -->
-      <section class="case-hero">
+      <section class="case-hero" id="top">
         <div class="case-hero-grid">
           <div class="case-hero-text">
             <div class="case-meta-tags">
@@ -74,7 +74,7 @@
       </section>
 
       <!-- ══════════ IMPACT ══════════ -->
-      <section class="case-section">
+      <section class="case-section" id="impact">
         <div class="case-section-header">
           <div class="case-section-label">IMPACT</div>
           <div class="case-section-num">02</div>
@@ -204,7 +204,7 @@
       </section>
 
       <!-- ══════════ MAIN CASE 진입 ══════════ -->
-      <div class="main-case-intro">
+      <div class="main-case-intro" id="main-case">
         <div class="main-case-label">MAIN CASE · 카카오뱅크 B2B 협업</div>
         <h2 class="main-case-title">방구석연구소 × 카카오뱅크 ｜ 유휴 콘텐츠를 수익원으로</h2>
       </div>
@@ -364,7 +364,7 @@
     </div><!-- /case-inner -->
 
     <!-- ══════════ SIDE CASES ══════════ -->
-    <section class="side-cases-section">
+    <section class="side-cases-section" id="side-cases">
       <div class="case-inner">
         <div class="case-block-header">
           <div class="block-label">SIDE CASES</div>
@@ -416,7 +416,7 @@
     </section>
 
     <!-- ══════════ REFLECTION (페이지 종합) ══════════ -->
-    <section class="meta-reflection" data-reveal>
+    <section class="meta-reflection" data-reveal id="reflection">
       <div class="case-inner">
         <div class="case-section-header">
           <div class="case-section-label">META REFLECTION</div>
@@ -457,7 +457,7 @@
     </section>
 
     <!-- ══════════ NAVIGATION ══════════ -->
-    <nav class="project-navigation" aria-label="다른 프로젝트">
+    <nav class="project-navigation" aria-label="다른 프로젝트" id="next">
       <div class="proj-nav-row">
         <div class="case-block-header">
           <div class="block-label">NEXT PROJECT</div>
@@ -498,7 +498,18 @@
 
   <button class="back-to-top" id="backToTop" aria-label="맨 위로">↑</button>
 
+  <!-- 페이지 내 floating side nav (dot → hover로 라벨 펼침) -->
+  <aside class="in-page-nav" aria-label="페이지 섹션 네비게이션" data-nav-config='[
+    {"id": "top", "label": "Top"},
+    {"id": "impact", "label": "Impact"},
+    {"id": "main-case", "label": "Main Case"},
+    {"id": "side-cases", "label": "Side Cases"},
+    {"id": "reflection", "label": "Reflection"},
+    {"id": "next", "label": "Next"}
+  ]'></aside>
+
   <script src="/script.js"></script>
   <script src="/reveal.js" defer></script>
+  <script src="/in-page-nav.js"></script>
 </body>
 </html>

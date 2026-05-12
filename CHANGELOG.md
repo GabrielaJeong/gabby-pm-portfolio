@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| (pending) | feat(in-page-nav): folio/banggooso/momscare 페이지 적용 (Phase 2 마무리) |
 | `7d20376` | fix(in-page-nav): page bottom 도달 시 마지막 항목 강제 활성 fallback (NEXT 섹션 활성 안 되는 사각지대 해결) |
 | `3c5dde2` | fix(in-page-nav): 라인 endpoint를 JS로 실측 (CSS calc이 라벨 line-height 영향으로 점 위 ~3px '꼭다리' 발생) |
 | `bab08ab` | fix(in-page-nav): 진행 라인 시작/끝점을 첫·마지막 점 중앙으로 맞춤 (라인이 점 위로 삐져나오는 문제 해결) |

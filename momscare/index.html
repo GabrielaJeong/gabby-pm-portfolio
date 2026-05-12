@@ -24,7 +24,7 @@
       <a href="/#work" class="case-back-link">← 모든 프로젝트 보기</a>
 
       <!-- ══════════ HERO ══════════ -->
-      <section class="case-hero">
+      <section class="case-hero" id="top">
         <div class="case-hero-grid">
           <div class="case-hero-text">
             <div class="case-meta-tags">
@@ -73,7 +73,7 @@
       </section>
 
       <!-- ══════════ IMPACT ══════════ -->
-      <section class="case-section">
+      <section class="case-section" id="impact">
         <div class="case-section-header">
           <div class="case-section-label">IMPACT</div>
           <div class="case-section-num">02</div>
@@ -258,7 +258,7 @@
       </section>
 
       <!-- ══════════ STRATEGY ══════════ -->
-      <div class="case-block" data-reveal>
+      <div class="case-block" data-reveal id="main-case">
         <div class="case-block-header">
           <div class="block-label">STRATEGY</div>
         </div>
@@ -373,7 +373,7 @@
     </div><!-- /case-inner -->
 
     <!-- ══════════ 협업 타임라인 (맘스케어 차별 컴포넌트) ══════════ -->
-    <section class="collab-timeline-section">
+    <section class="collab-timeline-section" id="collab">
       <div class="case-inner">
         <div class="case-block-header">
           <div class="block-label">COLLABORATION TIMELINE</div>
@@ -423,7 +423,7 @@
     </section>
 
     <!-- ══════════ REFLECTION (페이지 종합) ══════════ -->
-    <section class="meta-reflection" data-reveal>
+    <section class="meta-reflection" data-reveal id="reflection">
       <div class="case-inner">
         <div class="case-section-header">
           <div class="case-section-label">META REFLECTION</div>
@@ -447,7 +447,7 @@
     </section>
 
     <!-- ══════════ NAVIGATION ══════════ -->
-    <nav class="project-navigation" aria-label="다른 프로젝트">
+    <nav class="project-navigation" aria-label="다른 프로젝트" id="next">
       <div class="proj-nav-row">
         <div class="case-block-header">
           <div class="block-label">OTHER PROJECTS</div>
@@ -488,8 +488,19 @@
 
   <button class="back-to-top" id="backToTop" aria-label="맨 위로">↑</button>
 
+  <!-- 페이지 내 floating side nav (dot → hover로 라벨 펼침) -->
+  <aside class="in-page-nav" aria-label="페이지 섹션 네비게이션" data-nav-config='[
+    {"id": "top", "label": "Top"},
+    {"id": "impact", "label": "Impact"},
+    {"id": "main-case", "label": "Main Case"},
+    {"id": "collab", "label": "Collab"},
+    {"id": "reflection", "label": "Reflection"},
+    {"id": "next", "label": "Next"}
+  ]'></aside>
+
   <script src="/script.js"></script>
   <script src="/reveal.js" defer></script>
+  <script src="/in-page-nav.js"></script>
   <script src="/momscare/momscare.js"></script>
 </body>
 </html>
