@@ -125,27 +125,39 @@
 
   function updateActiveState(allTargets, visibleIds) {
     if (visibleIds.size === 0) {
-      // 아무 것도 안 보이면 모두 비활성
-      allTargets.forEach(function (t) { t.itemEl.classList.remove('is-active'); });
+      // 아무 것도 안 보이면 모두 비활성/미통과
+      allTargets.forEach(function (t) {
+        t.itemEl.classList.remove('is-active', 'is-passed');
+      });
       updateProgressLine(allTargets, null);
       return;
     }
     // 페이지 안에서 가장 먼저 나타나는(=가장 위에 있는) visible 섹션을 활성으로
     var topMost = null;
     var topMostY = Infinity;
-    allTargets.forEach(function (t) {
+    var topMostIdx = -1;
+    allTargets.forEach(function (t, i) {
       if (visibleIds.has(t.id)) {
         var y = t.el.getBoundingClientRect().top;
         if (y < topMostY) {
           topMostY = y;
           topMost = t;
+          topMostIdx = i;
         }
       }
     });
 
-    allTargets.forEach(function (t) {
-      if (t === topMost) t.itemEl.classList.add('is-active');
-      else t.itemEl.classList.remove('is-active');
+    // 활성 = 골드 + ring / 활성 이전 항목 = is-passed(골드) / 이후 = 비활성
+    allTargets.forEach(function (t, i) {
+      if (t === topMost) {
+        t.itemEl.classList.add('is-active');
+        t.itemEl.classList.remove('is-passed');
+      } else if (i < topMostIdx) {
+        t.itemEl.classList.add('is-passed');
+        t.itemEl.classList.remove('is-active');
+      } else {
+        t.itemEl.classList.remove('is-active', 'is-passed');
+      }
     });
 
     updateProgressLine(allTargets, topMost);

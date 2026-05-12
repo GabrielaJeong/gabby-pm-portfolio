@@ -2133,6 +2133,15 @@ ul {
   background: var(--text-secondary);
 }
 
+/* 통과한 항목 — 활성보다 위쪽, 진행 라인이 지나간 점은 골드로 채워서 라인과 자연 연속 */
+.in-page-nav-item.is-passed > .in-page-nav-link .in-page-nav-dot {
+  background: var(--gold);
+}
+
+.in-page-nav-item.is-passed > .in-page-nav-link {
+  color: var(--text-secondary);
+}
+
 /* 활성 항목 — scroll-spy로 .is-active 부여 */
 .in-page-nav-item.is-active > .in-page-nav-link .in-page-nav-dot {
   background: var(--gold);
@@ -2242,6 +2251,14 @@ ul {
 
 .in-page-nav-sublink:hover .in-page-nav-subdot {
   background: var(--text-primary);
+}
+
+.in-page-nav-subitem.is-passed > .in-page-nav-sublink .in-page-nav-subdot {
+  background: var(--gold);
+}
+
+.in-page-nav-subitem.is-passed > .in-page-nav-sublink {
+  color: var(--text-secondary);
 }
 
 .in-page-nav-subitem.is-active > .in-page-nav-sublink .in-page-nav-subdot {
