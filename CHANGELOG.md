@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `d8b904b` | fix(contact): 메인 Contact 카피 범용화 ('패스오더의 사이클' → '제품의 다음 사이클') + PM 정체성 1줄 강화 |
 | `968a674` | fix(content): 사실 정합성 1단계 — 방구석연구소 회원 30만/UV 70~120만 통일, 타임라인 '2024—현재' → '2024—2025', 맘스케어 '후원사 3곳' → '3개 이해관계자' 표현 정확화 |
 | `9490b9f` | fix(folio-hero): case-title 60→72px로 다른 케이스 페이지와 통일 |
 | `9e33e45` | feat(folio-in-page-nav): nav 항목 5→9개로 확장 (Why / Decisions / Documents / Engineering 추가) |
