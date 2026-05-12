@@ -489,20 +489,26 @@ ul {
   color: var(--gold);
 }
 
-/* HERO 대표 수치 3개 — 채용자가 첫 화면에서 가져가는 증거 */
+/* HERO 대표 수치 3개 — pill 태그 형태로 시각 강조 */
 .hero-metrics {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-3);
   margin-bottom: var(--space-5);
-  font-size: 18px;
-  color: var(--text-muted);
-  font-weight: 500;
-  letter-spacing: -0.01em;
 }
 
 .hero-metric {
+  display: inline-flex;
+  align-items: center;
+  padding: var(--space-2) var(--space-4);
+  background: rgba(245, 207, 165, 0.05);     /* gold tint 5% */
+  border: 1px solid rgba(245, 207, 165, 0.18);
+  border-radius: 999px;
+  font-size: 15px;
+  font-weight: 500;
+  color: var(--text-muted);
+  letter-spacing: -0.01em;
   white-space: nowrap;
 }
 
@@ -511,9 +517,9 @@ ul {
   font-weight: 700;
 }
 
+/* sep — pill 형태에선 불필요 */
 .hero-metric-sep {
-  color: var(--text-muted);
-  opacity: 0.4;
+  display: none;
 }
 
 /* HERO 도메인·책임 범위 요약 — h1 보조 톤 */
