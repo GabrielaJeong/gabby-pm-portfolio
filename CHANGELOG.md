@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `968a674` | fix(content): 사실 정합성 1단계 — 방구석연구소 회원 30만/UV 70~120만 통일, 타임라인 '2024—현재' → '2024—2025', 맘스케어 '후원사 3곳' → '3개 이해관계자' 표현 정확화 |
 | `9490b9f` | fix(folio-hero): case-title 60→72px로 다른 케이스 페이지와 통일 |
 | `9e33e45` | feat(folio-in-page-nav): nav 항목 5→9개로 확장 (Why / Decisions / Documents / Engineering 추가) |
 | `9b484a8` | feat(in-page-nav): folio/banggooso/momscare 페이지 적용 (Phase 2 마무리) |
