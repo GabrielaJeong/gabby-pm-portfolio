@@ -2063,25 +2063,27 @@ ul {
   position: relative;       /* 진행도 라인 절대 위치 기준 */
 }
 
-/* 점들을 잇는 배경 라인 — 흐릿하게 전체 길이 */
+/* 점들을 잇는 배경 라인 — 첫 점 중앙 ~ 마지막 점 중앙 사이만 그림
+   계산값: padding-top(--space-3) + link padding(2px) + dot 반지름(4px)
+   → 라인이 점 밖으로 삐져나오지 않음 */
 .in-page-nav-list::before {
   content: "";
   position: absolute;
-  /* 점 중앙 x = padding-left(16) + dot 반지름(4) → -0.5px 보정 */
+  /* 점 중앙 x = padding-left(--space-4) + dot 반지름(4) → -0.5px 보정 */
   left: calc(var(--space-4) + 4px - 0.5px);
-  top: var(--space-3);
-  bottom: var(--space-3);
+  top: calc(var(--space-3) + 2px + 4px);
+  bottom: calc(var(--space-3) + 2px + 4px);
   width: 1px;
   background: var(--border-default);
   pointer-events: none;
 }
 
-/* 진행도 라인 — 활성 항목 점 중앙까지 골드로 채워짐 */
+/* 진행도 라인 — 라인 시작점(첫 점 중앙) ~ 활성 점 중앙까지 골드 */
 .in-page-nav-list::after {
   content: "";
   position: absolute;
   left: calc(var(--space-4) + 4px - 0.5px);
-  top: var(--space-3);
+  top: calc(var(--space-3) + 2px + 4px);
   width: 1px;
   height: var(--nav-progress, 0px);
   background: var(--gold);

@@ -163,7 +163,7 @@
     updateProgressLine(allTargets, topMost);
   }
 
-  /* ─ 세로 라인 진행도 — 활성 항목 점 중앙까지 height 업데이트 ─ */
+  /* ─ 세로 라인 진행도 — 첫 점 중앙 ~ 활성 점 중앙 거리로 height 계산 ─ */
   function updateProgressLine(allTargets, activeTarget) {
     if (allTargets.length === 0) return;
     var list = allTargets[0].itemEl.parentElement;   // ul.in-page-nav-list
@@ -174,17 +174,20 @@
       return;
     }
 
-    var dot = activeTarget.itemEl.querySelector('.in-page-nav-dot, .in-page-nav-subdot');
-    if (!dot) {
+    // 라인 시작점 = 첫 번째 점 중앙 (CSS의 ::after top과 일치해야 함)
+    var firstDot = allTargets[0].itemEl.querySelector('.in-page-nav-dot, .in-page-nav-subdot');
+    var activeDot = activeTarget.itemEl.querySelector('.in-page-nav-dot, .in-page-nav-subdot');
+    if (!firstDot || !activeDot) {
       list.style.setProperty('--nav-progress', '0px');
       return;
     }
 
-    var dotRect = dot.getBoundingClientRect();
-    var listRect = list.getBoundingClientRect();
-    // 점 중앙 y에서 list top 까지 거리 = 진행도 라인 길이
-    var dotCenterY = dotRect.top + dotRect.height / 2;
-    var progressPx = dotCenterY - listRect.top;
+    var firstRect = firstDot.getBoundingClientRect();
+    var activeRect = activeDot.getBoundingClientRect();
+    var lineStartY = firstRect.top + firstRect.height / 2;
+    var activeY = activeRect.top + activeRect.height / 2;
+
+    var progressPx = Math.max(0, activeY - lineStartY);
     list.style.setProperty('--nav-progress', progressPx + 'px');
   }
 
