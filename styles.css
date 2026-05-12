@@ -508,13 +508,15 @@ ul {
   font-size: 15px;
   font-weight: 500;
   color: var(--text-muted);
-  letter-spacing: -0.01em;
+  letter-spacing: 0;                          /* 자간 깨짐 방지 — 0 명시 */
   white-space: nowrap;
+  font-variant-numeric: tabular-nums;         /* 숫자 정렬 또렷 */
 }
 
+/* gold 강조 — weight는 통일(500), 색만으로 강조. weight 차이가 한 줄 안에서 시각 단차 만들어 텍스트 깨져 보였음 */
 .hero-metric .gold {
   color: var(--gold);
-  font-weight: 600;     /* 700은 Pretendard에서 500과 단차 커 텍스트 깨져 보임 */
+  font-weight: 500;
 }
 
 /* sep — pill 형태에선 불필요 */
