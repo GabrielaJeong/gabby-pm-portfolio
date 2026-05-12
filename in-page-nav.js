@@ -28,8 +28,9 @@
     var config;
     try {
       config = JSON.parse(configRaw);
+      console.log('[in-page-nav] parsed config:', config);
     } catch (e) {
-      console.warn('[in-page-nav] invalid JSON config', e);
+      console.error('[in-page-nav] invalid JSON config:', e, '\nraw:', configRaw);
       return;
     }
 
@@ -83,7 +84,10 @@
 
   function createNavItem(entry, allTargets, isSub) {
     var target = document.getElementById(entry.id);
-    if (!target) return null;
+    if (!target) {
+      console.warn('[in-page-nav] section not found: #' + entry.id);
+      return null;
+    }
 
     var li = document.createElement('li');
     li.className = isSub ? 'in-page-nav-subitem' : 'in-page-nav-item';
@@ -153,7 +157,9 @@
 
   /* ─ init ─ */
   function init() {
-    document.querySelectorAll('.in-page-nav[data-nav-config]').forEach(initInPageNav);
+    var navs = document.querySelectorAll('.in-page-nav[data-nav-config]');
+    console.log('[in-page-nav] found', navs.length, 'nav element(s)');
+    navs.forEach(initInPageNav);
   }
 
   if (document.readyState === 'loading') {
