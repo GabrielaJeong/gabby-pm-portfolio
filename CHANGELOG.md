@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `23cc5a5` | feat(work): Work를 MAIN PRODUCT(메타브·방구석·맘스케어) / SIDE PRODUCT(Folio)로 분리 — 라벨 그룹 2개 스택 + 글로벌 nav 드롭다운·모바일 드로어에 그룹 라벨, .proj-grid 4→3열, 신규 클래스 4개(.proj-group/.proj-group-label/.nav-dropdown-group/.drawer-work-group), Moodyfit는 추후 Side에 추가 |
 | `e2204af` | fix(nav): 글로벌 nav 활성 밑줄이 존재하지 않는 `data-section`을 참조해 항상 미동작하던 버그 수정 (href 해시 매칭으로 변경) + 중복/TDZ `.drawer-work-sub a` 핸들러 제거 + hamburger null 가드 / in-page-nav 디버그 console.log 제거 / index.html script.js 경로 절대화 / 하네스 독스 정합화(CLAUDE.md charts.js·in-page-nav.js, README 로컬 서버 필수) |
 
 ## 2026-04-29
