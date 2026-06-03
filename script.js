@@ -21,14 +21,8 @@ if (drawerWorkToggle) {
     drawerWorkToggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
   });
 }
-
-// 드로어 Work 하위 링크 클릭 시 드로어 닫기
-document.querySelectorAll('.drawer-work-sub a').forEach((link) => {
-  link.addEventListener('click', () => {
-    nav.classList.remove('drawer-open');
-    hamburger.setAttribute('aria-label', '메뉴 열기');
-  });
-});
+// 드로어 Work 하위 링크 클릭 시 드로어 닫기는 아래 `.nav-drawer a` 핸들러가
+// 이미 처리 (하위 링크도 .nav-drawer 자손이므로 별도 핸들러 불필요).
 
 // ==================== NAV SCROLL EFFECT ====================
 const nav = document.getElementById('nav');
@@ -47,11 +41,13 @@ handleScroll();
 // ==================== MOBILE DRAWER ====================
 const hamburger = document.getElementById('hamburger');
 
-hamburger.addEventListener('click', () => {
-  nav.classList.toggle('drawer-open');
-  const isOpen = nav.classList.contains('drawer-open');
-  hamburger.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
-});
+if (hamburger) {
+  hamburger.addEventListener('click', () => {
+    nav.classList.toggle('drawer-open');
+    const isOpen = nav.classList.contains('drawer-open');
+    hamburger.setAttribute('aria-label', isOpen ? '메뉴 닫기' : '메뉴 열기');
+  });
+}
 
 document.querySelectorAll('.nav-drawer a').forEach((link) => {
   link.addEventListener('click', () => {
@@ -73,7 +69,11 @@ const observer = new IntersectionObserver(
       if (entry.isIntersecting) {
         const id = entry.target.id;
         navLinks.forEach((link) => {
-          link.classList.toggle('active', link.dataset.section === id);
+          // nav 링크는 href="/#about" 형태 — 해시 부분을 섹션 id로 매칭
+          const href = link.getAttribute('href') || '';
+          const hashIndex = href.indexOf('#');
+          const linkSection = hashIndex !== -1 ? href.slice(hashIndex + 1) : '';
+          link.classList.toggle('active', linkSection === id);
         });
       }
     });

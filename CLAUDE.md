@@ -36,10 +36,11 @@ gabby-pm-portfolio/
 ├── index.html          # 메인 페이지
 ├── styles.css          # 글로벌 토큰 (--bg, --gold, --space-N 등)
 ├── components.css      # ★ 공유 컴포넌트 (메타브에서 검증된 모든 케이스 스터디 공통 클래스)
-├── nav.js              # 공유 네비게이션 컴포넌트
-├── script.js           # 공용 JS
+├── nav.js              # 공유 글로벌 네비게이션 (document.write 주입)
+├── script.js           # 공용 JS (back-to-top, 드로어, nav 활성 밑줄, Q&A, 탭 등)
 ├── reveal.js           # Reveal on Scroll (모든 페이지 공유)
 ├── expand-toggle.js    # 펼침/접힘 유틸리티 (모든 페이지 공유)
+├── in-page-nav.js      # 플로팅 사이드 네비 + scroll-spy (data-nav-config 기반)
 ├── CLAUDE.md           # 이 파일 (강제 규칙서)
 ├── docs/
 │   ├── DESIGN_SYSTEM.md    # 디자인 토큰 상세
@@ -150,7 +151,9 @@ URL 매핑 (Vercel 자동):
 다음 인터랙션은 **모든 페이지가 공유**:
 
 - **Reveal on Scroll**: `reveal.js` 사용. 신규 reveal 로직 만들지 말 것
-- **Chart.js**: `charts.js`의 helper 함수 사용. 직접 Chart.js 인스턴스 만들지 말 것
+- **Chart.js**: 차트가 필요한 페이지만 CDN으로 로드(현재 `/metavv/`만 사용), 인스턴스는 해당 페이지 전용 JS(`metavv.js`)에서 생성. 차트는 반드시 `IntersectionObserver`로 뷰포트 진입 후 초기화(LEARNED.md L12 — Reveal와 충돌 방지). 공용 `charts.js` 헬퍼는 아직 없음 — 차트 페이지가 늘면 그때 공용 헬퍼로 추출
+- **In-page side nav**: `in-page-nav.js` 사용. `.in-page-nav[data-nav-config]`에 JSON 설정만 작성하면 li/scroll-spy 자동 생성. 신규 사이드 네비 로직 만들지 말 것
+- **펼침/접힘 카드**: `expand-toggle.js`의 `initExpandCards(selector, opts)` 사용. 신규 토글 로직 만들지 말 것
 - **Tab 전환** (필요 시): 메타브의 `setupCaseTabs()` 그대로 사용
 
 ---

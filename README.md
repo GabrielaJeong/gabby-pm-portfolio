@@ -30,21 +30,15 @@ cd gabby-pm-portfolio
 
 ### 2. 프로젝트 실행
 
-아래 방법 중 하나를 선택해 실행합니다.
-
-#### 방법 A. 브라우저에서 `index.html` 직접 열기
-
-```bash
-index.html
-```
-
-#### 방법 B. 간단한 로컬 서버 실행
+이 사이트는 에셋을 루트 절대경로(`/styles.css`, `/nav.js`, `/metavv/` 등)로 참조합니다.
+따라서 `index.html`을 브라우저로 직접 열면(`file://`) 경로가 깨지므로, **반드시 로컬 서버로 실행**해야 합니다.
 
 ```bash
 python -m http.server 5500
 ```
 
 브라우저에서 `http://localhost:5500`으로 접속하면 됩니다.
+(VS Code의 Live Server 확장 등 루트(`/`) 기준으로 서빙하는 도구면 무엇이든 가능합니다.)
 
 ## 배포 URL
 

@@ -28,7 +28,6 @@
     var config;
     try {
       config = JSON.parse(configRaw);
-      console.log('[in-page-nav] parsed config:', config);
     } catch (e) {
       console.error('[in-page-nav] invalid JSON config:', e, '\nraw:', configRaw);
       return;
@@ -240,7 +239,6 @@
   /* ─ init ─ */
   function init() {
     var navs = document.querySelectorAll('.in-page-nav[data-nav-config]');
-    console.log('[in-page-nav] found', navs.length, 'nav element(s)');
     navs.forEach(initInPageNav);
   }
 
