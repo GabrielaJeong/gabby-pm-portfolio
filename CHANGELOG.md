@@ -5,6 +5,12 @@
 
 ---
 
+## 2026-06-03
+
+| 커밋 | 변경 내용 |
+|---|---|
+| `e2204af` | fix(nav): 글로벌 nav 활성 밑줄이 존재하지 않는 `data-section`을 참조해 항상 미동작하던 버그 수정 (href 해시 매칭으로 변경) + 중복/TDZ `.drawer-work-sub a` 핸들러 제거 + hamburger null 가드 / in-page-nav 디버그 console.log 제거 / index.html script.js 경로 절대화 / 하네스 독스 정합화(CLAUDE.md charts.js·in-page-nav.js, README 로컬 서버 필수) |
+
 ## 2026-04-29
 
 | 커밋 | 변경 내용 |
