@@ -323,20 +323,6 @@ ul {
   color: var(--gold);
 }
 
-/* 드롭다운 Main/Side 제품 그룹 라벨 */
-.nav-dropdown-group {
-  padding: 6px 16px 4px;
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  color: var(--text-muted);
-}
-
-.nav-dropdown-group:not(:first-child) {
-  margin-top: 6px;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
 /* 모바일 드로어 Work 아코디언 */
 .drawer-work {
   border-bottom: 1px solid var(--border);
@@ -385,19 +371,6 @@ ul {
 
 .drawer-work-sub a:hover {
   color: var(--gold) !important;
-}
-
-/* 드로어 Main/Side 제품 그룹 라벨 */
-.drawer-work-group {
-  display: block;
-  padding: 8px 0 4px;
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  color: var(--text-muted);
-}
-
-.drawer-work-group:not(:first-child) {
-  margin-top: 8px;
 }
 
 /* ==================== BACK TO TOP ==================== */
