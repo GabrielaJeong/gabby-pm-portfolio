@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `e897212` | refactor(projects): 케이스 페이지 프로젝트 라벨을 전역 PROJECT 0X → MAIN/SIDE PRODUCT 카테고리로 통일(HERO 태그 5곳 + NEXT PROJECT 4블록), NEXT에 Moodyfit 포함해 5개 cross-link(각 페이지 나머지 4개), metavv NEXT href 버그 교정(/#work→직접 링크), block-label OTHER PROJECTS→NEXT PROJECT, .project-nav-grid 3→4열+반응형 |
 | `b4d8b5b` | feat(moodyfit): Moodyfit '준비 중' 임시 페이지 추가(case-page 셸 재사용, 신규 클래스 0) + Side Product 드롭다운·모바일 드로어 연결 + Work SIDE PRODUCT 그룹에 Moodyfit 카드(COMING SOON) 추가 |
 | `2f70ad0` | fix(nav): 메타브 메뉴 라벨 '메타브/메타브 스튜디오'→'메타브'로 단축 (드롭다운 폭 절약) |
 | `05f4186` | fix(nav): Main Product 메뉴 항목 한글화 (Metavv→메타브/메타브 스튜디오, Banggooso→방구석연구소, Momscare→맘스케어) — 데스크탑+모바일, Side의 Folio는 유지 |
