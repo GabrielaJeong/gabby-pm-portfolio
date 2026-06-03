@@ -2163,7 +2163,7 @@
 
 .project-nav-grid {
   display: grid;
-  grid-template-columns: repeat(3, 1fr);
+  grid-template-columns: repeat(4, 1fr);
   gap: var(--space-5);
   align-items: stretch;
   width: 100%;
@@ -2171,6 +2171,18 @@
 
 .project-nav-grid .project-nav-card {
   min-width: 0;
+}
+
+@media (max-width: 960px) {
+  .project-nav-grid {
+    grid-template-columns: repeat(2, 1fr);
+  }
+}
+
+@media (max-width: 768px) {
+  .project-nav-grid {
+    grid-template-columns: 1fr;
+  }
 }
 
 .project-nav-card {
