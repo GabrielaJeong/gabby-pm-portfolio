@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `2f70ad0` | fix(nav): 메타브 메뉴 라벨 '메타브/메타브 스튜디오'→'메타브'로 단축 (드롭다운 폭 절약) |
 | `05f4186` | fix(nav): Main Product 메뉴 항목 한글화 (Metavv→메타브/메타브 스튜디오, Banggooso→방구석연구소, Momscare→맘스케어) — 데스크탑+모바일, Side의 Folio는 유지 |
 | `54f6be2` | feat(nav): 글로벌 nav의 단일 Work 드롭다운을 top-level 'Main Product▾'(메타브·방구석·맘스케어) / 'Side Product▾'(Folio) 두 메뉴로 분리 (데스크탑+모바일 드로어) — 메뉴 레벨에서 본업/사이드 구분 노출, script.js 다중 .drawer-work 아코디언 지원, 드롭다운 내부 그룹 라벨 클래스 제거 |
 | `23cc5a5` | feat(work): Work를 MAIN PRODUCT(메타브·방구석·맘스케어) / SIDE PRODUCT(Folio)로 분리 — 라벨 그룹 2개 스택 + 글로벌 nav 드롭다운·모바일 드로어에 그룹 라벨, .proj-grid 4→3열, 신규 클래스 4개(.proj-group/.proj-group-label/.nav-dropdown-group/.drawer-work-group), Moodyfit는 추후 Side에 추가 |
