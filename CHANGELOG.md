@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `ee64443` | feat(theme): 라이트 모드 추가(홈 전용) — 색상을 RGB 채널 토큰(--fg-rgb/--gold-rgb/--border-rgb/--overlay-rgb)으로 재구성하고 본문 하드코딩 색 ~40곳 토큰화(다크 무변화), [data-theme=light] 팔레트(웜 오프화이트+진한 골드 #B07A3C), nav 토글 버튼·script.js 핸들러·index.html FOUC 인라인 스크립트. 케이스 페이지는 다크 전용 유지 |
 | `01e29f3` | fix(about): 타임라인이 길어지면 Q&A와 붙던 간격 버그 수정 — .qa-label margin-top 80px(모바일 56px)로 about-grid↔Q&A 명시 분리(사진 컬럼 높이 의존 제거) + LEARNED.md L22 추가 |
 | `3cedf23` | feat(about): 타임라인에 '2026 — 현재 · AI 프로덕트 빌드' 항목 추가(current 이동) — 사이드 프로젝트에 AI PM 확장 서사 연결, about 인트로/캡션 문구 업데이트 + 고아 </span> 정리 |
 | `e897212` | refactor(projects): 케이스 페이지 프로젝트 라벨을 전역 PROJECT 0X → MAIN/SIDE PRODUCT 카테고리로 통일(HERO 태그 5곳 + NEXT PROJECT 4블록), NEXT에 Moodyfit 포함해 5개 cross-link(각 페이지 나머지 4개), metavv NEXT href 버그 교정(/#work→직접 링크), block-label OTHER PROJECTS→NEXT PROJECT, .project-nav-grid 3→4열+반응형 |
