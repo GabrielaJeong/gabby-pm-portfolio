@@ -120,3 +120,29 @@ document.querySelectorAll('.cap-card').forEach((card) => {
     });
   });
 });
+
+// ==================== THEME TOGGLE (홈 전용 라이트/다크) ====================
+// data-theme는 index.html <head> 인라인 스크립트가 먼저 적용(FOUC 방지).
+// 여기선 토글 클릭으로 전환 + localStorage 저장만 담당.
+const themeToggle = document.getElementById('themeToggle');
+
+if (themeToggle) {
+  const syncLabel = () => {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    themeToggle.setAttribute('aria-label', isLight ? '다크 모드로 전환' : '라이트 모드로 전환');
+  };
+  syncLabel();
+
+  themeToggle.addEventListener('click', () => {
+    const isLight = document.documentElement.getAttribute('data-theme') === 'light';
+    if (isLight) {
+      document.documentElement.removeAttribute('data-theme');
+    } else {
+      document.documentElement.setAttribute('data-theme', 'light');
+    }
+    try {
+      localStorage.setItem('theme', isLight ? 'dark' : 'light');
+    } catch (e) { /* localStorage 차단 환경 무시 */ }
+    syncLabel();
+  });
+}

@@ -10,9 +10,16 @@
 
   var path = window.location.pathname;
 
+  // 라이트 모드 토글은 홈에서만 노출 (케이스 페이지는 다크 전용)
+  var isHome = path === '/' || path === '/index.html' || path === '';
+
   function active(href) {
     return path.startsWith(href) ? ' style="color: var(--gold);"' : '';
   }
+
+  var themeToggle = isHome
+    ? '<button class="theme-toggle" id="themeToggle" type="button" aria-label="라이트 모드로 전환" title="테마 전환"></button>'
+    : '';
 
   var html = [
     '<nav class="nav" id="nav">',
@@ -42,6 +49,7 @@
           '</li>',
           '<li><a href="/#contact">Contact</a></li>',
         '</ul>',
+        themeToggle,
         '<a href="/assets/resume.pdf" class="nav-cta" target="_blank" rel="noopener">Resume</a>',
         '<button class="nav-hamburger" aria-label="메뉴 열기" id="hamburger">',
           '<span></span><span></span><span></span>',
