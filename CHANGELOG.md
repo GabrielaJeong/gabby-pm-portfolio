@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `5ab3659` | style(theme): 라이트 모드 팔레트 웜 골드 → 쿨 블루(소프트 화이트 #f5f8fc + 블루 악센트 #3A6FB0 + 딥 슬레이트). 채널 값만 교체로 호버/보더/그라데이션 자동 반영 |
 | `ee64443` | feat(theme): 라이트 모드 추가(홈 전용) — 색상을 RGB 채널 토큰(--fg-rgb/--gold-rgb/--border-rgb/--overlay-rgb)으로 재구성하고 본문 하드코딩 색 ~40곳 토큰화(다크 무변화), [data-theme=light] 팔레트(웜 오프화이트+진한 골드 #B07A3C), nav 토글 버튼·script.js 핸들러·index.html FOUC 인라인 스크립트. 케이스 페이지는 다크 전용 유지 |
 | `01e29f3` | fix(about): 타임라인이 길어지면 Q&A와 붙던 간격 버그 수정 — .qa-label margin-top 80px(모바일 56px)로 about-grid↔Q&A 명시 분리(사진 컬럼 높이 의존 제거) + LEARNED.md L22 추가 |
 | `3cedf23` | feat(about): 타임라인에 '2026 — 현재 · AI 프로덕트 빌드' 항목 추가(current 이동) — 사이드 프로젝트에 AI PM 확장 서사 연결, about 인트로/캡션 문구 업데이트 + 고아 </span> 정리 |
