@@ -27,6 +27,15 @@
 <body class="case-page">
 <script src="/nav.js"></script>
 
+  <nav class="case-toc" aria-label="섹션 목차" data-nav-config='[
+    {"id": "top", "label": "Top"},
+    {"id": "impact", "label": "Impact"},
+    {"id": "main-case", "label": "Main Case"},
+    {"id": "collab", "label": "Collab"},
+    {"id": "reflection", "label": "Reflection"},
+    {"id": "next", "label": "Next"}
+  ]'></nav>
+
   <main class="case-main">
     <div class="case-inner">
 
@@ -506,18 +515,9 @@
   <button class="back-to-top" id="backToTop" aria-label="맨 위로">↑</button>
 
   <!-- 페이지 내 floating side nav (dot → hover로 라벨 펼침) -->
-  <aside class="in-page-nav" aria-label="페이지 섹션 네비게이션" data-nav-config='[
-    {"id": "top", "label": "Top"},
-    {"id": "impact", "label": "Impact"},
-    {"id": "main-case", "label": "Main Case"},
-    {"id": "collab", "label": "Collab"},
-    {"id": "reflection", "label": "Reflection"},
-    {"id": "next", "label": "Next"}
-  ]'></aside>
-
   <script src="/script.js"></script>
   <script src="/reveal.js" defer></script>
-  <script src="/in-page-nav.js"></script>
+  <script src="/case-toc.js"></script>
   <script src="/momscare/momscare.js"></script>
 </body>
 </html>

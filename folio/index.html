@@ -27,6 +27,18 @@
 <body class="case-page">
 <script src="/nav.js"></script>
 
+  <nav class="case-toc" aria-label="섹션 목차" data-nav-config='[
+    {"id": "top", "label": "Top"},
+    {"id": "live", "label": "Live"},
+    {"id": "why", "label": "Why"},
+    {"id": "decisions", "label": "Decisions"},
+    {"id": "documents", "label": "Documents"},
+    {"id": "engineering", "label": "Engineering"},
+    {"id": "design-system", "label": "Design System"},
+    {"id": "reflection", "label": "Reflection"},
+    {"id": "next", "label": "Next"}
+  ]'></nav>
+
   <main class="case-main">
     <div class="case-inner">
 
@@ -895,22 +907,10 @@
   <button class="back-to-top" id="backToTop" aria-label="맨 위로">↑</button>
 
   <!-- 페이지 내 floating side nav (dot → hover로 라벨 펼침) -->
-  <aside class="in-page-nav" aria-label="페이지 섹션 네비게이션" data-nav-config='[
-    {"id": "top", "label": "Top"},
-    {"id": "live", "label": "Live"},
-    {"id": "why", "label": "Why"},
-    {"id": "decisions", "label": "Decisions"},
-    {"id": "documents", "label": "Documents"},
-    {"id": "engineering", "label": "Engineering"},
-    {"id": "design-system", "label": "Design System"},
-    {"id": "reflection", "label": "Reflection"},
-    {"id": "next", "label": "Next"}
-  ]'></aside>
-
   <script src="/script.js"></script>
   <script src="/reveal.js" defer></script>
   <script src="/expand-toggle.js"></script>
-  <script src="/in-page-nav.js"></script>
+  <script src="/case-toc.js"></script>
   <script src="/folio/folio.js"></script>
 </body>
 </html>
