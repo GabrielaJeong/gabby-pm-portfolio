@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `d9d3a0e` | style(layout): 화면 스케일 가볍게 압축 — 콘텐츠 폭 1440→1280px(전역), 홈 섹션 세로 패딩 160→116px(about/cap/proj/exp/contact). 타이포 유지 |
 | `bf5de42` | style(theme): 라이트 모드 배경을 화이트에 더 가깝게 (#f5f8fc → #fafcfe), 쿨 틴트 약화 + nav 오버레이 동기화 |
 | `5ab3659` | style(theme): 라이트 모드 팔레트 웜 골드 → 쿨 블루(소프트 화이트 #f5f8fc + 블루 악센트 #3A6FB0 + 딥 슬레이트). 채널 값만 교체로 호버/보더/그라데이션 자동 반영 |
 | `ee64443` | feat(theme): 라이트 모드 추가(홈 전용) — 색상을 RGB 채널 토큰(--fg-rgb/--gold-rgb/--border-rgb/--overlay-rgb)으로 재구성하고 본문 하드코딩 색 ~40곳 토큰화(다크 무변화), [data-theme=light] 팔레트(웜 오프화이트+진한 골드 #B07A3C), nav 토글 버튼·script.js 핸들러·index.html FOUC 인라인 스크립트. 케이스 페이지는 다크 전용 유지 |
