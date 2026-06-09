@@ -17,7 +17,7 @@
   --shadow-card: 0 12px 32px rgba(0, 0, 0, 0.4);
   --font-sans: "Pretendard Variable", Pretendard, -apple-system, BlinkMacSystemFont,
     system-ui, sans-serif;
-  --max-width: 1440px;
+  --max-width: 1280px;
   --content-width: 880px;
   --hero-main-width: 760px;
   --gutter: clamp(20px, 4vw, 56px);
@@ -670,7 +670,7 @@ ul {
 /* ==================== ABOUT ==================== */
 
 .about-section {
-  padding: 160px 0;
+  padding: 116px 0;
   background: var(--bg);
 }
 
@@ -953,7 +953,7 @@ ul {
 /* ==================== CAPABILITIES ==================== */
 
 .cap-section {
-  padding: 160px 0;
+  padding: 116px 0;
   background: var(--bg);
 }
 
@@ -1433,7 +1433,7 @@ ul {
 /* ==================== PROJECTS ==================== */
 
 .proj-section {
-  padding: 160px 0;
+  padding: 116px 0;
   background: var(--bg);
 }
 
@@ -1694,7 +1694,7 @@ ul {
 /* ==================== EXPERIENCE ==================== */
 
 .exp-section {
-  padding: 160px 0;
+  padding: 116px 0;
   background: var(--bg);
 }
 
@@ -1957,7 +1957,7 @@ ul {
 /* ==================== CONTACT ==================== */
 
 .contact-section {
-  padding: 160px 0 80px;
+  padding: 116px 0 80px;
   background: var(--bg);
 }
 
