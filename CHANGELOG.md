@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `e35ac73` | refactor(ia): 홈을 ABOUT/WORK 별도 페이지로 분리 — `/about/`(포지셔닝·타임라인·Q&A) + `/work/`(Selected Work→How I Work→Track Record) 신규, index는 Hero+입구 카드 2개+Contact로 슬림화, nav를 About·Work·Contact 3축으로 재작성(Main/Side 드롭다운 대체), 테마 토글 about/work까지 확대, 케이스 back-link /#work→/work/, 전역 02–06 번호 폐기. 신규 클래스 7(입구 카드) |
 | `d9d3a0e` | style(layout): 화면 스케일 가볍게 압축 — 콘텐츠 폭 1440→1280px(전역), 홈 섹션 세로 패딩 160→116px(about/cap/proj/exp/contact). 타이포 유지 |
 | `bf5de42` | style(theme): 라이트 모드 배경을 화이트에 더 가깝게 (#f5f8fc → #fafcfe), 쿨 틴트 약화 + nav 오버레이 동기화 |
 | `5ab3659` | style(theme): 라이트 모드 팔레트 웜 골드 → 쿨 블루(소프트 화이트 #f5f8fc + 블루 악센트 #3A6FB0 + 딥 슬레이트). 채널 값만 교체로 호버/보더/그라데이션 자동 반영 |

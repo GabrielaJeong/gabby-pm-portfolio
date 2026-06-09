@@ -46,11 +46,19 @@ gabby-pm-portfolio/
 │   ├── DESIGN_SYSTEM.md    # 디자인 토큰 상세
 │   └── LEARNED.md          # 반복 실수 패턴
 ├── assets/             # 정적 파일 (resume.pdf, profile.jpg)
+├── about/              # ABOUT 페이지 (포지셔닝·타임라인·Q&A) — styles.css만 사용
+├── work/               # WORK 페이지 (Selected Work·How I Work·Track Record) — styles.css만 사용
 ├── metavv/             # 정답 페이지 — metavv.css = 메타브 전용 스타일만
 ├── folio/
 ├── banggooso/
-└── momscare/
+├── momscare/
+└── moodyfit/           # 임시(준비 중) 페이지
 ```
+
+**상위 IA (2026 재구성):** 홈(`/`)은 Hero + About/Work 두 입구 카드 + Contact 의
+슬림 랜딩. 본문은 `/about/`(나) · `/work/`(내 일) 두 페이지로 분리.
+글로벌 nav = About · Work · Contact 3축. 라이트 모드는 홈·`/about/`·`/work/`만
+(styles.css만 쓰므로 토큰화로 자동 지원), 케이스 상세는 다크 전용.
 
 **CSS 임포트 순서 (모든 케이스 스터디 페이지 필수):**
 ```html
@@ -60,8 +68,9 @@ gabby-pm-portfolio/
 ```
 
 URL 매핑 (Vercel 자동):
-- `/` → 메인
-- `/metavv/`, `/folio/`, `/banggooso/`, `/momscare/` → 각 상세
+- `/` → 메인 랜딩 (Hero + 입구 + Contact)
+- `/about/` → ABOUT, `/work/` → WORK
+- `/metavv/`, `/folio/`, `/banggooso/`, `/momscare/`, `/moodyfit/` → 각 상세
 
 ---
 
