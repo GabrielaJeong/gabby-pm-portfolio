@@ -11,18 +11,7 @@ if (backToTop) {
   });
 }
 
-// ==================== NAV DROPDOWN (모바일 Main/Side Product 아코디언) ====================
-// 드로어에 .drawer-work 아코디언이 여러 개(Main Product / Side Product)라 전부 순회.
-document.querySelectorAll('.drawer-work').forEach((work) => {
-  const toggle = work.querySelector('.drawer-work-toggle');
-  if (!toggle) return;
-  toggle.addEventListener('click', () => {
-    const isOpen = work.classList.toggle('open');
-    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
-  });
-});
-// 드로어 하위 링크 클릭 시 드로어 닫기는 아래 `.nav-drawer a` 핸들러가
-// 이미 처리 (하위 링크도 .nav-drawer 자손이므로 별도 핸들러 불필요).
+// 드로어 링크 클릭 시 닫기는 아래 `.nav-drawer a` 핸들러가 처리.
 
 // ==================== NAV SCROLL EFFECT ====================
 const nav = document.getElementById('nav');

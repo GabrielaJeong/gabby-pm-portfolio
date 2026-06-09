@@ -1,8 +1,8 @@
 /* =========================================================
-   nav.js — 공유 네비게이션 컴포넌트
+   nav.js — 공유 글로벌 네비게이션 컴포넌트
    모든 페이지에서 <script src="/nav.js"></script>로 로드.
    document.write()로 파서 인라인 주입 → 레이아웃 시프트 없음.
-   현재 페이지 path 기준으로 Work 서브메뉴 링크 골드 강조.
+   상위 위계: About / Work / Contact 3축.
    ========================================================= */
 
 (function () {
@@ -10,14 +10,16 @@
 
   var path = window.location.pathname;
 
-  // 라이트 모드 토글은 홈에서만 노출 (케이스 페이지는 다크 전용)
+  // 테마 토글은 라이트 지원 페이지(홈·/about/·/work/)에서만 노출.
+  // 케이스 상세 페이지는 다크 전용이라 토글 없음.
   var isHome = path === '/' || path === '/index.html' || path === '';
+  var isThemed = isHome || path.indexOf('/about') === 0 || path.indexOf('/work') === 0;
 
   function active(href) {
-    return path.startsWith(href) ? ' style="color: var(--gold);"' : '';
+    return path.indexOf(href) === 0 ? ' style="color: var(--gold);"' : '';
   }
 
-  var themeToggle = isHome
+  var themeToggle = isThemed
     ? '<button class="theme-toggle" id="themeToggle" type="button" aria-label="라이트 모드로 전환" title="테마 전환"></button>'
     : '';
 
@@ -26,27 +28,8 @@
       '<div class="nav-inner">',
         '<a href="/" class="nav-logo">Gabriela&#39;s Portfolio</a>',
         '<ul class="nav-links">',
-          '<li><a href="/#about">About</a></li>',
-          '<li><a href="/#experience">Experience</a></li>',
-          '<li class="nav-dropdown">',
-            '<button class="nav-dropdown-toggle" aria-expanded="false">',
-              'Main Product <span class="nav-dropdown-arrow">▾</span>',
-            '</button>',
-            '<ul class="nav-dropdown-menu">',
-              '<li><a href="/metavv/"' + active('/metavv/') + '>메타브</a></li>',
-              '<li><a href="/banggooso/"' + active('/banggooso/') + '>방구석연구소</a></li>',
-              '<li><a href="/momscare/"' + active('/momscare/') + '>맘스케어</a></li>',
-            '</ul>',
-          '</li>',
-          '<li class="nav-dropdown">',
-            '<button class="nav-dropdown-toggle" aria-expanded="false">',
-              'Side Product <span class="nav-dropdown-arrow">▾</span>',
-            '</button>',
-            '<ul class="nav-dropdown-menu">',
-              '<li><a href="/folio/"' + active('/folio/') + '>Folio</a></li>',
-              '<li><a href="/moodyfit/"' + active('/moodyfit/') + '>Moodyfit</a></li>',
-            '</ul>',
-          '</li>',
+          '<li><a href="/about/"' + active('/about/') + '>About</a></li>',
+          '<li><a href="/work/"'  + active('/work/')  + '>Work</a></li>',
           '<li><a href="/#contact">Contact</a></li>',
         '</ul>',
         themeToggle,
@@ -56,27 +39,8 @@
         '</button>',
       '</div>',
       '<div class="nav-drawer" id="drawer">',
-        '<a href="/#about">About</a>',
-        '<a href="/#experience">Experience</a>',
-        '<div class="drawer-work">',
-          '<button class="drawer-work-toggle" aria-expanded="false">',
-            'Main Product <span class="drawer-work-arrow">▾</span>',
-          '</button>',
-          '<div class="drawer-work-sub">',
-            '<a href="/metavv/"'    + active('/metavv/')    + '>메타브</a>',
-            '<a href="/banggooso/"' + active('/banggooso/') + '>방구석연구소</a>',
-            '<a href="/momscare/"'  + active('/momscare/')  + '>맘스케어</a>',
-          '</div>',
-        '</div>',
-        '<div class="drawer-work">',
-          '<button class="drawer-work-toggle" aria-expanded="false">',
-            'Side Product <span class="drawer-work-arrow">▾</span>',
-          '</button>',
-          '<div class="drawer-work-sub">',
-            '<a href="/folio/"' + active('/folio/') + '>Folio</a>',
-            '<a href="/moodyfit/"' + active('/moodyfit/') + '>Moodyfit</a>',
-          '</div>',
-        '</div>',
+        '<a href="/about/"' + active('/about/') + '>About</a>',
+        '<a href="/work/"'  + active('/work/')  + '>Work</a>',
         '<a href="/#contact">Contact</a>',
         '<a href="/assets/resume.pdf" class="drawer-cta" target="_blank" rel="noopener">Resume</a>',
       '</div>',

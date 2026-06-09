@@ -667,6 +667,90 @@ ul {
   }
 }
 
+/* ==================== HOME ENTRY (About / Work 두 입구) ==================== */
+
+.home-entry {
+  padding: 116px 0;
+  background: var(--bg);
+}
+
+.home-entry-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 0 48px;
+  display: grid;
+  grid-template-columns: 1fr 1fr;
+  gap: 24px;
+}
+
+.entry-card {
+  display: flex;
+  flex-direction: column;
+  padding: 48px;
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-card);
+  text-decoration: none;
+  color: inherit;
+  transition: border-color 0.3s ease, transform 0.3s ease;
+}
+
+.entry-card:hover {
+  border-color: var(--border-gold);
+  transform: translateY(-2px);
+}
+
+.entry-card-eyebrow {
+  font-size: 12px;
+  color: var(--text-muted);
+  letter-spacing: 0.18em;
+  margin-bottom: 16px;
+}
+
+.entry-card-title {
+  font-size: 28px;
+  color: var(--text-primary);
+  font-weight: var(--fw-h1);
+  letter-spacing: -0.02em;
+  margin: 0 0 12px;
+}
+
+.entry-card-desc {
+  font-size: 15px;
+  color: var(--text-muted);
+  line-height: 1.6;
+  margin: 0 0 28px;
+  flex: 1;
+}
+
+.entry-card-arrow {
+  font-size: 14px;
+  color: var(--gold);
+  font-weight: 500;
+}
+
+@media (max-width: 960px) {
+  .home-entry {
+    padding: 100px 0;
+  }
+  .home-entry-inner {
+    padding: 0 32px;
+  }
+}
+
+@media (max-width: 768px) {
+  .home-entry {
+    padding: 80px 0;
+  }
+  .home-entry-inner {
+    grid-template-columns: 1fr;
+    padding: 0 24px;
+  }
+  .entry-card {
+    padding: 32px;
+  }
+}
+
 /* ==================== ABOUT ==================== */
 
 .about-section {
