@@ -10,18 +10,13 @@
 
   var path = window.location.pathname;
 
-  // 테마 토글은 라이트 지원 페이지(홈·/about/·/work/)에서만 노출.
-  // 케이스 상세 페이지는 다크 전용이라 토글 없음.
-  var isHome = path === '/' || path === '/index.html' || path === '';
-  var isThemed = isHome || path.indexOf('/about') === 0 || path.indexOf('/work') === 0;
-
   function active(href) {
     return path.indexOf(href) === 0 ? ' style="color: var(--gold);"' : '';
   }
 
-  var themeToggle = isThemed
-    ? '<button class="theme-toggle" id="themeToggle" type="button" aria-label="라이트 모드로 전환" title="테마 전환"></button>'
-    : '';
+  // 모든 페이지가 라이트/다크 토큰을 지원 → 토글 전역 노출.
+  var themeToggle =
+    '<button class="theme-toggle" id="themeToggle" type="button" aria-label="라이트 모드로 전환" title="테마 전환"></button>';
 
   var html = [
     '<nav class="nav" id="nav">',

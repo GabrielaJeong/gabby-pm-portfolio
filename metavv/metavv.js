@@ -7,6 +7,12 @@
 (function () {
   'use strict';
 
+  // 차트 accent를 현재 테마의 CSS 변수에서 읽음 (다크=골드 / 라이트=블루).
+  // 페이지 로드 시점 테마 기준 — 토글 후 차트 갱신은 새로고침 필요.
+  var _rootStyle = getComputedStyle(document.documentElement);
+  var ACCENT = _rootStyle.getPropertyValue('--gold').trim() || 'rgb(245, 207, 165)';
+  var ACCENT_RGB = _rootStyle.getPropertyValue('--gold-rgb').trim() || '245, 207, 165';
+
   // ============ 1. Chart.js 매출 그래프 ============
   function renderRevenueChart() {
     const canvas = document.getElementById('revenueChart');
@@ -20,8 +26,8 @@
 
     // 골드 그라데이션 (라인 아래 영역)
     const gradient = ctx.createLinearGradient(0, 0, 0, 240);
-    gradient.addColorStop(0, 'rgba(245, 207, 165, 0.18)');
-    gradient.addColorStop(1, 'rgba(245, 207, 165, 0)');
+    gradient.addColorStop(0, 'rgba(' + ACCENT_RGB + ', 0.18)');
+    gradient.addColorStop(1, 'rgba(' + ACCENT_RGB + ', 0)');
 
     new Chart(ctx, {
       type: 'line',
@@ -30,13 +36,13 @@
         datasets: [{
           label: '월 매출 (만원)',
           data: data,
-          borderColor: '#F5CFA5',
+          borderColor: ACCENT,
           backgroundColor: gradient,
           borderWidth: 2,
           fill: true,
           tension: 0.4,
-          pointBackgroundColor: '#F5CFA5',
-          pointBorderColor: '#F5CFA5',
+          pointBackgroundColor: ACCENT,
+          pointBorderColor: ACCENT,
           pointRadius: function (context) {
             // 시작점과 끝점만 점 표시
             const i = context.dataIndex;
@@ -57,13 +63,13 @@
           legend: { display: false },
           tooltip: {
             backgroundColor: 'rgba(26, 25, 25, 0.95)',
-            titleColor: '#F5CFA5',
+            titleColor: ACCENT,
             bodyColor: '#D8D4CA',
             titleFont: { family: 'Pretendard', size: 11, weight: '500' },
             bodyFont: { family: 'Pretendard', size: 13, weight: '500' },
             padding: 12,
             displayColors: false,
-            borderColor: 'rgba(245, 207, 165, 0.3)',
+            borderColor: 'rgba(' + ACCENT_RGB + ', 0.3)',
             borderWidth: 1,
             callbacks: {
               title: function (items) { return items[0].label; },
@@ -130,10 +136,10 @@
         data: {
           datasets: [{
             data: [2, 98],
-            backgroundColor: ['#F5CFA5', 'rgba(138, 136, 130, 0.15)'],
+            backgroundColor: [ACCENT, 'rgba(138, 136, 130, 0.15)'],
             borderColor: ['transparent', 'transparent'],
             borderWidth: 0,
-            hoverBackgroundColor: ['#F5CFA5', 'rgba(138, 136, 130, 0.28)']
+            hoverBackgroundColor: [ACCENT, 'rgba(138, 136, 130, 0.28)']
           }]
         },
         options: {
@@ -144,13 +150,13 @@
             legend: { display: false },
             tooltip: {
               backgroundColor: 'rgba(26, 25, 25, 0.95)',
-              titleColor: '#F5CFA5',
+              titleColor: ACCENT,
               bodyColor: '#D8D4CA',
               titleFont: { family: 'Pretendard', size: 11, weight: '500' },
               bodyFont: { family: 'Pretendard', size: 13, weight: '500' },
               padding: 12,
               displayColors: false,
-              borderColor: 'rgba(245, 207, 165, 0.3)',
+              borderColor: 'rgba(' + ACCENT_RGB + ', 0.3)',
               borderWidth: 1,
               callbacks: {
                 title: function (items) {

@@ -93,7 +93,7 @@
 .kpi-progress-track {
   width: 100%;
   flex: 1;
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(var(--fg-rgb), 0.04);
   border-radius: var(--radius-sm);
   overflow: hidden;
   display: flex;
@@ -106,7 +106,7 @@
 }
 
 .kpi-progress-fill--target {
-  background: rgba(255, 255, 255, 0.15);
+  background: rgba(var(--fg-rgb), 0.15);
 }
 
 .kpi-progress-fill--actual {
@@ -227,12 +227,12 @@
 }
 
 .ctx-collab-party--sponsor {
-  background: rgba(245, 207, 165, 0.04);
+  background: rgba(var(--gold-rgb), 0.04);
   border: 1px solid var(--border-gold);
 }
 
 .ctx-collab-party--operator {
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(var(--fg-rgb), 0.02);
   border: 1px solid var(--border-default);
 }
 
@@ -267,7 +267,7 @@
 
 .ctx-collab-user {
   padding: var(--space-3) var(--space-6);
-  background: rgba(255, 255, 255, 0.04);
+  background: rgba(var(--fg-rgb), 0.04);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-sm);
   font-size: var(--fs-body);
@@ -281,7 +281,7 @@
 /* ==================== 협업 타임라인 ==================== */
 
 .collab-timeline-section {
-  background: rgba(255, 255, 255, 0.015);
+  background: rgba(var(--fg-rgb), 0.015);
   border-top: 1px solid var(--border-default);
   border-bottom: 1px solid var(--border-default);
   padding: var(--section-gap) 0;
@@ -301,7 +301,7 @@
   display: flex;
   flex-direction: column;
   padding: var(--card-padding-lg);
-  background: rgba(255, 255, 255, 0.02);
+  background: rgba(var(--fg-rgb), 0.02);
   border: 1px solid var(--border-default);
   border-radius: var(--radius-md);
   text-align: left;
@@ -316,7 +316,7 @@
 .collab-phase--wip {
   border-style: dashed;
   border-color: var(--border-default);
-  background: rgba(255, 255, 255, 0.01);
+  background: rgba(var(--fg-rgb), 0.01);
 }
 
 .collab-phase-label {
@@ -410,7 +410,7 @@
   font-size: var(--fs-caption);
   font-weight: var(--fw-caption);
   color: var(--text-label-gold);
-  background: rgba(245, 207, 165, 0.08);
+  background: rgba(var(--gold-rgb), 0.08);
   border: 1px solid var(--border-gold);
   border-radius: var(--radius-sm);
   padding: var(--space-2) var(--space-4);
