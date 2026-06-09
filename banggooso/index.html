@@ -27,7 +27,7 @@
 <body class="case-page">
 <script src="/nav.js"></script>
 
-  <nav class="case-toc" aria-label="섹션 목차" data-nav-config='[
+  <nav class="case-toc" data-toc-mode="pages" aria-label="섹션 목차" data-nav-config='[
     {"id": "top", "label": "Intro"},
     {"id": "impact", "label": "Impact"},
     {"id": "main-case", "label": "Main Case"},
@@ -42,7 +42,7 @@
       <a href="/work/" class="case-back-link">← 모든 프로젝트 보기</a>
 
       <!-- ══════════ HERO ══════════ -->
-      <section class="case-hero" id="top">
+      <section class="case-hero" id="top" data-page="top">
         <div class="case-hero-grid">
           <div class="case-hero-text">
             <div class="case-meta-tags">
@@ -92,7 +92,7 @@
       </section>
 
       <!-- ══════════ IMPACT ══════════ -->
-      <section class="case-section" id="impact">
+      <section class="case-section" id="impact" data-page="impact">
         <div class="case-section-header">
           <div class="case-section-label">IMPACT</div>
           <div class="case-section-num">02</div>
@@ -140,7 +140,7 @@
       </section>
 
       <!-- ══════════ CONTEXT ══════════ -->
-      <section class="case-section">
+      <section class="case-section" data-page="main-case">
         <div class="case-section-header">
           <div class="case-section-label">CONTEXT</div>
           <div class="case-section-num">03</div>
@@ -191,7 +191,7 @@
       </section>
 
       <!-- ══════════ PROBLEM ══════════ -->
-      <section class="case-section">
+      <section class="case-section" data-page="main-case">
         <div class="case-section-header">
           <div class="case-section-label">PROBLEM</div>
           <div class="case-section-num">04</div>
@@ -222,13 +222,13 @@
       </section>
 
       <!-- ══════════ MAIN CASE 진입 ══════════ -->
-      <div class="main-case-intro" id="main-case">
+      <div class="main-case-intro" id="main-case" data-page="main-case">
         <div class="main-case-label">MAIN CASE · 카카오뱅크 B2B 협업</div>
         <h2 class="main-case-title">방구석연구소 × 카카오뱅크 ｜ 유휴 콘텐츠를 수익원으로</h2>
       </div>
 
       <!-- STRATEGY -->
-      <div class="case-block" data-reveal>
+      <div class="case-block" data-reveal data-page="main-case">
         <div class="case-block-header">
           <div class="block-label">MAIN CASE · STRATEGY</div>
         </div>
@@ -261,7 +261,7 @@
       </div>
 
       <!-- EXECUTION -->
-      <div class="case-block" data-reveal data-section="execution">
+      <div class="case-block" data-reveal data-section="execution" data-page="main-case">
         <div class="case-block-header">
           <div class="block-label">MAIN CASE · EXECUTION</div>
         </div>
@@ -301,7 +301,7 @@
       </div>
 
       <!-- RESULT -->
-      <div class="case-block" data-reveal>
+      <div class="case-block" data-reveal data-page="main-case">
         <div class="case-block-header">
           <div class="block-label">MAIN CASE · RESULT</div>
         </div>
@@ -340,7 +340,7 @@
       </div>
 
       <!-- REFLECTION — 메인 케이스 -->
-      <div class="case-block" data-reveal>
+      <div class="case-block" data-reveal data-page="main-case">
         <div class="case-block-header">
           <div class="block-label">MAIN CASE · META REFLECTION</div>
         </div>
@@ -382,7 +382,7 @@
     </div><!-- /case-inner -->
 
     <!-- ══════════ SIDE CASES ══════════ -->
-    <section class="side-cases-section" id="side-cases">
+    <section class="side-cases-section" id="side-cases" data-page="side-cases">
       <div class="case-inner">
         <div class="case-block-header">
           <div class="block-label">SIDE CASES</div>
@@ -434,7 +434,7 @@
     </section>
 
     <!-- ══════════ REFLECTION (페이지 종합) ══════════ -->
-    <section class="meta-reflection" data-reveal id="reflection">
+    <section class="meta-reflection" data-reveal id="reflection" data-page="reflection">
       <div class="case-inner">
         <div class="case-section-header">
           <div class="case-section-label">META REFLECTION</div>
@@ -475,7 +475,7 @@
     </section>
 
     <!-- ══════════ NAVIGATION ══════════ -->
-    <nav class="project-navigation" aria-label="다른 프로젝트" id="next">
+    <nav class="project-navigation" aria-label="다른 프로젝트" id="next" data-page="next">
       <div class="proj-nav-row">
         <div class="case-block-header">
           <div class="block-label">NEXT PROJECT</div>

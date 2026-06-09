@@ -92,6 +92,42 @@
   }
 }
 
+/* 책 페이지 넘김 (pages 모드 하단 prev/next) */
+.case-flip {
+  display: flex;
+  align-items: center;
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: var(--space-12) var(--space-12) var(--space-16);
+}
+
+.case-flip-btn {
+  background: var(--surface);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-family: inherit;
+  font-size: var(--fs-sub);
+  font-weight: var(--fw-caption);
+  padding: var(--space-3) var(--space-5);
+  cursor: pointer;
+  transition: border-color 0.2s ease, color 0.2s ease, background 0.2s ease;
+}
+
+.case-flip-btn:hover {
+  border-color: var(--border-gold);
+  color: var(--gold);
+}
+
+.case-flip-prev { margin-right: auto; }
+.case-flip-next { margin-left: auto; }
+
+@media (max-width: 768px) {
+  .case-flip {
+    padding: var(--space-8) var(--space-6) var(--space-12);
+  }
+}
+
 .case-inner {
   max-width: var(--max-width);
   margin: 0 auto;
