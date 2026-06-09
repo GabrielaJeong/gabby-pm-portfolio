@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `322d8bc` | feat(case-toc): 책-페이지 모드(data-toc-mode=pages) 추가 — 한 번에 한 섹션만 표시 + 상단 목차/하단 prev·next 넘김. banggooso 프로토타입 적용(블록 12개 data-page 태깅). 'Top'→'Intro' 라벨도 변경(8516d99). metavv/folio/momscare는 스크롤 모드 유지(추후 확장) |
 | `b3c8486` | feat(case-toc): 케이스 페이지 상단 고정 섹션 목차바 추가 — 글로벌 nav 아래 sticky, scroll-spy 현재 섹션 강조 + 클릭 점프. metavv/folio/banggooso/momscare에 적용, 기존 플로팅 닷 네비 대체. case-main padding-top 조정 |
 | `5457abe` | refactor(work): /work/ 지표 3중 중복 정리 — How I Work을 지표·서사 정본으로, Track Record는 골드 지표 강조 빼고 스코프 중심 이력으로 슬림(7개 유지), Selected Work 카드는 티저 유지 |
 | `cef3413` | feat(theme): 라이트 모드를 케이스(프로덕트) 페이지까지 확장 — components/페이지 CSS 테마색 RGB 채널 토큰화(다크 무변화), --shadow-rgb 채널 추가, metavv 차트 accent CSS 변수 연동(라이트=블루), 케이스 5개 FOUC 스크립트, nav 토글 전역화. metavv --mv-*·folio 네이비 데모는 고정 |
