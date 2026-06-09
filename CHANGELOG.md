@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `cef3413` | feat(theme): 라이트 모드를 케이스(프로덕트) 페이지까지 확장 — components/페이지 CSS 테마색 RGB 채널 토큰화(다크 무변화), --shadow-rgb 채널 추가, metavv 차트 accent CSS 변수 연동(라이트=블루), 케이스 5개 FOUC 스크립트, nav 토글 전역화. metavv --mv-*·folio 네이비 데모는 고정 |
 | `e35ac73` | refactor(ia): 홈을 ABOUT/WORK 별도 페이지로 분리 — `/about/`(포지셔닝·타임라인·Q&A) + `/work/`(Selected Work→How I Work→Track Record) 신규, index는 Hero+입구 카드 2개+Contact로 슬림화, nav를 About·Work·Contact 3축으로 재작성(Main/Side 드롭다운 대체), 테마 토글 about/work까지 확대, 케이스 back-link /#work→/work/, 전역 02–06 번호 폐기. 신규 클래스 7(입구 카드) |
 | `d9d3a0e` | style(layout): 화면 스케일 가볍게 압축 — 콘텐츠 폭 1440→1280px(전역), 홈 섹션 세로 패딩 160→116px(about/cap/proj/exp/contact). 타이포 유지 |
 | `bf5de42` | style(theme): 라이트 모드 배경을 화이트에 더 가깝게 (#f5f8fc → #fafcfe), 쿨 틴트 약화 + nav 오버레이 동기화 |
