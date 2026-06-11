@@ -1074,7 +1074,22 @@ body.home {
   font-weight: 500;
   line-height: 1.35;
   letter-spacing: -0.015em;
-  margin: 0 0 28px;
+  margin: 0 0 16px;
+}
+
+/* 키 넘버 배지 — 탭 상태와 무관하게 핵심 증거 항상 노출 (기존 골드 토큰 사용) */
+.cap-card-badge {
+  display: inline-block;
+  margin: 0 0 24px;
+  padding: var(--space-1) var(--space-3);
+  background: rgba(var(--gold-rgb), 0.08);
+  border: 1px solid rgba(var(--gold-rgb), 0.22);
+  border-radius: 999px;
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--gold);
+  letter-spacing: 0.02em;
+  font-variant-numeric: tabular-nums;
 }
 
 .cap-tabs {
