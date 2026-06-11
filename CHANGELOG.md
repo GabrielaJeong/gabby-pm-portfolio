@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `64aff34` | feat(hero): 홈 히어로 기술/에디토리얼 무드 재구성(브랜드 유지) — 초대형 'PRODUCT MANAGER' 타이포 + 모노스페이스 어노테이션(eyebrow·좌표·상태라인) + 데코 레이더(SVG) + 라이브 시계(KST). 대표 수치 pill 유지, 옛 슬로건/요약/푸터 클래스 제거 |
 | `17f1d08` | fix(work): Work 드롭다운(42dc41b)을 되돌리고 /work/ 전용 제품 서브탭 바(.work-subnav, nav 아래)로 변경 — MAIN/SIDE 제품 바로가기. nav Work 일반 링크 복구로 메뉴 정렬 문제 해소 |
 | `42dc41b` | refactor(ia): How I Work·Track Record를 /work/→/about/ 이동(About=나+역량+이력, Work=제품만), nav Work를 Main/Side 제품 드롭다운으로(데스크탑 hover + 모바일 드로어 아코디언, Work 토글은 /work/), 홈 About/Work 입구 카드 섹션 삭제(홈=Hero) |
 | `eadba3a` | feat(contact): Contact를 별도 페이지(/contact/)로 분리 — 홈 Contact 섹션을 /contact/로 이동(홈=Hero+About/Work 입구), nav Contact를 /contact/ 페이지 링크로(경로 active), 6386840의 우측 분리 되돌림. Contact가 홈 스크롤 앵커가 아니게 되어 고정 선택 문제 해소. CLAUDE.md 구조/URL 갱신 |
