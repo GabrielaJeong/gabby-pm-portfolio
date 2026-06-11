@@ -27,7 +27,7 @@
 <body class="case-page">
 <script src="/nav.js"></script>
 
-  <nav class="case-toc" aria-label="섹션 목차" data-nav-config='[
+  <nav class="case-toc" data-toc-mode="pages" aria-label="섹션 목차" data-nav-config='[
     {"id": "top", "label": "Intro"},
     {"id": "impact", "label": "Impact"},
     {"id": "main-case", "label": "Main Case"},
@@ -39,7 +39,7 @@
     <div class="case-inner">
 
       <!-- ══════════ HERO ══════════ -->
-      <section class="case-hero" id="top">
+      <section class="case-hero" id="top" data-page="top">
         <div class="case-hero-grid">
           <div class="case-hero-text">
             <div class="case-meta-tags">
@@ -85,7 +85,7 @@
       </section>
 
       <!-- ══════════ IMPACT ══════════ -->
-      <section class="case-section" id="impact">
+      <section class="case-section" id="impact" data-page="impact">
         <div class="case-section-header">
           <div class="case-section-label">IMPACT</div>
           <div class="case-section-num">02</div>
@@ -154,7 +154,7 @@
       </section>
 
       <!-- ══════════ CONTEXT ══════════ -->
-      <section class="case-section">
+      <section class="case-section" data-page="impact">
         <div class="case-section-header">
           <div class="case-section-label">CONTEXT</div>
           <div class="case-section-num">03</div>
@@ -207,7 +207,7 @@
       </section>
 
       <!-- ══════════ PROBLEM ══════════ -->
-      <section class="case-section">
+      <section class="case-section" data-page="impact">
         <div class="case-section-header">
           <div class="case-section-label">PROBLEM</div>
           <div class="case-section-num">04</div>
@@ -270,7 +270,7 @@
       </section>
 
       <!-- ══════════ STRATEGY ══════════ -->
-      <div class="case-block" data-reveal id="main-case">
+      <div class="case-block" data-reveal id="main-case" data-page="main-case">
         <div class="case-block-header">
           <div class="block-label">STRATEGY</div>
         </div>
@@ -303,7 +303,7 @@
       </div>
 
       <!-- ══════════ EXECUTION ══════════ -->
-      <div class="case-block" data-reveal data-section="execution">
+      <div class="case-block" data-reveal data-section="execution" data-page="main-case">
         <div class="case-block-header">
           <div class="block-label">EXECUTION</div>
         </div>
@@ -343,7 +343,7 @@
       </div>
 
       <!-- ══════════ REFLECTION ══════════ -->
-      <div class="case-block" data-reveal>
+      <div class="case-block" data-reveal data-page="main-case">
         <div class="case-block-header">
           <div class="block-label">META REFLECTION</div>
         </div>
@@ -385,7 +385,7 @@
     </div><!-- /case-inner -->
 
     <!-- ══════════ 협업 타임라인 (맘스케어 차별 컴포넌트) ══════════ -->
-    <section class="collab-timeline-section" id="collab">
+    <section class="collab-timeline-section" id="collab" data-page="collab">
       <div class="case-inner">
         <div class="case-block-header">
           <div class="block-label">COLLABORATION TIMELINE</div>
@@ -435,7 +435,7 @@
     </section>
 
     <!-- ══════════ REFLECTION (페이지 종합) ══════════ -->
-    <section class="meta-reflection" data-reveal id="reflection">
+    <section class="meta-reflection" data-reveal id="reflection" data-page="reflection">
       <div class="case-inner">
         <div class="case-section-header">
           <div class="case-section-label">META REFLECTION</div>

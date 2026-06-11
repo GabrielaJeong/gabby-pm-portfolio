@@ -27,7 +27,7 @@
 <body class="case-page">
 <script src="/nav.js"></script>
 
-  <nav class="case-toc" aria-label="섹션 목차" data-nav-config='[
+  <nav class="case-toc" data-toc-mode="pages" aria-label="섹션 목차" data-nav-config='[
     {"id": "top", "label": "Intro"},
     {"id": "cases", "label": "Cases"},
     {"id": "reflection", "label": "Reflection"}
@@ -37,7 +37,7 @@
     <div class="case-inner">
 
       <!-- ============ HERO ============ -->
-      <section class="case-hero" id="top">
+      <section class="case-hero" id="top" data-page="top">
         <div class="case-hero-grid">
 
           <div class="case-hero-text">
@@ -85,7 +85,7 @@
       </section>
 
       <!-- ============ IMPACT DASHBOARD ============ -->
-      <section class="case-section">
+      <section class="case-section" data-page="top">
         <div class="case-section-header">
           <div class="case-section-label">IMPACT DASHBOARD</div>
           <div class="case-section-num">02</div>
@@ -153,7 +153,7 @@
       </section>
 
       <!-- ============ CONTEXT ============ -->
-      <section class="case-section">
+      <section class="case-section" data-page="top">
         <div class="case-section-header">
           <div class="case-section-label">CONTEXT</div>
           <div class="case-section-num">03</div>
@@ -243,7 +243,7 @@
       </section>
 
       <!-- ============ PROBLEM ============ -->
-      <section class="case-section">
+      <section class="case-section" data-page="top">
         <div class="case-section-header">
           <div class="case-section-label">PROBLEM</div>
           <div class="case-section-num">04</div>
@@ -433,7 +433,7 @@
     </div><!-- /case-inner -->
 
   <!-- ============ cases-wrapper: sticky 범위 제한 ============ -->
-  <div class="cases-wrapper" id="cases">
+  <div class="cases-wrapper" id="cases" data-page="cases">
     <div class="case-inner">
 
       <!-- ============ 탭 네비게이션 ============ -->
@@ -456,7 +456,7 @@
       <section class="case-content" data-case="revenue">
 
         <!-- ══════════ STRATEGY ══════════ -->
-        <div class="case-block" data-reveal>
+        <div class="case-block" data-reveal data-page="cases">
           <div class="case-block-header">
             <div class="block-label">CASE 01 · STRATEGY</div>
           </div>
@@ -527,7 +527,7 @@
         </div>
 
         <!-- ══════════ EXECUTION ══════════ -->
-        <div class="case-block" data-reveal data-section="execution">
+        <div class="case-block" data-reveal data-section="execution" data-page="cases">
           <div class="case-block-header">
             <div class="block-label">CASE 01 · EXECUTION</div>
           </div>
@@ -784,7 +784,7 @@
         </div>
 
         <!-- ══════════ RESULT ══════════ -->
-        <div class="case-block" data-reveal>
+        <div class="case-block" data-reveal data-page="cases">
           <div class="case-block-header">
             <div class="block-label">CASE 01 · RESULT</div>
           </div>
@@ -816,7 +816,7 @@
         </div>
 
         <!-- ══════════ REFLECTION ══════════ -->
-        <div class="case-block" data-reveal>
+        <div class="case-block" data-reveal data-page="cases">
           <div class="case-block-header">
             <div class="block-label">CASE 01 · META REFLECTION</div>
           </div>
@@ -860,7 +860,7 @@
       <section class="case-content" data-case="cs" hidden>
 
         <!-- ══════════ STRATEGY ══════════ -->
-        <div class="case-block" data-reveal>
+        <div class="case-block" data-reveal data-page="cases">
           <div class="case-block-header">
             <div class="block-label">CASE 02 · STRATEGY</div>
           </div>
@@ -956,7 +956,7 @@
         </div>
 
         <!-- ══════════ EXECUTION ══════════ -->
-        <div class="case-block" data-reveal>
+        <div class="case-block" data-reveal data-page="cases">
           <div class="case-block-header">
             <div class="block-label">CASE 02 · EXECUTION</div>
           </div>
@@ -1028,7 +1028,7 @@
         </div>
 
         <!-- ══════════ RESULT ══════════ -->
-        <div class="case-block" data-reveal>
+        <div class="case-block" data-reveal data-page="cases">
           <div class="case-block-header">
             <div class="block-label">CASE 02 · RESULT</div>
           </div>
@@ -1060,7 +1060,7 @@
         </div>
 
         <!-- ══════════ REFLECTION ══════════ -->
-        <div class="case-block" data-reveal>
+        <div class="case-block" data-reveal data-page="cases">
           <div class="case-block-header">
             <div class="block-label">CASE 02 · META REFLECTION</div>
           </div>
@@ -1104,7 +1104,7 @@
       <section class="case-content" data-case="zero-to-one" hidden>
 
         <!-- ══════════ 공통 인트로 ══════════ -->
-        <div class="case-block" data-reveal>
+        <div class="case-block" data-reveal data-page="cases">
           <div class="case-block-header">
             <div class="block-label">CASE 03 · 0→1 PLANNING</div>
           </div>
@@ -1142,7 +1142,7 @@
         <!-- ══════════ CASE A, 닉네임 ══════════ -->
         <div class="mini-case-content" data-mini-case="nickname">
 
-          <div class="case-block" data-reveal>
+          <div class="case-block" data-reveal data-page="cases">
             <div class="case-block-header">
               <div class="block-label">CASE A · STRATEGY</div>
             </div>
@@ -1174,7 +1174,7 @@
             </div>
           </div>
 
-          <div class="case-block" data-reveal>
+          <div class="case-block" data-reveal data-page="cases">
             <div class="case-block-header">
               <div class="block-label">CASE A · EXECUTION</div>
             </div>
@@ -1218,7 +1218,7 @@
             </div>
           </div>
 
-          <div class="case-block" data-reveal>
+          <div class="case-block" data-reveal data-page="cases">
             <div class="case-block-header">
               <div class="block-label">CASE A · RESULT</div>
             </div>
@@ -1249,7 +1249,7 @@
         <!-- ══════════ CASE B, 이미지커스텀 ══════════ -->
         <div class="mini-case-content" data-mini-case="image-custom" hidden>
 
-          <div class="case-block" data-reveal>
+          <div class="case-block" data-reveal data-page="cases">
             <div class="case-block-header">
               <div class="block-label">CASE B · STRATEGY</div>
             </div>
@@ -1281,7 +1281,7 @@
             </div>
           </div>
 
-          <div class="case-block" data-reveal>
+          <div class="case-block" data-reveal data-page="cases">
             <div class="case-block-header">
               <div class="block-label">CASE B · EXECUTION</div>
             </div>
@@ -1314,7 +1314,7 @@
           </div>
 
           <!-- TRY IT · 이미지 커스텀 미니 시연 (임시 비활성 — hidden 속성) -->
-          <div class="case-block" data-reveal hidden>
+          <div class="case-block" data-reveal hidden data-page="cases">
             <div class="case-block-header">
               <div class="block-label">TRY IT · IMAGE CUSTOM</div>
             </div>
@@ -1463,7 +1463,7 @@
             <p class="image-custom-note">ⓘ 실제 메타브 라이브 컴포넌트의 미니 시연 — 백엔드 연결 X, 인터랙션만 시연</p>
           </div>
 
-          <div class="case-block" data-reveal>
+          <div class="case-block" data-reveal data-page="cases">
             <div class="case-block-header">
               <div class="block-label">CASE B · RESULT</div>
             </div>
@@ -1492,7 +1492,7 @@
         </div>
 
         <!-- ══════════ 공통 메타 REFLECTION ══════════ -->
-        <div class="case-block" data-reveal>
+        <div class="case-block" data-reveal data-page="cases">
           <div class="case-block-header">
             <div class="block-label">CASE 03 · META REFLECTION</div>
           </div>
@@ -1537,7 +1537,7 @@
   </div><!-- /cases-wrapper -->
 
   <!-- ══════════ META REFLECTION ══════════ -->
-  <section class="meta-reflection" id="reflection">
+  <section class="meta-reflection" id="reflection" data-page="reflection">
     <div class="case-inner">
       <div class="case-block-header">
           <div class="block-label">META REFLECTION</div>
