@@ -48,6 +48,7 @@ gabby-pm-portfolio/
 ├── assets/             # 정적 파일 (resume.pdf, profile.jpg)
 ├── about/              # ABOUT 페이지 (포지셔닝·타임라인·Q&A) — styles.css만 사용
 ├── work/               # WORK 페이지 (Selected Work·How I Work·Track Record) — styles.css만 사용
+├── contact/            # CONTACT 페이지 — styles.css만 사용
 ├── metavv/             # 정답 페이지 — metavv.css = 메타브 전용 스타일만
 ├── folio/
 ├── banggooso/
@@ -68,8 +69,8 @@ gabby-pm-portfolio/
 ```
 
 URL 매핑 (Vercel 자동):
-- `/` → 메인 랜딩 (Hero + 입구 + Contact)
-- `/about/` → ABOUT, `/work/` → WORK
+- `/` → 메인 랜딩 (Hero + About/Work 입구)
+- `/about/` → ABOUT, `/work/` → WORK, `/contact/` → CONTACT
 - `/metavv/`, `/folio/`, `/banggooso/`, `/momscare/`, `/moodyfit/` → 각 상세
 
 ---

@@ -1,0 +1,80 @@
+<!DOCTYPE html>
+<html lang="ko">
+<head>
+  <meta charset="UTF-8" />
+  <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+  <title>Contact — 정소채 · Gabriela Jeong</title>
+  <meta name="description" content="제품의 다음 사이클에 함께할 PM 정소채에게 연락하기 — 이메일·GitHub·이력서." />
+  <!-- 테마 초기화 — 페인트 전에 data-theme 적용 (FOUC 방지) -->
+  <script>
+    (function () {
+      try {
+        var t = localStorage.getItem('theme');
+        if (!t) t = window.matchMedia('(prefers-color-scheme: light)').matches ? 'light' : 'dark';
+        if (t === 'light') document.documentElement.setAttribute('data-theme', 'light');
+      } catch (e) { /* 차단 환경 무시 */ }
+    })();
+  </script>
+  <link
+    rel="stylesheet"
+    as="style"
+    crossorigin
+    href="https://cdn.jsdelivr.net/gh/orioncactus/pretendard@v1.3.9/dist/web/variable/pretendardvariable-dynamic-subset.min.css"
+  />
+  <link rel="stylesheet" href="/styles.css" />
+</head>
+<body>
+<script src="/nav.js"></script>
+
+  <!-- ==================== CONTACT ==================== -->
+  <section class="contact-section" id="contact">
+    <div class="contact-inner">
+
+      <div class="contact-header">
+        <div class="contact-label">CONTACT</div>
+      </div>
+
+      <div class="contact-grid">
+
+        <div class="contact-message">
+          <h2 class="contact-title">
+            새로운 다음 정답을 찾아 나가고 있을<br />
+            <span class="accent">제품의 다음 사이클</span>에<br />
+            함께 하고 싶습니다.
+          </h2>
+          <p class="contact-body">
+            사용자 행동을 읽고, 실행 가능한 구조로 바꾸는 PM으로<br />
+            '왜?'를 던지는 것뿐만이 아닌, 성장으로의 기로를 밝히는 동료가 되겠습니다.
+          </p>
+        </div>
+
+        <ul class="contact-links">
+          <li class="contact-link-row">
+            <span class="contact-link-label">EMAIL</span>
+            <a href="mailto:fbrkqls94@gmail.com" class="contact-link-value">fbrkqls94@gmail.com</a>
+          </li>
+          <li class="contact-link-row">
+            <span class="contact-link-label">GITHUB</span>
+            <a href="https://github.com/GabrielaJeong" target="_blank" rel="noopener" class="contact-link-value">github.com/GabrielaJeong</a>
+          </li>
+          <li class="contact-link-row">
+            <span class="contact-link-label">RESUME</span>
+            <a href="/assets/resume.pdf" target="_blank" rel="noopener" class="contact-link-value">PDF 다운로드 ↓</a>
+          </li>
+        </ul>
+
+      </div>
+
+      <div class="contact-footer">
+        <div class="contact-footer-name">정소채 · Gabby</div>
+        <div class="contact-footer-meta">Product Manager · Portfolio 2026</div>
+      </div>
+
+    </div>
+  </section>
+
+  <button class="back-to-top" id="backToTop" aria-label="맨 위로">↑</button>
+
+  <script src="/script.js"></script>
+</body>
+</html>
