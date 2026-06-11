@@ -47,8 +47,18 @@
   });
 
   if (!targets.length) return;
+
+  // 목차바 = [← 모든 프로젝트 보기 (좌)] ............ [섹션 메뉴 (우)]
+  var inner = document.createElement('div');
+  inner.className = 'case-toc-inner';
+  var back = document.createElement('a');
+  back.className = 'case-toc-back';
+  back.href = '/work/';
+  back.textContent = '← 모든 프로젝트 보기';
+  inner.appendChild(back);
+  inner.appendChild(list);
   toc.innerHTML = '';
-  toc.appendChild(list);
+  toc.appendChild(inner);
 
   function navHeight() {
     return globalNav ? globalNav.getBoundingClientRect().height : 0;
