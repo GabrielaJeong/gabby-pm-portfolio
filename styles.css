@@ -502,78 +502,6 @@ body.home {
   overflow: hidden;
 }
 
-/* 데코: 레이더 — PRODUCT MANAGER 타이틀 뒤 레이어 */
-.hero-radar {
-  position: absolute;
-  top: 50%;
-  left: 54%;
-  transform: translate(-50%, -50%);
-  width: clamp(360px, 50vw, 700px);
-  height: clamp(360px, 50vw, 700px);
-  opacity: 0.6;
-  z-index: 0;            /* 텍스트(.hero-inner, z-index 1) 뒤에 깔림 */
-  pointer-events: none;
-}
-
-.hero-radar circle,
-.hero-radar line {
-  fill: none;
-  stroke: rgba(var(--border-rgb), 0.55);
-  stroke-width: 0.6;
-}
-
-/* 점선 링 (회전 시 점선이 흘러 회전이 보임) */
-.radar-ring--dashed {
-  stroke: rgba(var(--border-rgb), 0.7);
-  stroke-dasharray: 3 5;
-}
-
-/* 서로 반대로 도는 두 그룹 */
-.radar-spin {
-  transform-box: view-box;
-  transform-origin: 100px 100px;
-}
-
-.radar-spin--cw {
-  animation: radar-cw 26s linear infinite;
-}
-
-.radar-spin--ccw {
-  animation: radar-ccw 20s linear infinite;
-}
-
-@keyframes radar-cw {
-  to { transform: rotate(360deg); }
-}
-
-@keyframes radar-ccw {
-  to { transform: rotate(-360deg); }
-}
-
-/* 중심: 겹친 사각형들 (레이어) — 그룹째 천천히 회전 */
-.radar-shapes {
-  transform-box: view-box;
-  transform-origin: 100px 100px;
-  animation: radar-cw 36s linear infinite;
-}
-
-.radar-sq {
-  fill: none;
-  stroke-width: 0.8;
-}
-
-.radar-sq--a { stroke: rgba(var(--gold-rgb), 0.8); }
-.radar-sq--b { stroke: rgba(var(--gold-rgb), 0.5); }
-.radar-sq--c { stroke: rgba(var(--border-rgb), 0.65); }
-
-@media (prefers-reduced-motion: reduce) {
-  .radar-spin--cw,
-  .radar-spin--ccw,
-  .radar-shapes {
-    animation: none;
-  }
-}
-
 .hero-inner {
   max-width: var(--max-width);
   margin: 0 auto;
@@ -625,6 +553,20 @@ body.home {
   color: var(--text-primary);
   letter-spacing: -0.04em;
   margin: 0 0 var(--space-6);
+}
+
+/* 글씨에 미세 노이즈(그레인) — 글자 안쪽에만 클립. 미지원 시 솔리드 색 폴백 */
+@supports ((-webkit-background-clip: text) or (background-clip: text)) {
+  .hero-display {
+    background-color: var(--text-primary);
+    background-image: url("data:image/svg+xml,%3Csvg xmlns='http://www.w3.org/2000/svg' width='160' height='160'%3E%3Cfilter id='n'%3E%3CfeTurbulence type='fractalNoise' baseFrequency='0.85' numOctaves='2' stitchTiles='stitch'/%3E%3CfeColorMatrix type='matrix' values='0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0 0.12 0'/%3E%3C/filter%3E%3Crect width='100%25' height='100%25' filter='url(%23n)'/%3E%3C/svg%3E");
+    background-size: 160px 160px;
+    background-repeat: repeat;
+    -webkit-background-clip: text;
+            background-clip: text;
+    -webkit-text-fill-color: transparent;
+    color: transparent;
+  }
 }
 
 .hero-sub {
@@ -1357,11 +1299,6 @@ body.home {
   .about-inner,
   .cap-inner {
     padding: 0 24px;
-  }
-
-  /* HERO 레이더는 모바일에서 숨김 */
-  .hero-radar {
-    display: none;
   }
 
   .hero-metrics {
