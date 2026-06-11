@@ -113,6 +113,30 @@ if (themeToggle) {
   });
 }
 
+// ==================== HERO 커서 골드 글로우 ====================
+// 호버 가능한 기기 + 모션 허용 시에만. rAF로 throttle.
+const heroGlowEl = document.querySelector('.hero');
+if (
+  heroGlowEl &&
+  window.matchMedia('(hover: hover)').matches &&
+  !window.matchMedia('(prefers-reduced-motion: reduce)').matches
+) {
+  let glowRaf = null;
+  let lastMove = null;
+  heroGlowEl.addEventListener('pointermove', (e) => {
+    lastMove = e;
+    heroGlowEl.classList.add('glow-on');
+    if (glowRaf) return;
+    glowRaf = requestAnimationFrame(() => {
+      glowRaf = null;
+      const r = heroGlowEl.getBoundingClientRect();
+      heroGlowEl.style.setProperty('--mx', ((lastMove.clientX - r.left) / r.width) * 100 + '%');
+      heroGlowEl.style.setProperty('--my', ((lastMove.clientY - r.top) / r.height) * 100 + '%');
+    });
+  }, { passive: true });
+  heroGlowEl.addEventListener('pointerleave', () => heroGlowEl.classList.remove('glow-on'));
+}
+
 // ==================== HERO eyebrow 타이핑 효과 ====================
 const heroType = document.getElementById('heroType');
 if (heroType) {
