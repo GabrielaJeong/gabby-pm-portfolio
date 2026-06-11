@@ -189,16 +189,19 @@
 /* HERO 좌우 2단 레이아웃 — 디바이스 목업 이미지 배치용 */
 .case-hero-grid {
   display: grid;
-  grid-template-columns: 1fr 1fr;
+  grid-template-columns: 1fr;
+  justify-items: center;
   gap: var(--space-12);
-  align-items: start;
   margin-bottom: var(--space-12);
 }
 
 .case-hero-text {
   display: flex;
   flex-direction: column;
+  align-items: center;
+  text-align: center;
   gap: var(--space-5);
+  max-width: 780px;
 }
 
 .case-hero-visual {
