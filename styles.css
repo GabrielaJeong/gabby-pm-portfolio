@@ -483,10 +483,18 @@ ul {
 
 /* ==================== HERO ==================== */
 
+/* 홈: nav + hero가 정확히 한 화면(스크롤 없음).
+   body를 flex 컬럼으로 만들어 hero가 nav를 뺀 남은 공간을 채우게 (매직 넘버 X) */
+body.home {
+  min-height: 100vh;
+  min-height: 100svh;
+  display: flex;
+  flex-direction: column;
+}
+
 .hero {
-  /* nav(sticky, 약 60px)가 차지하는 만큼 빼서 hero+nav가 한 화면에 들어오게 */
-  min-height: calc(100vh - 62px);
-  min-height: calc(100svh - 62px);
+  flex: 1 0 auto;   /* nav 제외 남은 높이를 채움 */
+  min-height: 0;
   padding: 0;
   position: relative;
   display: flex;
