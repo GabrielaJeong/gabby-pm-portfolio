@@ -5,6 +5,16 @@
 
 ---
 
+## 2026-06-12
+
+| 커밋 | 변경 내용 |
+|---|---|
+| `229a07d` | feat(case-toc): metavv/folio/momscare에 책-페이지 모드(data-toc-mode=pages) 적용 — 블록별 data-page 태깅으로 한 번에 한 페이지만 표시. metavv Intro(히어로·임팩트·컨텍스트·문제)/Cases(탭 전체)/Reflection, folio Why에 How·What·Features 묶음, momscare Impact에 컨텍스트·문제 묶음 |
+| `63d265a` | refactor(case): NEXT PROJECT 블록 + 'Next' 목차 항목 제거(4개 케이스 페이지) — 페이지 구조 변경으로 페이지 간 NEXT 네비 불필요 |
+| `46f7eac` | style(case-hero): 케이스 히어로 디바이스 목업 이미지 제거 + 헤더/서브헤더 중앙정렬(case-hero-grid 1컬럼·case-hero-text 가운데). 목업은 추후 직접 구성 예정 |
+
+---
+
 ## 2026-06-03
 
 | 커밋 | 변경 내용 |
