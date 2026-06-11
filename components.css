@@ -201,7 +201,13 @@
   align-items: center;
   text-align: center;
   gap: var(--space-5);
-  max-width: 780px;
+  /* 폭 제약을 두지 않아 큰 타이틀이 수동 <br/> 지점에서만 끊기도록(컨테이너가 상한) */
+  max-width: 100%;
+}
+
+/* 중앙정렬 시 본문은 가독 폭으로 제한해 가운데 묶음 유지 */
+.case-hero-text .case-summary {
+  max-width: 720px;
 }
 
 .case-hero-visual {
