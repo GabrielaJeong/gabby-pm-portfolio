@@ -522,37 +522,47 @@ ul {
   stroke-width: 1;
 }
 
-.hero-radar-shape {
-  fill: rgba(var(--gold-rgb), 0.06);
-  stroke: rgba(var(--gold-rgb), 0.45);
-  stroke-width: 1.5;
+/* 점선 링 (회전 시 점선이 흘러 회전이 보임) */
+.radar-ring--dashed {
+  stroke: rgba(var(--border-rgb), 0.6);
+  stroke-dasharray: 4 6;
+}
+
+/* 서로 반대로 도는 두 그룹 */
+.radar-spin {
   transform-box: view-box;
   transform-origin: 100px 100px;
-  animation: radar-pulse 4s ease-in-out infinite;
 }
 
-/* 레이더 스윕 — 중심에서 한 줄이 천천히 회전 */
-.hero-radar-sweep {
-  stroke: rgba(var(--gold-rgb), 0.6);
-  stroke-width: 1.5;
-  transform-box: view-box;
-  transform-origin: 100px 100px;
-  animation: radar-sweep 5s linear infinite;
+.radar-spin--cw {
+  animation: radar-cw 26s linear infinite;
 }
 
-@keyframes radar-sweep {
-  from { transform: rotate(0deg); }
-  to   { transform: rotate(360deg); }
+.radar-spin--ccw {
+  animation: radar-ccw 20s linear infinite;
 }
 
-@keyframes radar-pulse {
-  0%, 100% { transform: scale(0.97); opacity: 0.75; }
-  50%      { transform: scale(1.03); opacity: 1; }
+@keyframes radar-cw {
+  to { transform: rotate(360deg); }
 }
+
+@keyframes radar-ccw {
+  to { transform: rotate(-360deg); }
+}
+
+/* 중심: 겹친 사각형들 (레이어) */
+.radar-sq {
+  fill: none;
+  stroke-width: 1.2;
+}
+
+.radar-sq--a { stroke: rgba(var(--gold-rgb), 0.55); }
+.radar-sq--b { stroke: rgba(var(--gold-rgb), 0.32); }
+.radar-sq--c { stroke: rgba(var(--border-rgb), 0.55); }
 
 @media (prefers-reduced-motion: reduce) {
-  .hero-radar-sweep,
-  .hero-radar-shape {
+  .radar-spin--cw,
+  .radar-spin--ccw {
     animation: none;
   }
 }

@@ -40,13 +40,26 @@
 
     <!-- 데코: 레이더 (우상단) -->
     <svg class="hero-radar" viewBox="0 0 200 200" aria-hidden="true">
-      <circle cx="100" cy="100" r="92" />
-      <circle cx="100" cy="100" r="62" />
-      <circle cx="100" cy="100" r="32" />
-      <line x1="100" y1="8" x2="100" y2="192" />
-      <line x1="8" y1="100" x2="192" y2="100" />
-      <polygon class="hero-radar-shape" points="100,42 152,92 122,150 68,140 56,82" />
-      <line class="hero-radar-sweep" x1="100" y1="100" x2="100" y2="12" />
+      <!-- 외곽 점선 링 + 십자선 — 시계방향 회전 -->
+      <g class="radar-spin radar-spin--cw">
+        <circle class="radar-ring--dashed" cx="100" cy="100" r="94" />
+        <line x1="100" y1="6" x2="100" y2="194" />
+        <line x1="6" y1="100" x2="194" y2="100" />
+      </g>
+      <!-- 중간 점선 링 + 대각선 — 반시계 회전 -->
+      <g class="radar-spin radar-spin--ccw">
+        <circle class="radar-ring--dashed" cx="100" cy="100" r="66" />
+        <line x1="32" y1="32" x2="168" y2="168" />
+        <line x1="168" y1="32" x2="32" y2="168" />
+      </g>
+      <!-- 고정 실선 링 -->
+      <circle class="radar-ring" cx="100" cy="100" r="36" />
+      <!-- 중심: 겹친 사각형들 (레이어) -->
+      <g class="radar-shapes">
+        <rect class="radar-sq radar-sq--a" x="76" y="76" width="48" height="48" />
+        <rect class="radar-sq radar-sq--b" x="80" y="80" width="40" height="40" transform="rotate(22 100 100)" />
+        <rect class="radar-sq radar-sq--c" x="84" y="84" width="32" height="32" transform="rotate(45 100 100)" />
+      </g>
     </svg>
 
     <div class="hero-inner">
