@@ -517,8 +517,8 @@ body.home {
 /* 데코: 우상단 레이더 */
 .hero-radar {
   position: absolute;
-  top: 13%;
-  right: 6%;
+  top: 14%;
+  right: 10%;
   width: clamp(180px, 21vw, 330px);
   height: clamp(180px, 21vw, 330px);
   opacity: 0.55;
