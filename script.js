@@ -112,3 +112,17 @@ if (themeToggle) {
     syncLabel();
   });
 }
+
+// ==================== HERO 라이브 시계 (KST · GMT+9) ====================
+const heroClock = document.getElementById('heroClock');
+if (heroClock) {
+  const tickClock = () => {
+    const now = new Date();
+    // 보는 사람 타임존과 무관하게 KST(UTC+9) 기준
+    const kst = new Date(now.getTime() + (now.getTimezoneOffset() + 540) * 60000);
+    const pad = (n) => String(n).padStart(2, '0');
+    heroClock.textContent = pad(kst.getHours()) + ':' + pad(kst.getMinutes()) + ':' + pad(kst.getSeconds());
+  };
+  tickClock();
+  setInterval(tickClock, 1000);
+}

@@ -492,30 +492,85 @@ ul {
   overflow: hidden;
 }
 
+/* 데코: blueprint 좌표 라벨 */
+.hero-coord {
+  position: absolute;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 11px;
+  letter-spacing: 0.08em;
+  color: var(--text-muted);
+  opacity: 0.32;
+  pointer-events: none;
+  user-select: none;
+}
+
+/* 데코: 우상단 레이더 */
+.hero-radar {
+  position: absolute;
+  top: 11%;
+  right: 5%;
+  width: clamp(220px, 27vw, 440px);
+  height: clamp(220px, 27vw, 440px);
+  opacity: 0.55;
+  pointer-events: none;
+}
+
+.hero-radar circle,
+.hero-radar line {
+  fill: none;
+  stroke: var(--border);
+  stroke-width: 1;
+}
+
+.hero-radar-shape {
+  fill: rgba(var(--gold-rgb), 0.06);
+  stroke: rgba(var(--gold-rgb), 0.45);
+  stroke-width: 1.5;
+}
+
 .hero-inner {
   max-width: var(--max-width);
   margin: 0 auto;
   padding: 0 48px;
   width: 100%;
   position: relative;
+  z-index: 1;
 }
 
-.hero-label {
-  position: absolute;
-  top: 50%;
-  right: 48px;
-  font-size: 12px;
-  color: var(--text-muted);
-  letter-spacing: 0.18em;
-  writing-mode: vertical-rl;
-  transform: translateY(-50%) rotate(180deg);
-}
-
-.hero-status {
+.hero-eyebrow {
   display: inline-flex;
   align-items: center;
-  gap: 12px;
-  margin-bottom: 80px;
+  gap: 8px;
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
+  font-size: 13px;
+  letter-spacing: 0.12em;
+  color: var(--text-muted);
+  margin-bottom: var(--space-5);
+}
+
+.hero-eyebrow-tick {
+  color: var(--gold);
+}
+
+.hero-display {
+  font-size: clamp(48px, 13vw, 184px);
+  line-height: 0.9;
+  font-weight: 800;
+  color: var(--text-primary);
+  letter-spacing: -0.04em;
+  margin: 0 0 var(--space-8);
+}
+
+.hero-sub {
+  font-size: clamp(15px, 1.4vw, 19px);
+  color: var(--text-muted);
+  line-height: var(--lh-relaxed);
+  margin: 0 0 var(--space-8);
+  max-width: 640px;
+}
+
+.hero-sub .accent {
+  color: var(--gold);
 }
 
 .status-dot {
@@ -525,6 +580,7 @@ ul {
   background: var(--gold);
   box-shadow: 0 0 10px rgba(var(--gold-rgb), 0.5);
   animation: pulse 2s ease-in-out infinite;
+  flex-shrink: 0;
 }
 
 @keyframes pulse {
@@ -532,100 +588,73 @@ ul {
   50% { opacity: 0.5; }
 }
 
-.hero-status span:last-child {
-  font-size: 15px;
-  color: var(--text-muted);
-  letter-spacing: 0.02em;
-}
-
-.hero-slogan {
-  font-size: 72px;
-  line-height: 1.15;
-  font-weight: var(--fw-h1);
-  color: var(--text-primary);
-  letter-spacing: -0.03em;
-  margin: 0 0 var(--space-8);    /* 32px — metrics/summary 자리 확보 */
-  max-width: 1380px;
-}
-
-.hero-slogan .accent {
-  color: var(--gold);
-}
-
-/* HERO 대표 수치 3개 — pill 태그 형태로 시각 강조 */
+/* HERO 대표 수치 — pill */
 .hero-metrics {
   display: flex;
   flex-wrap: wrap;
   align-items: center;
   gap: var(--space-3);
-  margin-bottom: var(--space-5);
 }
 
 .hero-metric {
   display: inline-flex;
   align-items: center;
   padding: var(--space-2) var(--space-4);
-  background: rgba(var(--gold-rgb), 0.05);     /* gold tint 5% */
+  background: rgba(var(--gold-rgb), 0.05);
   border: 1px solid rgba(var(--gold-rgb), 0.18);
   border-radius: 999px;
-  font-size: 15px;
+  font-size: 14px;
   font-weight: 500;
   color: var(--text-muted);
-  letter-spacing: 0;                          /* 자간 깨짐 방지 — 0 명시 */
+  letter-spacing: 0;
   white-space: nowrap;
-  font-variant-numeric: tabular-nums;         /* 숫자 정렬 또렷 */
+  font-variant-numeric: tabular-nums;
 }
 
-/* gold 강조 — weight는 통일(500), 색만으로 강조. weight 차이가 한 줄 안에서 시각 단차 만들어 텍스트 깨져 보였음 */
 .hero-metric .gold {
   color: var(--gold);
   font-weight: 500;
 }
 
-/* sep — pill 형태에선 불필요 */
-.hero-metric-sep {
-  display: none;
-}
-
-/* HERO 도메인·책임 범위 요약 — h1 보조 톤 */
-.hero-summary {
-  font-size: 17px;
-  color: var(--text-muted);
-  line-height: var(--lh-relaxed);
-  margin: 0 0 var(--space-12);
-  max-width: 720px;
-}
-
-.hero-footer {
+/* 하단 상태 라인 (모노스페이스) */
+.hero-status-bar {
+  position: absolute;
+  bottom: 0;
+  left: 0;
+  right: 0;
   display: flex;
   justify-content: space-between;
-  align-items: flex-end;
-  padding-top: 32px;
+  align-items: center;
+  gap: var(--space-4);
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 20px 48px;
   border-top: 1px solid var(--border);
+  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
 }
 
-.identity-name {
-  font-size: 18px;
-  color: var(--text-primary);
-  font-weight: 500;
-  margin-bottom: 6px;
-}
-
-.identity-role {
-  font-size: 14px;
-  color: var(--text-muted);
-}
-
-.hero-scroll {
+.hero-status {
+  display: inline-flex;
+  align-items: center;
+  gap: 10px;
   font-size: 12px;
+  letter-spacing: 0.1em;
   color: var(--text-muted);
-  letter-spacing: 0.18em;
-  animation: scrollHint 2.5s ease-in-out infinite;
 }
 
-@keyframes scrollHint {
-  0%, 100% { transform: translateY(0); opacity: 0.6; }
-  50% { transform: translateY(3px); opacity: 1; }
+.hero-clock {
+  display: inline-flex;
+  align-items: center;
+  gap: 12px;
+  font-size: 12px;
+  letter-spacing: 0.1em;
+  color: var(--text-muted);
+  white-space: nowrap;
+}
+
+.hero-clock-time {
+  color: var(--text-primary);
+  font-variant-numeric: tabular-nums;
 }
 
 .anchor-section {
@@ -1227,10 +1256,6 @@ ul {
     padding: 0 32px;
   }
 
-  .hero-slogan {
-    font-size: 64px;
-  }
-
   .about-section,
   .cap-section {
     padding: 100px 0;
@@ -1268,44 +1293,23 @@ ul {
     padding: 0 24px;
   }
 
-  .hero-label {
+  /* HERO 데코(레이더·좌표)는 모바일에서 숨김 */
+  .hero-radar,
+  .hero-coord {
     display: none;
   }
 
-  .hero-status {
-    margin-bottom: 56px;
-  }
-
-  .hero-slogan {
-    font-size: 40px;
-    letter-spacing: -0.02em;
-    margin-bottom: var(--space-6);
-  }
-
-  /* HERO 수치/요약 — 모바일에선 세로 쌓고 폰트 축소 */
   .hero-metrics {
     flex-direction: column;
     align-items: flex-start;
     gap: var(--space-2);
-    font-size: 14px;
-    margin-bottom: var(--space-4);
   }
 
-  .hero-metric-sep {
-    display: none;
-  }
-
-  .hero-summary {
-    font-size: 14px;
-    margin-bottom: var(--space-10);
-  }
-
-  .identity-name {
-    font-size: 15px;
-  }
-
-  .identity-role {
-    font-size: 12px;
+  .hero-status-bar {
+    flex-direction: column;
+    align-items: flex-start;
+    gap: var(--space-2);
+    padding: 16px 24px;
   }
 
   .about-section,
@@ -1406,10 +1410,6 @@ ul {
 }
 
 @media (max-width: 480px) {
-  .hero-slogan {
-    font-size: 32px;
-  }
-
   .about-title,
   .cap-title {
     font-size: 22px;
