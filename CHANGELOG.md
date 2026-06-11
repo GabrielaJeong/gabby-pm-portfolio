@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `6386840` | fix(nav): Contact 고정 선택 버그 제거 — 스크롤 활성-밑줄 옵저버(이탈 시 미해제)가 잔재로 Contact만 고정시키던 것 삭제, Contact를 About/Work 메뉴에서 빼 우측 별도 링크(.nav-contact)로 분리 |
 | `45f626b` | fix(case-toc): 떠있던 백링크를 목차바로 통합(좌측 백링크 + 우측 정렬 메뉴, 4개 토크 페이지 공통) + banggooso CONTEXT를 IMPACT 앞으로(무엇인가→성과 흐름). banggooso HERO scroll-indicator 제거 + CONTEXT를 Impact 페이지로(1e7bf52) |
 | `322d8bc` | feat(case-toc): 책-페이지 모드(data-toc-mode=pages) 추가 — 한 번에 한 섹션만 표시 + 상단 목차/하단 prev·next 넘김. banggooso 프로토타입 적용(블록 12개 data-page 태깅). 'Top'→'Intro' 라벨도 변경(8516d99). metavv/folio/momscare는 스크롤 모드 유지(추후 확장) |
 | `b3c8486` | feat(case-toc): 케이스 페이지 상단 고정 섹션 목차바 추가 — 글로벌 nav 아래 sticky, scroll-spy 현재 섹션 강조 + 클릭 점프. metavv/folio/banggooso/momscare에 적용, 기존 플로팅 닷 네비 대체. case-main padding-top 조정 |
