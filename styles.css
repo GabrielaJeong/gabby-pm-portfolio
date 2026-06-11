@@ -507,10 +507,10 @@ ul {
 /* 데코: 우상단 레이더 */
 .hero-radar {
   position: absolute;
-  top: 11%;
-  right: 5%;
-  width: clamp(220px, 27vw, 440px);
-  height: clamp(220px, 27vw, 440px);
+  top: 13%;
+  right: 6%;
+  width: clamp(180px, 21vw, 330px);
+  height: clamp(180px, 21vw, 330px);
   opacity: 0.55;
   pointer-events: none;
 }
@@ -591,13 +591,33 @@ ul {
   color: var(--gold);
 }
 
+/* eyebrow 타이핑 커서 */
+.hero-eyebrow-caret {
+  display: inline-block;
+  width: 7px;
+  height: 1.05em;
+  background: var(--gold);
+  margin-left: 3px;
+  vertical-align: middle;
+  animation: caret-blink 1.05s steps(1) infinite;
+}
+
+@keyframes caret-blink {
+  0%, 50% { opacity: 1; }
+  50.01%, 100% { opacity: 0; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-eyebrow-caret { animation: none; opacity: 0.6; }
+}
+
 .hero-display {
-  font-size: clamp(48px, 13vw, 184px);
-  line-height: 0.9;
+  font-size: clamp(40px, 8.5vw, 112px);
+  line-height: 0.92;
   font-weight: 800;
   color: var(--text-primary);
   letter-spacing: -0.04em;
-  margin: 0 0 var(--space-8);
+  margin: 0 0 var(--space-6);
 }
 
 .hero-sub {

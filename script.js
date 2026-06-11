@@ -113,6 +113,25 @@ if (themeToggle) {
   });
 }
 
+// ==================== HERO eyebrow 타이핑 효과 ====================
+const heroType = document.getElementById('heroType');
+if (heroType) {
+  const full = heroType.getAttribute('data-text') || '';
+  if (window.matchMedia('(prefers-reduced-motion: reduce)').matches) {
+    heroType.textContent = full;
+  } else {
+    let i = 0;
+    const typeStep = () => {
+      heroType.textContent = full.slice(0, i);
+      if (i < full.length) {
+        i += 1;
+        setTimeout(typeStep, 55);
+      }
+    };
+    setTimeout(typeStep, 300); // 살짝 딜레이 후 시작
+  }
+}
+
 // ==================== HERO 라이브 시계 (KST · GMT+9) ====================
 const heroClock = document.getElementById('heroClock');
 if (heroClock) {
