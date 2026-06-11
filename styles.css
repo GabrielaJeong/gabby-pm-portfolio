@@ -502,15 +502,16 @@ body.home {
   overflow: hidden;
 }
 
-/* 데코: 우상단 레이더 */
+/* 데코: 레이더 — PRODUCT MANAGER 타이틀 뒤 레이어 */
 .hero-radar {
   position: absolute;
-  top: 14%;
-  /* 뷰포트 % 가 아니라 콘텐츠 박스 우측 안쪽(레쥬메 라인)에 정렬 — 전체가 안으로 */
-  right: calc(max(0px, (100% - var(--max-width)) / 2) + 48px);
-  width: clamp(160px, 18vw, 300px);
-  height: clamp(160px, 18vw, 300px);
-  opacity: 0.8;
+  top: 50%;
+  left: 54%;
+  transform: translate(-50%, -50%);
+  width: clamp(360px, 50vw, 700px);
+  height: clamp(360px, 50vw, 700px);
+  opacity: 0.6;
+  z-index: 0;            /* 텍스트(.hero-inner, z-index 1) 뒤에 깔림 */
   pointer-events: none;
 }
 
