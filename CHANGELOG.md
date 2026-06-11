@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `88303b9` | fix(case-hero): 히어로 텍스트가 페이지 중앙이 아닌 좌측으로 치우치던 문제 수정 — 페이지별 CSS(metavv/folio/momscare)가 .case-hero-grid를 2단(이미지 자리)으로 오버라이드해 텍스트가 좌측 칸 안에서만 가운데 정렬됐던 것을 단일 컬럼(1fr)로 통일, justify-items 제거, 죽은 목업 규칙 정리(banggooso 포함) |
 | `deefb20` | fix(folio): pages 모드에서 'WHY ENGINEERING RIGOR' 블록이 전 페이지에 노출되던 버그 — .case-inner로만 감싸져 data-page 미부여(토글 제외)였던 것을 data-page=engineering로 귀속 |
 | `92c89f6` | fix(case-hero): 중앙정렬 후 타이틀 오펀 줄바꿈 수정 — case-hero-text max-width 780px(2컬럼 잔재) 제거→100%, summary만 720px 가독 폭 유지. LEARNED L23(정렬 변경=폭·줄바꿈·정렬선 3종 점검) 기록 |
 | `229a07d` | feat(case-toc): metavv/folio/momscare에 책-페이지 모드(data-toc-mode=pages) 적용 — 블록별 data-page 태깅으로 한 번에 한 페이지만 표시. metavv Intro(히어로·임팩트·컨텍스트·문제)/Cases(탭 전체)/Reflection, folio Why에 How·What·Features 묶음, momscare Impact에 컨텍스트·문제 묶음 |
