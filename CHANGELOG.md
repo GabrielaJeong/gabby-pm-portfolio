@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `deefb20` | fix(folio): pages 모드에서 'WHY ENGINEERING RIGOR' 블록이 전 페이지에 노출되던 버그 — .case-inner로만 감싸져 data-page 미부여(토글 제외)였던 것을 data-page=engineering로 귀속 |
 | `92c89f6` | fix(case-hero): 중앙정렬 후 타이틀 오펀 줄바꿈 수정 — case-hero-text max-width 780px(2컬럼 잔재) 제거→100%, summary만 720px 가독 폭 유지. LEARNED L23(정렬 변경=폭·줄바꿈·정렬선 3종 점검) 기록 |
 | `229a07d` | feat(case-toc): metavv/folio/momscare에 책-페이지 모드(data-toc-mode=pages) 적용 — 블록별 data-page 태깅으로 한 번에 한 페이지만 표시. metavv Intro(히어로·임팩트·컨텍스트·문제)/Cases(탭 전체)/Reflection, folio Why에 How·What·Features 묶음, momscare Impact에 컨텍스트·문제 묶음 |
 | `63d265a` | refactor(case): NEXT PROJECT 블록 + 'Next' 목차 항목 제거(4개 케이스 페이지) — 페이지 구조 변경으로 페이지 간 NEXT 네비 불필요 |
