@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `45f626b` | fix(case-toc): 떠있던 백링크를 목차바로 통합(좌측 백링크 + 우측 정렬 메뉴, 4개 토크 페이지 공통) + banggooso CONTEXT를 IMPACT 앞으로(무엇인가→성과 흐름). banggooso HERO scroll-indicator 제거 + CONTEXT를 Impact 페이지로(1e7bf52) |
 | `322d8bc` | feat(case-toc): 책-페이지 모드(data-toc-mode=pages) 추가 — 한 번에 한 섹션만 표시 + 상단 목차/하단 prev·next 넘김. banggooso 프로토타입 적용(블록 12개 data-page 태깅). 'Top'→'Intro' 라벨도 변경(8516d99). metavv/folio/momscare는 스크롤 모드 유지(추후 확장) |
 | `b3c8486` | feat(case-toc): 케이스 페이지 상단 고정 섹션 목차바 추가 — 글로벌 nav 아래 sticky, scroll-spy 현재 섹션 강조 + 클릭 점프. metavv/folio/banggooso/momscare에 적용, 기존 플로팅 닷 네비 대체. case-main padding-top 조정 |
 | `5457abe` | refactor(work): /work/ 지표 3중 중복 정리 — How I Work을 지표·서사 정본으로, Track Record는 골드 지표 강조 빼고 스코프 중심 이력으로 슬림(7개 유지), Selected Work 카드는 티저 유지 |
