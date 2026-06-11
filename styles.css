@@ -386,20 +386,6 @@ ul {
   color: var(--gold);
 }
 
-/* 드롭다운 Main/Side 그룹 라벨 */
-.nav-dropdown-group {
-  padding: 6px 16px 4px;
-  font-size: 10px;
-  letter-spacing: 0.14em;
-  color: var(--text-muted);
-}
-
-.nav-dropdown-group:not(:first-child) {
-  margin-top: 6px;
-  padding-top: 12px;
-  border-top: 1px solid var(--border);
-}
-
 /* 모바일 드로어 Work 아코디언 */
 .drawer-work {
   border-bottom: 1px solid var(--border);
@@ -448,19 +434,6 @@ ul {
 
 .drawer-work-sub a:hover {
   color: var(--gold) !important;
-}
-
-/* 드로어 Main/Side 그룹 라벨 */
-.drawer-work-group {
-  display: block;
-  padding: 8px 0 4px;
-  font-size: 11px;
-  letter-spacing: 0.12em;
-  color: var(--text-muted);
-}
-
-.drawer-work-group:not(:first-child) {
-  margin-top: 8px;
 }
 
 /* ==================== BACK TO TOP ==================== */
@@ -1456,6 +1429,57 @@ ul {
 
   .stage-hero-main.big-num {
     font-size: 40px;
+  }
+}
+
+/* ==================== WORK 제품 서브탭 바 (/work/ 전용, nav 아래) ==================== */
+
+.work-subnav {
+  border-bottom: 1px solid var(--border);
+  background: var(--bg);
+}
+
+.work-subnav-inner {
+  max-width: var(--max-width);
+  margin: 0 auto;
+  padding: 14px 48px;
+  display: flex;
+  align-items: center;
+  flex-wrap: wrap;
+  gap: 20px;
+}
+
+.work-subnav-group {
+  font-size: 11px;
+  letter-spacing: 0.14em;
+  color: var(--text-muted);
+}
+
+.work-subnav-link {
+  font-size: 14px;
+  color: var(--text);
+  text-decoration: none;
+  transition: color 0.2s ease;
+}
+
+.work-subnav-link:hover {
+  color: var(--gold);
+}
+
+.work-subnav-sep {
+  width: 1px;
+  height: 14px;
+  background: var(--border-strong);
+}
+
+@media (max-width: 768px) {
+  .work-subnav-inner {
+    padding: 12px 24px;
+    gap: 14px;
+    flex-wrap: nowrap;
+    overflow-x: auto;
+    white-space: nowrap;
+    -webkit-overflow-scrolling: touch;
   }
 }
 
