@@ -484,7 +484,9 @@ ul {
 /* ==================== HERO ==================== */
 
 .hero {
-  min-height: 100vh;
+  /* nav(sticky, 약 60px)가 차지하는 만큼 빼서 hero+nav가 한 화면에 들어오게 */
+  min-height: calc(100vh - 62px);
+  min-height: calc(100svh - 62px);
   padding: 0;
   position: relative;
   display: flex;
