@@ -526,6 +526,35 @@ ul {
   fill: rgba(var(--gold-rgb), 0.06);
   stroke: rgba(var(--gold-rgb), 0.45);
   stroke-width: 1.5;
+  transform-box: view-box;
+  transform-origin: 100px 100px;
+  animation: radar-pulse 4s ease-in-out infinite;
+}
+
+/* 레이더 스윕 — 중심에서 한 줄이 천천히 회전 */
+.hero-radar-sweep {
+  stroke: rgba(var(--gold-rgb), 0.6);
+  stroke-width: 1.5;
+  transform-box: view-box;
+  transform-origin: 100px 100px;
+  animation: radar-sweep 5s linear infinite;
+}
+
+@keyframes radar-sweep {
+  from { transform: rotate(0deg); }
+  to   { transform: rotate(360deg); }
+}
+
+@keyframes radar-pulse {
+  0%, 100% { transform: scale(0.97); opacity: 0.75; }
+  50%      { transform: scale(1.03); opacity: 1; }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .hero-radar-sweep,
+  .hero-radar-shape {
+    animation: none;
+  }
 }
 
 .hero-inner {
