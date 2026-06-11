@@ -502,18 +502,6 @@ body.home {
   overflow: hidden;
 }
 
-/* 데코: blueprint 좌표 라벨 */
-.hero-coord {
-  position: absolute;
-  font-family: ui-monospace, SFMono-Regular, Menlo, monospace;
-  font-size: 11px;
-  letter-spacing: 0.08em;
-  color: var(--text-muted);
-  opacity: 0.32;
-  pointer-events: none;
-  user-select: none;
-}
-
 /* 데코: 우상단 레이더 */
 .hero-radar {
   position: absolute;
@@ -522,21 +510,21 @@ body.home {
   right: calc(max(0px, (100% - var(--max-width)) / 2) + 48px);
   width: clamp(160px, 18vw, 300px);
   height: clamp(160px, 18vw, 300px);
-  opacity: 0.55;
+  opacity: 0.8;
   pointer-events: none;
 }
 
 .hero-radar circle,
 .hero-radar line {
   fill: none;
-  stroke: var(--border);
-  stroke-width: 1;
+  stroke: rgba(var(--border-rgb), 0.55);
+  stroke-width: 0.6;
 }
 
 /* 점선 링 (회전 시 점선이 흘러 회전이 보임) */
 .radar-ring--dashed {
-  stroke: rgba(var(--border-rgb), 0.6);
-  stroke-dasharray: 4 6;
+  stroke: rgba(var(--border-rgb), 0.7);
+  stroke-dasharray: 3 5;
 }
 
 /* 서로 반대로 도는 두 그룹 */
@@ -570,12 +558,12 @@ body.home {
 
 .radar-sq {
   fill: none;
-  stroke-width: 1.2;
+  stroke-width: 0.8;
 }
 
-.radar-sq--a { stroke: rgba(var(--gold-rgb), 0.55); }
-.radar-sq--b { stroke: rgba(var(--gold-rgb), 0.32); }
-.radar-sq--c { stroke: rgba(var(--border-rgb), 0.55); }
+.radar-sq--a { stroke: rgba(var(--gold-rgb), 0.8); }
+.radar-sq--b { stroke: rgba(var(--gold-rgb), 0.5); }
+.radar-sq--c { stroke: rgba(var(--border-rgb), 0.65); }
 
 @media (prefers-reduced-motion: reduce) {
   .radar-spin--cw,
@@ -1370,9 +1358,8 @@ body.home {
     padding: 0 24px;
   }
 
-  /* HERO 데코(레이더·좌표)는 모바일에서 숨김 */
-  .hero-radar,
-  .hero-coord {
+  /* HERO 레이더는 모바일에서 숨김 */
+  .hero-radar {
     display: none;
   }
 
