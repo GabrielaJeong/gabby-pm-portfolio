@@ -45,32 +45,9 @@ document.querySelectorAll('.nav-drawer a').forEach((link) => {
   });
 });
 
-// ==================== SECTION ACTIVE UNDERLINE ====================
-const sections = ['work', 'about', 'experience', 'contact']
-  .map((id) => document.getElementById(id))
-  .filter(Boolean);
-
-const navLinks = document.querySelectorAll('.nav-links a');
-
-const observer = new IntersectionObserver(
-  (entries) => {
-    entries.forEach((entry) => {
-      if (entry.isIntersecting) {
-        const id = entry.target.id;
-        navLinks.forEach((link) => {
-          // nav 링크는 href="/#about" 형태 — 해시 부분을 섹션 id로 매칭
-          const href = link.getAttribute('href') || '';
-          const hashIndex = href.indexOf('#');
-          const linkSection = hashIndex !== -1 ? href.slice(hashIndex + 1) : '';
-          link.classList.toggle('active', linkSection === id);
-        });
-      }
-    });
-  },
-  { rootMargin: '-40% 0px -55% 0px', threshold: 0 }
-);
-
-sections.forEach((section) => observer.observe(section));
+// (구) SECTION ACTIVE UNDERLINE 옵저버 제거 — About/Work는 별도 페이지가 되어
+// 스크롤 추적 대상이 없고, Contact만 남아 '한 번 켜지면 안 꺼지는' 고정 선택 버그를
+// 유발했음. Contact는 nav 메뉴에서 분리(우측 별도 링크)했고 활성 표시 없음.
 
 // ==================== ABOUT · Q&A ACCORDION ====================
 // 모든 Q&A는 기본 닫힌 상태로 시작.

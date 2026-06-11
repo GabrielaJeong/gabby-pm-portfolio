@@ -215,6 +215,17 @@ ul {
   border-radius: 2px;
 }
 
+/* Contact — About/Work 메뉴와 분리된 우측 링크 (활성 추적 없음) */
+.nav-contact {
+  font-size: 14px;
+  color: var(--text);
+  transition: color 0.2s ease;
+}
+
+.nav-contact:hover {
+  color: var(--gold);
+}
+
 .nav-cta {
   background: var(--gold);
   color: var(--on-gold);
@@ -660,6 +671,7 @@ ul {
   }
 
   .nav-links,
+  .nav-contact,
   .nav-cta {
     display: none;
   }
