@@ -11,7 +11,16 @@ if (backToTop) {
   });
 }
 
-// 드로어 링크 클릭 시 닫기는 아래 `.nav-drawer a` 핸들러가 처리.
+// ==================== 모바일 드로어 Work 아코디언 ====================
+document.querySelectorAll('.drawer-work').forEach((work) => {
+  const toggle = work.querySelector('.drawer-work-toggle');
+  if (!toggle) return;
+  toggle.addEventListener('click', () => {
+    const isOpen = work.classList.toggle('open');
+    toggle.setAttribute('aria-expanded', isOpen ? 'true' : 'false');
+  });
+});
+// 드로어 일반 링크 클릭 시 닫기는 아래 `.nav-drawer a` 핸들러가 처리.
 
 // ==================== NAV SCROLL EFFECT ====================
 const nav = document.getElementById('nav');
