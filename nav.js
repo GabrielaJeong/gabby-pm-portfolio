@@ -21,7 +21,7 @@
   var html = [
     '<nav class="nav" id="nav">',
       '<div class="nav-inner">',
-        '<a href="/" class="nav-logo">Gabriela&#39;s Portfolio</a>',
+        '<a href="/" class="nav-logo">PORTFOLIO 2026</a>',
         '<ul class="nav-links">',
           '<li><a href="/about/"'   + active('/about/')   + '>About</a></li>',
           '<li><a href="/work/"'    + active('/work/')    + '>Work</a></li>',
