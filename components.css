@@ -186,23 +186,24 @@
   margin-bottom: var(--space-16);
 }
 
-/* HERO 좌우 2단 레이아웃 — 디바이스 목업 이미지 배치용 */
+/* HERO — 이미지 제거 후 단일 컬럼 중앙정렬 */
 .case-hero-grid {
   display: grid;
   grid-template-columns: 1fr;
-  justify-items: center;
   gap: var(--space-12);
   margin-bottom: var(--space-12);
 }
 
+/* justify-items:center를 쓰지 않는 이유: 그리드 아이템이 shrink-to-fit 되어
+   본문 폭에 맞춰 좁아지면 큰 타이틀이 의도치 않게 줄바꿈됨(LEARNED L23).
+   → 아이템은 전체 폭(1fr)으로 펴고 정렬은 text-align:center로만 처리한다. */
 .case-hero-text {
   display: flex;
   flex-direction: column;
   align-items: center;
   text-align: center;
   gap: var(--space-5);
-  /* 폭 제약을 두지 않아 큰 타이틀이 수동 <br/> 지점에서만 끊기도록(컨테이너가 상한) */
-  max-width: 100%;
+  width: 100%;
 }
 
 /* 중앙정렬 시 본문은 가독 폭으로 제한해 가운데 묶음 유지 */

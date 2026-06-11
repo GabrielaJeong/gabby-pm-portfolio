@@ -5,66 +5,13 @@
    글로벌 토큰: /styles.css :root
    ======================================================== */
 
-/* ==================== HERO 디바이스 목업 (Folio 앱 스플래시) ==================== */
+/* ==================== HERO ==================== */
 
-/* HERO 좌우 비율 — 텍스트가 길어 metavv보다 더 비대칭 (1.6:1) */
-.case-hero .case-hero-grid {
-  grid-template-columns: 1.6fr 1fr;
-}
-
-/* 단어 단위 줄바꿈 — 한 단어가 강제로 잘리지 않도록
-   (case-title 60px 축소 룰 제거 — 다른 케이스 페이지와 동일한 72px 사용) */
+/* 히어로 이미지 제거 후 case-hero-grid는 components.css의 단일 컬럼 중앙정렬을 사용.
+   단어 단위 줄바꿈만 유지 — 한 단어가 강제로 잘리지 않도록 */
 .case-hero .case-title,
 .case-hero .case-summary {
   word-break: keep-all;
-}
-
-/* 폰 mockup 영역은 hero 한 화면에 들어가도록 height 제한 + 하단 잘림 */
-.case-hero .case-hero-visual {
-  align-self: start;
-  height: 480px;
-  overflow: hidden;
-  display: flex;
-  justify-content: center;
-  align-items: flex-start;
-}
-
-/* 폰 프레임 — 어두운 베젤 + 그림자 */
-.folio-phone-mockup {
-  width: 100%;
-  max-width: 280px;
-  aspect-ratio: 9 / 19.5;
-  background: var(--surface);
-  border-radius: var(--space-10);
-  padding: var(--space-2);
-  box-shadow:
-    0 var(--space-8) var(--space-16) rgba(var(--shadow-rgb), 0.5),
-    inset 0 0 0 1px var(--border-default);
-  box-sizing: border-box;
-  flex-shrink: 0;
-}
-
-/* 화면 영역 — 폰 프레임 안에서 splash 이미지 채움 */
-.folio-phone-screen {
-  width: 100%;
-  height: 100%;
-  border-radius: var(--space-7);
-  overflow: hidden;
-  background: #0d1521;
-}
-
-.folio-phone-screen img {
-  width: 100%;
-  height: 100%;
-  object-fit: cover;
-  display: block;
-}
-
-/* 모바일: 디바이스 목업 작게 + 컬럼 1열 스택 (case-hero-grid 기본 모바일 룰 상속) */
-@media (max-width: 768px) {
-  .folio-phone-mockup {
-    max-width: 220px;
-  }
 }
 
 /* ==================== KEY DECISIONS — 5장 직렬 + 카드 안 좌(메타) + 우(본문) 2컬럼 ==================== */

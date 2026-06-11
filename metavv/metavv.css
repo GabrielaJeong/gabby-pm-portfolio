@@ -437,22 +437,6 @@
   }
 }
 
-/* ==================== HERO 디바이스 목업 ==================== */
-
-.case-hero-grid {
-  grid-template-columns: 1.3fr 1fr;
-}
-
-.case-hero-visual {
-  overflow: hidden;
-}
-
-.case-hero-visual img {
-  width: 100%;
-  height: auto;
-  transform: translateX(95px) translateY(-2px);
-}
-
 /* scroll-indicator margin-top 조정 */
 .scroll-indicator {
   margin-top: 50px;
