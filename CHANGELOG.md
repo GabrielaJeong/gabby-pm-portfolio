@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `4854d91` | content(moodyfit): 준비 중 안내에 제품 한 줄 소개 추가 — '가중치와 LLM을 활용한 추천 시스템을 접목한 멀티 패션 커머스 앱' |
 | `88303b9` | fix(case-hero): 히어로 텍스트가 페이지 중앙이 아닌 좌측으로 치우치던 문제 수정 — 페이지별 CSS(metavv/folio/momscare)가 .case-hero-grid를 2단(이미지 자리)으로 오버라이드해 텍스트가 좌측 칸 안에서만 가운데 정렬됐던 것을 단일 컬럼(1fr)로 통일, justify-items 제거, 죽은 목업 규칙 정리(banggooso 포함) |
 | `deefb20` | fix(folio): pages 모드에서 'WHY ENGINEERING RIGOR' 블록이 전 페이지에 노출되던 버그 — .case-inner로만 감싸져 data-page 미부여(토글 제외)였던 것을 data-page=engineering로 귀속 |
 | `92c89f6` | fix(case-hero): 중앙정렬 후 타이틀 오펀 줄바꿈 수정 — case-hero-text max-width 780px(2컬럼 잔재) 제거→100%, summary만 720px 가독 폭 유지. LEARNED L23(정렬 변경=폭·줄바꿈·정렬선 3종 점검) 기록 |
