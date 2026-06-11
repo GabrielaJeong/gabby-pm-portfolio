@@ -518,9 +518,10 @@ body.home {
 .hero-radar {
   position: absolute;
   top: 14%;
-  right: 10%;
-  width: clamp(180px, 21vw, 330px);
-  height: clamp(180px, 21vw, 330px);
+  /* 뷰포트 % 가 아니라 콘텐츠 박스 우측 안쪽(레쥬메 라인)에 정렬 — 전체가 안으로 */
+  right: calc(max(0px, (100% - var(--max-width)) / 2) + 48px);
+  width: clamp(160px, 18vw, 300px);
+  height: clamp(160px, 18vw, 300px);
   opacity: 0.55;
   pointer-events: none;
 }
@@ -560,7 +561,13 @@ body.home {
   to { transform: rotate(-360deg); }
 }
 
-/* 중심: 겹친 사각형들 (레이어) */
+/* 중심: 겹친 사각형들 (레이어) — 그룹째 천천히 회전 */
+.radar-shapes {
+  transform-box: view-box;
+  transform-origin: 100px 100px;
+  animation: radar-cw 36s linear infinite;
+}
+
 .radar-sq {
   fill: none;
   stroke-width: 1.2;
@@ -572,7 +579,8 @@ body.home {
 
 @media (prefers-reduced-motion: reduce) {
   .radar-spin--cw,
-  .radar-spin--ccw {
+  .radar-spin--ccw,
+  .radar-shapes {
     animation: none;
   }
 }
