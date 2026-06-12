@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `bee3b89` | style(case-hero): pages 히어로를 뷰포트 세로 중앙으로(min-height 100svh-nav-목차바-갭-flip + flex center) — 메뉴에 붙던 문제·하단 flip 버튼 가림 해소. 메타 4항목 가운데 정렬(text-align center), 'Scroll to explore' 제거, 고아 border-bottom/margin-bottom 제거. 신규 토큰 --nav-h/--case-flip-h |
 | `e5db932` | feat(metavv): Intro에 묶여있던 히어로/임팩트/컨텍스트/문제를 페이지로 분리(banggooso 패턴) — toc: Intro(히어로 단독)/Impact(임팩트 대시보드+컨텍스트)/Problem/Case 01/02/03/Reflection |
 | `6250d43` | fix(banggooso-hero): 타이틀 'B2B 협업 자산으로 전환하다' 한 줄로(2줄 구성) + 서브카피 '플랫폼에서' 뒤 줄바꿈으로 '가졌습니다.' 오펀 해소. .case-title/.case-summary에 word-break: keep-all 전역 추가(한글 어절 단위 줄바꿈) |
 | `393555c` | fix(subbar): work 서브바 ↔ 케이스 목차바 하단 구분선 위치 통일 — 두 바 높이(48 vs 52px) 불일치를 공통 토큰 --subbar-height(48px)로 통일(세로 패딩 제거+min-height+가운데 정렬) |
