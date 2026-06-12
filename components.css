@@ -383,11 +383,6 @@
   letter-spacing: 0.18em;
 }
 
-.case-section-num {
-  font-size: var(--fs-caption);
-  color: var(--text-tertiary);
-}
-
 /* ── 메인 섹션 타이틀 (IMPACT / CONTEXT / PROBLEM / META REFLECTION) ── */
 .case-section-title {
   font-size: var(--fs-h1);
