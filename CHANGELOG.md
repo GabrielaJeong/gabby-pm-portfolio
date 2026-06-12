@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `7e226ac` | docs(convention): 케이스 페이지(pages 모드) 레이아웃 규약 확립 — CASE PAGE LAYOUT 토큰 그룹화 + --case-block-gap 신설(100px 토큰화·값 보존), CLAUDE.md §6-2 강제 규약(절대규칙+체크리스트+grep), DESIGN_SYSTEM.md §9 모델. 현재 코드 규약 준수 확인 |
 | `79cf65d` | fix(case): banggooso main-case-intro border-top(선) 제거+여백 축소, PROBLEM 후행 선/여백 정리(:has) + 히어로↔flip 간격 복원(.case-hero.toc-page-tail 예외, toc-page-tail 회귀 수정) + momscare STRATEGY 아래 표지 이미지 추가(reveal+플로트 애니메이션, .momscare-cover) |
 | `a994af2` | fix(metavv): flip 버튼 gap(space-3) 추가 + .toc-page-tail(마지막 블록 후행 border/padding/margin 리셋)로 #impact·#problem 버튼 위 선·잉여패딩 제거 + 미니탭 라벨 CASE A/B→A/B & .mini-tab-nav 목차바 아래 sticky 고정 |
 | `fcf04e9` | fix(in-page-nav): 비활성 회색 점이 반투명(0.45)이라 뒤 진행 라인이 비치던 문제 — 같은 회색을 --bg 위에 합성해 완전 불투명화(라인 비침 제거) |
