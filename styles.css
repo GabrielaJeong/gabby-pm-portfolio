@@ -85,6 +85,9 @@
   /* 케이스 목차바(.case-toc) ↔ 각 페이지 첫 컴포넌트 사이 유니버설 갭.
      이 값 하나로 모든 케이스 페이지의 상단 여백을 통일한다. */
   --case-content-top: var(--space-10);
+  /* nav 아래 서브 내비바(.work-subnav, .case-toc) 공통 높이 — 페이지 간
+     이동 시 구분선 위치가 일치하도록 한 값으로 통일. */
+  --subbar-height: 48px;
 
   /* ═══ BORDER COLORS ═══ */
   --border-default: rgba(var(--fg-rgb), 0.12);
@@ -1478,7 +1481,8 @@ body.home {
 .work-subnav-inner {
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: 14px 48px;
+  padding: 0 48px;
+  min-height: var(--subbar-height);
   display: flex;
   align-items: center;
   flex-wrap: wrap;
@@ -1510,7 +1514,7 @@ body.home {
 
 @media (max-width: 768px) {
   .work-subnav-inner {
-    padding: 12px 24px;
+    padding: 0 24px;
     gap: 14px;
     flex-wrap: nowrap;
     overflow-x: auto;

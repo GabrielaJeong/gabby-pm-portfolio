@@ -51,7 +51,9 @@
   gap: var(--space-6);
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: var(--space-3) var(--space-12);
+  /* 세로 패딩 대신 공통 높이(--subbar-height)로 .work-subnav와 구분선 위치 일치 */
+  padding: 0 var(--space-12);
+  min-height: var(--subbar-height);
 }
 
 .case-toc-back {
@@ -118,7 +120,7 @@
 @media (max-width: 768px) {
   .case-toc-inner {
     gap: var(--space-4);
-    padding: var(--space-3) var(--space-6);
+    padding: 0 var(--space-6);
   }
   .case-toc-list {
     flex-wrap: nowrap;
