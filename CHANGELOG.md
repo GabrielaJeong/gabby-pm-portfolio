@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `a994af2` | fix(metavv): flip 버튼 gap(space-3) 추가 + .toc-page-tail(마지막 블록 후행 border/padding/margin 리셋)로 #impact·#problem 버튼 위 선·잉여패딩 제거 + 미니탭 라벨 CASE A/B→A/B & .mini-tab-nav 목차바 아래 sticky 고정 |
 | `fcf04e9` | fix(in-page-nav): 비활성 회색 점이 반투명(0.45)이라 뒤 진행 라인이 비치던 문제 — 같은 회색을 --bg 위에 합성해 완전 불투명화(라인 비침 제거) |
 | `e2a8360` | docs(learned): L25 추가(가시성 모델 전환 시 스캐폴딩 유령 여백 반성+점검 절차) + 전체 코드 유령 패딩 감사(folio 2건 외 없음, metavv case-block은 부모 토글로 안전) + folio 히어로 서브카피 수정 |
 | `456d4c1` | fix(folio): 히어로↔flip 간격이 metavv와 달랐던 원인 제거 — .live-preview-section + .case-inner padding-top(64px)이 Intro에서 빈 래퍼에 유령 공간을 남겨 flip을 밀어냄(L24 스크롤 잔재). 제거하여 전 페이지 간격 일관화 |
