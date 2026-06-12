@@ -526,71 +526,15 @@
   width: 100%;
 }
 
-/* ==================== CASES WRAPPER — sticky 범위 제한 ==================== */
+/* ==================== CASES — 각 케이스는 목차바 독립 페이지 ==================== */
 
+/* cases-wrapper는 구조용 패스스루. 탭 박스 시절의 배경/구분선/상하 여백을 제거해,
+   비활성(Intro/Reflection) 페이지에서 빈 케이스가 빈 띠로 남지 않게 한다. */
 .cases-wrapper {
   position: relative;
-  background: rgba(var(--fg-rgb), 0.018);
-  border-top: 1px solid var(--border-default);
-  border-bottom: 1px solid var(--border-default);
-  padding-bottom: var(--section-gap);
-  margin-top: var(--section-gap);
 }
 
-/* ==================== TAB NAVIGATION ==================== */
-
-.case-tab-nav {
-  position: sticky;
-  top: 80px;                            /* 글로벌 네비 높이 (case-main padding-top 기준) */
-  z-index: 50;
-  background: var(--bg);
-  border-bottom: 1px solid var(--border-default);
-  padding: var(--space-4) 0;
-  margin-top: var(--section-gap);
-  display: flex;
-  gap: var(--space-2);
-}
-
-.case-tab {
-  padding: var(--space-3) var(--space-5);
-  border-radius: var(--radius-md);
-  border: 1px solid transparent;
-  text-decoration: none;
-  color: inherit;
-  display: flex;
-  flex-direction: column;
-  gap: var(--space-1);
-  transition: background 0.2s ease, border-color 0.2s ease;
-}
-
-.case-tab-label {
-  font-size: var(--fs-caption);
-  font-weight: var(--fw-caption);
-  color: var(--text-label-gold);
-  letter-spacing: 0.08em;
-}
-
-.case-tab-title {
-  font-size: var(--fs-body);
-  font-weight: 500;
-  color: var(--text-tertiary);
-  transition: color 0.2s ease;
-}
-
-.case-tab[aria-selected="true"] {
-  background: rgba(var(--gold-rgb), 0.08);
-  border-color: var(--border-gold);
-}
-
-.case-tab[aria-selected="true"] .case-tab-title {
-  color: var(--text-primary);
-}
-
-.case-tab:hover:not([aria-selected="true"]) {
-  background: rgba(var(--fg-rgb), 0.03);
-}
-
-/* ==================== TAB CONTENT ==================== */
+/* ==================== CASE CONTENT ==================== */
 
 .case-content {
   padding: var(--section-inner) 0;
