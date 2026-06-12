@@ -22,6 +22,13 @@
   /* 목차바 ↔ 첫 컴포넌트 유니버설 갭 (단일 출처). 첫 블록의 선행 여백/구분선은
      .toc-page-lead로 제거하므로 이 값이 모든 페이지의 상단 갭이 된다. */
   padding-top: var(--case-content-top);
+  /* 보이는 페이지(히어로+하단 flip 등)를 한 묶음으로 뷰포트 세로 중앙에 배치.
+     내용이 길어 넘치면 safe가 상단 정렬로 폴백(상단 잘림 방지) → flip 버튼이
+     내용 바로 아래에 붙어 '너무 아래로 내려가는' 현상 없음. */
+  min-height: calc(100svh - var(--nav-h) - var(--subbar-height));
+  display: flex;
+  flex-direction: column;
+  justify-content: safe center;
 }
 
 /* pages 모드: case-toc.js가 각 페이지의 첫 보이는 블록에 .toc-page-lead 부여.
@@ -195,15 +202,6 @@
 
 .case-hero {
   padding: var(--space-8) 0;
-}
-
-/* pages 모드 히어로(data-page 보유): 메뉴/목차바에 붙지 않고 뷰포트 세로 중앙에.
-   하단 flip 네비가 한 화면에 보이도록 높이를 확보. (목차바 없는 moodyfit 등 제외) */
-.case-hero[data-page] {
-  min-height: calc(100svh - var(--nav-h) - var(--subbar-height) - var(--case-content-top) - var(--case-flip-h));
-  display: flex;
-  flex-direction: column;
-  justify-content: center;
 }
 
 /* HERO — 이미지 제거 후 단일 컬럼 중앙정렬 */
