@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `70a0667` | fix(case-hero): folio 등 히어로가 위로 붙던 잔여 문제 — [히어로+flip] 묶음이 뷰포트보다 살짝 커 상단 정렬 폴백되던 것을, 큰 여백 축소(flip 패딩·히어로↔메타 간격·메타 패딩)로 ~64px 줄여 중앙정렬 유도 |
 | `86d8e0a` | fix(case-hero): 짧은 히어로(folio)에서 flip 버튼이 너무 아래로 가던 문제 — 히어로를 뷰포트만큼 키우는 대신 .case-main이 [히어로+flip]을 한 묶음으로 뷰포트 중앙(justify-content: safe center)에 배치, 내용 길면 상단 정렬 폴백. --case-flip-h 토큰 제거 |
 | `bee3b89` | style(case-hero): pages 히어로를 뷰포트 세로 중앙으로(min-height 100svh-nav-목차바-갭-flip + flex center) — 메뉴에 붙던 문제·하단 flip 버튼 가림 해소. 메타 4항목 가운데 정렬(text-align center), 'Scroll to explore' 제거, 고아 border-bottom/margin-bottom 제거. 신규 토큰 --nav-h/--case-flip-h |
 | `e5db932` | feat(metavv): Intro에 묶여있던 히어로/임팩트/컨텍스트/문제를 페이지로 분리(banggooso 패턴) — toc: Intro(히어로 단독)/Impact(임팩트 대시보드+컨텍스트)/Problem/Case 01/02/03/Reflection |
