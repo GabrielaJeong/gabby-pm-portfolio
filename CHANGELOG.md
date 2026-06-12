@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `3cff1fc` | fix(case): 본문 페이지 상단정렬 통일(.case-main flex-start, 히어로만 .is-hero-page 중앙정렬) — 짧은 메타 리플렉션이 가운데로 내려 상단 공백이 페이지마다 달랐던 문제 해소(banggooso 위치 기준). + momscare impact 페이지 IMPACT↔collab 과한 갭 정리 |
 | `98ff3e0` | style(case): 섹션 페이지 번호(.case-section-num 02/03/04) 전 케이스 제거(metavv/banggooso/momscare 각 3개) + 죽은 CSS 정리. 지표 수치는 유지 |
 | `33634de` | refactor(momscare): IMPACT(KPI)를 Collab과 합쳐 impact 페이지로 재구성, 원래 impact 페이지(CONTEXT+PROBLEM)는 context로 변경. toc: top/context/main-case/impact/reflection |
 | `7e226ac` | docs(convention): 케이스 페이지(pages 모드) 레이아웃 규약 확립 — CASE PAGE LAYOUT 토큰 그룹화 + --case-block-gap 신설(100px 토큰화·값 보존), CLAUDE.md §6-2 강제 규약(절대규칙+체크리스트+grep), DESIGN_SYSTEM.md §9 모델. 현재 코드 규약 준수 확인 |
