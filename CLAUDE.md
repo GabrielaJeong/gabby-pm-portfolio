@@ -178,6 +178,43 @@ URL 매핑 (Vercel 자동):
 
 ---
 
+## 6-2. 케이스 페이지 레이아웃 규약 (pages 모드) — ⚠️ 강제
+
+> 모든 케이스 상세 페이지(metavv/folio/banggooso/momscare)는 **책-페이지(pages) 모드**다.
+> `.case-toc[data-toc-mode="pages"]` + 블록별 `data-page`로 **한 번에 한 페이지만** 표시.
+> 세로 간격에서 같은 버그(유령 여백·고아 구분선·페이지마다 다른 간격)가 반복됐다.
+> 아래 규약 위반은 작업 결과 거부 사유. (배경: LEARNED L23·L24·L25)
+
+### 레이아웃은 4개 토큰으로만 (styles.css `CASE PAGE LAYOUT` 그룹 = 단일 출처)
+| 토큰 | 의미 | 제어 위치 |
+|---|---|---|
+| `--case-content-top` | 목차바 ↔ 각 페이지 **첫** 블록 갭 | `.case-main` padding-top **한 곳** |
+| `--case-block-gap` | 한 페이지 안 **블록↔블록** 세로 갭 | `.case-section` 등 |
+| `--subbar-height` | 서브바(.case-toc/.work-subnav) 공통 높이 | 두 바 동일 |
+| `--nav-h` | nav 높이(폴백, JS가 실측 덮어씀) | 중앙정렬 계산 |
+
+### 절대 규칙
+1. **모든 '콘텐츠' 블록은 `data-page` 보유.** 없으면 토글 안 돼 전 페이지에 노출(유령 콘텐츠). 부모가 `data-page`면 자식은 생략 가능(부모와 함께 토글).
+2. **첫/마지막 블록 가장자리는 JS가 처리.** `case-toc.js`가 첫 블록에 `.toc-page-lead`(선행 margin/padding/border-top 리셋), 마지막 블록에 `.toc-page-tail`(후행 리셋)을 부여. **블록에 직접 선행/후행 구분선·큰 마진을 새로 박지 말 것** — pages 모드에서 고아가 된다.
+3. **항상 보이는 래퍼(`.case-inner`·`.cases-wrapper` 등)에 세로 margin/padding/border/min-height 금지.** 콘텐츠가 비어도 남아 유령 갭이 된다(L25, folio `live-preview + .case-inner` 사고).
+4. **`+`·`~` 인접 형제 셀렉터로 세로 간격 주지 말 것.** 참조 형제가 숨으면 고아가 된다.
+5. **블록 간 갭은 `--case-block-gap`만.** 페이지·블록마다 다른 값을 박지 말 것(간격 불일치의 원인). 새 간격이 필요하면 토큰을 styles.css에 추가하고 보고.
+6. **히어로(`.case-hero`)는 블록이자 예외** — `.toc-page-tail`이어도 자체 하단 패딩 유지(버튼과 숨 쉴 공간). 건드리지 말 것.
+
+### 케이스 블록 추가/전환 시 사전 체크리스트 (필수)
+- [ ] 새 콘텐츠 블록에 `data-page` 부여했나?
+- [ ] 래퍼(`.case-inner` 등)나 `+`/`~` 셀렉터에 **세로** 여백을 주지 않았나?
+- [ ] 블록 간 갭은 `--case-block-gap`만 썼나? (새 큰 margin/border-bottom 금지)
+- [ ] grep 검증 통과? (아래 2줄)
+```bash
+# (a) 항상 보이는 래퍼에 세로 스페이싱 → 0이어야
+grep -rnE "\.case-inner[^{]*\{[^}]*(padding-top|padding-bottom|margin-top|margin-bottom|min-height|border-top|border-bottom)" *.css */*.css
+# (b) + .case-inner / ~ 형제 셀렉터 간격 → 0이어야
+grep -rnE "[+~]\s*\.case-inner" *.css */*.css
+```
+
+---
+
 ## 7. 작업 후 보고 규칙
 
 작업 완료 후 **반드시** 다음을 가비님에게 보고:

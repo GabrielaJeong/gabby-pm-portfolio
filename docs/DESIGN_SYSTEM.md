@@ -316,3 +316,42 @@ border-radius:    var(--radius-lg);               /* 16px */
 - SVG 내 텍스트는 CSS `text-align`이 아닌 `text-anchor` 속성으로 정렬.
 - 다이어그램 노드 = `text-anchor="middle"`, x 좌표 = 카드 중앙.
 - 정렬 변경 시 x 좌표도 함께 수정해야 함.
+
+---
+
+## 9. 케이스 페이지 레이아웃 시스템 (pages 모드)
+
+> 강제 규약·체크리스트는 **CLAUDE.md §6-2**. 여기는 모델/토큰 레퍼런스. 배경: LEARNED L23·L24·L25.
+
+케이스 상세 페이지는 "책-페이지"처럼 한 번에 한 페이지만 보인다.
+`.case-toc[data-toc-mode="pages"]` + 블록별 `data-page="<섹션 id>"`로 토글하고,
+세로 리듬은 **4개 토큰**으로만 제어한다(다른 곳에 박지 않는다).
+
+```
+┌─ 글로벌 nav ─────────────────────────────┐  높이 --nav-h (JS 실측)
+├─ .case-toc (서브바) ─────────────────────┤  높이 --subbar-height
+│                                          │
+│        ↕ --case-content-top  (.case-main padding-top, 단일 출처)
+│   ┌─ 첫 블록  .toc-page-lead ──────────┐  선행 margin/padding/border-top = 0 (JS)
+│   │   …콘텐츠…                          │
+│   └────────────────────────────────────┘
+│        ↕ --case-block-gap  (블록↔블록)
+│   ┌─ 중간 블록 ───────────────────────┐
+│   └────────────────────────────────────┘
+│        ↕ --case-block-gap
+│   ┌─ 마지막 블록  .toc-page-tail ──────┐  후행 margin/padding/border-bottom = 0 (JS)
+│   └────────────────────────────────────┘   (단, .case-hero는 자체 하단 패딩 유지)
+│   ┌─ .case-flip (이전/다음 넘김) ───────┐
+└───┴────────────────────────────────────┘
+```
+
+| 토큰 | 갭 | 누가 제어 |
+|---|---|---|
+| `--case-content-top` | 목차바 ↔ 첫 블록 | `.case-main { padding-top }` (한 곳) |
+| `--case-block-gap` | 블록 ↔ 블록 | `.case-section` 등 블록 자신 |
+| `--subbar-height` | 서브바 높이 | `.case-toc` / `.work-subnav` |
+| `--nav-h` | nav 높이(폴백) | `case-toc.js`가 실측 setProperty |
+
+**핵심 원칙**: 가장자리(첫/마지막)는 JS가 `.toc-page-lead` / `.toc-page-tail`로 리셋한다.
+그러니 **블록·래퍼·형제셀렉터에 스크롤 시절 큰 마진/구분선을 새로 박으면 안 된다** —
+숨겨졌을 때 고아 여백/선이 된다(이게 반복된 버그의 근원).

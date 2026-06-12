@@ -84,15 +84,14 @@
   /* ═══ SECTION GAPS ═══ */
   --section-gap:   var(--space-16);
   --section-inner: var(--space-12);
-  /* 케이스 목차바(.case-toc) ↔ 각 페이지 첫 컴포넌트 사이 유니버설 갭.
-     이 값 하나로 모든 케이스 페이지의 상단 여백을 통일한다. */
-  --case-content-top: var(--space-10);
-  /* nav 아래 서브 내비바(.work-subnav, .case-toc) 공통 높이 — 페이지 간
-     이동 시 구분선 위치가 일치하도록 한 값으로 통일. */
-  --subbar-height: 48px;
-  /* 글로벌 nav 높이 — 케이스 본문(.case-main) 세로 중앙정렬 계산에 사용.
-     이 62px는 폴백값이고, case-toc.js가 실제 측정값으로 덮어써 정확/반응형으로 만든다. */
-  --nav-h: 62px;
+
+  /* ═══ CASE PAGE LAYOUT (pages 모드 레이아웃 단일 출처) ═══
+     케이스 페이지 세로 리듬은 전부 이 토큰들로만 제어한다. 규약: docs/DESIGN_SYSTEM.md §9,
+     CLAUDE.md §10. 블록 자체에 스크롤 시절 큰 마진/구분선을 새로 박지 말 것. */
+  --case-content-top: var(--space-10); /* 목차바 ↔ 각 페이지 '첫' 블록 갭 (.case-main padding-top) */
+  --case-block-gap:   100px;           /* 한 페이지 안 블록 ↔ 블록 세로 갭 (.case-section 등) */
+  --subbar-height:    48px;            /* nav 아래 서브바(.work-subnav/.case-toc) 공통 높이 */
+  --nav-h:            62px;            /* 글로벌 nav 높이(폴백) — case-toc.js가 실측값으로 덮어씀 */
 
   /* ═══ BORDER COLORS ═══ */
   --border-default: rgba(var(--fg-rgb), 0.12);
