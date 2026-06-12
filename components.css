@@ -328,6 +328,7 @@
   letter-spacing: -0.035em;
   line-height: var(--lh-snug);
   margin: 0 0 var(--space-7);
+  word-break: keep-all; /* 한글 어절 단위 줄바꿈 — 단어 중간에서 끊기지 않도록 */
 }
 
 .case-title .accent {
@@ -341,6 +342,7 @@
   line-height: var(--lh-relaxed);
   max-width: 820px;
   margin: 0 0 var(--space-8);
+  word-break: keep-all; /* 한글 어절 단위 줄바꿈 — 단어 중간에서 끊기지 않도록 */
 }
 
 /* 메타 그리드 — 4칸 동일 너비 */
