@@ -143,7 +143,7 @@
   align-items: center;
   max-width: var(--max-width);
   margin: 0 auto;
-  padding: var(--space-12) var(--space-12) var(--space-16);
+  padding: var(--space-8) var(--space-12) var(--space-10);
 }
 
 .case-flip-btn {
@@ -209,7 +209,7 @@
   display: grid;
   grid-template-columns: 1fr;
   gap: var(--space-12);
-  margin-bottom: var(--space-12);
+  margin-bottom: var(--space-8);
 }
 
 /* justify-items:center를 쓰지 않는 이유: 그리드 아이템이 shrink-to-fit 되어
@@ -355,7 +355,7 @@
   display: grid;
   grid-template-columns: repeat(4, 1fr);
   gap: var(--space-6);
-  padding-top: var(--space-8);
+  padding-top: var(--space-6);
   border-top: 1px solid var(--border);
   text-align: center; /* 4개 메타 항목을 컨테이너 내 가운데 정렬 */
 }
