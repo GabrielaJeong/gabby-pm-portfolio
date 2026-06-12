@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `98ff3e0` | style(case): 섹션 페이지 번호(.case-section-num 02/03/04) 전 케이스 제거(metavv/banggooso/momscare 각 3개) + 죽은 CSS 정리. 지표 수치는 유지 |
 | `33634de` | refactor(momscare): IMPACT(KPI)를 Collab과 합쳐 impact 페이지로 재구성, 원래 impact 페이지(CONTEXT+PROBLEM)는 context로 변경. toc: top/context/main-case/impact/reflection |
 | `7e226ac` | docs(convention): 케이스 페이지(pages 모드) 레이아웃 규약 확립 — CASE PAGE LAYOUT 토큰 그룹화 + --case-block-gap 신설(100px 토큰화·값 보존), CLAUDE.md §6-2 강제 규약(절대규칙+체크리스트+grep), DESIGN_SYSTEM.md §9 모델. 현재 코드 규약 준수 확인 |
 | `79cf65d` | fix(case): banggooso main-case-intro border-top(선) 제거+여백 축소, PROBLEM 후행 선/여백 정리(:has) + 히어로↔flip 간격 복원(.case-hero.toc-page-tail 예외, toc-page-tail 회귀 수정) + momscare STRATEGY 아래 표지 이미지 추가(reveal+플로트 애니메이션, .momscare-cover) |
