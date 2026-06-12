@@ -106,6 +106,7 @@
 
     function show(key) {
       var leadAssigned = false;
+      var lastMatch = null;
       blocks.forEach(function (b) {
         var match = b.getAttribute('data-page') === key;
         b.style.display = match ? '' : 'none';
@@ -116,7 +117,11 @@
         } else {
           b.classList.remove('toc-page-lead');
         }
+        b.classList.remove('toc-page-tail');
+        if (match) lastMatch = b;
       });
+      // 마지막 보이는 블록 → tail로 표시 (후행 구분선/잉여 여백 제거)
+      if (lastMatch) lastMatch.classList.add('toc-page-tail');
       targets.forEach(function (t) {
         t.link.classList.toggle('is-active', t.id === key);
       });

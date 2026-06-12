@@ -40,6 +40,15 @@
   border-top: 0;
 }
 
+/* 각 페이지의 마지막 보이는 블록: 스크롤 모드용 후행 구분선(border-bottom)과
+   큰 후행 여백(padding/margin-bottom)을 제거 → 하단 flip 버튼 위 잉여 선/패딩 제거.
+   버튼과의 간격은 .case-flip 자체 padding이 담당. (.toc-page-lead의 짝) */
+.case-main .toc-page-tail {
+  margin-bottom: 0;
+  padding-bottom: 0;
+  border-bottom: 0;
+}
+
 /* ==================== CASE TOC — 상단 고정 섹션 목차바 ==================== */
 /* 글로벌 nav 바로 아래 sticky. JS(case-toc.js)가 top을 nav 높이에 동기화 */
 .case-toc {
@@ -141,6 +150,7 @@
 .case-flip {
   display: flex;
   align-items: center;
+  gap: var(--space-3); /* prev/next 버튼 사이 약간의 간격 */
   max-width: var(--max-width);
   margin: 0 auto;
   padding: var(--space-8) var(--space-12) var(--space-10);

@@ -571,6 +571,11 @@
   margin: var(--section-inner) 0 0;
   border-bottom: 1px solid var(--border-default);
   padding-bottom: 0;
+  /* 스크롤다운해도 A/B 탭이 보이도록 목차바 바로 아래에 고정 */
+  position: sticky;
+  top: calc(var(--nav-h) + var(--subbar-height));
+  z-index: 40;
+  background: var(--bg);
 }
 
 .mini-tab {
