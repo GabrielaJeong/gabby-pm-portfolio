@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `6baac50` | refactor(case-hero): --nav-h 근사값(62px)을 case-toc.js의 nav 실측값으로 동기화(setProperty) — 본문 세로 중앙정렬 계산이 정확/반응형. nav 자체는 미수정(부작용 없음), 토큰은 폴백 유지 |
 | `463cf30` | refactor(case-hero): 히어로 공유 컴포넌트 완전 토큰화 — 하드코딩(font-size 72/18px, max-width 820/720px) 제거. 신규 토큰 --fs-case-title/--measure-summary, summary max-width 이중정의 통합, 죽은 .case-hero-visual* CSS·folio 중복 word-break 제거. 히어로 규칙 하드코딩 px 0건 |
 | `70a0667` | fix(case-hero): folio 등 히어로가 위로 붙던 잔여 문제 — [히어로+flip] 묶음이 뷰포트보다 살짝 커 상단 정렬 폴백되던 것을, 큰 여백 축소(flip 패딩·히어로↔메타 간격·메타 패딩)로 ~64px 줄여 중앙정렬 유도 |
 | `86d8e0a` | fix(case-hero): 짧은 히어로(folio)에서 flip 버튼이 너무 아래로 가던 문제 — 히어로를 뷰포트만큼 키우는 대신 .case-main이 [히어로+flip]을 한 묶음으로 뷰포트 중앙(justify-content: safe center)에 배치, 내용 길면 상단 정렬 폴백. --case-flip-h 토큰 제거 |
