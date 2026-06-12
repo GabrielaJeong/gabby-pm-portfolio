@@ -424,3 +424,27 @@
 .collab-wip-note + .collab-phase-result {
   margin-top: var(--space-4);
 }
+
+/* ==================== 맘스케어 표지 (STRATEGY 아래, 부드러운 플로트) ==================== */
+.momscare-cover {
+  margin: var(--space-12) auto var(--space-4);
+  max-width: 460px;
+  padding: 0 var(--space-8);
+}
+
+.momscare-cover img {
+  width: 100%;
+  height: auto;
+  display: block;
+  filter: drop-shadow(0 var(--space-6) var(--space-12) rgba(var(--shadow-rgb), 0.35));
+  animation: momscare-float 4.5s ease-in-out infinite;
+}
+
+@keyframes momscare-float {
+  0%, 100% { transform: translateY(0); }
+  50%      { transform: translateY(-12px); }
+}
+
+@media (prefers-reduced-motion: reduce) {
+  .momscare-cover img { animation: none; }
+}

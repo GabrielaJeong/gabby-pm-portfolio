@@ -19,11 +19,18 @@
 
 /* ==================== MAIN CASE 진입부 ==================== */
 
+/* pages 모드: PROBLEM ↔ MAIN CASE 사이 과한 구분선/여백 정리 */
 .main-case-intro {
-  padding: var(--section-gap) 0 var(--space-8);
-  border-top: 2px solid var(--border-strong);
-  margin-top: calc(var(--section-gap) * 1.5);
+  padding: var(--space-10) 0 var(--space-8);  /* 상단 64→40 */
+  margin-top: var(--space-10);                 /* 96→40, border-top(2px 선) 제거 */
   margin-bottom: var(--section-inner);
+}
+
+/* PROBLEM(메인케이스 진입부 바로 앞 섹션)의 후행 선·여백 축소 */
+.case-section:has(+ .main-case-intro) {
+  border-bottom: none;
+  margin-bottom: 0;
+  padding-bottom: var(--space-10);             /* 100→40 */
 }
 
 .main-case-label {

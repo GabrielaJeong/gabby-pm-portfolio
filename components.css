@@ -49,6 +49,12 @@
   border-bottom: 0;
 }
 
+/* 단, 히어로는 후행 여백이 과하지 않고(보더·큰 마진 없음) 버튼과의 숨 쉴 공간이
+   필요하므로 자체 하단 패딩을 유지 → 히어로↔flip 버튼 간격 확보 */
+.case-main .case-hero.toc-page-tail {
+  padding-bottom: var(--space-8);
+}
+
 /* ==================== CASE TOC — 상단 고정 섹션 목차바 ==================== */
 /* 글로벌 nav 바로 아래 sticky. JS(case-toc.js)가 top을 nav 높이에 동기화 */
 .case-toc {
