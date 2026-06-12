@@ -82,6 +82,9 @@
   /* ═══ SECTION GAPS ═══ */
   --section-gap:   var(--space-16);
   --section-inner: var(--space-12);
+  /* 케이스 목차바(.case-toc) ↔ 각 페이지 첫 컴포넌트 사이 유니버설 갭.
+     이 값 하나로 모든 케이스 페이지의 상단 여백을 통일한다. */
+  --case-content-top: var(--space-10);
 
   /* ═══ BORDER COLORS ═══ */
   --border-default: rgba(var(--fg-rgb), 0.12);

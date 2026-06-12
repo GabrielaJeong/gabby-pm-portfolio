@@ -101,8 +101,17 @@
     }
 
     function show(key) {
+      var leadAssigned = false;
       blocks.forEach(function (b) {
-        b.style.display = (b.getAttribute('data-page') === key) ? '' : 'none';
+        var match = b.getAttribute('data-page') === key;
+        b.style.display = match ? '' : 'none';
+        // 이 페이지의 첫 보이는 블록만 lead로 표시 → 선행 구분선/여백 제거 (CSS)
+        if (match && !leadAssigned) {
+          b.classList.add('toc-page-lead');
+          leadAssigned = true;
+        } else {
+          b.classList.remove('toc-page-lead');
+        }
       });
       targets.forEach(function (t) {
         t.link.classList.toggle('is-active', t.id === key);

@@ -502,3 +502,42 @@ box-shadow: 0 24px 64px rgba(0, 0, 0, 0.5);
 **진단 포인트**: "중앙정렬 했는데 글자 하나만 떨어졌다/줄바꿈이 이상하다" -> text-align만 건드리고 폭 제약을 안 풀었는지 의심. 정렬 변경 = 폭 + 줄바꿈 + 형제 정렬선 3종 세트 점검.
 
 ---
+
+## L24. 전역 UI 도입 후 "선행 구분선/여백" 고아화 — 첫 컴포넌트 상단 갭은 단일 출처로 통일
+
+**증상**: 상단 고정 목차바(.case-toc)를 전역 도입하고 책-페이지(pages) 모드로 바꾼 뒤, 각 페이지의 첫 컴포넌트와 목차바 사이에 **빈 띠 + 가느다란 구분선**이 남음(예: metavv Cases 페이지). 페이지마다 상단 갭도 제각각(Intro 48px / Cases 80px)이었음.
+
+**원인**: 스크롤-흐름 시절 컴포넌트들은 "위 섹션과의 구분"을 위해 자기 자신에 `margin-top`/`border-top`을 갖고 있었음(`.cases-wrapper { margin-top: section-gap; border-top }`, `.meta-reflection { margin-top; border-top }`, `.case-hero { padding-top }`). pages 모드에선 이 블록이 **페이지의 첫 요소**가 되는데, 선행 여백/구분선이 그대로 남아 목차바 바로 아래에 고아 띠/선으로 노출됨.
+
+**교훈**: 전역 레이아웃 컴포넌트(고정 헤더/서브내비/탭바)를 새로 끼우면, 기존 컴포넌트의 **선행(상단) 구분 스타일이 갑자기 "첫 요소"에 걸려 고아가 된다**. 반드시 "첫 컴포넌트 ↔ 전역 UI" 경계의 여백/구분선을 점검·정리할 것.
+
+**올바른 패턴 — 상단 갭은 단일 출처(토큰 1개)로 통일**:
+- 갭 값을 토큰 하나로 정의: `--case-content-top`
+- 컨테이너 한 곳에서만 적용: `.case-main { padding-top: var(--case-content-top); }`
+- 첫 보이는 블록은 자기 선행 여백/구분선을 0으로 리셋(JS가 `.toc-page-lead` 부여):
+
+```css
+.case-main .toc-page-lead {  /* 0,2,0 — 컴포넌트별 0,1,0 규칙을 파일 순서와 무관하게 이김 */
+  margin-top: 0;
+  padding-top: 0;
+  border-top: 0;
+}
+```
+```js
+// case-toc.js show(key): 이 페이지의 첫 매칭 블록만 lead로
+var leadAssigned = false;
+blocks.forEach(function (b) {
+  var match = b.getAttribute('data-page') === key;
+  b.style.display = match ? '' : 'none';
+  if (match && !leadAssigned) { b.classList.add('toc-page-lead'); leadAssigned = true; }
+  else { b.classList.remove('toc-page-lead'); }
+});
+```
+
+**진단 포인트**: "전역 바/헤더 바로 아래 빈 띠나 선이 보인다" → 첫 컴포넌트가 스크롤 시절 `margin-top`/`border-top`을 그대로 들고 온 것. 갭은 컨테이너 한 곳(토큰)에서만 만들고, 첫 블록의 선행 구분 스타일은 리셋한다.
+
+**금지**:
+- 페이지마다 첫 컴포넌트 상단 갭을 제각각 두기(컴포넌트 자체 margin/padding에 의존)
+- 스크롤용 구분선(border-top/margin-top)을 첫 요소에 그대로 노출
+
+---
