@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `e5db932` | feat(metavv): Intro에 묶여있던 히어로/임팩트/컨텍스트/문제를 페이지로 분리(banggooso 패턴) — toc: Intro(히어로 단독)/Impact(임팩트 대시보드+컨텍스트)/Problem/Case 01/02/03/Reflection |
 | `6250d43` | fix(banggooso-hero): 타이틀 'B2B 협업 자산으로 전환하다' 한 줄로(2줄 구성) + 서브카피 '플랫폼에서' 뒤 줄바꿈으로 '가졌습니다.' 오펀 해소. .case-title/.case-summary에 word-break: keep-all 전역 추가(한글 어절 단위 줄바꿈) |
 | `393555c` | fix(subbar): work 서브바 ↔ 케이스 목차바 하단 구분선 위치 통일 — 두 바 높이(48 vs 52px) 불일치를 공통 토큰 --subbar-height(48px)로 통일(세로 패딩 제거+min-height+가운데 정렬) |
 | `ca70c1d` | feat(metavv): Cases 내부 탭(CASE 01/02/03)을 목차바 독립 페이지로 분리 — 이중 네비 제거, 각 case-content에 id+data-page 부여(Intro/Case 01/02/03/Reflection), 탭 네비·죽은 탭 CSS 제거, cases-wrapper는 구조용 패스스루로(빈 페이지 띠 방지) |
