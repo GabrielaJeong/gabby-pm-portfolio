@@ -20,6 +20,7 @@
     system-ui, sans-serif;
   --max-width: 1280px;
   --content-width: 880px;
+  --measure-summary: 720px;  /* 히어로 본문(case-summary) 가독 폭 */
   --hero-main-width: 760px;
   --gutter: clamp(20px, 4vw, 56px);
   --section-pad-y: clamp(60px, 8vh, 96px);
@@ -37,6 +38,7 @@
   --text-label-gold-dim: rgba(var(--gold-rgb), 0.55);
 
   --fs-display: 56px;
+  --fs-case-title: 72px;   /* 케이스 히어로 타이틀 — display(56)보다 큰 전용 크기 */
   --fs-h1:      32px;
   --fs-h2:      20px;
   --fs-h3:      18px;

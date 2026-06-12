@@ -224,41 +224,8 @@
   width: 100%;
 }
 
-/* 중앙정렬 시 본문은 가독 폭으로 제한해 가운데 묶음 유지 */
-.case-hero-text .case-summary {
-  max-width: 720px;
-}
-
-.case-hero-visual {
-  display: flex;
-  justify-content: center;
-  align-items: center;
-}
-
-.case-hero-visual img {
-  width: 100%;
-  height: auto;
-  max-width: 100%;
-  display: block;
-}
-
-/* HERO 디바이스 목업 직접 자식 img — 하단 페이드아웃 (이미지 잘림 자연스럽게)
-   child(>) selector라 folio의 .folio-phone-screen img(폰 mockup 내부)는 영향 없음 */
-.case-hero-visual > img {
-  -webkit-mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-          mask-image: linear-gradient(to bottom, black 70%, transparent 100%);
-}
 
 @media (max-width: 768px) {
-  .case-hero-grid {
-    grid-template-columns: 1fr;
-    gap: var(--space-8);
-  }
-
-  .case-hero-visual {
-    order: -1;
-  }
-
   .prob-grid {
     grid-template-columns: 1fr;
     gap: var(--space-8);
@@ -327,7 +294,7 @@
 }
 
 .case-title {
-  font-size: 72px;
+  font-size: var(--fs-case-title);
   font-weight: var(--fw-display);
   color: var(--text-primary);
   letter-spacing: -0.035em;
@@ -341,11 +308,11 @@
 }
 
 .case-summary {
-  font-size: 18px;
+  font-size: var(--fs-h3);
   font-weight: var(--fw-body);
   color: var(--text-secondary);
   line-height: var(--lh-relaxed);
-  max-width: 820px;
+  max-width: var(--measure-summary);
   margin: 0 0 var(--space-8);
   word-break: keep-all; /* 한글 어절 단위 줄바꿈 — 단어 중간에서 끊기지 않도록 */
 }

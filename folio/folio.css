@@ -5,14 +5,8 @@
    글로벌 토큰: /styles.css :root
    ======================================================== */
 
-/* ==================== HERO ==================== */
-
-/* 히어로 이미지 제거 후 case-hero-grid는 components.css의 단일 컬럼 중앙정렬을 사용.
-   단어 단위 줄바꿈만 유지 — 한 단어가 강제로 잘리지 않도록 */
-.case-hero .case-title,
-.case-hero .case-summary {
-  word-break: keep-all;
-}
+/* 히어로는 전부 공유 컴포넌트(components.css)로 처리 — folio 전용 히어로 스타일 없음.
+   (word-break: keep-all은 .case-title/.case-summary에 전역 적용됨) */
 
 /* ==================== KEY DECISIONS — 5장 직렬 + 카드 안 좌(메타) + 우(본문) 2컬럼 ==================== */
 
