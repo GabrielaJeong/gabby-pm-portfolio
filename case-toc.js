@@ -64,7 +64,11 @@
     return globalNav ? globalNav.getBoundingClientRect().height : 0;
   }
   function syncTop() {
-    toc.style.top = navHeight() + 'px';
+    var h = navHeight();
+    toc.style.top = h + 'px';
+    // 측정한 실제 nav 높이를 --nav-h 토큰에 반영 → 본문 세로 중앙정렬 계산이
+    // 근사값이 아닌 정확값으로(반응형). nav는 건드리지 않는다.
+    document.documentElement.style.setProperty('--nav-h', h + 'px');
   }
   syncTop();
   window.addEventListener('resize', syncTop, { passive: true });

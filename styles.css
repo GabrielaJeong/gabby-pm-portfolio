@@ -90,8 +90,8 @@
   /* nav 아래 서브 내비바(.work-subnav, .case-toc) 공통 높이 — 페이지 간
      이동 시 구분선 위치가 일치하도록 한 값으로 통일. */
   --subbar-height: 48px;
-  /* 글로벌 nav 대략 높이 — 케이스 본문(.case-main)을 뷰포트 세로 중앙에 둘 때
-     nav+목차바 높이를 빼기 위해 사용. */
+  /* 글로벌 nav 높이 — 케이스 본문(.case-main) 세로 중앙정렬 계산에 사용.
+     이 62px는 폴백값이고, case-toc.js가 실제 측정값으로 덮어써 정확/반응형으로 만든다. */
   --nav-h: 62px;
 
   /* ═══ BORDER COLORS ═══ */
