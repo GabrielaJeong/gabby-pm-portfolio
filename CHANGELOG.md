@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `456d4c1` | fix(folio): 히어로↔flip 간격이 metavv와 달랐던 원인 제거 — .live-preview-section + .case-inner padding-top(64px)이 Intro에서 빈 래퍼에 유령 공간을 남겨 flip을 밀어냄(L24 스크롤 잔재). 제거하여 전 페이지 간격 일관화 |
 | `6baac50` | refactor(case-hero): --nav-h 근사값(62px)을 case-toc.js의 nav 실측값으로 동기화(setProperty) — 본문 세로 중앙정렬 계산이 정확/반응형. nav 자체는 미수정(부작용 없음), 토큰은 폴백 유지 |
 | `463cf30` | refactor(case-hero): 히어로 공유 컴포넌트 완전 토큰화 — 하드코딩(font-size 72/18px, max-width 820/720px) 제거. 신규 토큰 --fs-case-title/--measure-summary, summary max-width 이중정의 통합, 죽은 .case-hero-visual* CSS·folio 중복 word-break 제거. 히어로 규칙 하드코딩 px 0건 |
 | `70a0667` | fix(case-hero): folio 등 히어로가 위로 붙던 잔여 문제 — [히어로+flip] 묶음이 뷰포트보다 살짝 커 상단 정렬 폴백되던 것을, 큰 여백 축소(flip 패딩·히어로↔메타 간격·메타 패딩)로 ~64px 줄여 중앙정렬 유도 |
