@@ -194,9 +194,16 @@
 /* ==================== HERO ==================== */
 
 .case-hero {
-  padding: var(--space-8) 0 var(--space-10);
-  border-bottom: 1px solid var(--border);
-  margin-bottom: var(--space-16);
+  padding: var(--space-8) 0;
+}
+
+/* pages 모드 히어로(data-page 보유): 메뉴/목차바에 붙지 않고 뷰포트 세로 중앙에.
+   하단 flip 네비가 한 화면에 보이도록 높이를 확보. (목차바 없는 moodyfit 등 제외) */
+.case-hero[data-page] {
+  min-height: calc(100svh - var(--nav-h) - var(--subbar-height) - var(--case-content-top) - var(--case-flip-h));
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
 }
 
 /* HERO — 이미지 제거 후 단일 컬럼 중앙정렬 */
@@ -352,6 +359,7 @@
   gap: var(--space-6);
   padding-top: var(--space-8);
   border-top: 1px solid var(--border);
+  text-align: center; /* 4개 메타 항목을 컨테이너 내 가운데 정렬 */
 }
 
 .case-meta-label {

@@ -88,6 +88,10 @@
   /* nav 아래 서브 내비바(.work-subnav, .case-toc) 공통 높이 — 페이지 간
      이동 시 구분선 위치가 일치하도록 한 값으로 통일. */
   --subbar-height: 48px;
+  /* 글로벌 nav 대략 높이 / 케이스 하단 flip 네비 대략 높이 —
+     pages 모드 히어로를 뷰포트 세로 중앙에 채우되 하단 flip이 한 화면에 보이도록 확보. */
+  --nav-h: 62px;
+  --case-flip-h: 150px;
 
   /* ═══ BORDER COLORS ═══ */
   --border-default: rgba(var(--fg-rgb), 0.12);
