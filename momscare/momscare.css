@@ -275,7 +275,15 @@
   border-top: 1px solid var(--border-default);
   border-bottom: 1px solid var(--border-default);
   padding: var(--section-gap) 0;
-  margin-top: var(--section-gap);
+  margin-top: var(--space-8);
+}
+
+/* impact 페이지: IMPACT(KPI)와 collab이 한 페이지에 합쳐져, IMPACT의 후행 큰 여백·구분선이
+   collab과 사이에 과한 빈 구간을 만들던 것 정리 (collab의 border-top이 구획 담당) */
+#impact.case-section {
+  padding-bottom: 0;
+  margin-bottom: 0;
+  border-bottom: none;
 }
 
 .collab-timeline {

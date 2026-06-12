@@ -122,6 +122,8 @@
       });
       // 마지막 보이는 블록 → tail로 표시 (후행 구분선/잉여 여백 제거)
       if (lastMatch) lastMatch.classList.add('toc-page-tail');
+      // 첫 페이지(히어로)만 뷰포트 세로 중앙정렬, 나머지 본문 페이지는 상단 정렬
+      caseMain.classList.toggle('is-hero-page', key === targets[0].id);
       targets.forEach(function (t) {
         t.link.classList.toggle('is-active', t.id === key);
       });

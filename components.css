@@ -22,12 +22,18 @@
   /* 목차바 ↔ 첫 컴포넌트 유니버설 갭 (단일 출처). 첫 블록의 선행 여백/구분선은
      .toc-page-lead로 제거하므로 이 값이 모든 페이지의 상단 갭이 된다. */
   padding-top: var(--case-content-top);
-  /* 보이는 페이지(히어로+하단 flip 등)를 한 묶음으로 뷰포트 세로 중앙에 배치.
-     내용이 길어 넘치면 safe가 상단 정렬로 폴백(상단 잘림 방지) → flip 버튼이
-     내용 바로 아래에 붙어 '너무 아래로 내려가는' 현상 없음. */
   min-height: calc(100svh - var(--nav-h) - var(--subbar-height));
   display: flex;
   flex-direction: column;
+  /* 기본: 본문 페이지는 상단 정렬 — 콘텐츠 길이와 무관하게 첫 블록이 항상 목차바
+     바로 아래(--case-content-top)에 와 위치가 일관됨. (짧은 페이지가 가운데로
+     내려가 상단 공백이 제각각 생기는 문제 방지) */
+  justify-content: flex-start;
+}
+
+/* 히어로(Intro) 페이지만 뷰포트 세로 중앙정렬 — 짧은 히어로가 메뉴에 붙지 않게.
+   case-toc.js가 현재 페이지가 첫 페이지(히어로)일 때 .is-hero-page를 부여. */
+.case-main.is-hero-page {
   justify-content: safe center;
 }
 
