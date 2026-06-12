@@ -168,10 +168,10 @@ a.axis-card.doc-card:hover {
   margin-top: var(--section-gap);
 }
 
-/* Live Preview 다음 콘텐츠 영역 — 상단 여백 */
-.live-preview-section + .case-inner {
-  padding-top: var(--section-gap);
-}
+/* (제거) Live Preview 다음 .case-inner의 상단 패딩 —
+   pages 모드에선 래퍼가 항상 보여 빈 페이지(Intro)에 유령 64px 공간을 만들고
+   히어로↔flip 간격을 페이지마다 다르게 만들었음. 페이지 간 상단 갭은
+   --case-content-top + .toc-page-lead가 담당하므로 불필요(L24). */
 
 /* 브라우저 프레임 */
 .live-browser-frame {
