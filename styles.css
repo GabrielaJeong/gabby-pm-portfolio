@@ -2368,7 +2368,9 @@ body.home {
   width: 8px;
   height: 8px;
   border-radius: 50%;
-  background: var(--text-quaternary);
+  /* 반투명 회색(text-quaternary)을 불투명 --bg 위에 합성 → 색감은 동일하되
+     점이 완전 불투명이라 뒤의 진행 라인이 비치지 않는다 */
+  background: linear-gradient(var(--text-quaternary), var(--text-quaternary)), var(--bg);
   border: none;
   transition: background 0.3s ease, transform 0.3s ease;
   position: relative;       /* ring pulse ::after 기준 */
