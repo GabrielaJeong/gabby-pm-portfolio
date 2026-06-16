@@ -2009,6 +2009,14 @@
   line-height: var(--lh-tight);
   letter-spacing: -0.025em;
   margin-bottom: var(--space-4);
+  word-break: keep-all; /* 좁은 카드에서 '감소' 등이 단어 중간에 깨지지 않게 */
+}
+
+/* 큰 수치 뒤 작은 설명(예: 65% + 작은 '감소') — 한 줄에 들어오게 */
+.result-num .small {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-body);
+  letter-spacing: 0;
 }
 
 .result-sub {
