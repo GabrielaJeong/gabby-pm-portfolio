@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `084234d` | style(metavv): CASE 02 STRATEGY 타이틀 '전체 문의 중 17%를 차지한 CS의 원인' 골드 색강조 |
 | `43537c5` | fix(metavv): CASE 02 RESULT 메트릭 줄바꿈 깨짐 수정(.result-num word-break:keep-all + '감소' small 스팬, '투입 최소화'→'최소화') + 타이틀 'UX 변경만으로 CS를 80% 감소시키다' 골드 색강조 |
 | `3cff1fc` | fix(case): 본문 페이지 상단정렬 통일(.case-main flex-start, 히어로만 .is-hero-page 중앙정렬) — 짧은 메타 리플렉션이 가운데로 내려 상단 공백이 페이지마다 달랐던 문제 해소(banggooso 위치 기준). + momscare impact 페이지 IMPACT↔collab 과한 갭 정리 |
 | `98ff3e0` | style(case): 섹션 페이지 번호(.case-section-num 02/03/04) 전 케이스 제거(metavv/banggooso/momscare 각 3개) + 죽은 CSS 정리. 지표 수치는 유지 |
