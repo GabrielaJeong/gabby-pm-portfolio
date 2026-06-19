@@ -1254,3 +1254,75 @@
   margin-top: var(--space-8);     /* 32px */
   margin-bottom: var(--space-16); /* 64px */
 }
+
+/* ==================== STRATEGY: 수익 트리 (공통 자산 → 3 수익축) ==================== */
+/* 하단 '공통 자산'을 베이스로, 위로 3개 수익축이 뻗어 빠짐없이 수익화됨을 시각화 */
+.revenue-tree {
+  display: flex;
+  flex-direction: column;
+}
+
+/* 줄기: 각 카드 ↔ 베이스 연결선 (3열, axis-grid와 동일 정렬) */
+.revenue-stems {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-8);
+  margin-top: calc(-1 * var(--space-2));
+}
+
+.revenue-stem {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  height: var(--space-10);
+  color: var(--gold);
+}
+
+.revenue-stem::before {
+  content: "B2";          /* ▲ 위(카드)로 향함 — 자산에서 수익이 올라감 */
+  font-size: 9px;
+  line-height: 1;
+}
+
+.revenue-stem::after {
+  content: "";
+  flex: 1;
+  border-left: 1px dashed rgba(var(--gold-rgb), 0.5);
+}
+
+/* 베이스: 3축이 공유하는 단 하나의 자산 */
+.revenue-base {
+  display: flex;
+  flex-direction: column;
+  align-items: center;
+  gap: var(--space-1);
+  text-align: center;
+  padding: var(--card-padding-md);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-md);
+  background: rgba(var(--gold-rgb), 0.05);
+}
+
+.revenue-base-label {
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  letter-spacing: 0.12em;
+  color: var(--text-label-gold);
+}
+
+.revenue-base-value {
+  font-size: var(--fs-h3);
+  font-weight: var(--fw-h3);
+  color: var(--text-primary);
+}
+
+.revenue-base-note {
+  font-size: var(--fs-sub);
+  color: var(--text-tertiary);
+}
+
+/* 모바일: 카드가 세로로 쌓이면 줄기 정렬이 무의미 → 생략 */
+@media (max-width: 768px) {
+  .revenue-stems { display: none; }
+  .revenue-base { margin-top: var(--space-5); }
+}
