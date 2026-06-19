@@ -9,6 +9,8 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `79a73a7` | style(work): #selected-work(.proj-section) 상단 패딩 116→80px 축소(하단 유지) |
+| `5ef7f02` | redesign(metavv): STRATEGY를 '공통 자산 → 3 수익축' 다이어그램(revenue-tree)으로 레이아웃 피벗 — 하단 베이스(메타브·80만 유저·월 30만 UV)에서 3축이 뻗는 구조로 '하나의 자산을 빠짐없이 수익화' 시각화. 신규 클래스 7 |
 | `06512e6` | redesign(metavv): CASE 01 STRATEGY를 '빠짐없는 수익 설계'로 재구성 — 카드 라벨 AXIS→수익원(기존 유저/신규 고객/무료 트래픽), 완결성 서브카피, 중복 PHASE 타임라인 제거 + 죽은 axis-timeline CSS 정리 |
 | `084234d` | style(metavv): CASE 02 STRATEGY 타이틀 '전체 문의 중 17%를 차지한 CS의 원인' 골드 색강조 |
 | `43537c5` | fix(metavv): CASE 02 RESULT 메트릭 줄바꿈 깨짐 수정(.result-num word-break:keep-all + '감소' small 스팬, '투입 최소화'→'최소화') + 타이틀 'UX 변경만으로 CS를 80% 감소시키다' 골드 색강조 |
