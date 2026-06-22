@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `76b93c0` | feat(moodyfit): 프론트 데모(moodyfit-alpha.vercel.app) iframe 임베드 — 폰 비율(390×844), '새 창에서 열기'+프론트 전용 안내. 페이지 전용 moodyfit.css 신설, 히어로 문구 데모 안내로 조정 |
 | `6803715` | content: 도메인 표기 'B2C SaaS' → 'B2B·B2C SaaS' (홈 히어로 타이프라이터 + /work/ 메타) — B2B/B2C 둘 다 수행 반영 |
 | `03eb0de` | content(banggooso): 사이드 케이스 콘텐츠를 '기획에 참여한 …(50만)·…(16만)'으로 정정 — 사용자 참여수처럼 읽히던 표현을 PM 기획 참여 역할로 명확화 |
 | `79a73a7` | style(work): #selected-work(.proj-section) 상단 패딩 116→80px 축소(하단 유지) |
