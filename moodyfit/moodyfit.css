@@ -1,0 +1,54 @@
+/* ========================================================
+   moodyfit.css — Moodyfit 전용 스타일
+   공유 컴포넌트: /components.css, 글로벌 토큰: /styles.css
+   ======================================================== */
+
+/* ==================== 프론트 데모 임베드 (폰 비율) ==================== */
+
+.moodyfit-demo {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-8);
+}
+
+/* 폰 화면(390×844) 비율 그대로, 좁은 화면에선 폭에 맞춰 축소 */
+.moodyfit-demo iframe {
+  width: 390px;
+  height: 844px;
+  max-width: 100%;
+  border: 0;
+  border-radius: var(--space-6);
+  box-shadow: 0 var(--space-3) var(--space-10) rgba(var(--shadow-rgb), 0.45);
+  background: var(--surface);
+}
+
+.moodyfit-demo-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-4);
+}
+
+.moodyfit-demo-open {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: var(--fs-sub);
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.moodyfit-demo-open:hover {
+  border-color: var(--border-gold);
+  color: var(--gold);
+}
+
+.moodyfit-demo-note {
+  text-align: center;
+  margin-top: var(--space-3);
+  font-size: var(--fs-sub);
+  color: var(--text-tertiary);
+}
