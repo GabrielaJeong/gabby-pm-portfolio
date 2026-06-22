@@ -2373,3 +2373,51 @@
   align-self: flex-end;
 }
 
+/* ==================== 데모 임베드 — 폰 프레임 (반응형 앱 미리보기, 공유) ==================== */
+/* 사용: folio LIVE PREVIEW, moodyfit 데모. iframe 폭(390)이 앱의 모바일 뷰포트가 됨 */
+.demo-phone {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-8);
+}
+
+.demo-phone iframe {
+  width: 390px;
+  height: 844px;
+  max-width: 100%;
+  border: 0;
+  border-radius: var(--space-6);
+  box-shadow: 0 var(--space-3) var(--space-10) rgba(var(--shadow-rgb), 0.45);
+  background: var(--surface);
+}
+
+.demo-phone-actions {
+  display: flex;
+  justify-content: center;
+  margin-top: var(--space-4);
+}
+
+.demo-phone-open {
+  display: inline-flex;
+  align-items: center;
+  gap: var(--space-2);
+  padding: var(--space-3) var(--space-5);
+  border: 1px solid var(--border);
+  border-radius: var(--radius-md);
+  color: var(--text-secondary);
+  font-size: var(--fs-sub);
+  text-decoration: none;
+  transition: border-color 0.2s ease, color 0.2s ease;
+}
+
+.demo-phone-open:hover {
+  border-color: var(--border-gold);
+  color: var(--gold);
+}
+
+.demo-phone-note {
+  text-align: center;
+  margin-top: var(--space-3);
+  font-size: var(--fs-sub);
+  color: var(--text-tertiary);
+}
