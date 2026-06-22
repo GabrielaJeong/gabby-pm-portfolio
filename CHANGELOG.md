@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `6803715` | content: 도메인 표기 'B2C SaaS' → 'B2B·B2C SaaS' (홈 히어로 타이프라이터 + /work/ 메타) — B2B/B2C 둘 다 수행 반영 |
 | `03eb0de` | content(banggooso): 사이드 케이스 콘텐츠를 '기획에 참여한 …(50만)·…(16만)'으로 정정 — 사용자 참여수처럼 읽히던 표현을 PM 기획 참여 역할로 명확화 |
 | `79a73a7` | style(work): #selected-work(.proj-section) 상단 패딩 116→80px 축소(하단 유지) |
 | `5ef7f02` | redesign(metavv): STRATEGY를 '공통 자산 → 3 수익축' 다이어그램(revenue-tree)으로 레이아웃 피벗 — 하단 베이스(메타브·80만 유저·월 30만 UV)에서 3축이 뻗는 구조로 '하나의 자산을 빠짐없이 수익화' 시각화. 신규 클래스 7 |
