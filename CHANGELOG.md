@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `5e5166b` | content(work): Moodyfit 카드를 다른 카드와 동일 형식으로 — 큰 수치 '2축' + 태그 '가중치 + LLM', desc를 '[도메인]·[특징]' 패턴으로 정리 |
 | `8d10bf2` | content(work): Moodyfit 카드 태그 'COMING SOON' → 'LLM 추천 시스템' |
 | `3d796eb` | feat(folio): LIVE PREVIEW를 폰 프레임(모바일 뷰, 390px)으로 전환 + .demo-phone 공유 컴포넌트(components.css) 신설(folio+moodyfit 공용). folio 죽은 .live-browser-* 제거, moodyfit.css 삭제(공유 컴포넌트로 마이그레이션) |
 | `1519e98` | fix(moodyfit): 중복된 '모든 프로젝트 보기' 백링크 제거(히어로 내부 중복 삭제, 상단 1개 유지) |
