@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `8d10bf2` | content(work): Moodyfit 카드 태그 'COMING SOON' → 'LLM 추천 시스템' |
 | `3d796eb` | feat(folio): LIVE PREVIEW를 폰 프레임(모바일 뷰, 390px)으로 전환 + .demo-phone 공유 컴포넌트(components.css) 신설(folio+moodyfit 공용). folio 죽은 .live-browser-* 제거, moodyfit.css 삭제(공유 컴포넌트로 마이그레이션) |
 | `1519e98` | fix(moodyfit): 중복된 '모든 프로젝트 보기' 백링크 제거(히어로 내부 중복 삭제, 상단 1개 유지) |
 | `76b93c0` | feat(moodyfit): 프론트 데모(moodyfit-alpha.vercel.app) iframe 임베드 — 폰 비율(390×844), '새 창에서 열기'+프론트 전용 안내. 페이지 전용 moodyfit.css 신설, 히어로 문구 데모 안내로 조정 |
