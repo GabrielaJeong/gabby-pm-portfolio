@@ -240,6 +240,24 @@ ul {
   opacity: 0.92;
 }
 
+/* 경력기술서 — Resume 옆 보조(고스트) 버튼 */
+.nav-cta--ghost {
+  background: transparent;
+  color: var(--text);
+  border: 1px solid var(--border-strong);
+}
+
+.nav-cta--ghost:hover {
+  border-color: var(--gold);
+  color: var(--gold);
+  opacity: 1;
+}
+
+.drawer-cta--ghost {
+  color: var(--text-secondary) !important;
+  font-weight: 400;
+}
+
 /* 라이트/다크 테마 토글 (홈 전용) — 다크에선 ☀(→라이트), 라이트에선 ☾(→다크) */
 .theme-toggle {
   width: 36px;

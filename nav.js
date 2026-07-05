@@ -28,6 +28,7 @@
           '<li><a href="/contact/"' + active('/contact/') + '>Contact</a></li>',
         '</ul>',
         themeToggle,
+        '<a href="/assets/career.pdf" class="nav-cta nav-cta--ghost" target="_blank" rel="noopener">경력기술서</a>',
         '<a href="/assets/resume.pdf" class="nav-cta" target="_blank" rel="noopener">Resume</a>',
         '<button class="nav-hamburger" aria-label="메뉴 열기" id="hamburger">',
           '<span></span><span></span><span></span>',
@@ -38,6 +39,7 @@
         '<a href="/work/"'  + active('/work/')  + '>Work</a>',
         '<a href="/contact/"' + active('/contact/') + '>Contact</a>',
         '<a href="/assets/resume.pdf" class="drawer-cta" target="_blank" rel="noopener">Resume</a>',
+        '<a href="/assets/career.pdf" class="drawer-cta drawer-cta--ghost" target="_blank" rel="noopener">경력기술서</a>',
       '</div>',
     '</nav>',
   ].join('');
