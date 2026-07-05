@@ -186,6 +186,14 @@ ul {
   align-items: center;
   justify-content: space-between;
   gap: 32px;
+  position: relative; /* .nav-links 절대 중앙정렬 기준 */
+}
+
+/* 우측 액션 묶음 (테마 토글 + 경력기술서 + Resume) — 하나로 묶어 우측 정렬 */
+.nav-actions {
+  display: flex;
+  align-items: center;
+  gap: 16px;
 }
 
 .nav-logo {
@@ -198,8 +206,11 @@ ul {
 .nav-links {
   display: flex;
   gap: 36px;
-  flex: 1;
   justify-content: center;
+  /* 페이지 정중앙 절대 고정 — 우측 버튼 개수/폭에 영향받지 않음 */
+  position: absolute;
+  left: 50%;
+  transform: translateX(-50%);
 }
 
 .nav-links a {
