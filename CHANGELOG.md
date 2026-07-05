@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `a710b1a` | feat(docs): 경력기술서 다운로드 추가 — nav(Resume 옆 고스트 버튼)+드로어+Contact(이력서/경력기술서 2행). 파일 경로 /assets/resume.pdf·/assets/career.pdf, 신규 .nav-cta--ghost |
 | `5e5166b` | content(work): Moodyfit 카드를 다른 카드와 동일 형식으로 — 큰 수치 '2축' + 태그 '가중치 + LLM', desc를 '[도메인]·[특징]' 패턴으로 정리 |
 | `8d10bf2` | content(work): Moodyfit 카드 태그 'COMING SOON' → 'LLM 추천 시스템' |
 | `3d796eb` | feat(folio): LIVE PREVIEW를 폰 프레임(모바일 뷰, 390px)으로 전환 + .demo-phone 공유 컴포넌트(components.css) 신설(folio+moodyfit 공용). folio 죽은 .live-browser-* 제거, moodyfit.css 삭제(공유 컴포넌트로 마이그레이션) |
