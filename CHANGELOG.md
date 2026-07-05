@@ -9,6 +9,8 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `71e772d` | fix(nav): 경력기술서 버튼 추가로 메뉴가 좌측으로 밀리던 문제 — 우측 액션을 .nav-actions로 묶고 .nav-links를 페이지 정중앙에 absolute 고정(버튼 수/폭 무관) |
+| `eb9dca6` | assets: 최신 이력서(resume.pdf) 교체 + 경력기술서(career.pdf) 추가 (한글명→영문 rename) |
 | `a710b1a` | feat(docs): 경력기술서 다운로드 추가 — nav(Resume 옆 고스트 버튼)+드로어+Contact(이력서/경력기술서 2행). 파일 경로 /assets/resume.pdf·/assets/career.pdf, 신규 .nav-cta--ghost |
 | `5e5166b` | content(work): Moodyfit 카드를 다른 카드와 동일 형식으로 — 큰 수치 '2축' + 태그 '가중치 + LLM', desc를 '[도메인]·[특징]' 패턴으로 정리 |
 | `8d10bf2` | content(work): Moodyfit 카드 태그 'COMING SOON' → 'LLM 추천 시스템' |
