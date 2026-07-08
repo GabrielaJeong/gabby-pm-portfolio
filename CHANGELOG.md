@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `625b03c` | fix(metavv): STRATEGY 카드 정리 — 줄기 화살표 'B2' 깨짐(유니코드 이스케이프 오류)을 CSS 삼각형으로 대체, 타이틀 강제 min-height 제거+세로 리듬 일관화(그룹내 tight/그룹간 넉넉), 태그 상단 정렬 |
 | `71e772d` | fix(nav): 경력기술서 버튼 추가로 메뉴가 좌측으로 밀리던 문제 — 우측 액션을 .nav-actions로 묶고 .nav-links를 페이지 정중앙에 absolute 고정(버튼 수/폭 무관) |
 | `eb9dca6` | assets: 최신 이력서(resume.pdf) 교체 + 경력기술서(career.pdf) 추가 (한글명→영문 rename) |
 | `a710b1a` | feat(docs): 경력기술서 다운로드 추가 — nav(Resume 옆 고스트 버튼)+드로어+Contact(이력서/경력기술서 2행). 파일 경로 /assets/resume.pdf·/assets/career.pdf, 신규 .nav-cta--ghost |
