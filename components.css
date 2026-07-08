@@ -1323,12 +1323,13 @@
   box-sizing: border-box;
 }
 
+/* ── 카드 세로 리듬: 그룹 내 tight(space-1/2) · 그룹 간 넉넉(space-6) 일관 ── */
 .axis-card-label {
   font-size: var(--fs-caption);
   font-weight: var(--fw-caption);
   color: var(--text-label-gold);
   letter-spacing: 0.08em;
-  margin-bottom: var(--card-gap-default);
+  margin-bottom: var(--space-2); /* eyebrow → title */
 }
 
 .axis-card-title {
@@ -1336,14 +1337,13 @@
   font-weight: var(--fw-h3);
   color: var(--text-primary);
   line-height: var(--lh-snug);
-  margin-bottom: var(--space-2);
-  min-height: calc(var(--fs-h3) * var(--lh-snug) * 2);
+  margin-bottom: var(--space-1); /* title → sub (tight) */
 }
 
 .axis-card-sub {
   font-size: var(--fs-sub);
   color: var(--text-tertiary);
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-6); /* 식별부 → 지표부 그룹 갭 */
 }
 
 .axis-card-divider {
@@ -1377,9 +1377,8 @@
   color: var(--text-label-gold);
 }
 
-/* axis-card 태그 그룹 하단 고정 */
+/* axis-card 태그 그룹 — 콘텐츠 바로 아래 상단 정렬 (하단 고정 X) */
 .axis-card .exec-steps {
-  margin-top: auto;
   flex-wrap: wrap;
 }
 
@@ -1387,7 +1386,7 @@
 .axis-card .impact-metric-num {
   font-size: var(--fs-h1);           /* 56px → 32px: 카드 규모에 맞게 */
   letter-spacing: -0.02em;
-  margin-bottom: var(--space-1);
+  margin-bottom: var(--space-2);     /* num → tag */
 }
 
 .axis-card .impact-metric-num .small {
@@ -1395,13 +1394,13 @@
 }
 
 .axis-card .impact-metric-tag {
-  margin-bottom: var(--space-1);
+  margin-bottom: var(--space-1);     /* tag → label (tight) */
 }
 
 .axis-card .impact-metric-label {
   font-size: var(--fs-sub);
   color: var(--text-tertiary);
-  margin-bottom: var(--space-5);
+  margin-bottom: var(--space-6);     /* 지표부 → 구분선/태그 그룹 갭 */
 }
 
 /* 하단 결론 박스 */

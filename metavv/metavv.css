@@ -1279,9 +1279,12 @@
 }
 
 .revenue-stem::before {
-  content: "B2";          /* ▲ 위(카드)로 향함 — 자산에서 수익이 올라감 */
-  font-size: 9px;
-  line-height: 1;
+  content: "";
+  width: 0;
+  height: 0;
+  border-left: 4px solid transparent;
+  border-right: 4px solid transparent;
+  border-bottom: 6px solid var(--gold);
 }
 
 .revenue-stem::after {
