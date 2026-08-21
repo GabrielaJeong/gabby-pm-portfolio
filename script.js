@@ -156,6 +156,29 @@ if (heroType) {
   }
 }
 
+// ==================== 개인정보 보호 (헤드헌팅 제출용) ====================
+// 이 포트폴리오는 헤드헌팅을 통해 전달됨 — 회사가 후보자에게 직접 연락하지
+// 못하도록, 이력서·경력기술서 다운로드와 Contact 접근 시 안내 alert를 띄운다.
+(function () {
+  var PRIVACY_MSG =
+    '개인정보 보호를 위해 이력서·경력기술서·연락처는\n담당 헤드헌터를 통해 전달드립니다.';
+
+  // 이력서·경력기술서 PDF 링크 클릭 차단 + 안내 (nav 데스크탑/드로어, Contact 공통)
+  document.addEventListener('click', function (e) {
+    var t = e.target;
+    if (!t || !t.closest) return;
+    var link = t.closest('a[href$="resume.pdf"], a[href$="career.pdf"]');
+    if (!link) return;
+    e.preventDefault();
+    window.alert(PRIVACY_MSG);
+  });
+
+  // Contact 페이지 진입 시 안내 (/contact/, /contact/index.html 모두 매칭)
+  if (window.location.pathname.indexOf('/contact/') === 0) {
+    window.alert(PRIVACY_MSG);
+  }
+})();
+
 // ==================== HERO 라이브 시계 (KST · GMT+9) ====================
 const heroClock = document.getElementById('heroClock');
 if (heroClock) {
