@@ -10,6 +10,7 @@
 | 커밋 | 변경 내용 |
 |---|---|
 | `2a5d08c` | feat(privacy): 헤드헌팅 제출용 개인정보 보호 — 이력서·경력기술서 PDF 링크 클릭 차단 + 안내 alert(nav 데스크탑/드로어·Contact 공통), Contact 페이지 진입 시 안내 alert. script.js 공용 핸들러(신규 클래스/토큰 0) |
+| `2294e06` | fix(privacy): Contact 접근을 alert에서 리다이렉트로 변경 — 진입 시 안내 후 메인(/)으로 replace. 콘텐츠 페인트 전 차단 위해 contact/index.html `<head>` 인라인 스크립트로 처리(이메일·GitHub 순간 노출 방지), script.js에선 Contact 블록 제거 |
 
 ---
 

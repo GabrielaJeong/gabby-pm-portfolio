@@ -172,11 +172,8 @@ if (heroType) {
     e.preventDefault();
     window.alert(PRIVACY_MSG);
   });
-
-  // Contact 페이지 진입 시 안내 (/contact/, /contact/index.html 모두 매칭)
-  if (window.location.pathname.indexOf('/contact/') === 0) {
-    window.alert(PRIVACY_MSG);
-  }
+  // Contact 페이지 진입 차단은 contact/index.html <head> 인라인 스크립트가
+  // 담당(콘텐츠 페인트 전 리다이렉트 → 이메일·GitHub 순간 노출 방지).
 })();
 
 // ==================== HERO 라이브 시계 (KST · GMT+9) ====================
