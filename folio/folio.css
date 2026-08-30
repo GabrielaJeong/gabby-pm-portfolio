@@ -650,6 +650,14 @@ a.axis-card.doc-card:hover {
   }
 }
 
+/* ==================== 본문 볼드 강조 (페이지 전역) ====================
+   긴 설명 문단에서 핵심 문장을 <strong>으로 감싸면 밝고 굵게 떠서
+   스캔이 쉬워진다. 색/굵기는 토큰 사용. */
+.case-main strong {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
 /* ==================== PRICING 섹션 ====================
    신규 컴포넌트: 표(.pricing-table)는 기존 페이지에 표 컴포넌트가 없어 신설
    (DESIGN_SYSTEM COLOR PALETTE 그리드 톤 참고). 나머지는 전부 기존 공유

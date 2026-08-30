@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `c680dd5` | style(folio): PRICING THE PROBLEM 가독성 개선 — 설명 문단에 `<br>`+핵심 구절 볼드(신규 `.case-main strong` 전역 강조), Question 3카드를 밋밋한 exec-step-card→골드 보더 axis-card(제목 위계)로 교체해 강조 |
 | `58df4cf` | feat(folio): PRICING 섹션 추가(KEY DECISIONS↔PRODUCT DOCUMENTS 사이, #pricing) — THE PROBLEM/DECISIONS 3카드(DISCARDED 포함)/최종 가격표 10행+마진 차트(Chart.js 가로막대·IntersectionObserver)/3층 REVENUE STACK. 기존 컴포넌트 재사용(decision-card·axis-grid·exec-step-card·exec-tradeoff-item·impact-chart-card·phase-arrow·axis-card·case-tag), 목차에 Pricing 추가, meta description 보강. 신규 클래스 7(.pricing-table/-wrap/-note/-legend/-chart-wrap·.revenue-layout/-summary — 표 컴포넌트 부재로 신설) |
 
 ---
