@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `e4eba84` | redesign(folio): PRICING DECISIONS 카드 3개 재구성 — 좌 메타(38%: 라벨/제목/요약) + 우 3단 스텝(62%: TRIED/VALIDATED/DECIDED, 스텝 구분선, DECIDED 본문 600) + 카드 하단 풀폭 푸터(✕ DISCARDED / BENCHMARK 인라인). 기존 본문 문단·exec-tradeoff-list 삭제, 신규 카피로 교체. min-height 제거(자연 높이), word-break keep-all. 신규 클래스 7(.decision-card--steps·.decision-steps·-step·-step-label·.decision-foot·-item·-label) |
 | `d7d8317` | fix(folio): PRICING 질문 카드 푸터 링크가 Intro로 튀던 버그 — pages 모드 해시(페이지 키) 전환과 앵커 해시(#pricing-table 등) 충돌. folio.js에서 클릭 가로채 해시 변경 없이 같은 페이지 내 대상으로 스크롤(고정바 오프셋). 불필요해진 scroll-margin-top 제거 |
 | `6181ad0` | redesign(folio): PRICING 질문 카드 재설계 — 큰 번호(56px/800/muted40%)+QUESTION 라벨, 좌측 accent 세로 바, 질문 18px/600 lh1.5, 하단 'ANSWERED IN' 푸터 링크(→ #pricing-table/#decision-margin/#revenue-stack 앵커 신설), hover 시 border accent. 리서치 칩 라벨 'RESEARCH BASE·6개 서비스 직접 플레이'+채택여부 색 점(채택/부분/역방향)+우측 범례. 볼드 강조(`<strong>`·.case-main strong) 제거. 신규 클래스 7(.q-*) |
 | `c680dd5` | style(folio): PRICING THE PROBLEM 가독성 개선 — 설명 문단에 `<br>`+핵심 구절 볼드(신규 `.case-main strong` 전역 강조), Question 3카드를 밋밋한 exec-step-card→골드 보더 axis-card(제목 위계)로 교체해 강조 |

@@ -381,39 +381,65 @@
         <div class="decisions-list">
 
           <!-- 카드 1 — 코인 단위 -->
-          <div class="decision-card">
+          <div class="decision-card decision-card--steps">
             <div class="decision-card-meta">
               <div class="exec-phase-label">COIN UNIT</div>
               <div class="exec-phase-title">코인 1개를 2원으로 정한 이유</div>
-              <div class="exec-phase-summary">투명한 10원 단위를 버리고, 소비 저항을 낮추는 잘게 쪼갠 단위를 선택했습니다.</div>
-              <div class="exec-tradeoff-list">
-                <div class="exec-tradeoff-item">
-                  <div class="exec-tradeoff-q">DISCARDED · 코인 1개 = 10원 투명 단위</div>
-                  <div class="exec-tradeoff-a">비교 용이성은 높지만 소비 저항이 빠르게 형성됨</div>
-                </div>
-                <div class="exec-tradeoff-item">
-                  <div class="exec-tradeoff-q">BENCHMARK</div>
-                  <div class="exec-tradeoff-a">블룸 1,500시드 = 2,900원 (시드당 1.93원)</div>
-                </div>
+              <div class="exec-phase-summary">투명함보다 소비 저항을 낮추는 쪽을 택했습니다.</div>
+            </div>
+            <div class="decision-steps">
+              <div class="decision-step">
+                <div class="decision-step-label">TRIED</div>
+                <div class="exec-detail-body">코인 1개 = 10원. 'Opus 23코인 = 230원'이 즉시 계산되는 투명 과금.</div>
+              </div>
+              <div class="decision-step">
+                <div class="decision-step-label">VALIDATED</div>
+                <div class="exec-detail-body">경쟁사 6개를 직접 플레이한 결과, 결제액과 코인 수량이 1:1로 떨어지지 않을 때 유저는 환산을 포기했습니다. 10원 단위는 '비싸다'는 인상도 그만큼 빨리 왔습니다.</div>
+              </div>
+              <div class="decision-step">
+                <div class="decision-step-label">DECIDED</div>
+                <div class="exec-detail-body">코인 2원 + 번들 보너스로 실질 단가를 1.5~1.76원 사이에서 흐립니다.</div>
               </div>
             </div>
-            <div class="exec-detail-body">처음에는 코인 1개 = 10원의 투명 단위로 설계했습니다. 'Opus 23코인 = 230원'이 즉시 계산되어 투명 과금이라는 포지셔닝과 맞고, 결제 시스템 구현 시 단가 계산도 단순해집니다. 그러나 경쟁사 6개를 직접 플레이한 결과, 결제액과 코인 수량이 1:1로 떨어지지 않을 때 유저가 비용 환산을 포기하고 소비 저항이 낮아진다는 것을 확인했습니다. 10원 단위는 비교가 쉬운 만큼 '비싸다'는 인상도 빨리 받게 만들었습니다. 코인 1개 = 2원으로 두되 번들 보너스로 실질 단가를 1.5~1.76원 사이에서 흐리는 방식을 채택했습니다.</div>
+            <div class="decision-foot">
+              <div class="decision-foot-item">
+                <span class="decision-foot-label">✕ DISCARDED</span>
+                <span class="exec-tradeoff-a">10원 투명 단위 — 비교는 쉽지만 소비 저항이 빨리 형성됨</span>
+              </div>
+              <div class="decision-foot-item">
+                <span class="decision-foot-label">BENCHMARK</span>
+                <span class="exec-tradeoff-a">블룸 시드당 1.93원</span>
+              </div>
+            </div>
           </div>
 
           <!-- 카드 2 — 마진 구조 -->
-          <div class="decision-card" id="decision-margin">
+          <div class="decision-card decision-card--steps" id="decision-margin">
             <div class="decision-card-meta">
               <div class="exec-phase-label">MARGIN</div>
-              <div class="exec-phase-title">일괄 4.5배를 버리고 모델별 차등 마진을 적용한 이유</div>
-              <div class="exec-phase-summary">시장 가격은 모델 등급별로 뚜렷하게 수렴했고, 일괄 마진은 양쪽 모두에서 어긋났습니다.</div>
-              <div class="exec-tradeoff-list">
-                <div class="exec-tradeoff-item">
-                  <div class="exec-tradeoff-q">DISCARDED · 전 모델 일괄 4.5배</div>
-                  <div class="exec-tradeoff-a">고급은 시장가 초과, 저가는 수익 기회 상실</div>
-                </div>
+              <div class="exec-phase-title">일괄 4.5배를 버리고 차등 마진을 적용한 이유</div>
+              <div class="exec-phase-summary">시장은 이미 등급별로 다른 마진에 수렴해 있었습니다.</div>
+            </div>
+            <div class="decision-steps">
+              <div class="decision-step">
+                <div class="decision-step-label">TRIED</div>
+                <div class="exec-detail-body">전 모델 일괄 4.5배.</div>
+              </div>
+              <div class="decision-step">
+                <div class="decision-step-label">VALIDATED</div>
+                <div class="exec-detail-body">고급은 Opus가 362원이 되어 시장 최고가 300원을 넘고, 저가는 시장 7~10배 대비 수익을 덜 남깁니다. 양쪽 모두 실패.</div>
+              </div>
+              <div class="decision-step">
+                <div class="decision-step-label">DECIDED</div>
+                <div class="exec-detail-body">저가 8배 / 중급 3배 / 고급 2.4배. 저가에서 벌고, 고급으로 헤비 유저를 끌어옵니다.</div>
               </div>
             </div>
-            <div class="exec-detail-body">초기에는 모든 모델에 일괄 4.5배 마진을 적용하려 했습니다. 시장 검증 결과 이 방식은 두 방향 모두에서 실패했습니다. 고급 모델에 4.5배를 적용하면 Opus가 362원이 되어 시장 최고가(300원)보다 비싸 판매가 불가능하고, 저가 모델은 4.5배로는 시장(7~10배)보다 낮은 마진을 남겨 수익 기회를 놓칩니다. 따라서 저가 8배, 중급 3배, 고급 2.4배의 차등 마진을 적용했습니다. 저가 모델에서 수익을 확보하고 고급 모델은 경쟁력 있는 가격으로 헤비 유저를 끌어들이는 이중 전략입니다.</div>
+            <div class="decision-foot">
+              <div class="decision-foot-item">
+                <span class="decision-foot-label">✕ DISCARDED</span>
+                <span class="exec-tradeoff-a">일괄 4.5배 — 고급은 못 팔고 저가는 덜 버는 구조</span>
+              </div>
+            </div>
           </div>
 
           <!-- 카드 2 하단 — 시장 밴드 미니 표 -->
@@ -443,23 +469,32 @@
           </div>
 
           <!-- 카드 3 — 범위 설정 -->
-          <div class="decision-card">
+          <div class="decision-card decision-card--steps">
             <div class="decision-card-meta">
               <div class="exec-phase-label">SCOPE</div>
-              <div class="exec-phase-title">무료 자체 모델을 1차 범위에서 제외한 이유</div>
+              <div class="exec-phase-title">무료 자체 모델을 1차 범위에서 뺀 이유</div>
               <div class="exec-phase-summary">할 수 있는 것과 지금 해야 하는 것을 분리했습니다.</div>
-              <div class="exec-tradeoff-list">
-                <div class="exec-tradeoff-item">
-                  <div class="exec-tradeoff-q">DISCARDED · 1차 범위에 자체 모델 포함</div>
-                  <div class="exec-tradeoff-a">가격 정책과 인프라 트랙이 섞여 범위가 불명확해짐</div>
-                </div>
-                <div class="exec-tradeoff-item">
-                  <div class="exec-tradeoff-q">ROADMAP</div>
-                  <div class="exec-tradeoff-a">무료 자체 모델 · 이원 화폐 구조 · 컨텍스트 길이 상품화 · 토큰 캐싱 최적화</div>
-                </div>
+            </div>
+            <div class="decision-steps">
+              <div class="decision-step">
+                <div class="decision-step-label">TRIED</div>
+                <div class="exec-detail-body">케이브덕·제타처럼 자체 모델로 무과금 원가 흡수. Node.js 기반이라 기술적으로 가능.</div>
+              </div>
+              <div class="decision-step">
+                <div class="decision-step-label">VALIDATED</div>
+                <div class="exec-detail-body">호스팅·튜닝·서버 운영이 따라붙는 별도 개발 트랙입니다. 가격 정책과 섞이면 1차 범위가 흐려집니다.</div>
+              </div>
+              <div class="decision-step">
+                <div class="decision-step-label">DECIDED</div>
+                <div class="exec-detail-body">1차에서 제외하고 확장 로드맵으로 이관합니다.</div>
               </div>
             </div>
-            <div class="exec-detail-body">케이브덕과 제타는 무료 자체 모델로 무과금 유저의 원가를 흡수합니다. Folio도 Node.js 기반이라 오픈웨이트 모델 자체 호스팅이 가능하지만, 이는 모델 호스팅·튜닝·서버 운영이 따라붙는 별도 개발 트랙입니다. 가격 정책 1차 설계의 범위를 명확히 하기 위해 이번 단계에서는 제외하고 확장 로드맵으로 이관했습니다. 단계적 확장을 전제로 한 의도적 범위 설정입니다.</div>
+            <div class="decision-foot">
+              <div class="decision-foot-item">
+                <span class="decision-foot-label">✕ DISCARDED</span>
+                <span class="exec-tradeoff-a">1차 범위에 자체 모델 포함 — 가격 정책과 인프라 트랙이 섞임</span>
+              </div>
+            </div>
           </div>
 
         </div>

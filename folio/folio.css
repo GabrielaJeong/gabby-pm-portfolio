@@ -55,6 +55,80 @@
   }
 }
 
+/* ── PRICING DECISIONS 변형: 좌 메타(38%) / 우 3단 스텝(62%) + 풀폭 푸터 ── */
+.decision-card--steps {
+  grid-template-columns: minmax(0, 38fr) minmax(0, 62fr);
+  min-height: 0;                 /* 고정 높이 제거 → 콘텐츠 자연 높이 */
+  align-items: start;
+  row-gap: var(--space-6);
+  word-break: keep-all;
+}
+
+/* 우측 3단 스텝 리스트 */
+.decision-steps {
+  display: flex;
+  flex-direction: column;
+}
+
+.decision-step {
+  padding: var(--space-4) 0;
+}
+
+.decision-step:first-child { padding-top: 0; }
+.decision-step:last-child  { padding-bottom: 0; }
+
+.decision-step:not(:last-child) {
+  border-bottom: 1px solid var(--border-default);
+}
+
+.decision-step-label {
+  font-size: 11px;               /* 지정 (floor 12px 예외) */
+  font-weight: var(--fw-caption);
+  text-transform: uppercase;
+  letter-spacing: 0.1em;
+  color: var(--text-tertiary);
+  margin-bottom: var(--space-2);
+}
+
+/* DECIDED(마지막 스텝) 본문 강조 */
+.decision-step:last-child .exec-detail-body {
+  color: var(--text-primary);
+  font-weight: 600;
+}
+
+/* 카드 하단 풀폭 푸터 — DISCARDED / BENCHMARK 가로 인라인 */
+.decision-foot {
+  grid-column: 1 / -1;
+  display: flex;
+  flex-wrap: wrap;
+  gap: var(--space-2) var(--space-8);
+  align-items: baseline;
+  padding-top: var(--space-5);
+  border-top: 1px dashed var(--border-default);
+}
+
+.decision-foot-item {
+  display: flex;
+  align-items: baseline;
+  gap: var(--space-2);
+  min-width: 0;
+}
+
+.decision-foot-label {
+  flex-shrink: 0;
+  font-size: 11px;               /* 지정 (floor 12px 예외) */
+  font-weight: var(--fw-caption);
+  text-transform: uppercase;
+  letter-spacing: 0.08em;
+  color: var(--text-tertiary);
+}
+
+@media (max-width: 768px) {
+  .decision-card--steps {
+    grid-template-columns: 1fr;
+  }
+}
+
 /* ==================== exec-phase-detail 내부 간격 ==================== */
 
 /* exec-detail 자유 라벨 → 콘텐츠 */
