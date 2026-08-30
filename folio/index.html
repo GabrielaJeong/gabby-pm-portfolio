@@ -508,52 +508,59 @@
         <h2 class="case-section-title">모델별 코인 단가</h2>
         <p class="case-section-sub">코인 1개 = 2원 기준. input 8,000 토큰 + output 700 토큰, 환율 1,400원, 캐싱 미반영 정가로 산출했습니다. 캐싱을 적용하면 실질 마진은 이보다 높아지므로, 이 표는 최악의 경우에도 보장되는 마진의 보수적 바닥입니다.</p>
 
-        <div class="impact-chart-card pricing-card" data-reveal>
-          <div class="pricing-table-wrap">
-            <table class="pricing-table pricing-table--price">
-              <thead>
-                <tr>
-                  <th scope="col">모델</th>
-                  <th scope="col">코인/턴</th>
-                  <th scope="col">판매가(원)</th>
-                  <th scope="col">원가(원)</th>
-                  <th scope="col">마진</th>
-                </tr>
-              </thead>
-              <tbody>
-                <tr data-tier="low"><td>Gemini 3.1 Flash-Lite</td><td>17</td><td>34</td><td>약 4</td><td>약 8배</td></tr>
-                <tr data-tier="low"><td>Gemini 2.5 Flash</td><td>23</td><td>46</td><td>약 6</td><td>약 8배</td></tr>
-                <tr data-tier="low"><td>GLM-4.7 / GLM 5</td><td>24</td><td>48</td><td>약 6</td><td>약 8배</td></tr>
-                <tr data-tier="mid"><td>Claude Haiku 4.5</td><td>24</td><td>48</td><td>약 16</td><td>약 3배</td></tr>
-                <tr data-tier="mid"><td>Gemini 2.5 Pro <sup>※</sup></td><td>36</td><td>72</td><td>약 24</td><td>약 3배</td></tr>
-                <tr data-tier="mid"><td>Gemini 3.5 Flash</td><td>38</td><td>76</td><td>약 26</td><td>약 3배</td></tr>
-                <tr data-tier="mid" class="is-default"><td>Gemini 3.1 Pro <sup>※</sup> <span class="case-tag tag-primary">기본값</span></td><td>51</td><td>102</td><td>약 34</td><td>약 3배</td></tr>
-                <tr data-tier="high"><td>Claude Sonnet 4.6</td><td>58</td><td>116</td><td>약 48</td><td>약 2.4배</td></tr>
-                <tr data-tier="high"><td>Claude Opus 4.6</td><td>97</td><td>194</td><td>약 81</td><td>약 2.4배</td></tr>
-                <tr data-tier="high"><td>Claude Opus 4.7</td><td>97</td><td>194</td><td>약 81</td><td>약 2.4배</td></tr>
-              </tbody>
-              <tfoot>
-                <tr><td colspan="5">※ Gemini Pro 계열은 컨텍스트 200K 초과 시 단가가 2배가 되므로, 장문 세션은 코인을 추가 차감하도록 설계했습니다.</td></tr>
-              </tfoot>
-            </table>
-          </div>
-          <div class="exec-steps pricing-legend">
-            <span class="exec-step" data-tier="low">저가 · 8배</span>
-            <span class="exec-step" data-tier="mid">중급 · 3배</span>
-            <span class="exec-step" data-tier="high">고급 · 2.4배</span>
-          </div>
-        </div>
-
-        <div class="impact-chart-card pricing-card" data-reveal>
-          <div class="impact-chart-head">
-            <div class="impact-chart-info">
-              <div class="impact-chart-tag">COST vs PRICE</div>
-              <div class="impact-chart-title">원가 대비 판매가 — 저가 8배 / 중급 3배 / 고급 2.4배</div>
-              <div class="impact-chart-period">코인 1개 = 2원 · 캐싱 미반영 정가 기준</div>
+        <div class="pricing-final-grid" data-reveal>
+          <div class="impact-chart-card pricing-table-card">
+            <div class="impact-chart-head">
+              <div class="impact-chart-info">
+                <div class="impact-chart-tag">PRICE TABLE</div>
+              </div>
+              <div class="exec-steps pricing-legend">
+                <span class="exec-step" data-tier="low">저가</span>
+                <span class="exec-step" data-tier="mid">중급</span>
+                <span class="exec-step" data-tier="high">고급</span>
+              </div>
+            </div>
+            <div class="pricing-table-wrap">
+              <table class="pricing-table pricing-table--price">
+                <thead>
+                  <tr>
+                    <th scope="col">모델</th>
+                    <th scope="col">코인/턴</th>
+                    <th scope="col">판매가(원)</th>
+                    <th scope="col">원가(원)</th>
+                    <th scope="col">마진</th>
+                  </tr>
+                </thead>
+                <tbody>
+                  <tr data-tier="low"><td>Gemini 3.1 Flash-Lite</td><td>17</td><td>34</td><td>약 4</td><td>약 8배</td></tr>
+                  <tr data-tier="low"><td>Gemini 2.5 Flash</td><td>23</td><td>46</td><td>약 6</td><td>약 8배</td></tr>
+                  <tr data-tier="low"><td>GLM-4.7 / GLM 5</td><td>24</td><td>48</td><td>약 6</td><td>약 8배</td></tr>
+                  <tr data-tier="mid"><td>Claude Haiku 4.5</td><td>24</td><td>48</td><td>약 16</td><td>약 3배</td></tr>
+                  <tr data-tier="mid"><td>Gemini 2.5 Pro <sup>※</sup></td><td>36</td><td>72</td><td>약 24</td><td>약 3배</td></tr>
+                  <tr data-tier="mid"><td>Gemini 3.5 Flash</td><td>38</td><td>76</td><td>약 26</td><td>약 3배</td></tr>
+                  <tr data-tier="mid" class="is-default"><td>Gemini 3.1 Pro <sup>※</sup> <span class="case-tag tag-primary">기본값</span></td><td>51</td><td>102</td><td>약 34</td><td>약 3배</td></tr>
+                  <tr data-tier="high"><td>Claude Sonnet 4.6</td><td>58</td><td>116</td><td>약 48</td><td>약 2.4배</td></tr>
+                  <tr data-tier="high"><td>Claude Opus 4.6</td><td>97</td><td>194</td><td>약 81</td><td>약 2.4배</td></tr>
+                  <tr data-tier="high"><td>Claude Opus 4.7</td><td>97</td><td>194</td><td>약 81</td><td>약 2.4배</td></tr>
+                </tbody>
+                <tfoot>
+                  <tr><td colspan="5">※ Gemini Pro 계열은 컨텍스트 200K 초과 시 단가가 2배가 되므로, 장문 세션은 코인을 추가 차감하도록 설계했습니다.</td></tr>
+                </tfoot>
+              </table>
             </div>
           </div>
-          <div class="pricing-chart-wrap">
-            <canvas id="pricingMarginChart"></canvas>
+
+          <div class="impact-chart-card pricing-chart-card">
+            <div class="impact-chart-head">
+              <div class="impact-chart-info">
+                <div class="impact-chart-tag">COST vs PRICE</div>
+                <div class="impact-chart-title">원가 대비 판매가</div>
+                <div class="impact-chart-period">저가 8배 · 중급 3배 · 고급 2.4배</div>
+              </div>
+            </div>
+            <div class="pricing-chart-wrap">
+              <canvas id="pricingMarginChart"></canvas>
+            </div>
           </div>
         </div>
       </section>

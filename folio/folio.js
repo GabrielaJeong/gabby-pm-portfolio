@@ -63,11 +63,19 @@
   var costData  = [4, 6, 6, 16, 24, 26, 34, 48, 81, 81];
   var priceData = [34, 46, 48, 48, 72, 76, 102, 116, 194, 194];
 
-  // 등급 색 (표 행 바·범례와 동일 매핑): 저가 gray / 중급 gold-dim / 고급 gold
-  var COL_LOW  = 'rgba(' + BORDER_RGB + ', 0.6)';
-  var COL_MID  = 'rgba(' + ACCENT_RGB + ', 0.55)';
-  var COL_HIGH = ACCENT;
-  var COL_COST = 'rgba(' + BORDER_RGB + ', 0.35)';
+  // 등급 색 (표 행 바·범례와 동일): accent 3단 명도 — 저가 가장 밝게 → 고급 원색.
+  // ACCENT_RGB를 흰색으로 혼합해 명도 단계 생성(테마 무관: 다크=골드/라이트=블루).
+  var accentParts = ACCENT_RGB.split(',').map(function (s) { return parseInt(s, 10) || 0; });
+  function lightenAccent(t) { // t=0 원색 → t=1 흰색
+    return 'rgb(' +
+      Math.round(accentParts[0] + (255 - accentParts[0]) * t) + ', ' +
+      Math.round(accentParts[1] + (255 - accentParts[1]) * t) + ', ' +
+      Math.round(accentParts[2] + (255 - accentParts[2]) * t) + ')';
+  }
+  var COL_LOW  = lightenAccent(0.55); // 가장 밝게
+  var COL_MID  = lightenAccent(0.30);
+  var COL_HIGH = ACCENT;              // 가장 진하게
+  var COL_COST = 'rgba(' + BORDER_RGB + ', 0.22)'; // 원가: border 컬러 + 낮은 투명도로 성격 분리
   // 인덱스별 판매가 막대 색 (1~3행 저가 / 4~7행 중급 / 8~10행 고급)
   var priceColors = priceData.map(function (_, i) {
     if (i <= 2) return COL_LOW;
@@ -171,7 +179,7 @@
             grid: { display: false },
             ticks: {
               color: '#A8B5C8',
-              font: { family: 'Pretendard', size: 11 }
+              font: { family: 'Pretendard', size: 12 }
             },
             border: { color: 'rgba(138, 136, 130, 0.15)' }
           }
