@@ -328,32 +328,45 @@
         </div>
         <h3 class="block-title">한 턴의 원가가 대화 길이에 따라 무한히 커집니다</h3>
         <p class="case-section-sub">캐릭터 설정과 유저 페르소나는 매 턴 고정으로 들어가는 상수이고, 로어북은 키워드 매칭 시 조건부로 주입됩니다.<br>
-          가장 위험한 것은 <strong>장기기억과 대화 히스토리</strong>로, <strong>통제하지 않으면 대화가 길어질수록 한 턴의 원가가 폭발적으로 증가</strong>합니다.<br>
-          이 서비스의 가격 정책은 <strong>'원가가 변동하는 상품을 어떻게 정찰제처럼 팔 것인가'</strong>라는 문제를 푸는 일이었습니다.</p>
+          가장 위험한 것은 장기기억과 대화 히스토리로, 통제하지 않으면 대화가 길어질수록 한 턴의 원가가 폭발적으로 증가합니다.<br>
+          이 서비스의 가격 정책은 '원가가 변동하는 상품을 어떻게 정찰제처럼 팔 것인가'라는 문제를 푸는 일이었습니다.</p>
 
         <div class="axis-grid" data-reveal>
-          <div class="axis-card">
-            <div class="axis-card-label">QUESTION 01</div>
-            <div class="axis-card-title">모델별 한 턴의 실제 원가는 얼마이며, 어떻게 마진을 포함한 단가로 환산할 것인가</div>
-          </div>
-          <div class="axis-card">
-            <div class="axis-card-label">QUESTION 02</div>
-            <div class="axis-card-title">경쟁사들은 같은 모델을 얼마에 팔고 있으며, 시장 가격 밴드는 어디인가</div>
-          </div>
-          <div class="axis-card">
-            <div class="axis-card-label">QUESTION 03</div>
-            <div class="axis-card-title">무과금 유저를 포함한 전체 수익 구조를 어떻게 설계해야 지속 가능한가</div>
-          </div>
+          <a class="q-card" href="#pricing-table">
+            <div class="q-card-num">01</div>
+            <div class="q-card-label">QUESTION</div>
+            <div class="q-card-text">모델별 한 턴의 실제 원가는 얼마이며, 어떻게 마진을 포함한 단가로 환산할 것인가</div>
+            <div class="q-card-foot">ANSWERED IN · FINAL PRICING <span aria-hidden="true">→</span></div>
+          </a>
+          <a class="q-card" href="#decision-margin">
+            <div class="q-card-num">02</div>
+            <div class="q-card-label">QUESTION</div>
+            <div class="q-card-text">경쟁사들은 같은 모델을 얼마에 팔고 있으며, 시장 가격 밴드는 어디인가</div>
+            <div class="q-card-foot">ANSWERED IN · MARGIN <span aria-hidden="true">→</span></div>
+          </a>
+          <a class="q-card" href="#revenue-stack">
+            <div class="q-card-num">03</div>
+            <div class="q-card-label">QUESTION</div>
+            <div class="q-card-text">무과금 유저를 포함한 전체 수익 구조를 어떻게 설계해야 지속 가능한가</div>
+            <div class="q-card-foot">ANSWERED IN · REVENUE STRUCTURE <span aria-hidden="true">→</span></div>
+          </a>
         </div>
 
-        <div class="exec-detail-label">경쟁사 6개 직접 플레이</div>
-        <div class="exec-steps">
-          <span class="exec-step">블룸</span>
-          <span class="exec-step">베이비챗</span>
-          <span class="exec-step">케이브덕</span>
-          <span class="exec-step">제타</span>
-          <span class="exec-step">로판 AI</span>
-          <span class="exec-step">크랙</span>
+        <div class="exec-detail-label">RESEARCH BASE · 6개 서비스 직접 플레이</div>
+        <div class="q-research">
+          <div class="exec-steps">
+            <span class="exec-step" data-adopt="yes">블룸</span>
+            <span class="exec-step" data-adopt="partial">베이비챗</span>
+            <span class="exec-step" data-adopt="yes">케이브덕</span>
+            <span class="exec-step" data-adopt="no">제타</span>
+            <span class="exec-step" data-adopt="no">로판 AI</span>
+            <span class="exec-step" data-adopt="yes">크랙</span>
+          </div>
+          <div class="q-legend">
+            <span data-adopt="yes">채택</span>
+            <span data-adopt="partial">부분 채택</span>
+            <span data-adopt="no">역방향</span>
+          </div>
         </div>
       </section>
 
@@ -388,7 +401,7 @@
           </div>
 
           <!-- 카드 2 — 마진 구조 -->
-          <div class="decision-card">
+          <div class="decision-card" id="decision-margin">
             <div class="decision-card-meta">
               <div class="exec-phase-label">MARGIN</div>
               <div class="exec-phase-title">일괄 4.5배를 버리고 모델별 차등 마진을 적용한 이유</div>
@@ -453,7 +466,7 @@
       </section>
 
       <!-- ══════════ PRICING — FINAL PRICING (가격표 + 마진 차트) ══════════ -->
-      <section class="case-section" data-page="pricing">
+      <section class="case-section" id="pricing-table" data-page="pricing">
         <div class="case-section-header">
           <div class="case-section-label">FINAL PRICING</div>
         </div>
@@ -507,7 +520,7 @@
       </section>
 
       <!-- ══════════ PRICING — REVENUE STACK (3층 수익 구조) ══════════ -->
-      <section class="case-section" data-page="pricing">
+      <section class="case-section" id="revenue-stack" data-page="pricing">
         <div class="case-section-header">
           <div class="case-section-label">REVENUE STRUCTURE</div>
         </div>
