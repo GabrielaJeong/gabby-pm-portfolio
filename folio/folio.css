@@ -649,3 +649,140 @@ a.axis-card.doc-card:hover {
     gap: var(--space-2);
   }
 }
+
+/* ==================== PRICING 섹션 ====================
+   신규 컴포넌트: 표(.pricing-table)는 기존 페이지에 표 컴포넌트가 없어 신설
+   (DESIGN_SYSTEM COLOR PALETTE 그리드 톤 참고). 나머지는 전부 기존 공유
+   컴포넌트 재사용(decision-card / axis-grid / exec-step-card / exec-tradeoff-item /
+   impact-chart-card / phase-arrow / axis-card / case-tag). */
+
+/* ── 등급 색상: 골드 명도 램프 (기존 토큰만) — 표 행 바 + 범례 칩 공용 ── */
+.pricing-table tr[data-tier="low"],
+.pricing-legend .exec-step[data-tier="low"]   { --tier-color: rgba(var(--border-rgb), 0.6); }
+.pricing-table tr[data-tier="mid"],
+.pricing-legend .exec-step[data-tier="mid"]   { --tier-color: var(--text-label-gold-dim); }
+.pricing-table tr[data-tier="high"],
+.pricing-legend .exec-step[data-tier="high"]  { --tier-color: var(--gold); }
+
+/* ── 표 컴포넌트 ── */
+.pricing-table-wrap {
+  overflow-x: auto;                 /* 좁은 폭에서 표만 가로 스크롤 (본문 스크롤 방지) */
+  -webkit-overflow-scrolling: touch;
+}
+
+.pricing-table {
+  width: 100%;
+  border-collapse: collapse;
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+}
+
+.pricing-table thead th {
+  text-align: left;
+  font-size: var(--fs-caption);
+  font-weight: var(--fw-caption);
+  color: var(--text-tertiary);
+  letter-spacing: 0.08em;
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border-default);
+  white-space: nowrap;
+}
+
+.pricing-table td {
+  padding: var(--space-3) var(--space-4);
+  border-bottom: 1px solid var(--border-default);
+  line-height: var(--lh-normal);
+  vertical-align: top;
+  word-break: keep-all;
+}
+
+.pricing-table tbody tr:last-child td {
+  border-bottom: none;
+}
+
+.pricing-table tbody tr:hover {
+  background: rgba(var(--fg-rgb), 0.02);
+}
+
+/* 첫 열(모델·구간·번들·등급) 강조 */
+.pricing-table td:first-child {
+  color: var(--text-primary);
+  font-weight: 500;
+}
+
+/* 등급 색 바 — 첫 열 좌측 */
+.pricing-table tr[data-tier] td:first-child {
+  border-left: 2px solid var(--tier-color);
+}
+
+/* 기본 모델 행 강조 (DEFAULT MODEL 카드와 동일 골드 틴트) */
+.pricing-table tr.is-default {
+  background: rgba(var(--gold-rgb), 0.06);
+}
+
+.pricing-table tr.is-default:hover {
+  background: rgba(var(--gold-rgb), 0.09);
+}
+
+/* 표 하단 각주 */
+.pricing-note {
+  font-size: var(--fs-sub);
+  color: var(--text-tertiary);
+  line-height: var(--lh-normal);
+  margin-top: var(--space-4);
+  word-break: keep-all;
+}
+
+/* 등급 색 범례 (exec-steps 재사용 + 좌측 색 바) */
+.pricing-legend {
+  margin-top: var(--space-5);
+}
+
+.pricing-legend .exec-step {
+  border-left: 2px solid var(--tier-color);
+}
+
+/* ── 마진 차트 (impact-chart-card 재사용, 가로막대 10개용 큰 캔버스) ──
+   높이는 canvas 고정 px — 기존 차트 컴포넌트(.impact-chart-canvas-wrap 240px,
+   .prob-donut-chart-area 200px)와 동일한 캔버스 사이징 관례. Chart.js가
+   responsive:true + maintainAspectRatio:false로 캔버스를 이 래퍼에 맞춰 그림. */
+.pricing-chart-wrap {
+  position: relative;
+  height: 420px;
+  margin-top: var(--space-4);
+}
+
+/* ── REVENUE STACK: 2열 (좌 3층 스택 | 우 요약) ── */
+.revenue-layout {
+  display: grid;
+  grid-template-columns: minmax(0, 1.6fr) minmax(0, 1fr);
+  gap: var(--space-8);
+  align-items: start;
+  margin-top: var(--space-8);
+}
+
+/* 요약 박스 — 스크롤 시 따라오도록 sticky (axis-card 재사용) */
+.revenue-summary {
+  position: sticky;
+  top: calc(var(--nav-h) + var(--subbar-height) + var(--space-6));
+}
+
+/* 3층 스택(재사용 .decisions-list) 내 tier 카드(exec-step-card) 내부 간격 —
+   기존 클래스만 사용, .revenue-layout 스코프로 한정 */
+.revenue-layout .exec-step-card .exec-tradeoff-list {
+  margin-bottom: var(--space-5);
+}
+
+.revenue-layout .exec-step-card .exec-detail-body {
+  margin-top: var(--space-4);
+  margin-bottom: var(--space-5);
+}
+
+@media (max-width: 900px) {
+  .revenue-layout {
+    grid-template-columns: 1fr;
+  }
+  .revenue-summary {
+    position: static;
+  }
+}
