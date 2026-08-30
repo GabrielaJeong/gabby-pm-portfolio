@@ -10,6 +10,37 @@
   }
 })();
 
+// ==================== PRICING — 질문 카드 푸터 링크(같은 페이지 내 스크롤) ====================
+// pages 모드는 해시(#pricing 등 '페이지 키')로 페이지를 전환한다. 푸터 링크의
+// #pricing-table/#decision-margin/#revenue-stack는 페이지 키가 아니므로, 기본
+// 해시 이동에 맡기면 목차바 로직이 첫 페이지(Intro)로 되돌려버린다.
+// → 해시를 바꾸지 않고, 이미 열려 있는 pricing 페이지 안에서 대상으로 직접 스크롤.
+(function () {
+  'use strict';
+
+  var cards = document.querySelectorAll('a.q-card[href^="#"]');
+  if (!cards.length) return;
+
+  function stickyOffset() {
+    var nav = document.querySelector('.nav');
+    var toc = document.querySelector('.case-toc');
+    var h = 0;
+    if (nav) h += nav.getBoundingClientRect().height;
+    if (toc) h += toc.getBoundingClientRect().height;
+    return h + 16; // 여유 간격
+  }
+
+  cards.forEach(function (card) {
+    card.addEventListener('click', function (e) {
+      var target = document.getElementById(card.getAttribute('href').slice(1));
+      if (!target) return; // 대상 없으면 기본 동작
+      e.preventDefault();
+      var y = target.getBoundingClientRect().top + window.scrollY - stickyOffset();
+      window.scrollTo({ top: Math.max(0, y), behavior: 'smooth' });
+    });
+  });
+})();
+
 // ==================== PRICING — 원가 대비 판매가 마진 차트 ====================
 // 가로 막대(원가 vs 판매가) 10개 모델. metavv.js와 동일하게 테마 CSS 변수에서 색을 읽고,
 // Reveal와 충돌하지 않도록 IntersectionObserver로 뷰포트 진입 후 초기화(LEARNED L12).
