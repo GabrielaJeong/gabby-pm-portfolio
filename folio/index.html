@@ -508,39 +508,43 @@
         <h2 class="case-section-title">모델별 코인 단가</h2>
         <p class="case-section-sub">코인 1개 = 2원 기준. input 8,000 토큰 + output 700 토큰, 환율 1,400원, 캐싱 미반영 정가로 산출했습니다. 캐싱을 적용하면 실질 마진은 이보다 높아지므로, 이 표는 최악의 경우에도 보장되는 마진의 보수적 바닥입니다.</p>
 
-        <div class="pricing-table-wrap" data-reveal>
-          <table class="pricing-table pricing-table--price">
-            <thead>
-              <tr>
-                <th scope="col">모델</th>
-                <th scope="col">코인/턴</th>
-                <th scope="col">판매가(원)</th>
-                <th scope="col">원가(원)</th>
-                <th scope="col">마진</th>
-              </tr>
-            </thead>
-            <tbody>
-              <tr data-tier="low"><td>Gemini 3.1 Flash-Lite</td><td>17</td><td>34</td><td>약 4</td><td>약 8배</td></tr>
-              <tr data-tier="low"><td>Gemini 2.5 Flash</td><td>23</td><td>46</td><td>약 6</td><td>약 8배</td></tr>
-              <tr data-tier="low"><td>GLM-4.7 / GLM 5</td><td>24</td><td>48</td><td>약 6</td><td>약 8배</td></tr>
-              <tr data-tier="mid"><td>Claude Haiku 4.5</td><td>24</td><td>48</td><td>약 16</td><td>약 3배</td></tr>
-              <tr data-tier="mid"><td>Gemini 2.5 Pro</td><td>36</td><td>72</td><td>약 24</td><td>약 3배</td></tr>
-              <tr data-tier="mid"><td>Gemini 3.5 Flash</td><td>38</td><td>76</td><td>약 26</td><td>약 3배</td></tr>
-              <tr data-tier="mid" class="is-default"><td>Gemini 3.1 Pro <span class="case-tag tag-primary">기본값</span></td><td>51</td><td>102</td><td>약 34</td><td>약 3배</td></tr>
-              <tr data-tier="high"><td>Claude Sonnet 4.6</td><td>58</td><td>116</td><td>약 48</td><td>약 2.4배</td></tr>
-              <tr data-tier="high"><td>Claude Opus 4.6</td><td>97</td><td>194</td><td>약 81</td><td>약 2.4배</td></tr>
-              <tr data-tier="high"><td>Claude Opus 4.7</td><td>97</td><td>194</td><td>약 81</td><td>약 2.4배</td></tr>
-            </tbody>
-          </table>
+        <div class="impact-chart-card pricing-card" data-reveal>
+          <div class="pricing-table-wrap">
+            <table class="pricing-table pricing-table--price">
+              <thead>
+                <tr>
+                  <th scope="col">모델</th>
+                  <th scope="col">코인/턴</th>
+                  <th scope="col">판매가(원)</th>
+                  <th scope="col">원가(원)</th>
+                  <th scope="col">마진</th>
+                </tr>
+              </thead>
+              <tbody>
+                <tr data-tier="low"><td>Gemini 3.1 Flash-Lite</td><td>17</td><td>34</td><td>약 4</td><td>약 8배</td></tr>
+                <tr data-tier="low"><td>Gemini 2.5 Flash</td><td>23</td><td>46</td><td>약 6</td><td>약 8배</td></tr>
+                <tr data-tier="low"><td>GLM-4.7 / GLM 5</td><td>24</td><td>48</td><td>약 6</td><td>약 8배</td></tr>
+                <tr data-tier="mid"><td>Claude Haiku 4.5</td><td>24</td><td>48</td><td>약 16</td><td>약 3배</td></tr>
+                <tr data-tier="mid"><td>Gemini 2.5 Pro <sup>※</sup></td><td>36</td><td>72</td><td>약 24</td><td>약 3배</td></tr>
+                <tr data-tier="mid"><td>Gemini 3.5 Flash</td><td>38</td><td>76</td><td>약 26</td><td>약 3배</td></tr>
+                <tr data-tier="mid" class="is-default"><td>Gemini 3.1 Pro <sup>※</sup> <span class="case-tag tag-primary">기본값</span></td><td>51</td><td>102</td><td>약 34</td><td>약 3배</td></tr>
+                <tr data-tier="high"><td>Claude Sonnet 4.6</td><td>58</td><td>116</td><td>약 48</td><td>약 2.4배</td></tr>
+                <tr data-tier="high"><td>Claude Opus 4.6</td><td>97</td><td>194</td><td>약 81</td><td>약 2.4배</td></tr>
+                <tr data-tier="high"><td>Claude Opus 4.7</td><td>97</td><td>194</td><td>약 81</td><td>약 2.4배</td></tr>
+              </tbody>
+              <tfoot>
+                <tr><td colspan="5">※ Gemini Pro 계열은 컨텍스트 200K 초과 시 단가가 2배가 되므로, 장문 세션은 코인을 추가 차감하도록 설계했습니다.</td></tr>
+              </tfoot>
+            </table>
+          </div>
+          <div class="exec-steps pricing-legend">
+            <span class="exec-step" data-tier="low">저가 · 8배</span>
+            <span class="exec-step" data-tier="mid">중급 · 3배</span>
+            <span class="exec-step" data-tier="high">고급 · 2.4배</span>
+          </div>
         </div>
-        <div class="exec-steps pricing-legend">
-          <span class="exec-step" data-tier="low">저가 · 8배</span>
-          <span class="exec-step" data-tier="mid">중급 · 3배</span>
-          <span class="exec-step" data-tier="high">고급 · 2.4배</span>
-        </div>
-        <p class="pricing-note">Gemini Pro 계열은 컨텍스트 200K 초과 시 단가가 2배가 되므로, 장문 세션은 코인을 추가 차감하도록 설계했습니다.</p>
 
-        <div class="impact-chart-card" data-reveal>
+        <div class="impact-chart-card pricing-card" data-reveal>
           <div class="impact-chart-head">
             <div class="impact-chart-info">
               <div class="impact-chart-tag">COST vs PRICE</div>
@@ -568,29 +572,39 @@
           <div class="decisions-list">
 
             <!-- 1층 -->
-            <div class="exec-step-card">
+            <div class="exec-step-card" data-layer="1">
               <div class="exec-step-label">1층 · 무과금 유저 <span class="case-tag tag-secondary">가장 많음</span></div>
-              <div class="exec-tradeoff-list">
-                <div class="exec-tradeoff-item"><div class="exec-tradeoff-q">획득 경로</div><div class="exec-tradeoff-a">매일 무료 코인 지급 + 광고·오퍼월로 코인 획득</div></div>
-                <div class="exec-tradeoff-item"><div class="exec-tradeoff-q">수익원</div><div class="exec-tradeoff-a">광고 노출 · 오퍼월 전환</div></div>
-                <div class="exec-tradeoff-item"><div class="exec-tradeoff-q">역할</div><div class="exec-tradeoff-a">트래픽·콘텐츠 생태계 유지 · 광고 매출 · 전환 모수</div></div>
+              <div class="revenue-meta">
+                <div><div class="decision-step-label">획득 경로</div><div class="exec-tradeoff-a">매일 무료 코인 지급 + 광고·오퍼월로 코인 획득</div></div>
+                <div><div class="decision-step-label">수익원</div><div class="exec-tradeoff-a">광고 노출 · 오퍼월 전환</div></div>
+                <div><div class="decision-step-label">역할</div><div class="exec-tradeoff-a">트래픽·콘텐츠 생태계 유지 · 광고 매출 · 전환 모수</div></div>
               </div>
-              <p class="exec-detail-body">리워드 동영상 eCPM은 1회당 1~2원인데 저가 모델 한 턴 원가가 약 6원이라, 광고 수익만으로 AI 원가를 100% 상쇄하는 것은 구조적으로 불가능합니다. 따라서 무과금 전략의 목표는 흑자화가 아니라 '적자 폭 통제 + 과금 전환으로 회수'입니다. 무료 사용을 하루 약 10턴으로 제한하면 유저 1명당 하루 약 70원 수준의 적자로 묶이고, 이를 과금 전환을 위한 유저 획득 비용(CAC)으로 간주합니다. 무과금 100명당 월 2~3명만 전환되면 회수됩니다.</p>
-              <div class="exec-step-divider"></div>
-              <div class="exec-step-effect">원가 방어 · 무과금에게는 저가 모델만 제공 — 고급 모델(Opus 97코인) 차감량 자체가 전환 유인</div>
+              <div class="revenue-stats">
+                <div class="revenue-stat"><div class="revenue-stat-num">eCPM 1~2원</div><div class="revenue-stat-desc">원가 6원</div></div>
+                <div class="revenue-stat"><div class="revenue-stat-num">하루 10턴 제한</div><div class="revenue-stat-desc">유저당 적자 70원/일</div></div>
+                <div class="revenue-stat"><div class="revenue-stat-num">100명 중 2~3명</div><div class="revenue-stat-desc">전환 시 적자 회수</div></div>
+              </div>
+              <div class="cost-defense">
+                <div class="decision-step-label">COST DEFENSE</div>
+                <div class="exec-detail-body">무과금에게는 저가 모델만 제공합니다. 고급 모델(Opus 97코인)의 차감량 자체가 전환 유인입니다.</div>
+              </div>
             </div>
 
-            <div class="phase-arrow phase-arrow-gold">↓ 코인 부족 → 충전</div>
+            <div class="revenue-connector"><span class="case-tag tag-secondary">코인 부족 → 충전</span></div>
 
             <!-- 2층 -->
-            <div class="exec-step-card">
+            <div class="exec-step-card" data-layer="2">
               <div class="exec-step-label">2층 · 단건 과금 유저</div>
-              <div class="exec-tradeoff-list">
-                <div class="exec-tradeoff-item"><div class="exec-tradeoff-q">행동</div><div class="exec-tradeoff-a">필요할 때 코인 충전 (단건 결제)</div></div>
-                <div class="exec-tradeoff-item"><div class="exec-tradeoff-q">수익원</div><div class="exec-tradeoff-a">코인 마진 (판매가 &gt; 모델 원가)</div></div>
-                <div class="exec-tradeoff-item"><div class="exec-tradeoff-q">역할</div><div class="exec-tradeoff-a">가벼운 결제 유저 · 고래 직전 단계</div></div>
+              <div class="revenue-meta">
+                <div><div class="decision-step-label">행동</div><div class="exec-tradeoff-a">필요할 때 코인 충전 (단건 결제)</div></div>
+                <div><div class="decision-step-label">수익원</div><div class="exec-tradeoff-a">코인 마진 (판매가 &gt; 모델 원가)</div></div>
+                <div><div class="decision-step-label">역할</div><div class="exec-tradeoff-a">가벼운 결제 유저 · 고래 직전 단계</div></div>
               </div>
-              <p class="exec-detail-body">웹과 앱 결제를 모두 제공하되 웹을 더 싸게 책정합니다. 웹 카드결제 수수료는 약 2.5%이지만 인앱결제는 30%로, 10만 원 번들 기준 27,500원이 수수료로 사라집니다. 첫 결제 장벽을 낮추기 위해 정가 30,000원 상당을 약 22,000원에 제공하는 첫구매 미끼 상품을 두며, 미끼 코인을 저가 모델 기준으로 채우면 27% 할인 후에도 웹 기준 약 6배 마진이 남습니다.</p>
+              <div class="revenue-stats">
+                <div class="revenue-stat"><div class="revenue-stat-num">2.5% vs 30%</div><div class="revenue-stat-desc">웹 PG vs 인앱 수수료</div></div>
+                <div class="revenue-stat"><div class="revenue-stat-num">27,500원</div><div class="revenue-stat-desc">10만원 번들 기준 수수료 차</div></div>
+                <div class="revenue-stat"><div class="revenue-stat-num">27%↓ 미끼</div><div class="revenue-stat-desc">할인 후에도 웹 마진 6배</div></div>
+              </div>
               <div class="pricing-table-wrap">
                 <table class="pricing-table">
                   <thead>
@@ -615,19 +629,24 @@
               <p class="pricing-note">웹 수수료 2.5%, 앱 수수료 30% 반영</p>
             </div>
 
-            <div class="phase-arrow phase-arrow-gold">↓ 헤비 유저 → 정기 전환</div>
+            <div class="revenue-connector"><span class="case-tag tag-secondary">헤비 유저 → 정기 전환</span></div>
 
             <!-- 3층 -->
-            <div class="exec-step-card">
+            <div class="exec-step-card" data-layer="3">
               <div class="exec-step-label">3층 · 멤버십 유저 <span class="case-tag tag-secondary">객단가 최고</span></div>
-              <div class="exec-tradeoff-list">
-                <div class="exec-tradeoff-item"><div class="exec-tradeoff-q">혜택</div><div class="exec-tradeoff-a">매달 코인 지급 + 코인 할인가 + 컨텍스트·메모리 깊이 확장</div></div>
-                <div class="exec-tradeoff-item"><div class="exec-tradeoff-q">수익원</div><div class="exec-tradeoff-a">정액제 · 미사용 코인 낙전 · 고급 모델 코인 차감</div></div>
-                <div class="exec-tradeoff-item"><div class="exec-tradeoff-q">역할</div><div class="exec-tradeoff-a">예측 가능 매출 · 현금흐름 안정 · 락인</div></div>
+              <div class="revenue-meta">
+                <div><div class="decision-step-label">혜택</div><div class="exec-tradeoff-a">매달 코인 지급 + 코인 할인가 + 컨텍스트·메모리 깊이 확장</div></div>
+                <div><div class="decision-step-label">수익원</div><div class="exec-tradeoff-a">정액제 · 미사용 코인 낙전 · 고급 모델 코인 차감</div></div>
+                <div><div class="decision-step-label">역할</div><div class="exec-tradeoff-a">예측 가능 매출 · 현금흐름 안정 · 락인</div></div>
               </div>
-              <p class="exec-detail-body">멤버십이 수익이 되는 이유는 네 가지입니다. 정액으로 매출이 예측 가능해지고, 지급한 코인 중 미사용분이 낙전으로 남으며, '본전을 뽑아야 한다'는 심리가 이탈을 막고, 헤비 유저의 객단가가 단건 충전보다 높아집니다. 단 경쟁사 6개 중 어떤 구독도 고급 모델을 무제한으로 제공하지 않는다는 사실을 확인하고, 고급 모델은 멤버십에서도 코인 차감을 유지해 원가를 방어합니다.</p>
+              <div class="revenue-stats revenue-stats--4">
+                <div class="revenue-stat"><div class="revenue-stat-num">정액</div><div class="revenue-stat-desc">매출 예측 가능</div></div>
+                <div class="revenue-stat"><div class="revenue-stat-num">낙전</div><div class="revenue-stat-desc">미사용 코인 수익</div></div>
+                <div class="revenue-stat"><div class="revenue-stat-num">본전 심리</div><div class="revenue-stat-desc">이탈 방지 · 락인</div></div>
+                <div class="revenue-stat"><div class="revenue-stat-num">코인 차감 유지</div><div class="revenue-stat-desc">고급 모델 무제한 없음</div></div>
+              </div>
               <div class="pricing-table-wrap">
-                <table class="pricing-table">
+                <table class="pricing-table pricing-table--membership">
                   <thead>
                     <tr>
                       <th scope="col">등급</th>
@@ -651,9 +670,9 @@
           <aside class="axis-card revenue-summary" data-reveal>
             <div class="axis-card-label">REVENUE SUMMARY</div>
             <div class="exec-tradeoff-list">
-              <div class="exec-tradeoff-item"><div class="exec-tradeoff-q">광고 · 오퍼월</div><div class="exec-tradeoff-a">1층 무과금 수익화</div></div>
-              <div class="exec-tradeoff-item"><div class="exec-tradeoff-q">코인 마진</div><div class="exec-tradeoff-a">2·3층 사용량 기반</div></div>
-              <div class="exec-tradeoff-item"><div class="exec-tradeoff-q">멤버십 정액 + 낙전</div><div class="exec-tradeoff-a">3층 안정 매출</div></div>
+              <div class="exec-tradeoff-item" data-layer="1"><div class="exec-tradeoff-q">광고 · 오퍼월</div><div class="exec-tradeoff-a">1층 무과금 수익화</div></div>
+              <div class="exec-tradeoff-item" data-layer="2"><div class="exec-tradeoff-q">코인 마진</div><div class="exec-tradeoff-a">2·3층 사용량 기반</div></div>
+              <div class="exec-tradeoff-item" data-layer="3"><div class="exec-tradeoff-q">멤버십 정액 + 낙전</div><div class="exec-tradeoff-a">3층 안정 매출</div></div>
             </div>
           </aside>
 

@@ -63,6 +63,18 @@
   var costData  = [4, 6, 6, 16, 24, 26, 34, 48, 81, 81];
   var priceData = [34, 46, 48, 48, 72, 76, 102, 116, 194, 194];
 
+  // 등급 색 (표 행 바·범례와 동일 매핑): 저가 gray / 중급 gold-dim / 고급 gold
+  var COL_LOW  = 'rgba(' + BORDER_RGB + ', 0.6)';
+  var COL_MID  = 'rgba(' + ACCENT_RGB + ', 0.55)';
+  var COL_HIGH = ACCENT;
+  var COL_COST = 'rgba(' + BORDER_RGB + ', 0.35)';
+  // 인덱스별 판매가 막대 색 (1~3행 저가 / 4~7행 중급 / 8~10행 고급)
+  var priceColors = priceData.map(function (_, i) {
+    if (i <= 2) return COL_LOW;
+    if (i <= 6) return COL_MID;
+    return COL_HIGH;
+  });
+
   var triggered = false;
 
   function render() {
@@ -78,7 +90,7 @@
           {
             label: '원가',
             data: costData,
-            backgroundColor: 'rgba(' + BORDER_RGB + ', 0.35)',
+            backgroundColor: COL_COST,
             borderWidth: 0,
             borderRadius: 3,
             barPercentage: 0.7,
@@ -87,7 +99,7 @@
           {
             label: '판매가',
             data: priceData,
-            backgroundColor: ACCENT,
+            backgroundColor: priceColors,
             borderWidth: 0,
             borderRadius: 3,
             barPercentage: 0.7,
@@ -105,12 +117,21 @@
             display: true,
             position: 'top',
             align: 'end',
+            onClick: function () {},   // 커스텀 4항목 범례 — 데이터셋 토글 비활성
             labels: {
               color: 'rgba(' + ACCENT_RGB + ', 0.85)',
               font: { family: 'Pretendard', size: 11 },
               boxWidth: 10,
               boxHeight: 10,
-              padding: 16
+              padding: 16,
+              generateLabels: function () {
+                return [
+                  { text: '저가', fillStyle: COL_LOW,  strokeStyle: COL_LOW,  lineWidth: 0 },
+                  { text: '중급', fillStyle: COL_MID,  strokeStyle: COL_MID,  lineWidth: 0 },
+                  { text: '고급', fillStyle: COL_HIGH, strokeStyle: COL_HIGH, lineWidth: 0 },
+                  { text: '원가', fillStyle: COL_COST, strokeStyle: COL_COST, lineWidth: 0 }
+                ];
+              }
             }
           },
           tooltip: {
@@ -174,4 +195,36 @@
   }, { threshold: 0.3 });
 
   observer.observe(canvas);
+})();
+
+// ==================== REVENUE STRUCTURE — 현재 층 요약 하이라이트 ====================
+// 뷰포트에서 가장 많이 보이는 층 카드(data-layer)에 대응하는 REVENUE SUMMARY 항목을
+// accent로 하이라이트. pages 모드로 숨겨져 있어도 표시 후 스크롤 시 정상 동작.
+(function () {
+  'use strict';
+
+  var cards = document.querySelectorAll('.revenue-layout .exec-step-card[data-layer]');
+  var items = document.querySelectorAll('.revenue-summary .exec-tradeoff-item[data-layer]');
+  if (!cards.length || !items.length || !('IntersectionObserver' in window)) return;
+
+  var ratios = {};
+
+  function setActive() {
+    var best = null, bestRatio = 0;
+    Object.keys(ratios).forEach(function (k) {
+      if (ratios[k] > bestRatio) { bestRatio = ratios[k]; best = k; }
+    });
+    items.forEach(function (it) {
+      it.classList.toggle('is-active', best !== null && it.getAttribute('data-layer') === best);
+    });
+  }
+
+  var observer = new IntersectionObserver(function (entries) {
+    entries.forEach(function (en) {
+      ratios[en.target.getAttribute('data-layer')] = en.isIntersecting ? en.intersectionRatio : 0;
+    });
+    setActive();
+  }, { threshold: [0, 0.25, 0.5, 0.75, 1] });
+
+  cards.forEach(function (c) { observer.observe(c); });
 })();

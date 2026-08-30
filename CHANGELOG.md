@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `a554fba` | redesign(folio): PRICING FINAL PRICING·REVENUE 재구성 — [FINAL] 표·차트 동일 카드(max-width 960)·숫자열 우측정렬·모델열 240px·행 3px 색바·Gemini Pro ※마커+200K 주석 tfoot 이동·차트 판매가 등급별 3색+범례 4개(저가/중급/고급/원가). [REVENUE] 요약 카드 패딩24·현재 층 accent 하이라이트(IntersectionObserver)·메타 3열 가로그리드(보더 제거)·본문 문단→스탯 타일(3열/3층 4열)·1층 COST DEFENSE 박스·층 전환 세로 연결선+pill·카드 내 표 좌우패딩0·멤버십 열폭(80/100/auto/180)·카드 패딩32/블록갭24. 신규 클래스 10 |
 | `e4eba84` | redesign(folio): PRICING DECISIONS 카드 3개 재구성 — 좌 메타(38%: 라벨/제목/요약) + 우 3단 스텝(62%: TRIED/VALIDATED/DECIDED, 스텝 구분선, DECIDED 본문 600) + 카드 하단 풀폭 푸터(✕ DISCARDED / BENCHMARK 인라인). 기존 본문 문단·exec-tradeoff-list 삭제, 신규 카피로 교체. min-height 제거(자연 높이), word-break keep-all. 신규 클래스 7(.decision-card--steps·.decision-steps·-step·-step-label·.decision-foot·-item·-label) |
 | `d7d8317` | fix(folio): PRICING 질문 카드 푸터 링크가 Intro로 튀던 버그 — pages 모드 해시(페이지 키) 전환과 앵커 해시(#pricing-table 등) 충돌. folio.js에서 클릭 가로채 해시 변경 없이 같은 페이지 내 대상으로 스크롤(고정바 오프셋). 불필요해진 scroll-margin-top 제거 |
 | `6181ad0` | redesign(folio): PRICING 질문 카드 재설계 — 큰 번호(56px/800/muted40%)+QUESTION 라벨, 좌측 accent 세로 바, 질문 18px/600 lh1.5, 하단 'ANSWERED IN' 푸터 링크(→ #pricing-table/#decision-margin/#revenue-stack 앵커 신설), hover 시 border accent. 리서치 칩 라벨 'RESEARCH BASE·6개 서비스 직접 플레이'+채택여부 색 점(채택/부분/역방향)+우측 범례. 볼드 강조(`<strong>`·.case-main strong) 제거. 신규 클래스 7(.q-*) |

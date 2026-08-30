@@ -896,9 +896,42 @@ a.axis-card.doc-card:hover {
   font-weight: 500;
 }
 
-/* 등급 색 바 — 첫 열 좌측 */
+/* 등급 색 바 — 첫 열 좌측 (지정 3px) */
 .pricing-table tr[data-tier] td:first-child {
-  border-left: 2px solid var(--tier-color);
+  border-left: 3px solid var(--tier-color);
+}
+
+/* FINAL PRICING 표: 숫자 열 우측 정렬 + 모델 열 240px 고정 */
+.pricing-table--price th:not(:first-child),
+.pricing-table--price td:not(:first-child) {
+  text-align: right;
+}
+
+.pricing-table--price th:first-child,
+.pricing-table--price td:first-child {
+  width: 240px;
+}
+
+/* 200K 주석 — 표 하단 푸터 행 (※, 13px, 본문색) */
+.pricing-table tfoot td {
+  border-top: 1px solid var(--border-default);
+  border-bottom: none;
+  padding-top: var(--space-4);
+  font-size: var(--fs-sub);
+  line-height: var(--lh-normal);
+  white-space: normal;
+  word-break: keep-all;
+}
+
+.pricing-table tfoot td:first-child {
+  color: var(--text-secondary);
+  font-weight: var(--fw-body);
+  text-align: left;
+}
+
+/* 표·차트 공용 카드 — 동일 컨테이너/폭 (표 최대폭 960px) */
+.pricing-card {
+  max-width: 960px;
 }
 
 /* 기본 모델 행 강조 (DEFAULT MODEL 카드와 동일 골드 틴트) */
@@ -947,21 +980,140 @@ a.axis-card.doc-card:hover {
   margin-top: var(--space-8);
 }
 
-/* 요약 박스 — 스크롤 시 따라오도록 sticky (axis-card 재사용) */
+/* 층 카드 — 카드 패딩 32px, 내부 블록 간격 24px 통일 (exec-step-card 재사용) */
+.revenue-layout .exec-step-card {
+  padding: var(--space-8);
+  gap: var(--space-6);
+}
+
+/* 헤더 라벨 — gap이 간격을 담당하므로 자체 하단 마진 제거 */
+.revenue-layout .exec-step-label {
+  margin-bottom: 0;
+}
+
+/* 상단 메타 3열 (좌측 보더 없는 라벨/값) */
+.revenue-meta {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-5);
+}
+
+.revenue-meta > div {
+  display: flex;
+  flex-direction: column;
+  gap: var(--space-1);
+}
+
+/* 스탯 타일 — 3열(3층은 4열), 큰 숫자/키워드 + 설명 */
+.revenue-stats {
+  display: grid;
+  grid-template-columns: repeat(3, 1fr);
+  gap: var(--space-3);
+}
+
+.revenue-stats--4 {
+  grid-template-columns: repeat(4, 1fr);
+}
+
+.revenue-stat {
+  padding: var(--card-padding-sm);
+  background: rgba(var(--fg-rgb), 0.02);
+  border: 1px solid var(--border-default);
+  border-radius: var(--radius-sm);
+}
+
+.revenue-stat-num {
+  font-size: var(--fs-h3);
+  font-weight: 600;
+  color: var(--text-primary);
+  line-height: var(--lh-snug);
+  word-break: keep-all;
+}
+
+.revenue-stat-desc {
+  font-size: var(--fs-caption);
+  color: var(--text-tertiary);
+  line-height: var(--lh-normal);
+  margin-top: var(--space-2);
+  word-break: keep-all;
+}
+
+/* 1층 원가 방어 — 라벨 + 본문 강조 박스 */
+.cost-defense {
+  padding: var(--card-padding-sm);
+  background: rgba(var(--gold-rgb), 0.04);
+  border: 1px solid var(--border-gold);
+  border-radius: var(--radius-sm);
+}
+
+.cost-defense .decision-step-label {
+  color: var(--text-label-gold);
+}
+
+.cost-defense .exec-detail-body {
+  margin-top: var(--space-2);
+}
+
+/* 층 사이 전환 — 세로 연결선 + 중앙 pill */
+.revenue-connector {
+  position: relative;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 40px;
+}
+
+.revenue-connector::before {
+  content: '';
+  position: absolute;
+  top: 0;
+  bottom: 0;
+  left: 50%;
+  border-left: 1px solid var(--border-strong);
+}
+
+.revenue-connector .case-tag {
+  position: relative;
+  background: var(--bg);
+}
+
+/* 카드 내 표 — 카드 콘텐츠 폭에 맞춤 (첫/마지막 열 좌우 패딩 0) */
+.revenue-layout .exec-step-card .pricing-table th:first-child,
+.revenue-layout .exec-step-card .pricing-table td:first-child {
+  padding-left: 0;
+}
+
+.revenue-layout .exec-step-card .pricing-table th:last-child,
+.revenue-layout .exec-step-card .pricing-table td:last-child {
+  padding-right: 0;
+}
+
+/* 멤버십 표 열 폭 (등급 80 / 요금 100 / 혜택 auto / 원가 방어 180) */
+.pricing-table--membership th:nth-child(1),
+.pricing-table--membership td:nth-child(1) { width: 80px; }
+.pricing-table--membership th:nth-child(2),
+.pricing-table--membership td:nth-child(2) { width: 100px; }
+.pricing-table--membership th:nth-child(4),
+.pricing-table--membership td:nth-child(4) { width: 180px; }
+
+/* 요약 박스 — 콘텐츠 높이 + 패딩 24px + sticky (axis-card 재사용) */
 .revenue-summary {
   position: sticky;
   top: calc(var(--nav-h) + var(--subbar-height) + var(--space-6));
+  padding: var(--space-6);
 }
 
-/* 3층 스택(재사용 .decisions-list) 내 tier 카드(exec-step-card) 내부 간격 —
-   기존 클래스만 사용, .revenue-layout 스코프로 한정 */
-.revenue-layout .exec-step-card .exec-tradeoff-list {
-  margin-bottom: var(--space-5);
+/* 현재 뷰포트 층에 해당하는 요약 항목 accent 하이라이트 (JS가 .is-active 토글) */
+.revenue-summary .exec-tradeoff-item {
+  transition: border-color 0.3s ease;
 }
 
-.revenue-layout .exec-step-card .exec-detail-body {
-  margin-top: var(--space-4);
-  margin-bottom: var(--space-5);
+.revenue-summary .exec-tradeoff-item.is-active {
+  border-left-color: var(--gold);
+}
+
+.revenue-summary .exec-tradeoff-item.is-active .exec-tradeoff-q {
+  color: var(--gold);
 }
 
 @media (max-width: 900px) {
@@ -970,5 +1122,13 @@ a.axis-card.doc-card:hover {
   }
   .revenue-summary {
     position: static;
+  }
+}
+
+@media (max-width: 768px) {
+  .revenue-meta,
+  .revenue-stats,
+  .revenue-stats--4 {
+    grid-template-columns: repeat(2, 1fr);
   }
 }
