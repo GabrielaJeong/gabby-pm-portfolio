@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `3b581de` | style(folio): #what 스탯 카드 위계 + 본문 볼드 — 서브 라인 본문색·500·15px(값 아래 6px, 라벨보다 강조), 구분선 점선→실선·위아래 16px, 본문 볼드 <strong>(600·inherit, 본문당 1개), 카드1 큰값 앞 라이브 도트(#22C55E·8px·2초 펄스·reduced-motion 정지). id=what 부여, impact-metric 공유 컴포넌트라 #what 스코프(타 페이지 영향 0). 신규 클래스 1(.live-dot) |
 | `dce89ab` | content(folio): WHAT 스탯 카드 본문 정리 — 서브헤드 교체, 카드1·2 본문 축약(카드2 모델명 제거→KEY DECISIONS로 일원화), 카드3·4 서브+본문 교체, 카드4 화살표 체인을 nowrap 스팬으로 묶어 화살표 고아 방지. 카드 스타일·라벨·큰 값 유지, WHY/HOW 결론블록·볼드 미적용 |
 | `fcca2a3` | style/content(folio): HOW 카드에 WHY 카드 스타일 동일 적용 — #why 스코프를 섹션 한정 .why-cards로 리팩터(WHY·HOW 공유, min-height는 #why만). HOW 라벨 번호(01·02·03)+본문·결론 카피 교체(카드3 결론 'AI 도구를 써도 무엇을 만들지는 PM이 정한다'). WHY·HOW 본문 키워드 볼드 <strong>(font-weight 600·color inherit, 본문당 1개, 총 6). 다른 페이지·섹션 영향 0 |
 | `cb3457e` | style(folio): #why 마무리 라인 블록화 — 액센트 틴트 배경(다크8%/라이트10%)·패딩 12/16·radius 6·좌측 보더 3px·14px/600/lh1.5·keep-all, 하단 고정 유지. 카드1 마무리 '…구조를 다룬다'로 축약(1줄). #why 스코프(공유 컴포넌트 미수정) |
