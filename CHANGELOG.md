@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `fcca2a3` | style/content(folio): HOW 카드에 WHY 카드 스타일 동일 적용 — #why 스코프를 섹션 한정 .why-cards로 리팩터(WHY·HOW 공유, min-height는 #why만). HOW 라벨 번호(01·02·03)+본문·결론 카피 교체(카드3 결론 'AI 도구를 써도 무엇을 만들지는 PM이 정한다'). WHY·HOW 본문 키워드 볼드 <strong>(font-weight 600·color inherit, 본문당 1개, 총 6). 다른 페이지·섹션 영향 0 |
 | `cb3457e` | style(folio): #why 마무리 라인 블록화 — 액센트 틴트 배경(다크8%/라이트10%)·패딩 12/16·radius 6·좌측 보더 3px·14px/600/lh1.5·keep-all, 하단 고정 유지. 카드1 마무리 '…구조를 다룬다'로 축약(1줄). #why 스코프(공유 컴포넌트 미수정) |
 | `c0cf3a8` | style(folio): #why 헤드라인 구절 단위 개행(.hl-seg span, nowrap, br 미사용) 3카드 + 카드3 본문 둘째 문장 교체('모델의 차이와 프롬프트 설계의 수준이 그대로 드러납니다'). 신규 클래스 1(.hl-seg) |
 | `46eb66c` | style(folio): #why 카드 위계 강화 — 헤드라인 20px/lh1.35/2줄 min-height(본문 시작선 정렬)·하단여백16px, 본문 lh1.7·본문↔마무리 24px, 구분선 숨김(마무리 좌측보더와 중복), 마무리 14px·보더 3px, 헤드라인·본문 keep-all+break-word. 공유 컴포넌트 보호 위해 전부 #why 스코프(HOW/타 페이지 영향 0), 모바일 min-height 해제 |

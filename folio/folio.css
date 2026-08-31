@@ -162,13 +162,14 @@
   margin-top: var(--section-gap);
 }
 
-/* ==================== #why 카드 위계 강화 ====================
+/* ==================== WHY·HOW 카드 위계 (섹션 한정 .why-cards) ====================
    .axis-card는 공유 컴포넌트(components.css, 4개 페이지 사용)라 전역 수정 금지.
-   모든 조정을 #why로 스코프해 WHY 섹션에만 적용(HOW/다른 페이지 영향 0). */
+   WHY·HOW 두 섹션의 .axis-grid에만 .why-cards를 부여해 스코프(다른 페이지 영향 0).
+   min-height(헤드라인 2줄 고정)만 헤드라인이 2줄인 #why에 한정 — HOW는 1줄이라 제외. */
 
 /* 1. 줄바꿈 — 헤드라인·본문 */
-#why .axis-card-title,
-#why .axis-card-body {
+.why-cards .axis-card-title,
+.why-cards .axis-card-body {
   word-break: keep-all;
   overflow-wrap: break-word;
 }
@@ -179,28 +180,38 @@
   display: inline;
 }
 
-/* 2·3. 헤드라인 위계 상향 + 2줄 기준 높이 고정(세 카드 본문 시작선 정렬) */
-#why .axis-card-title {
+/* 2. 헤드라인 위계 상향 */
+.why-cards .axis-card-title {
   font-size: var(--fs-h2);         /* 18 → 20px (+2px) */
   line-height: 1.35;
   margin-bottom: var(--space-4);   /* 4 → 16px */
+}
+
+/* 3. 헤드라인 2줄 기준 높이 고정(본문 시작선 정렬) — WHY 전용(HOW는 1줄) */
+#why .axis-card-title {
   min-height: 2.7em;               /* line-height 1.35 × 2줄 */
 }
 
 /* 2. 본문 — 색 뮤트 유지, 행간 1.7, 본문↔마무리 최소 24px */
-#why .axis-card-body {
+.why-cards .axis-card-body {
   line-height: var(--lh-relaxed);  /* 1.7 */
   margin-bottom: var(--space-6);   /* 24px (구분선 제거분 대체) */
 }
 
+/* 본문 키워드 볼드 — 본문 색 그대로(액센트 금지), 본문당 1개 */
+.why-cards .axis-card-body strong {
+  font-weight: var(--fw-h3);       /* 600 */
+  color: inherit;
+}
+
 /* 4. 구분선 제거 — 마무리 좌측 보더와 역할 중복 (DOM 유지, 시각만 제거) */
-#why .axis-card-divider {
+.why-cards .axis-card-divider {
   display: none;
 }
 
 /* 4. 마무리 — 결론 블록화 (액센트 틴트 배경 + 좌측 3px 보더).
    색/보더색은 기존 액센트(label-gold/border-gold) 유지, 하단 고정은 본문 flex:1이 담당. */
-#why .axis-card-insight {
+.why-cards .axis-card-insight {
   display: block;
   font-size: var(--fs-body);       /* 13 → 14px (본문과 동일) */
   font-weight: var(--fw-h3);       /* 600 */
@@ -214,7 +225,7 @@
 }
 
 /* 라이트 모드 — 틴트가 옅어 안 보이면 10%로 상향 */
-:root[data-theme="light"] #why .axis-card-insight {
+:root[data-theme="light"] .why-cards .axis-card-insight {
   background: rgba(var(--gold-rgb), 0.10);
 }
 
