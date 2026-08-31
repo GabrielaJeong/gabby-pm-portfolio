@@ -67,7 +67,7 @@
         <div class="case-meta-grid" data-reveal>
           <div class="case-meta-item">
             <div class="case-meta-label">ROLE</div>
-            <div class="case-meta-value">1인 A to Z · 기획·구축·운영</div>
+            <div class="case-meta-value">1인 A to Z · 기획·구축·배포</div>
           </div>
           <div class="case-meta-item">
             <div class="case-meta-label">STACK</div>
@@ -75,7 +75,7 @@
           </div>
           <div class="case-meta-item">
             <div class="case-meta-label">PERIOD</div>
-            <div class="case-meta-value">2026.04 ~ 운영 중</div>
+            <div class="case-meta-value">2026.04 ~ 라이브</div>
           </div>
           <div class="case-meta-item">
             <div class="case-meta-label">LIVE</div>
@@ -188,15 +188,6 @@
 
         <div class="impact-metric-grid">
           <div class="impact-metric-card" data-reveal>
-            <div class="impact-metric-tag">LIVE STATUS</div>
-            <div class="impact-metric-num result-num--sm"><span class="live-dot" aria-hidden="true"></span>운영 중</div>
-            <div class="impact-metric-label">라이브 프로덕트</div>
-            <div class="impact-metric-detail">
-              Railway에 배포해 실시간으로 사용할 수 있습니다. 이 페이지 상단 임베드에서 <strong>바로 체험</strong> 가능합니다.
-            </div>
-          </div>
-
-          <div class="impact-metric-card" data-reveal data-reveal-delay="1">
             <div class="impact-metric-tag">MODEL VALIDATION</div>
             <div class="impact-metric-num result-num--sm">6개</div>
             <div class="impact-metric-label">LLM 직접 비교 검증</div>
@@ -205,7 +196,7 @@
             </div>
           </div>
 
-          <div class="impact-metric-card" data-reveal data-reveal-delay="2">
+          <div class="impact-metric-card" data-reveal data-reveal-delay="1">
             <div class="impact-metric-tag">DEFAULT MODEL</div>
             <div class="impact-metric-num result-num--sm">Gemini 3.1 Pro</div>
             <div class="impact-metric-label">기본값 · 검증 종합 1위</div>
@@ -220,6 +211,15 @@
             <div class="impact-metric-label">기획부터 배포까지 단독 담당</div>
             <div class="impact-metric-detail">
               <span style="white-space:nowrap">기획/UIUX →</span> <span style="white-space:nowrap">플랫폼 구성 →</span> <span style="white-space:nowrap">프롬프트 아키텍처 →</span> <span style="white-space:nowrap">어드민 →</span> <span style="white-space:nowrap">보안 →</span> 배포. 전 영역을 <strong>한 사람이</strong> 맡았습니다.
+            </div>
+          </div>
+
+          <div class="impact-metric-card" data-reveal data-reveal-delay="2">
+            <div class="impact-metric-tag">LIVE STATUS</div>
+            <div class="impact-metric-num result-num--sm"><span class="live-dot" aria-hidden="true"></span>LIVE</div>
+            <div class="impact-metric-label">Railway 배포 · 즉시 체험 가능</div>
+            <div class="impact-metric-detail">
+              이 페이지 상단 임베드에서 <strong>바로 체험</strong>할 수 있습니다. 반응형 웹으로 모바일·데스크톱 모두 지원합니다.
             </div>
           </div>
         </div>
@@ -297,7 +297,7 @@
             <div class="decision-card-meta">
               <div class="exec-phase-label">SECURITY ARCHITECTURE</div>
               <div class="exec-phase-title">세션 소유권 검증을 직접 설계한 이유</div>
-              <div class="exec-phase-summary">라이브 운영 중인 프로덕트는 PM도 보안 사고 책임자입니다.</div>
+              <div class="exec-phase-summary">라이브로 공개된 프로덕트는 PM도 보안 사고 책임자입니다.</div>
             </div>
             <div class="exec-detail-body">비로그인 게스트의 세션이 다른 게스트와 섞이거나, 로그인 유저가 타인 세션에 접근하는 시나리오를 차단하기 위해 verifyOwnership 헬퍼를 신설했습니다. 로그인 유저는 user_id 일치, 게스트는 guest_id 일치 + user_id IS NULL 검증을 적용하고, 모든 세션 라우트(GET/PUT)에 소유권 체크를 박았습니다. 49개 테스트로 404/403/200 시나리오를 검증했습니다.</div>
           </div>
@@ -705,7 +705,7 @@
           <div class="case-section-label">PRODUCT DOCUMENTS</div>
         </div>
         <h2 class="case-section-title">PM처럼 사고하고 기록했습니다</h2>
-        <p class="case-section-sub">제품 정의부터 AI 검증, 어드민 설계까지. 라이브 프로덕트를 운영하며 작성한 실무 문서를 공개합니다.</p>
+        <p class="case-section-sub">제품 정의부터 AI 검증, 어드민 설계까지. 라이브 프로덕트를 만들며 작성한 실무 문서를 공개합니다.</p>
 
         <div class="axis-grid">
 

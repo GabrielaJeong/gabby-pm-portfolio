@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `6d1701f` | content(folio): WHAT 카드 순서 MODEL→DEFAULT→BUILT→LIVE(DOM 재배열), LIVE 카피(큰값 '운영 중'→'LIVE', 서브 'Railway 배포 · 즉시 체험 가능', 본문 교체), 값–서브 간격 6→12px·큰값 line-height 1.1·라이브 도트 flex 중앙정렬. + '운영' 표현 정리: 히어로 PERIOD(라이브)·ROLE(배포), SECURITY '라이브로 공개된', PRODUCT DOCUMENTS '만들며'. 역량·어드민 표현은 유지 |
 | `3b581de` | style(folio): #what 스탯 카드 위계 + 본문 볼드 — 서브 라인 본문색·500·15px(값 아래 6px, 라벨보다 강조), 구분선 점선→실선·위아래 16px, 본문 볼드 <strong>(600·inherit, 본문당 1개), 카드1 큰값 앞 라이브 도트(#22C55E·8px·2초 펄스·reduced-motion 정지). id=what 부여, impact-metric 공유 컴포넌트라 #what 스코프(타 페이지 영향 0). 신규 클래스 1(.live-dot) |
 | `dce89ab` | content(folio): WHAT 스탯 카드 본문 정리 — 서브헤드 교체, 카드1·2 본문 축약(카드2 모델명 제거→KEY DECISIONS로 일원화), 카드3·4 서브+본문 교체, 카드4 화살표 체인을 nowrap 스팬으로 묶어 화살표 고아 방지. 카드 스타일·라벨·큰 값 유지, WHY/HOW 결론블록·볼드 미적용 |
 | `fcca2a3` | style/content(folio): HOW 카드에 WHY 카드 스타일 동일 적용 — #why 스코프를 섹션 한정 .why-cards로 리팩터(WHY·HOW 공유, min-height는 #why만). HOW 라벨 번호(01·02·03)+본문·결론 카피 교체(카드3 결론 'AI 도구를 써도 무엇을 만들지는 PM이 정한다'). WHY·HOW 본문 키워드 볼드 <strong>(font-weight 600·color inherit, 본문당 1개, 총 6). 다른 페이지·섹션 영향 0 |
