@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `c0cf3a8` | style(folio): #why 헤드라인 구절 단위 개행(.hl-seg span, nowrap, br 미사용) 3카드 + 카드3 본문 둘째 문장 교체('모델의 차이와 프롬프트 설계의 수준이 그대로 드러납니다'). 신규 클래스 1(.hl-seg) |
 | `46eb66c` | style(folio): #why 카드 위계 강화 — 헤드라인 20px/lh1.35/2줄 min-height(본문 시작선 정렬)·하단여백16px, 본문 lh1.7·본문↔마무리 24px, 구분선 숨김(마무리 좌측보더와 중복), 마무리 14px·보더 3px, 헤드라인·본문 keep-all+break-word. 공유 컴포넌트 보호 위해 전부 #why 스코프(HOW/타 페이지 영향 0), 모바일 min-height 해제 |
 | `2671b35` | content(folio): WHY 섹션 카피 교체 + 카드 순서 CONTEXT→MOTIVATION→HYPOTHESIS(01 WHY NOW / 02 WHY BUILD / 03 WHY CHARACTER CHAT), 서브헤드 '라이브 프로덕트로 확인' 톤, 본문 2문장으로 축약. HTML 구조·CSS·클래스 무변경 |
 | `8d39854` | layout(folio): FINAL PRICING 2열 그리드 — 표 카드 52% / 차트 카드 48%(gap 24, 섹션 폭 전체), align-items stretch로 동일 높이 + 차트 캔버스가 표 높이 채움(flex). 표 카드 패딩 24·행 44px·모델열 200px·나머지 균등(table-layout fixed), 등급 칩을 표 헤더 우측 범례로 이동. 차트 제목 축약(제목 한 줄+캡션 12px)·y축 12px·저가/중급/고급 accent 3단 명도(저가 밝게)·원가 border색 저투명. 1200px 미만 1열 폴백. 표 행 바/칩도 동일 3단 색(color-mix). 신규 클래스 3(.pricing-final-grid·-table-card·-chart-card), .pricing-card 제거 |

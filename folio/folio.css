@@ -173,6 +173,12 @@
   overflow-wrap: break-word;
 }
 
+/* 헤드라인 구절 단위 개행 — 각 구절(span)은 통째로 유지, 구절 사이에서만 개행 */
+.hl-seg {
+  white-space: nowrap;
+  display: inline;
+}
+
 /* 2·3. 헤드라인 위계 상향 + 2줄 기준 높이 고정(세 카드 본문 시작선 정렬) */
 #why .axis-card-title {
   font-size: var(--fs-h2);         /* 18 → 20px (+2px) */
