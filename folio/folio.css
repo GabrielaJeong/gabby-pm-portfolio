@@ -162,6 +162,50 @@
   margin-top: var(--section-gap);
 }
 
+/* ==================== #why 카드 위계 강화 ====================
+   .axis-card는 공유 컴포넌트(components.css, 4개 페이지 사용)라 전역 수정 금지.
+   모든 조정을 #why로 스코프해 WHY 섹션에만 적용(HOW/다른 페이지 영향 0). */
+
+/* 1. 줄바꿈 — 헤드라인·본문 */
+#why .axis-card-title,
+#why .axis-card-body {
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 2·3. 헤드라인 위계 상향 + 2줄 기준 높이 고정(세 카드 본문 시작선 정렬) */
+#why .axis-card-title {
+  font-size: var(--fs-h2);         /* 18 → 20px (+2px) */
+  line-height: 1.35;
+  margin-bottom: var(--space-4);   /* 4 → 16px */
+  min-height: 2.7em;               /* line-height 1.35 × 2줄 */
+}
+
+/* 2. 본문 — 색 뮤트 유지, 행간 1.7, 본문↔마무리 최소 24px */
+#why .axis-card-body {
+  line-height: var(--lh-relaxed);  /* 1.7 */
+  margin-bottom: var(--space-6);   /* 24px (구분선 제거분 대체) */
+}
+
+/* 4. 구분선 제거 — 마무리 좌측 보더와 역할 중복 (DOM 유지, 시각만 제거) */
+#why .axis-card-divider {
+  display: none;
+}
+
+/* 4. 마무리 — 본문 크기 이상, 좌측 보더 2 → 3px (weight 600은 기존 유지) */
+#why .axis-card-insight {
+  font-size: var(--fs-body);       /* 13 → 14px */
+  border-left-width: 3px;
+  margin-top: 0;                   /* 간격은 본문 margin-bottom이 담당 */
+}
+
+/* 모바일 1열 — 헤드라인 아래 과도한 빈 공간 방지: min-height 해제 */
+@media (max-width: 768px) {
+  #why .axis-card-title {
+    min-height: 0;
+  }
+}
+
 /* ==================== PRODUCT DOCUMENTS ==================== */
 
 /* 문서 미리보기 placeholder — 스크린샷 제공 후 doc-preview-img로 교체 */
