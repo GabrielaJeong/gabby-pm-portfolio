@@ -198,11 +198,24 @@
   display: none;
 }
 
-/* 4. 마무리 — 본문 크기 이상, 좌측 보더 2 → 3px (weight 600은 기존 유지) */
+/* 4. 마무리 — 결론 블록화 (액센트 틴트 배경 + 좌측 3px 보더).
+   색/보더색은 기존 액센트(label-gold/border-gold) 유지, 하단 고정은 본문 flex:1이 담당. */
 #why .axis-card-insight {
-  font-size: var(--fs-body);       /* 13 → 14px */
+  display: block;
+  font-size: var(--fs-body);       /* 13 → 14px (본문과 동일) */
+  font-weight: var(--fw-h3);       /* 600 */
+  line-height: var(--lh-normal);   /* 1.5 */
+  word-break: keep-all;            /* 2줄 폴백 시 단어 중간 개행 방지 */
+  padding: var(--space-3) var(--space-4);  /* 12px 16px */
+  border-radius: var(--radius-tag);        /* 6px */
   border-left-width: 3px;
-  margin-top: 0;                   /* 간격은 본문 margin-bottom이 담당 */
+  background: rgba(var(--gold-rgb), 0.08);
+  margin-top: 0;                   /* 본문↔마무리 간격은 본문 margin-bottom(24px)이 담당 */
+}
+
+/* 라이트 모드 — 틴트가 옅어 안 보이면 10%로 상향 */
+:root[data-theme="light"] #why .axis-card-insight {
+  background: rgba(var(--gold-rgb), 0.10);
 }
 
 /* 모바일 1열 — 헤드라인 아래 과도한 빈 공간 방지: min-height 해제 */
