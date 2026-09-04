@@ -1335,3 +1335,68 @@ a.axis-card.doc-card:hover {
     grid-template-columns: repeat(2, 1fr);
   }
 }
+
+/* ==================== META REFLECTION — 전폭 행 레이아웃 (섹션 전용) ====================
+   3열 카드 그리드 대신 번호 + 텍스트 전폭 행. 이 섹션 전용 클래스라 타 카드 섹션 무영향. */
+.reflection-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.reflection-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: var(--space-10);            /* 40px */
+  padding: var(--space-10) 0;      /* 상하 40px */
+  border-bottom: 1px solid var(--border-default);
+}
+
+.reflection-row:last-child {
+  border-bottom: none;
+}
+
+/* 좌: 큰 번호 (라벨 대체) — 액센트 저투명 */
+.reflection-num {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(var(--gold-rgb), 0.14);
+  letter-spacing: -0.02em;
+}
+
+/* 우: 헤드라인 + 본문 */
+.reflection-head {
+  font-size: 22px;                 /* WHY 헤드라인(20px) 대비 +2px */
+  font-weight: var(--fw-h3);
+  color: var(--text-primary);
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+  word-break: keep-all;
+}
+
+.reflection-body {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  line-height: var(--lh-relaxed);  /* 1.7 */
+  max-width: var(--measure-summary); /* 720px — 전폭 가독성 저하 방지 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 본문 볼드 — 본문 색 그대로, 행당 1개 (WHY/HOW/WHAT과 동일 규칙) */
+.reflection-body strong {
+  font-weight: var(--fw-h3);
+  color: inherit;
+}
+
+/* 모바일: 1열 스택 — 번호를 헤드라인 위로, 크기 축소 */
+@media (max-width: 768px) {
+  .reflection-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+  .reflection-num {
+    font-size: 40px;
+  }
+}
