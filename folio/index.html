@@ -308,7 +308,7 @@
               <div class="exec-phase-title">세션 소유권 검증을 직접 설계한 이유</div>
               <div class="exec-phase-summary">라이브로 공개된 프로덕트는 PM도 보안 사고 책임자입니다.</div>
             </div>
-            <div class="exec-detail-body">비로그인 게스트의 세션이 다른 게스트와 섞이거나, 로그인 유저가 타인 세션에 접근하는 시나리오를 차단하기 위해 verifyOwnership 헬퍼를 신설했습니다. 로그인 유저는 user_id 일치, 게스트는 guest_id 일치 + user_id IS NULL 검증을 적용하고, 모든 세션 라우트(GET/PUT)에 소유권 체크를 박았습니다. 49개 테스트로 404/403/200 시나리오를 검증했습니다.</div>
+            <div class="exec-detail-body">비로그인 게스트의 세션이 다른 게스트와 섞이거나, 로그인 유저가 타인 세션에 접근하는 시나리오를 차단하기 위해 verifyOwnership 헬퍼를 신설했습니다. 로그인 유저는 user_id 일치, 게스트는 guest_id 일치 + user_id IS NULL 검증을 적용하고, 모든 세션 라우트(GET/PUT)에 소유권 체크를 박았습니다. 보안 시나리오 테스트로 게스트 격리·타인 세션 접근에 대한 404/403/200 응답을 검증했습니다.</div>
           </div>
 
           <div class="decision-card">

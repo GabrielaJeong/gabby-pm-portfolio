@@ -9,6 +9,7 @@
 
 | 커밋 | 변경 내용 |
 |---|---|
+| `f3cebfd` | fix(content): 정합성 픽스 3건 — 메타브 CASE01 RESULT '월 매출 70배→73배', 맘스케어 PHASE2 상태 '진행 중→2차 완료·재협업으로 이어진 프로젝트', Folio SECURITY 카드 마지막 문장에서 '49개 테스트' 제거하고 '보안 시나리오 테스트로 게스트 격리·타인 세션 접근 404/403/200 검증'으로 (개수는 ENGINEERING RIGOR가 담당) |
 | `efeddbc` | refactor(reflection): 회고 전폭 행 레이아웃(.reflection-*)+.hl-seg를 folio.css→components.css 공용화, 4개 페이지 적용 — metavv(3행, CASE 라인 유지)·banggooso(2행, GOOD/LIMIT 유지)·momscare(2행, Impact flip 유지) #reflection의 learned-card→행, 라벨 제거·번호 대체·헤드라인 구절 nowrap·행당 볼드 1개. folio는 클래스 동일이라 렌더 불변 |
 | `8cfc86b` | redesign(folio): META REFLECTION 3열 카드 → 전폭 행(섹션 전용 .reflection-*) — 좌 큰 번호(64px, 액센트 14%)+우 헤드라인/본문, 라벨·카드 배경·보더 제거, 행 사이 1px 구분선, 본문 max-width 720. LEARNED 03 헤드라인·본문 교체(하네스 상세→원칙 서술, 섹션 내 '하네스' 1회), 행별 볼드 1개. 모바일 1열(번호 40px 위로) |
 | `28e0c7f` | redesign(folio): ENGINEERING RIGOR 리디자인 + KEY DECISIONS 카드 추가 — 스탯 4카드 전부 숫자(TESTS 73·DECISIONS 20·LESSONS 21·HARNESS 7, WHAT 스탯 스타일 .stat-cards 공유), AREA 4카드 통일(칩 최대3+통일 리스트 최대4, 점선·★·harness 제거), KEY DECISIONS에 FRONTEND MIGRATION 추가(6장), WHY ENG 3카드 WHY/HOW화(번호 라벨·볼드·결론블록, learned-card→axis-card). 본문 볼드 1개/카드. 100% 스탯카드 제거(프롬프트 빌더 100%는 AREA 상세 유지) |
