@@ -157,17 +157,18 @@
   grid-template-columns: repeat(4, 1fr);
 }
 
-/* ── #what 스탯 카드 위계 (impact-metric은 공유 컴포넌트 → #what 스코프) ── */
+/* ── 스탯 카드 위계 (섹션 한정 .stat-cards — impact-metric은 공유 컴포넌트) ──
+   WHAT·ENGINEERING RIGOR 스탯 그리드에만 .stat-cards를 부여해 스코프(타 페이지 영향 0). */
 
 /* 값 ↔ 서브 간격 12px + 서브 강조(본문색·500·15px) — 라벨보다 강하게 */
-#what .impact-metric-num {
+.stat-cards .impact-metric-num {
   display: flex;                   /* 라이브 도트를 대문자 캡 하이트 중앙에 정렬 */
   align-items: center;
   line-height: 1.1;                /* 1.0 → 1.1 */
   margin-bottom: 0;
 }
 
-#what .impact-metric-label {
+.stat-cards .impact-metric-label {
   margin-top: 12px;                /* 6 → 12px */
   margin-bottom: 0;
   color: var(--text-secondary);    /* 뮤트 → 본문색 */
@@ -176,14 +177,14 @@
 }
 
 /* 구분선 점선 → 실선, 위·아래 여백 16px (라벨 margin-bottom 0으로 위 32→16px) */
-#what .impact-metric-detail {
+.stat-cards .impact-metric-detail {
   border-top-style: solid;
   margin-top: var(--space-4);
   padding-top: var(--space-4);
 }
 
 /* 본문 키워드 볼드 — 본문 색 그대로(액센트 금지), 본문당 1개 (WHY/HOW와 동일 규칙) */
-#what .impact-metric-detail strong {
+.stat-cards .impact-metric-detail strong {
   font-weight: var(--fw-h3);       /* 600 */
   color: inherit;
 }
@@ -386,6 +387,12 @@ a.axis-card.doc-card:hover {
   gap: var(--space-4);
   align-items: start;
   margin-top: var(--section-gap);
+}
+
+/* AREA 카드 펼침부 점선 구분선 제거 — 선 없이 여백만(spacer는 detail 내부라 접힘 시 함께 클립) */
+#engineering .exec-phase-detail::before {
+  border-top: 0;
+  margin: 0 0 var(--space-5);
 }
 
 /* 2×2 카드 그리드 → WHY 헤더 */

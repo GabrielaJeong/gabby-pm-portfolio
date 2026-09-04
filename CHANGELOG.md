@@ -5,6 +5,16 @@
 
 ---
 
+## 2026-09-04
+
+| 커밋 | 변경 내용 |
+|---|---|
+| `28e0c7f` | redesign(folio): ENGINEERING RIGOR 리디자인 + KEY DECISIONS 카드 추가 — 스탯 4카드 전부 숫자(TESTS 73·DECISIONS 20·LESSONS 21·HARNESS 7, WHAT 스탯 스타일 .stat-cards 공유), AREA 4카드 통일(칩 최대3+통일 리스트 최대4, 점선·★·harness 제거), KEY DECISIONS에 FRONTEND MIGRATION 추가(6장), WHY ENG 3카드 WHY/HOW화(번호 라벨·볼드·결론블록, learned-card→axis-card). 본문 볼드 1개/카드. 100% 스탯카드 제거(프롬프트 빌더 100%는 AREA 상세 유지) |
+| `d34d877` | fix(folio): 라이브 프리뷰 URL을 character-ai-prototype.vercel.app로 교체(iframe·새 창·LIVE 메타 3곳) |
+| `92bae53` | content(folio): 히어로 STACK 'Next.js · Express · LLM', WHAT LIVE 서브 'Vercel + Railway · 즉시 체험 가능' |
+
+---
+
 ## 2026-08-30
 
 | 커밋 | 변경 내용 |
