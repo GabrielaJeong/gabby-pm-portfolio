@@ -2420,3 +2420,76 @@
   font-size: var(--fs-sub);
   color: var(--text-tertiary);
 }
+
+/* ==================== 헤드라인 구절 개행 (공용) ==================== */
+/* 각 구절(span)은 통째로 유지, 구절 사이에서만 개행 (br 없이 어절 제어) */
+.hl-seg {
+  white-space: nowrap;
+  display: inline;
+}
+
+/* ==================== META REFLECTION — 전폭 행 레이아웃 (공용) ====================
+   3열 카드 그리드 대신 번호 + 텍스트 전폭 행. folio·metavv·banggooso·momscare 공용.
+   좌 120px 번호 컬럼 / 우 헤드라인+본문. 회고 섹션 전용(다른 카드 섹션과 분리). */
+.reflection-rows {
+  display: flex;
+  flex-direction: column;
+}
+
+.reflection-row {
+  display: grid;
+  grid-template-columns: 120px 1fr;
+  gap: var(--space-10);            /* 40px */
+  padding: var(--space-10) 0;      /* 상하 40px */
+  border-bottom: 1px solid var(--border-default);
+}
+
+.reflection-row:last-child {
+  border-bottom: none;
+}
+
+/* 좌: 큰 번호 (라벨 대체) — 액센트 저투명 */
+.reflection-num {
+  font-size: 64px;
+  font-weight: 700;
+  line-height: 1;
+  color: rgba(var(--gold-rgb), 0.14);
+  letter-spacing: -0.02em;
+}
+
+/* 우: 헤드라인 + 본문 */
+.reflection-head {
+  font-size: 22px;                 /* WHY 헤드라인(20px) 대비 +2px */
+  font-weight: var(--fw-h3);
+  color: var(--text-primary);
+  line-height: 1.35;
+  letter-spacing: -0.02em;
+  margin-bottom: var(--space-4);
+  word-break: keep-all;
+}
+
+.reflection-body {
+  font-size: var(--fs-body);
+  color: var(--text-secondary);
+  line-height: var(--lh-relaxed);  /* 1.7 */
+  max-width: var(--measure-summary); /* 720px — 전폭 가독성 저하 방지 */
+  word-break: keep-all;
+  overflow-wrap: break-word;
+}
+
+/* 본문 볼드 — 본문 색 그대로, 행당 1개 */
+.reflection-body strong {
+  font-weight: var(--fw-h3);
+  color: inherit;
+}
+
+/* 모바일: 1열 스택 — 번호를 헤드라인 위로, 크기 축소 */
+@media (max-width: 768px) {
+  .reflection-row {
+    grid-template-columns: 1fr;
+    gap: var(--space-3);
+  }
+  .reflection-num {
+    font-size: 40px;
+  }
+}
